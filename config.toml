@@ -87,16 +87,33 @@ summaryLength = 140
     identifier = "search"
     name = "搜索"
     url = "/search/"
+    weight = 1
+  [[menu.main]]
+    identifier = "diannaowangruo"
+    name = "电脑网络"
+    url = "/categories/diannaowangruo/"
     weight = 2
 
+  [[menu.main]]
+    identifier = "wangyesheji"
+    name = "网站设计"
+    url = "/categories/wangyesheji/"
+    weight = 3      
+ 
+  [[menu.main]]
+    identifier = "shenhuarizhi"
+    name = "生活日志"
+    url = "/categories/shenhuarizhi/"
+    weight = 4
+ 
   [[menu.main]]
     identifier = "archives"
     name = "归档"
     url = "/archives/"
-    weight = 3
+    weight = 5
 
   [[menu.main]]
     identifier = "about"
     name = "关于"
     url = "/about/"
-    weight = 4
+    weight = 6
