@@ -38,10 +38,6 @@ summaryLength = 140
   beian = "赣ICP备15001246号-2"
   cdnJsSite = "cdn.bootcdn.net" # 默认：cdnjs.cloudflare.com
 
-[markup]
-  [markup.highlight]
-    lineNos = true
-    style = "github"
 
 ## 友情链接，可以多个
 
