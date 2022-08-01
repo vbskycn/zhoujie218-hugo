@@ -32,12 +32,15 @@ url: "wordpress-tu-hugo-wanmei-ok"
 
 ## 方案对比
 
-当然，我们可以直接选择官网给出的方案[Migrate to Hugo](https://gohugo.io/tools/migrations/)。对于 wordpress，主要有以下几种。 ![image.png](https://img.zhoujie218.top/piggo/202208011522171.png) 这几种方案我都尝试过，各有优势却都不完美。以下是详细说明
+当然，我们可以直接选择官网给出的方案[Migrate to Hugo](https://gohugo.io/tools/migrations/)。对于 wordpress，主要有以下几种。 ![image.png](https://img.zhoujie218.top/piggo/202208011522171.png) 
 
-1. [wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)： 可以导出，且文件名称就是带有日期和中文的标题名称。但是不是原生 markdown 格式。而是如下图所示的结构。不满足需求 1，2，所以**排除**。![image.png](https://img.zhoujie218.top/piggo/202208011519064.png)
-2. [exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo): 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](https://img.zhoujie218.top/piggo/202208011519588.png)
-3. [blog2md](https://github.com/palaniraja/blog2md): 与[exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo)类似，文件名太乱且不包含日期。![image.png](https://img.zhoujie218.top/piggo/202208011519632.png)
-4. [wordhugopress](https://github.com/nantipov/wordhugopress): java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。![image.png](https://img.zhoujie218.top/piggo/202208011520476.png)
+  这几种方案我都尝试过，各有优势却都不完美。以下是详细说明
+
+1. [wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)： 可以导出，且文件名称就是带有日期和中文的标题名称。但是不是原生 markdown 格式。而是如下图所示的结构。不满足需求 1，2，所以**排除**。
+2. exitwp-for-hugo: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](https://img.zhoujie218.top/piggo/202208011519064.png)
+3. [exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo): 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](https://img.zhoujie218.top/piggo/202208011519588.png)
+4. [blog2md](https://github.com/palaniraja/blog2md): 与[exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo)类似，文件名太乱且不包含日期。![image.png](https://img.zhoujie218.top/piggo/202208011519632.png)
+5. [wordhugopress](https://github.com/nantipov/wordhugopress): java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。![image.png](https://img.zhoujie218.top/piggo/202208011520476.png)
 
 然后突然发现一个仓库[wordpress-export-to-markdow_L 版](https://github.com/AvantaR/wordpress-export-to-markdown)，这个只需要自己在电脑上安装 node.js 环境，然后就可以直接运行了。它可以解决除**固定链接**以外的所有问题，是一个近乎完美的方案。基于 L 版，[AvantaR](https://github.com/AvantaR)，在 markdown 的 yaml 头文件中添加了**slug**参数，详细实现见该仓库[wordpress-export-to-markdow_A 版](https://github.com/AvantaR/wordpress-export-to-markdown)。 实际上**slug**和**url**还是有区别的。以下面这个 yaml 头和网站https://www.zhoujie218.top/archives/1018.html为例：
 
