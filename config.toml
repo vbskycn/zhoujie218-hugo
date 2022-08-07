@@ -36,7 +36,7 @@ summaryLength = 140
   toc = true  # 是否开启目录
   fancybox = true ##点击图片变大
   beian = "赣ICP备15001246号-2"
-  cdnJsSite = "cdn.bootcdn.net" # 默认：cdnjs.cloudflare.com
+  # cdnJsSite = "cdn.bootcdn.net" # 默认：cdnjs.cloudflare.com
 
 
 ## 友情链接，可以多个
@@ -63,7 +63,7 @@ summaryLength = 140
   theme = "github-light"
 ## 配置 waline 评论系统,教程参考 https://waline.js.org/
 [params.waline]
-  enable = true
+  enable = false
   placeholder = "欢迎来到我的小博客，如果对此文有什么想法请在这里告诉我！温馨提示，网络并非法外之地，请谨言慎行！"
   serverURL = "https://waline-492r55y75-vbskycn.vercel.app/" #换成你的serverURL
 
