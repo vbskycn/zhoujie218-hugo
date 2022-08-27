@@ -1,5 +1,5 @@
 baseurl: https://zhoujie.ml
-languageCode: en-us
+languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
 title: 周杰个人网站
@@ -11,7 +11,7 @@ languages:
         weight: 2
     zh-cn:
         languageName: 中文
-        title: 演示站点
+        title: 周杰个人网站
         weight: 1
     ar:
         languageName: عربي
