@@ -111,3 +111,9 @@ summaryLength = 140
     name = "关于"
     url = "/about/"
     weight = 6
+
+  [[menu.main]]
+    identifier = "jianli"
+    name = "简历"
+    url = "/jianli/"
+    weight = 7
