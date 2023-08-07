@@ -3,7 +3,6 @@ title: "老式打印机套娃打印服务器p910nd和cups,实现一些特殊的�
 date: "2023-08-06"
 categories: 
   - "diannaowangruo"
-
 url: "p910nd-and-cups"
 ---
 

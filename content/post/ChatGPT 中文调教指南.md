@@ -1,3 +1,12 @@
+---
+title: "ChatGPT 中文调教指南"
+date: "2023-03-14"
+categories: 
+  - "diannaowangruo"
+url: "gpt-ok"
+---
+
+
 # ChatGPT 中文调教指南
 
 

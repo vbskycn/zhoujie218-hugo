@@ -1,3 +1,11 @@
+---
+title: "申請註冊 Microsoft 365 E5 開發者計畫"
+date: "2023-04-05"
+categories: 
+  - "diannaowangruo"
+url: "e5365-free"
+---
+
 想要免費獲得 **Microsoft 365 永久版本**和**微軟 OneDrive 5TB 雲端空間**嗎？其實可以申請 Microsoft 365 E5 開發者計畫後，就能取得永久版 Office 365 所有正版軟體授權和 OneDrive 雲端空間，最重要是申請完全免費，相比教育版功能會更強大，也不用擔心會被砍帳號風險。
 
 

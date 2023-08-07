@@ -1,3 +1,12 @@
+---
+title: "Ubuntu开箱使用指南（新手篇）"
+date: "2023-03-06"
+categories: 
+  - "diannaowangruo"
+url: "ubuntu-ok"
+---
+
+
 ### Ubuntu20.04开启ssh服务
 
 ```
