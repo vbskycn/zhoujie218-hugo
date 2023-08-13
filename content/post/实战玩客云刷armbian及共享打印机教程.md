@@ -6,10 +6,9 @@ categories:
 url: "wky-p910nd-cups-print"
 ---
 
-
 # 实战玩客云刷armbian及共享打印机教程
 
-**背景：**家里打印机HP M132a不支持无线打印，每次打印都要开笔记本连接打印机太繁琐，尤其是手机里的资料还要先发到笔记本再进行打印，如何将打印机变为无线或共享出去，翻看网上资料，发现可以将打印机插入路由器的usb口再进行一系列的设置，但自家路由器没有usb口，这个方案不可行，后来看到可以将玩客云刷机后连接打印机，将打印机共享出去，拼多多玩客云大概价格50包邮，在承受范围内，开搞。
+**背景：**家里打印机HP P1108 不支持无线打印，每次打印都要开笔记本连接打印机太繁琐，尤其是手机里的资料还要先发到笔记本再进行打印，如何将打印机变为无线或共享出去，翻看网上资料，发现可以将打印机插入路由器的usb口再进行一系列的设置，但自家路由器没有usb口，这个方案不可行，后来看到可以将玩客云刷机后连接打印机，将打印机共享出去，拼多多玩客云大概价格50包邮，在承受范围内，开搞。
 
 **准备工作：**玩客云1台，电脑1台（最好是台式机），十字螺丝刀，镊子一把，双公头USB线1根（如果电脑带type-c口，也可以使用USB转type-c的线，比如手机数据线）。
 
@@ -22,6 +21,16 @@ url: "wky-p910nd-cups-print"
 1. ## 下载armbian镜像
 
 https://github.com/hzyitc/armbian-onecloud/releases，下载带burn.img的，我下载的是Armbian_23.02.0-trunk_Onecloud_bullseye_edge_6.1.0.burn.img。
+
+https://cloud.189.cn/web/share?code=Bri2AfNRZfAr （访问码：tl43）推荐用这个，docker，qb,tr全剖搞定
+
+![玩客云的最终归宿还是安安静静的做一台打印服务器吧](https://img.zhoujie218.top/piggo/202308131459369.png)
+
+安装好的界面
+
+![image-20230813150039597](https://img.zhoujie218.top/piggo/202308131500739.png)
+
+
 
 1. ## 安装USB Burning Tool加载img镜像
 
@@ -78,31 +87,16 @@ nano /etc/network/interfaces
 然后添加下面字段，然后Ctrl+O回车，然后Ctrl+X，然后systemctl restart network重启网络，ping 192.168.1.1，ping [www.qq.com](http://www.qq.com/)都能通那就没问题了。
 
 ```plaintext
-auto eth0
-
-
-
+# Wired adapter #1
 allow-hotplug eth0
-
-
-
+no-auto-down eth0
+#iface eth0 inet dhcp
+hwaddress 12:34:56:78:9A:BC
 iface eth0 inet static
-
-
-
-address 192.168.1.20
-
-
-
+address 192.168.1.196
 netmask 255.255.255.0
-
-
-
-gateway 192.168.1.1
-
-
-
-dns-nameservers192.168.1.1
+gateway 192.168.1.253
+dns-nameservers 223.5.5.5
 ```
 
 1. ## 设置apt源
@@ -115,399 +109,106 @@ nano /etc/apt/sources.list
 
 ```plaintext
 deb https://mirrors.ustc.edu.cn/debian stretch main contrib non-free
-
-
-
 #deb-src http://httpredir.debian.org/debian stretch main contrib non-free
-
-
-
- 
-
-
-
 deb https://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free
-
-
-
 #deb-src http://httpredir.debian.org/debian stretch-updates main contrib non-free
-
-
-
- 
-
-
-
 deb https://mirrors.ustc.edu.cn/debian stretch-backports main contrib non-free
-
-
-
 #deb-src http://httpredir.debian.org/debian stretch-backports main contrib non-free
-
-
-
  
-
-
-
 deb https://mirrors.ustc.edu.cn/debian-security/ stretch/updates main contrib non-free
-
-
-
 #deb-src http://security.debian.org/ stretch/updates main contrib non-free
-
-
-
  
-
-
-
 #163镜像站  
-
-
-
  
-
-
-
 deb http://mirrors.163.com/debian/ buster main non-free contrib
-
-
-
 deb http://mirrors.163.com/debian/ buster-updates main non-free contrib
-
-
-
 deb http://mirrors.163.com/debian/ buster-backports main non-free contrib
-
-
-
 deb http://mirrors.163.com/debian-security/ buster/updates main non-free contrib
-
-
-
  
-
-
-
 deb-src http://mirrors.163.com/debian/ buster main non-free contrib
-
-
-
 deb-src http://mirrors.163.com/debian/ buster-updates main non-free contrib
-
-
-
 deb-src http://mirrors.163.com/debian/ buster-backports main non-free contrib
-
-
-
 deb-src http://mirrors.163.com/debian-security/ buster/updates main non-free contrib
-
-
-
 #华为云镜像站
-
-
-
  
-
-
-
 deb https://mirrors.huaweicloud.com/debian/ buster main contrib non-free
-
-
-
 deb https://mirrors.huaweicloud.com/debian/ buster-updates main contrib non-free
-
-
-
 deb https://mirrors.huaweicloud.com/debian/ buster-backports main contrib non-free
-
-
-
 deb https://mirrors.huaweicloud.com/debian-security/ buster/updates main contrib non-free
-
-
-
  
-
-
-
 deb-src https://mirrors.huaweicloud.com/debian/ buster main contrib non-free
-
-
-
 deb-src https://mirrors.huaweicloud.com/debian/ buster-updates main contrib non-free
-
-
-
 deb-src https://mirrors.huaweicloud.com/debian/ buster-backports main contrib non-free 
-
-
-
 #腾讯云镜像站
-
-
-
  
-
-
-
 deb http://mirrors.cloud.tencent.com/debian/ buster main non-free contrib
-
-
-
 deb http://mirrors.cloud.tencent.com/debian-security buster/updates main
-
-
-
 deb http://mirrors.cloud.tencent.com/debian/ buster-updates main non-free contrib
-
-
-
 deb http://mirrors.cloud.tencent.com/debian/ buster-backports main non-free contrib
-
-
-
  
-
-
-
 deb-src http://mirrors.cloud.tencent.com/debian-security buster/updates main
-
-
-
 deb-src http://mirrors.cloud.tencent.com/debian/ buster main non-free contrib
-
-
-
 deb-src http://mirrors.cloud.tencent.com/debian/ buster-updates main non-free contrib
-
-
-
 deb-src http://mirrors.cloud.tencent.com/debian/ buster-backports main non-free contrib
-
-
-
 #中科大镜像站
-
-
-
  
-
-
-
 deb https://mirrors.ustc.edu.cn/debian/ buster main contrib non-free
-
-
-
 deb https://mirrors.ustc.edu.cn/debian/ buster-updates main contrib non-free
-
-
-
 deb https://mirrors.ustc.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb https://mirrors.ustc.edu.cn/debian-security/ buster/updates main contrib non-free
-
-
-
  
-
-
-
 deb-src https://mirrors.ustc.edu.cn/debian/ buster main contrib non-free
-
-
-
 deb-src https://mirrors.ustc.edu.cn/debian/ buster-updates main contrib non-free
-
-
-
 deb-src https://mirrors.ustc.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb-src https://mirrors.ustc.edu.cn/debian-security/ buster/updates main contrib non-free
-
-
-
 #阿里云镜像站
-
-
-
  
-
-
-
 deb http://mirrors.aliyun.com/debian/ buster main non-free contrib
-
-
-
 deb http://mirrors.aliyun.com/debian-security buster/updates main
-
-
-
 deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
-
-
-
 deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
-
-
-
  
-
-
-
 deb-src http://mirrors.aliyun.com/debian-security buster/updates main
-
-
-
 deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib
-
-
-
 deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
-
-
-
 deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib
-
-
-
 #清华大学镜像站
-
-
-
  
-
-
-
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
-
-
-
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
-
-
-
 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ buster/updates main contrib non-free
-
-
-
  
-
-
-
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
-
-
-
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
-
-
-
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ buster/updates main contrib non-free
 
-
-
 #兰州大学镜像站
-
-
-
  
-
-
-
 deb http://mirror.lzu.edu.cn/debian stable main contrib non-free
-
-
-
 deb http://mirror.lzu.edu.cn/debian stable-updates main contrib non-free
-
-
-
 deb http://mirror.lzu.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb http://mirror.lzu.edu.cn/debian-security/ buster/updates main contrib non-free
-
-
-
  
-
-
-
 deb-src http://mirror.lzu.edu.cn/debian stable main contrib non-free
-
-
-
 deb-src http://mirror.lzu.edu.cn/debian stable-updates main contrib non-free
-
-
-
 deb-src http://mirror.lzu.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb-src http://mirror.lzu.edu.cn/debian-security/ buster/updates main contrib non-free
-
-
-
 #上海交大镜像站
-
-
-
  
-
-
-
 deb https://mirror.sjtu.edu.cn/debian/ buster main contrib non-free
-
-
-
 deb https://mirror.sjtu.edu.cn/debian/ buster-updates main contrib non-free
-
-
-
 deb https://mirror.sjtu.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb https://mirror.sjtu.edu.cn/debian-security/ buster/updates main contrib non-free
-
-
-
  
-
-
-
 deb-src https://mirror.sjtu.edu.cn/debian/ buster-updates main contrib non-free
-
-
-
 deb-src https://mirror.sjtu.edu.cn/debian/ buster-backports main contrib non-free
-
-
-
 deb-src https://mirror.sjtu.edu.cn/debian/ buster main contrib non-free
-
-
-
 deb-src https://mirror.sjtu.edu.cn/debian-security/ buster/updates main contrib non-free
 ```
+
+
 
 # 三、、Cups相关
 
@@ -516,16 +217,49 @@ deb-src https://mirror.sjtu.edu.cn/debian-security/ buster/updates main contrib 
 ```plaintext
 apt-get install cups –y
 
-
-
 nano /etc/cpus/cupsd.conf
 ```
 
-将【localhost:631】改成【0.0.0.0:631】,将【Browsing off】改成【Browsing on】，同时在三个</Location>上面添加【Allow all】，（中括号不用写入）如下图：
+将【localhost:631】改成【0.0.0.0:631】
 
-![img](https://img.zhoujie218.top/piggo/202308041002071.png)
+将【Browsing off】改成【Browsing on】
+
+同时在4个</Location>上面添加【Allow all】，（中括号不用写入）如下：
+
+```
+# Restrict access to the server...
+<Location />
+  Order allow,deny
+  Allow all
+</Location>
+
+# Restrict access to the admin pages...
+<Location /admin>
+  Order allow,deny
+  Allow all
+</Location>
+
+# Restrict access to configuration files...
+<Location /admin/conf>
+  AuthType None
+  Require user @SYSTEM
+  Order allow,deny
+  Allow all
+</Location>
+
+# Restrict access to log files...
+<Location /admin/log>
+  AuthType None
+  Require user @SYSTEM
+  Order allow,deny
+</Location>
+```
+
+
 
 然后systemctl restart cups重启打印服务。
+
+
 
 ## 2、cpus web管理界面添加打印机
 
@@ -534,38 +268,50 @@ nano /etc/cpus/cupsd.conf
 ```plaintext
 #爱普生打印机用下面这一行命令
 
-
-
 apt install printer-driver-escpr
-
-
 
 @惠普打印机用下面这一行命令
 
-
-
 apt install hplip
 
-
+切记别忘记了安装插件
+hp-plugin -i
 
 #兄弟打印机用下面这一行命令
-
-
 
 apt install printer-driver-brlaser
 
 
-
 #重启打印服务
-
-
 
 systemctl restart cups
 ```
 
 ### 2）添加打印机：
 
-同网段笔记本电脑浏览器输入http://[玩客云](https://so.csdn.net/so/search?q=玩客云&spm=1001.2101.3001.7020)IP:631，比如[http://192.168.1.20:631](http://192.168.1.20:631/)，点击administration，输入账号密码，然后add printer，选择打印机型号后点击Continue，勾选Share This Printer，点击Continue。建议打印机共享名不要设置的太长，比如改为M132。
+同网段笔记本电脑浏览器输入http://[玩客云](https://so.csdn.net/so/search?q=玩客云&spm=1001.2101.3001.7020)IP:631，比如[http://192.168.1.20:631](http://192.168.1.20:631/)，点击administration，输入账号密码，然后add printer，选择打印机型号后点击Continue，勾选Share This Printer，点击Continue。建议打印机共享名不要设置的太长，比如改为P1108
+
+```
+## cups添加p910nd网络打印机步骤
+
+然后执行以下步骤:
+
+1. 在浏览器中打开 https://ipadder:631
+
+2. 点击 Administration - Add Printer, 输入登录系统并且已经加到 lpadmin 组的账户的用户名密码
+
+3. 选择 AppSocket/HP JetDirect - Continue
+
+4. Connection 中输入 socket://openwrtip:9100 - Continue
+
+5. 给最终 share 的打印机取名，必须勾选 Share This Printer - Continue, 这一步 ** 非常重要 ** , 这里填写的名字，是 以后在 windows 中添加打印机的 uri, 必须勾选共享选项局域网中别的设备才可以发现这台打印机。
+
+6. 打印机品牌选择 hp - continue
+
+7. 打印机型号选择 HP LaserJet 1020 Foomatic/foo2zjs-z1 (recommended) - Add Printer
+```
+
+
 
 ### 3）打印测试页
 
@@ -576,16 +322,14 @@ systemctl restart cups
 执行
 
 ```plaintext
-apt install avahi-daemon –y
-
-
+sudo apt install avahi-daemon
 
 systemctl restart cups
 
-
-
 systemctl restart avahi-daemon
 ```
+
+
 
 尝试手机、笔记本是否能自动发现打印机。
 
@@ -596,8 +340,6 @@ systemctl restart avahi-daemon
 ```plaintext
 apt -y install avahi-daemon avahi-discover libnss-mdn
 
-
-
 systemctl restart avahi-daemon
 ```
 
@@ -606,20 +348,42 @@ systemctl restart avahi-daemon
 ```plaintext
 systemctl enable cups
 
-
-
 systemctl enable avahi-daemon
 ```
 
 我当时装完后2个服务的状态默认是开机自启的，通过systemctl status cups或avahi-daemon可以查看运行状态。
 
+
+
+## 配置打开打印机自动重启cups,以实现usb热插拔功能
+
+
+
+armbian系统，可在`/etc/udev/rules.d`目录下新建文件命名为`99-usb-cups.rules`，文件内容如下：
+
+```
+SUBSYSTEM=="usb", ACTION=="add", RUN+="/root/cupsstart.sh"
+```
+
+这表示识别打印机接入，就执行`/root/cupsstart.sh`脚本，脚本内容：
+
+```
+#!/bin/sh
+
+docker restart cups
+```
+
+
+
 # 四、测试
 
 笔记本、手机跟玩客云使用同一个路由器，然后自动查找打印机，找到后打印即可，如果找不到，尝试笔记本手动添加打印机，若依然无法添加，排查网络、Cups服务、配置及自动发现服务。
 
-![img](https://img.zhoujie218.top/piggo/202308041002272.png)
+![image-20230813151315808](https://img.zhoujie218.top/piggo/202308131513108.png)
 
 ![img](https://img.zhoujie218.top/piggo/202308041002445.png)
+
+
 
 
 
@@ -629,4 +393,9 @@ systemctl enable avahi-daemon
 
 
 
-https://blog.csdn.net/weixin_44237492/article/details/128799989
+
+
+
+
+
+
