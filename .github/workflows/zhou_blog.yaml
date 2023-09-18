@@ -1,0 +1,41 @@
+name: Auto Deploy Hugo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+ 
+      - name: Setup hugo-extended
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.101.0'
+          extended: true
+          
+      - name: Build
+        run: hugo --minify
+ 
+      - name: Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: 'root'
+          server: '${{ secrets.SERVER_IP }}'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './public'
+          remote_path: '/www/wwwroot/hugo_zhou'
+          
+      - name: Set directory permissions and owner on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: '${{ secrets.SERVER_IP }}'
+          username: 'root'
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo chown -R www /www/wwwroot/hugo_zhou
+            sudo chmod -R 755 /www/wwwroot/hugo_zhou
