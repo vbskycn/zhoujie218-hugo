@@ -17,6 +17,6 @@ description: zhoujie218,zhoujie218.top,zhou,周杰,记录点滴生活
 
 我的[Email](mailto:zhoujie218@gmail.com)
 
-![](http://img.zhoujie218.top/wp-content/uploads/2020/03/fe4a4b0373cdd497d53f7c3b.jpg)
+![](http://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/fe4a4b0373cdd497d53f7c3b.jpg)
 
 
