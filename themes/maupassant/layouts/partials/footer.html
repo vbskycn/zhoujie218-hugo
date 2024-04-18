@@ -8,10 +8,10 @@
     <br />
     <div>
         <div class="github-badge">
-            <a href="https://gohugo.cn/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
         </div>
         <div class="github-badge">
-            <a href="https://www.zhoujie218.top" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a>
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
         </div>
         <div class="github-badge">
             <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
@@ -135,6 +135,8 @@
 {{- else if hasPrefix .Site.GoogleAnalytics "G-" -}}
     {{ template "_internal/google_analytics.html" . }}
 {{- end -}}
+
+{{ partial "copy_button" . }}
 
 {{ if .Site.Params.busuanzi }}
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
