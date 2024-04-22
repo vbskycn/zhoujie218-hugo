@@ -34,15 +34,15 @@ url: "/archives/2461.html"
 
 ## 方案对比
 
-当然，我们可以直接选择官网给出的方案[Migrate to Hugo](https://gohugo.io/tools/migrations/)。对于 wordpress，主要有以下几种。 ![image.png](https://img-cloud.zhoujie218.top/piggo/202208011522171.png)
+当然，我们可以直接选择官网给出的方案[Migrate to Hugo](https://gohugo.io/tools/migrations/)。对于 wordpress，主要有以下几种。 ![image.png](/images/2022/08/eeab1a0e54c2518079330c3f38f79e21.png)
 
 这几种方案我都尝试过，各有优势却都不完美。以下是详细说明
 
 1. [wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)： 可以导出，且文件名称就是带有日期和中文的标题名称。但是不是原生 markdown 格式。而是如下图所示的结构。不满足需求 1，2，所以**排除**。
-2. exitwp-for-hugo: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](https://img-cloud.zhoujie218.top/piggo/202208011519064.png)
-3. [exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo): 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](https://img-cloud.zhoujie218.top/piggo/202208011519588.png)
-4. [blog2md](https://github.com/palaniraja/blog2md): 与[exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo)类似，文件名太乱且不包含日期。![image.png](https://img-cloud.zhoujie218.top/piggo/202208011519632.png)
-5. [wordhugopress](https://github.com/nantipov/wordhugopress): java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。![image.png](https://img-cloud.zhoujie218.top/piggo/202208011520476.png)
+2. exitwp-for-hugo: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](/images/2022/08/a9477d3190bc244151a2ea677ff490c4.png)
+3. [exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo): 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）![image.png](/images/2022/08/5c6cfb45b8b8dd9444526512d9691194.png)
+4. [blog2md](https://github.com/palaniraja/blog2md): 与[exitwp-for-hugo](https://github.com/wooni005/exitwp-for-hugo)类似，文件名太乱且不包含日期。![image.png](/images/2022/08/0fa3b914058208fabee634e644ec58e3.png)
+5. [wordhugopress](https://github.com/nantipov/wordhugopress): java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。![image.png](/images/2022/08/0c0015a72efd78cc3aa111863fe72876.png)
 
 然后突然发现一个仓库[wordpress-export-to-markdow\_L 版](https://github.com/AvantaR/wordpress-export-to-markdown)，这个只需要自己在电脑上安装 node.js 环境，然后就可以直接运行了。它可以解决除**固定链接**以外的所有问题，是一个近乎完美的方案。基于 L 版，[AvantaR](https://github.com/AvantaR)，在 markdown 的 yaml 头文件中添加了**slug**参数，详细实现见该仓库[wordpress-export-to-markdow\_A 版](https://github.com/AvantaR/wordpress-export-to-markdown)。 实际上**slug**和**url**还是有区别的。以下面这个 yaml 头和网站https://img-cloud.zhoujie218.top/archives/1018.html为例：
 
@@ -82,6 +82,6 @@ npm install && node index.js --wizard=false
 
 ### 图床迁移
 
-这部分实际上没有什么好说的，主要使用这两个软件，都是图形化界面，配置一下图床信息，选择一下 markdown 文件或者文件夹地址就可以自动迁移了。后者是免费的，前者虽然收费但是有免费体验期，对于只使用一次的用户来说就是免费。 ![image.png](https://img-cloud.zhoujie218.top/piggo/202208011520954.png) ~ 实际上还有[PicGo](https://github.com/Molunerfinn/PicGo)和[picgo-plugin-pic-migrater](https://github.com/PicGo/picgo-plugin-pic-migrater)，可以使用。~ 之前可能有用，但是程序很久都没有更新过了，一堆 bug，根本不能正常迁移。还是推荐大家使用 iPic 和 iPic Mover。
+这部分实际上没有什么好说的，主要使用这两个软件，都是图形化界面，配置一下图床信息，选择一下 markdown 文件或者文件夹地址就可以自动迁移了。后者是免费的，前者虽然收费但是有免费体验期，对于只使用一次的用户来说就是免费。 ![image.png](/images/2022/08/fbb00ab1277bac6b4cc7e2dbd836cbc8.png) ~ 实际上还有[PicGo](https://github.com/Molunerfinn/PicGo)和[picgo-plugin-pic-migrater](https://github.com/PicGo/picgo-plugin-pic-migrater)，可以使用。~ 之前可能有用，但是程序很久都没有更新过了，一堆 bug，根本不能正常迁移。还是推荐大家使用 iPic 和 iPic Mover。
 
 原文连接：[https://blog.i-ll.cc/post/2021-10-09-move-to-hugo/](https://blog.i-ll.cc/post/2021-10-09-move-to-hugo/)

@@ -13,7 +13,7 @@ url: "/archives/1180.html"
 
 大鸟升级的时候用的：BT(宝塔面板)5.9升级6.X-最牛叉的升级方案  这个升级方案，当时也是为了写这个教程，所以用了这个方法去升级，升级好了之后没什么大问题，但是遇到了两个错误，一个是宝塔终端不能用还有个就是 Panel service startup failed 这两个错误。
 
-\[caption id="attachment\_1183" align="alignnone" width="1024"\]![BT(宝塔面板)-Panel service startup failed](http://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/bt宝塔面板-panel-service-startup-failed20200205-1024x465.jpg) BT(宝塔面板)-Panel service startup failed\[/caption\]
+\[caption id="attachment\_1183" align="alignnone" width="1024"\]![BT(宝塔面板)-Panel service startup failed](/images/2020/02/1be5e8f3605fe1c31251327ab888e4b3.jpg) BT(宝塔面板)-Panel service startup failed\[/caption\]
 
 今天大鸟准备解决宝塔终端不能用的问题，却发现了 Panel service startup failed 想来也是用计划任务那个方式升级的时候一些底层的代码没有更新，造成了这种兼容性的问题。这个问题如何解决：
 
@@ -21,7 +21,7 @@ url: "/archives/1180.html"
 
 点击面板右上角修复，或者重启面板，这样有可能解决问题，如图：
 
-\[caption id="attachment\_1184" align="alignnone" width="1024"\]![BT(宝塔面板)-Panel service startup failed](http://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/bt宝塔面板-panel-service-startup-failed20200205-1-1024x128.jpg) BT(宝塔面板)-Panel service startup failed\[/caption\]
+\[caption id="attachment\_1184" align="alignnone" width="1024"\]![BT(宝塔面板)-Panel service startup failed](/images/2020/02/55c57c5a8e4eefe71af1630dd4d4cdf9.jpg) BT(宝塔面板)-Panel service startup failed\[/caption\]
 
 看着大鸟的提示的错误，修复面板肯定不行，这是很严重的兼容性的问题，升级不恰当造成的。我们看下一种方法。
 

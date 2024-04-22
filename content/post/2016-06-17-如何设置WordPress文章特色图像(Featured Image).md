@@ -37,7 +37,7 @@ url: "/archives/213.html"
 
 ### 如何从后台修改缩略图尺寸
 
-\[caption id="attachment\_2227" align="aligncenter" width="500"\][![从后台修改缩略图尺寸](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045445527.gif "media")](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045445527.gif) 从后台修改缩略图尺寸\[/caption\]
+\[caption id="attachment\_2227" align="aligncenter" width="500"\][![从后台修改缩略图尺寸](/images/2016/06/ce7eb14308df9224071b2fdd8a29e440.gif "media")](/images/2016/06/ce7eb14308df9224071b2fdd8a29e440.gif) 从后台修改缩略图尺寸\[/caption\]
 
 访问**后台>>设置>>媒体**，缩略图大小这一项就是特色图像（Featured Image or Thumbnail）的尺寸，也就是the\_post\_thumbnail()不加参数时调用的图片的尺寸。根据需要修改其参数即可。上传图片时WordPress会自定生成这个尺寸的图片。
 
@@ -47,14 +47,14 @@ url: "/archives/213.html"
 
 1. 上传图片时点击“**作为特色图像**”进行设置，如下图所示，点击后显示“**完成**”即表示设置成功。设置好的特色图像会在右侧栏目中显示出来。
 
-\[caption id="attachment\_2228" align="aligncenter" width="500"\][![上传图片时设置特色图片](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045446874.gif "上传图片时设置特色图片")](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045446874.gif) 上传图片时设置特色图片\[/caption\]
+\[caption id="attachment\_2228" align="aligncenter" width="500"\][![上传图片时设置特色图片](/images/2016/06/b457495eab4c270e0c06e984fa1515cb.gif "上传图片时设置特色图片")](/images/2016/06/b457495eab4c270e0c06e984fa1515cb.gif) 上传图片时设置特色图片\[/caption\]
 
 2. 点击右侧栏目中的特色图像设置，如下图所示，点击“**设置特色图像**”按钮后弹出与方法一一样的界面，设置方法也相同
 
-\[caption id="attachment\_2229" align="aligncenter" width="291"\][![从右侧工具栏设置特色图像](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045447544.gif "从右侧工具栏设置特色图像")](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045447544.gif) 从右侧工具栏设置特色图像\[/caption\]
+\[caption id="attachment\_2229" align="aligncenter" width="291"\][![从右侧工具栏设置特色图像](/images/2016/06/7dc367bc662858e7db362c7b7de0a0e7.gif "从右侧工具栏设置特色图像")](/images/2016/06/7dc367bc662858e7db362c7b7de0a0e7.gif) 从右侧工具栏设置特色图像\[/caption\]
 
 3. 如果你没有用上述两种方法设置，那么你也许希望从文章中已经存在的图片中选取一张作为特色图像，WordPress考虑的很周到，你可以轻松选择文中已有的图像。
 
 点击右侧工具栏的**设置特色图像**按钮，弹出如下所示对话框，选项卡切换到**相册**，就可以看到所有文中已经插入的图片，点击显示就会出现和方法一一样的界面，照着方法一设置即可。
 
-\[caption id="attachment\_2230" align="aligncenter" width="500"\][![选项卡切换到“相册”](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045447964.gif "选项卡切换到“相册”")](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101045447964.gif) 选项卡切换到“相册”\[/caption\]
+\[caption id="attachment\_2230" align="aligncenter" width="500"\][![选项卡切换到“相册”](/images/2016/06/d5d9bc94a0f83aea1a2d1e1fcbf8f5c1.gif "选项卡切换到“相册”")](/images/2016/06/d5d9bc94a0f83aea1a2d1e1fcbf8f5c1.gif) 选项卡切换到“相册”\[/caption\]

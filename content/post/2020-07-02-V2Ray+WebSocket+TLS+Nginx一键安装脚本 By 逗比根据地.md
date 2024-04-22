@@ -42,7 +42,7 @@ bash <(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray\_ws-tls\_bash
 
 安装成功后如下所示：
 
-\[caption id="attachment\_1772" align="alignnone" width="441"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-29.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-29.png) \[/caption\]
+\[caption id="attachment\_1772" align="alignnone" width="441"\][![](/images/2020/07/1d7ea90f73233b88ae6daf4f217869ab.png)](/images/2020/07/1d7ea90f73233b88ae6daf4f217869ab.png) \[/caption\]
 
 **脚本管理命令**
 
@@ -90,7 +90,7 @@ Nginx 目录：
 
 打开软件，点击：服务器→添加\[VMess\]服务器：
 
-\[caption id="attachment\_1773" align="alignnone" width="731"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-30.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-30.png) \[/caption\]
+\[caption id="attachment\_1773" align="alignnone" width="731"\][![](/images/2020/07/ee56121a0859a3fba34ccef4e31e40b1.png)](/images/2020/07/ee56121a0859a3fba34ccef4e31e40b1.png) \[/caption\]
 
 填上你设置的对应数据，请务必完全参照服务端返回的数据，服务端和客户端必须一致，如**地址（域名）**、**端口**、**用户ID**、**路径**等，**加密方式**一般为auto，**传输协议**为ws，**伪装类型**一般为none，**伪装域名**留空，开启tls和不安全传输，设置完保存。
 

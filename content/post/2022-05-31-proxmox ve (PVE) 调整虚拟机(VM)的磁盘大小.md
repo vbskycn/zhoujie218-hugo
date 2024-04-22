@@ -60,7 +60,7 @@ proxmox ve resize guest disk
 
 通过web ui中调整磁盘大小功能，先设置分配给虚拟机的磁盘空间，如下图
 
-![QQ20200101-235116@2x](https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg)
+![QQ20200101-235116@2x](/images/2022/05/95c7172cef5166281d7b2ef9776faf63.jpeg)
 
 我这里是从105G，调整到205个G
 
@@ -213,4 +213,4 @@ old_desc_blocks = 4, new_desc_blocks = 5
 The filesystem on /dev/sda2 is now 10354427 (4k) blocks long.
 ```
 
-![image-20220913173742507](https://img-cloud.zhoujie218.top/2022/09/13/a072ab53a7f36.png)
+![image-20220913173742507](/images/2022/05/ad4efd0642ad5bca3ab942f969e26ac0.png)

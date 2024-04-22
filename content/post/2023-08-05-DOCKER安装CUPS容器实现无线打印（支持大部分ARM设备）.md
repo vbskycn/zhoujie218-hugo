@@ -109,7 +109,7 @@ usb/lp0       0:0 660   @/root/cupsstart.sh
 SUBSYSTEM=="usb", ACTION=="add", RUN+="/root/cupsstart.sh"
 ```
 
-![image-20230805215822538](https://img-cloud.zhoujie218.top/piggo/202308052158714.png)
+![image-20230805215822538](/images/2023/08/57c851af3fa65ea2b99eaeb88331e7bd.png)
 
 拔usb就自动执行重启docker命令
 

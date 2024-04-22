@@ -42,7 +42,7 @@ CPU支持核心集成显卡需要 intel 10代或以前(根据内核版本指导)
 
 **1\. 机型设置** 在VM的硬件设置中，为VM的`机型` 设置为`q35` 如VM系统为Windows，BIOS引导方式应为UEFI(需在安装系统前定义) 如VM系统为[Linux](https://www.insilen.com/tags/linux)，BIOS引导方式则无要求均支持
 
-\[ \]025453.png)![img](https://img-cloud.zhoujie218.top/piggo/202305101630403.png)
+\[ \]025453.png)![img](/images/2023/05/a1156dcc96ca79c4e9661476662a8a9e.png)
 
 **2\. 编辑引导文件**
 
@@ -98,13 +98,13 @@ ls /sys/bus/pci/devices/0000\:00\:02.0/mdev_supported_types/
 
 **3\. 为虚拟机分配显卡**
 
-1. 添加 -> PCI设备 \[ \]025703.png)![img](https://img-cloud.zhoujie218.top/piggo/202305101630888.png)
+1. 添加 -> PCI设备 \[ \]025703.png)![img](/images/2023/05/556c96636791af1e3e89cf48ddfe2e66.png)
     
-2. 选择你的 集成显卡 \[ \]025837.png)![img](https://img-cloud.zhoujie218.top/piggo/202305101630549.png)
+2. 选择你的 集成显卡 \[ \]025837.png)![img](/images/2023/05/2cd4f6575b4c2d54341dddcb49117911.png)
     
-3. Mdev类型变为可选，点开它 \[ \]025847.png)![img](https://img-cloud.zhoujie218.top/piggo/202305101630412.png)
+3. Mdev类型变为可选，点开它 \[ \]025847.png)![img](/images/2023/05/3f70166d7550ba424ed484cec0ad1569.png)
     
-4. 按需求分配显卡给VM即可 \[ \]025856.png)![img](https://img-cloud.zhoujie218.top/piggo/202305101630380.png)
+4. 按需求分配显卡给VM即可 \[ \]025856.png)![img](/images/2023/05/15057041a43c86d9dc69d2831b71eb32.png)
     
 
 上图中，可用代表还有几块虚拟集成显卡可以分配：

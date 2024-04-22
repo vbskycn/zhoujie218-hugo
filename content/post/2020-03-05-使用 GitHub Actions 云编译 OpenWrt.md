@@ -67,28 +67,28 @@ Github Ac­tions 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra�
 
 - 进入 [P3TERX/Actions-OpenWrt](https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9BY3Rpb25zLU9wZW5XcnQ=) 项目页面，点击页面中的 [Use this template](https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9BY3Rpb25zLU9wZW5XcnQvZ2VuZXJhdGU=) （使用这个模版）按钮。
 
-\[caption id="attachment\_1575" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-1024x489.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file.png) \[/caption\]
+\[caption id="attachment\_1575" align="alignnone" width="1024"\][![](/images/2020/03/d19bc50267a26741852f9e878eca51fd.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file.png) \[/caption\]
 
 - 填写仓库名称，然后点击`Create repository from template`（从模版创建储存库）按钮。
 
-\[caption id="attachment\_1576" align="alignnone" width="814"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-1.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-1.png) \[/caption\]
+\[caption id="attachment\_1576" align="alignnone" width="814"\][![](/images/2020/03/91235eab10eef64480be4a6ebd519add.png)](/images/2020/03/91235eab10eef64480be4a6ebd519add.png) \[/caption\]
 
 - 经过几秒钟的等待，页面会跳转到新建的仓库，内容和我的项目是相同的。然后点击`Create new file`（创建新文件）按钮。
 
-\[caption id="attachment\_1577" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-2-1024x499.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-2.png) \[/caption\]
+\[caption id="attachment\_1577" align="alignnone" width="1024"\][![](/images/2020/03/ad01cd738fe8764309c8e4b3abc19ee6.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-2.png) \[/caption\]
 
 - 文件名填写为`.config`，把生成的`.config` 文件的内容复制粘贴到下面的文本框中。
 
-\[caption id="attachment\_1578" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-3-1024x419.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-3.png) \[/caption\]
+\[caption id="attachment\_1578" align="alignnone" width="1024"\][![](/images/2020/03/f6f22f2949d1b5305eb7a0e04b3300d6.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-3.png) \[/caption\]
 
 - 翻到页面最下方，点击`Commit new file`（提交新文件）按钮即可。后续编译工作会自动开始，你可以在 Actions 页面进行查看。
 
-\[caption id="attachment\_1579" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-4-1024x369.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-4.png) \[/caption\]
+\[caption id="attachment\_1579" align="alignnone" width="1024"\][![](/images/2020/03/6b3613f6779771e4f1fcf727ac6f91b2.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-4.png) \[/caption\]
 
 - 在等待编译完成的过程中，你可以进入[这个页面](https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9BY3Rpb25zLU9wZW5XcnQ=)点击右上角的`star`，这是对博主最大的支持，而且还可以加快编译速度哦（雾
 - 最后经过一两个小时的等待，不出意外你就可以在 Actions 页面看到已经打包好的固件目录压缩包。
 
-\[caption id="attachment\_1580" align="alignnone" width="828"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-5.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-5.png) \[/caption\]
+\[caption id="attachment\_1580" align="alignnone" width="828"\][![](/images/2020/03/01824ac5097ae13164bf55b8c180ee4e.png)](/images/2020/03/01824ac5097ae13164bf55b8c180ee4e.png) \[/caption\]
 
 > **TIPS:** 如需 ipk 文件可以在**进阶使用**章节找到方法。因为大多数人只需要固件，而且总是有萌新问固件在哪，所以现在默认只上传固件。
 

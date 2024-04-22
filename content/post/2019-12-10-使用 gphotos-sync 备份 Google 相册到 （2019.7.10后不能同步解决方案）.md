@@ -46,33 +46,33 @@ pip3 install gphotos-sync
 
 打开 [Google Developer Console](https://developers.google.com/console/ "https://developers.google.com/console/") 控制台，创建一个新项目，如：google-photos-sync
 
-![ 1095-google-new-project ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210.png)
+![ 1095-google-new-project ](/images/2019/12/cdd5f54fe3bacd98e45708c4756c88f8.png)
 
 ### 在 google-photos-sync 项目中激活 Photos Library API
 
 进入 API 库，搜索 Google Photos，激活 Photos Library API。
 
-![ 1095-google-photos-api ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210-1.png)
+![ 1095-google-photos-api ](/images/2019/12/174af131d1db8c597ee96345032d5df2.png)
 
 ### 创建 OAuth 同意屏幕
 
 填写应用名称，然后保存即可。（其余信息不用理会）
 
-![ 1095-google-screen-auth ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210-2.png)
+![ 1095-google-screen-auth ](/images/2019/12/679889159cfe38c577ad6e48982f346a.png)
 
 ### 创建 OAuth 客户端 ID
 
 凭据（Credentials）菜单，创建「OAuth 客户端 ID」（OAuth client ID）凭证。
 
-![ 1095-google-new-credentials ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210-3.png)
+![ 1095-google-new-credentials ](/images/2019/12/f2c2b574a381a48d31fe79cb3e6b1efc.png)
 
 「应用类型」一定要选择「其他（Other）」，点击创建。
 
-![ 1095-google-client-id-others ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210-4.png)
+![ 1095-google-client-id-others ](/images/2019/12/9a98e603dd8ff78504395c63a6e51df6.png)
 
 创建完成，点击凭证右侧下载按钮把 json 格式凭证信息下载并重命名为：client\_secret.json
 
-![ 1095-google-download-json ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210-5.png)
+![ 1095-google-download-json ](/images/2019/12/13007009fa8a8f34cca1a5847ec2f2d0.png)
 
 ### client\_secret.json 上传到指定路径
 
@@ -90,7 +90,7 @@ pip3 install gphotos-sync
 
 去年，是使用 rclone 将 Google Drive 文件同步至 OneDrive 实现备份 Google Photos，今年7月份，Google 更新政策，Google Drive 与 Goog...
 
-[![](https://cn.gravatar.com/avatar/0a5737fa7d7cf6abde7754cf7ef187aa?s=16&d=monsterid&r=g)老杨](https://cyhour.com/author/y/ "查看作者 老杨 发布的所有文章")
+[![](/images/2019/12/ccf4c4e9970a777cf05daefb402aa211)老杨](https://cyhour.com/author/y/ "查看作者 老杨 发布的所有文章")
 
 [评论 14](https://cyhour.com/1114/#comments)
 
@@ -98,7 +98,7 @@ pip3 install gphotos-sync
 
 前几天上了博友「灵尘居」的 Office 365 车，1T OneDrive 到手，手机照片一直喂 Google AI，挺方便的，以前还会同步一份到家里的垃圾西数 NAS，不过并不太自动，后来就懒得弄...
 
-[![](https://cn.gravatar.com/avatar/0a5737fa7d7cf6abde7754cf7ef187aa?s=16&d=monsterid&r=g)老杨](https://cyhour.com/author/y/ "查看作者 老杨 发布的所有文章")
+[![](/images/2019/12/ccf4c4e9970a777cf05daefb402aa211)老杨](https://cyhour.com/author/y/ "查看作者 老杨 发布的所有文章")
 
 [评论 8](https://cyhour.com/825/#comments)
 
@@ -168,7 +168,7 @@ bash /etc/init.d/startrclone start
 
 首次启动，会提示 Google 账号授权，根据提示信息的网址，复制到浏览器打开后进行授权，把生成的 token 填写到命令窗口即可。
 
-![ 1095-google-first-auth ](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/使用-gphotos-sync-备份-google-相册到-（2019-7-10后不能同步解决方案）20191210-6.png)
+![ 1095-google-first-auth ](/images/2019/12/4b106a8b0ffdc448d2048b6d93e1cacc.png)
 
 如无意外，gphotos-sync 就开始进行索引、下载、备份照片，以年月的形式来保存照片。第一次同步时间会比较长，数据大，容易出错，最好配合 --skip-index 参数以及 crontab 定时自动运行，否则 Google API 很容易超额（[Google API 额度查询](https://console.developers.google.com/iam-admin/quotas?service=photoslibrary.googleapis.com "https://console.developers.google.com/iam-admin/quotas?service=photoslibrary.googleapis.com")）。
 

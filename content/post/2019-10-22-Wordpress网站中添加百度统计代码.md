@@ -17,7 +17,7 @@ url: "/archives/837.html"
 
 管理->新增网站
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121165727396-177376463120191022.png) ![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121165801616-185022132620191022.png)
+![](/images/2019/10/ea978d616dd82580eddb3e73b4c5b357.png) ![](/images/2019/10/644fa5c2a67c0b3dbee34c1980e9c2ad.png)
 
 复制以上代码到个人站点中
 
@@ -27,15 +27,15 @@ url: "/archives/837.html"
 
 登录到wordpress管理后台->外观->编辑
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170320219-212710812820191022.png)
+![](/images/2019/10/f77114b35c0eaa44d8c37ad1880d9d54.png)
 
 选择要编辑的主题->主题文件->主题页眉(header.php)
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170500663-117297433520191022.png)
+![](/images/2019/10/bdbd36301b33269560a922561f004aad.png)
 
 此时看到文档并不能保存
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170534396-59572044120191022.png)
+![](/images/2019/10/52a4da52b16b3a78b211666466485b71.png)
 
 需要设置可写权限：
 
@@ -45,13 +45,13 @@ chmod -R 777 themes/
 
 修改权限后，即可看到更新文件按钮，将百度统计代码插入到以下位置：
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121171633798-173606584020191022.png)
+![](/images/2019/10/facd10cd60526a528c6e4717b49c42be.png)
 
 三、检验
 
 登录到百度统计后台->管理->代码检查
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121172106350-184197065020191022.png)
+![](/images/2019/10/09c53d23010acd872337e61224f4f848.png)
 
 - 提示：代码安装正确
 - 百度统计有时间周期，过一段时间刷新报告即可看到今日流量
