@@ -15,35 +15,35 @@ url: "/archives/1070.html"
 
 下载后将其解压，并将`rclone.exe`移动到`C:WindowsSystem32`这个目录，这样就可以使用rclone命令了，如下截图。
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png)
+\[![](/images/2019/12/272a9ec03e83060c83999308c13f80e5.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png))
+\]([/images/2019/12/272a9ec03e83060c83999308c13f80e5.png](/images/2019/12/272a9ec03e83060c83999308c13f80e5.png))
 
 在cmd窗口继续输入命令**`rclone config`**进行配置，输入`n`新建一个远程，并取一个名字，比如`onedrive`
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png)
+\[![](/images/2019/12/febaf26a3c284fcbd4f4864d40f51494.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png))
+\]([/images/2019/12/febaf26a3c284fcbd4f4864d40f51494.png](/images/2019/12/febaf26a3c284fcbd4f4864d40f51494.png))
 
 继续下一步，选择需要挂载的云存储，Onedrvie是16，随着版本的变化可能会改变，自己灵活变通即可。
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png)
+\[![](/images/2019/12/d46f3124e2a8e82fcc3c071505c3d85a.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png))
+\]([/images/2019/12/d46f3124e2a8e82fcc3c071505c3d85a.png](/images/2019/12/d46f3124e2a8e82fcc3c071505c3d85a.png))
 
 `client_id`/`client_secret`直接留空并回车，然后选择OneDrive版本，教育版或商业版请选择`b`，个人版选择`p`
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png)
+\[![](/images/2019/12/f36d561fed328f53490f2b0707366f5b.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png))
+\]([/images/2019/12/f36d561fed328f53490f2b0707366f5b.png](/images/2019/12/f36d561fed328f53490f2b0707366f5b.png))
 
 浏览器会自动打开`[http://localhost:53682/](http://localhost:53682/)` 并进行授权，如果授权成功会返回`token`，请务必将`token`记录并保存后面还要使用。
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png)
+\[![](/images/2019/12/1fee06ab093e7b90ced3706d3d9944e2.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png)\[!\[\](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png)[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png))
+\]([/images/2019/12/1fee06ab093e7b90ced3706d3d9944e2.png)\[!\[\](/images/2019/12/a219d357c90cd5cac9394f9ded1df721.png](/images/2019/12/1fee06ab093e7b90ced3706d3d9944e2.png)[![](/images/2019/12/a219d357c90cd5cac9394f9ded1df721.png))
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png))
+\]([/images/2019/12/a219d357c90cd5cac9394f9ded1df721.png](/images/2019/12/a219d357c90cd5cac9394f9ded1df721.png))
 
 ### CentOS安装Rclone
 
@@ -57,9 +57,9 @@ curl https://rclone.org/install.sh | sudo bash
 
 接下来操作方法和windows完全一样，就不重复了，唯一的区别是“Use auto config?”这里选择`n`，并输入之前获取的`token`
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png)
+\[![](/images/2019/12/911a8f13830555e494598532776cb1fc.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png))
+\]([/images/2019/12/911a8f13830555e494598532776cb1fc.png](/images/2019/12/911a8f13830555e494598532776cb1fc.png))
 
 ### 总结
 
@@ -192,9 +192,9 @@ onedrive: new – name – n – 23onedrive -n -n id -1 -0 -y
 
 不出问题的情况下，输入`df -h`就可以看到Onedrive成功挂载。
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-7.png)
+\[![](/images/2019/12/a217a53dc50b7eb590c0e462d8f176ce.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-7.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-7.png))
+\]([/images/2019/12/a217a53dc50b7eb590c0e462d8f176ce.png](/images/2019/12/a217a53dc50b7eb590c0e462d8f176ce.png))
 
 实际运行记录
 
@@ -224,9 +224,9 @@ crontab -e
 
 google相册 onedrive网速真的很牛逼，垃圾国外vps，上传下载峰值都能到450M
 
-\[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-8.png)
+\[![](/images/2019/12/f3df14969f27b5e6f7ab8f50dfb94440.png)
 
-\]([https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-8.png](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-8.png))
+\]([/images/2019/12/f3df14969f27b5e6f7ab8f50dfb94440.png](/images/2019/12/f3df14969f27b5e6f7ab8f50dfb94440.png))
 
 **遇到如下面的报错，是没有安装fuse3,安装后也不行的是路径不对**
 

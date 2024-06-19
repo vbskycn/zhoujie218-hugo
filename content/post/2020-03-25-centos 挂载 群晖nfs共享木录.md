@@ -11,7 +11,7 @@ url: "/archives/1560.html"
 
 群辉开启NFS共享
 
-![Centos挂载群辉的NFS共享文件夹](/images/2020/03/2f29c4913defdf04fe3701f864e34687.jpeg)
+![Centos挂载群辉的NFS共享文件夹](https://img-cloud.zhoujie218.top/pc/202111011325002.jpeg)
 
 在客户端linux系统中安装NFS客户端工具
 

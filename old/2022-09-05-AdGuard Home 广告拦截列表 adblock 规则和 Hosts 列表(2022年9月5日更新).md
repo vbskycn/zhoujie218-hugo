@@ -12,7 +12,7 @@ url: "/archives/2480.html"
 
 家里智能设备这么多，每台电脑、手机都安装 AdGuard 也太麻烦了，比如电脑端在浏览器上安装了 AdGuard 插件，但是换个浏览器就没用了，而 AdGuard Windows 客户端又要收费，最可怕的是手机也要装 AdGuard APP 应用……所以我还是觉得《[使用AdGuard Home](https://img-cloud.zhoujie218.top/archives/1784.html)》比较方便。
 
-![](https://img-cloud.zhoujie218.top/piggo/202209050943926.png)
+![](/images/2022/09/c6040916f0ae014f6642844b1933ac89.png)
 
 国内的建议使用国内服务器进行搭建，延迟较低。
 

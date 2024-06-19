@@ -27,7 +27,7 @@ url: "/archives/1528.html"
 
 **注意：**如果你的服务器文件过多，不适合一次性列举出全部文件，那么最好不要使用本应用。
 
-![www.zhoujie218.top.1.2.png](/images/2020/03/acb5e61be9a81977a6b12d66c1272af7.png "www.zhoujie218.top.1.2.png")
+![www.zhoujie218.top.1.2.png](https://ae01.alicdn.com/kf/Hb51414d8d81d4c80a0fad71c004de9017.png "www.zhoujie218.top.1.2.png")
 
 原创教程转载请注明：[](https://www.zhoujie218.top)[](https://www.zhoujie218.top)[https://www.zhoujie218.top](https://www.zhoujie218.top)
 
@@ -41,7 +41,7 @@ url: "/archives/1528.html"
 
 一，在终端里执行以下命令并找到配置文件内相应的路径（需要root用户） cat /etc/nginx/app.d/server.webstation-vhost.conf
 
-![www.zhoujie218.top.1.png](/images/2020/03/70b62c400d9e80af72b806bc43cd83f8.png "www.zhoujie218.top.1.png")
+![www.zhoujie218.top.1.png](https://ae01.alicdn.com/kf/Hd866dc5b33c444e0b21b70592720e7f8r.png "www.zhoujie218.top.1.png")
 
 二，因为可能有好几个站点设置，首先确认对应的端口号，然后找到对应的配置文件目录。如上图红框。 执行如下命令（替换下面绿色为你自己刚才找到的目录名）
 
@@ -51,6 +51,6 @@ echo -e "index index.html index.htm index.cgi index.php index.php5 /\_h5ai/publi
 
 刷新你的网站目录，应该就成下面的样子了
 
-![www.zhoujie218.top.1.2.png](/images/2020/03/acb5e61be9a81977a6b12d66c1272af7.png "www.zhoujie218.top.1.2.png")
+![www.zhoujie218.top.1.2.png](https://ae01.alicdn.com/kf/Hb51414d8d81d4c80a0fad71c004de9017.png "www.zhoujie218.top.1.2.png")
 
 [1](https://www.lanzous.com/iafr5pc)

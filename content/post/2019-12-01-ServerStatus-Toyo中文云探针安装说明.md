@@ -9,7 +9,7 @@ tags:
 url: "/archives/1002.html"
 ---
 
-[![](/images/2019/12/8d9581b9f1757e2ea2ac03198a676a73.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34.png)
+[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34-1024x286.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34.png)
 
 [![的GitHub](https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667)](https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667)
 

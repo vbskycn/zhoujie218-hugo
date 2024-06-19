@@ -8,7 +8,7 @@ url: "/archives/2014.html"
 
 **winkawaks 1.60典藏版**是一款童年经典的街机游戏模拟器，为用户提供了200多款精品街机游戏，帮助找到童年的快乐回忆。软件操作简单快捷，只需要几步即可轻松模拟街机环境运行游戏，满足用户的各种街机模拟功能需求。
 
-\[caption id="attachment\_2018" align="alignnone" width="600"\][![Winkawaks](/images/2021/07/e8491061b0c93cc19dbaec7093e1929e.jpg)](/images/2021/07/e8491061b0c93cc19dbaec7093e1929e.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2018" align="alignnone" width="600"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181558.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181558.jpg) Winkawaks\[/caption\]
 
 ### 【软件功能】
 
@@ -22,7 +22,7 @@ url: "/archives/2014.html"
 
 5、可联机，至于怎么联，会的自己弄，不会的不解释。
 
-\[caption id="attachment\_2020" align="alignnone" width="600"\][![Winkawaks](/images/2021/07/83748b49be2d03ca3c01c00c4c80acf5.jpg)](/images/2021/07/83748b49be2d03ca3c01c00c4c80acf5.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2020" align="alignnone" width="600"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181601.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181601.jpg) Winkawaks\[/caption\]
 
 ### 【使用方法】
 
@@ -34,7 +34,7 @@ winkawaks.exe就是原版程序，ipsloader.exe跟winkawaks.exe运行界面相�
 
 如果要修改键位设置，可以点“游戏”——重新定义键位设定——重新定义玩家1/2的键位设定，修后确定即可。
 
-\[caption id="attachment\_2022" align="alignnone" width="600"\][![Winkawaks](/images/2021/07/d40948ae9de58daf16e7a1fb00679356.jpg)](/images/2021/07/d40948ae9de58daf16e7a1fb00679356.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2022" align="alignnone" width="600"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181605.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181605.jpg) Winkawaks\[/caption\]
 
 ### 【作弊码设置】
 
@@ -42,11 +42,11 @@ winkawaks.exe就是原版程序，ipsloader.exe跟winkawaks.exe运行界面相�
 
 Winkawaks的作弊码文件扩展名后缀是dat
 
-\[caption id="attachment\_2024" align="alignnone" width="506"\][![Winkawaks](/images/2021/07/199a1cc48eef0f55b8ae4ae6fe205e95.jpg)](/images/2021/07/199a1cc48eef0f55b8ae4ae6fe205e95.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2024" align="alignnone" width="506"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181608.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181608.jpg) Winkawaks\[/caption\]
 
 我们可以通过新建“记事本”——更改扩展名来创建新的作弊码文件。
 
-\[caption id="attachment\_2026" align="alignnone" width="490"\][![Winkawaks](/images/2021/07/d4730618f0be6b41b2cd15a2c2c73aa0.jpg)](/images/2021/07/d4730618f0be6b41b2cd15a2c2c73aa0.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2026" align="alignnone" width="490"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181611.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181611.jpg) Winkawaks\[/caption\]
 
 文件名必须按照下图红框中的名字进行命名
 
@@ -58,13 +58,13 @@ Winkawaks的作弊码文件扩展名后缀是dat
 
 绿色是模拟器“选择金手指”界面中见到的字。蓝色是作弊地址。红色是作弊数值
 
-\[caption id="attachment\_2027" align="alignnone" width="440"\][![Winkawaks](/images/2021/07/fadaaf604f013d7912963a4cfe36b8ac.jpg)](/images/2021/07/fadaaf604f013d7912963a4cfe36b8ac.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2027" align="alignnone" width="440"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181614.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181614.jpg) Winkawaks\[/caption\]
 
 作弊码中的数值都是十六进制，这要十分注意，随便弄个“99”可能会直接导致游戏卡死
 
 知道“108170”出现这么多回吗？因为“战斗中角色”代码的位置就是108170.只是数值一改，人物就会变
 
-\[caption id="attachment\_2028" align="alignnone" width="498"\][![Winkawaks](/images/2021/07/0ba030ff43e32dee9111441b20e7a6f5.jpg)](/images/2021/07/0ba030ff43e32dee9111441b20e7a6f5.jpg) Winkawaks\[/caption\]
+\[caption id="attachment\_2028" align="alignnone" width="498"\][![Winkawaks](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181617.jpg)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210718181617.jpg) Winkawaks\[/caption\]
 
 利用“搜索金手指”功能找你要的作弊地址。
 

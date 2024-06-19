@@ -61,11 +61,11 @@ COPY{
 
 管理员进入后台角色组设置，选择指定的角色组点击编辑，进入图片审核标签，开启图片审核，设置审核动作，驱动调整为 NsfwJs，接口地址设置为 `http://127.0.0.1:3000/classify`，属性为 `image`，阈值为 `60`「以上参数根据实际情况调整」
 
-![image-20230901145352560](/images/2023/09/725e062165bd19158ac4b6c24b750c5b.webp)
+![image-20230901145352560](https://img-cloud.zhoujie218.top/2023/09/01/64f18a83430ec.webp)
 
 ## 效果
 
-![image-20230901145124825](/images/2023/09/05fabed514d9ee49acebcc0192f1033a.webp)
+![image-20230901145124825](https://img-cloud.zhoujie218.top/2023/09/01/64f189ef55228.webp)
 
 ## 已开启api，轻量使用
 

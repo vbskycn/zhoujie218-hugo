@@ -42,7 +42,7 @@ url: "/archives/2556.html"
 
 我的软路由ikuai openwrt都是安稳122天，而黑群晖只99天安稳运转
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/f54d10d0aa63a1f1aa176465f36a2fb9.webp)\]92830130-db4e159ca2f31e8.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3aaa0cd.webp)\]92830130-db4e159ca2f31e8.webp)
 
 为了确保图床的`7*24`小时能拜访，本次就把图床放在`NAS`上了。
 
@@ -69,11 +69,11 @@ hub.docker.com/r/btpanel/b…
 2. 基于镜像创立[容器](https://www.6hu.cc/archives/tag/容器)\-基本设置
     
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/5abf1e393f837a43ef86d4f241ee0435.webp)\]92830136-e20421f1ed677ed.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a86e56.webp)\]92830136-e20421f1ed677ed.webp)
 
 3、文件夹途径
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/178eecca38879ab9b472ae08d03ddab5.webp)\]92830142-f6c0072e9ccb9fc.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3b1bb33.webp)\]92830142-f6c0072e9ccb9fc.webp)
 
 左面是极空间NAS需求创立的文件夹，右边是容器运转后的目录。
 
@@ -88,11 +88,11 @@ hub.docker.com/r/btpanel/b…
 
 4、网络装备，这儿挑选`host`， 与宿主机（极空间）运用同一IP，待会去路由器开释`8888`端口，就能够经过外网拜访了。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/76d0f7a1bf0bfc6a42a71690eaee03cb.webp)\]92830148-25da098369c8e3c.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3ad05be.webp)\]92830148-25da098369c8e3c.webp)
 
 5、点击`使用`，等候容器发动。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/77c879269ee71f75ef0b1b76dd09d58e.webp)\]92830154-60cf7f962f97755.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a807ca.webp)\]92830154-60cf7f962f97755.webp)
 
 > 注意：布置完结后，请当即登录浮屠面板—>面板设置中修正用户名和暗码并修正安全进口
 
@@ -104,11 +104,11 @@ hub.docker.com/r/btpanel/b…
 
 > 其实不知道也没关系，横竖进入服务器输入bt，能够修正进口和暗码登信息
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/caed0e83eb7ce3980c02e49012c41717.webp)\]92830160-e8779c02a91bf5b.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a6fd3d.webp)\]92830160-e8779c02a91bf5b.webp)
 
 默许暗码不知道的情况下，就直接进入sh修正暗码
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/a24f4d5249d47971b30a76a92c5d8f80.webp)\]92830166-21468ab3b93ed21.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3d772dc.webp)\]92830166-21468ab3b93ed21.webp)
 
 ```bash
 # 输入命令，发动菜单
@@ -120,7 +120,7 @@ hub.docker.com/r/btpanel/b…
 齐活
 ```
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/7bd196874b2692ce5db485102cd86678.webp)\]92830172-0bc0a580cc5b584.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3ea1c2d.webp)\]92830172-0bc0a580cc5b584.webp)
 
 经过进口登录
 
@@ -128,31 +128,31 @@ hub.docker.com/r/btpanel/b…
 
 进来后二话不说，先把LNMP环境装一下，因为后面布置`lsky`项目都需求用，这个时间会关键
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/82a49afc00101cc8e571e2d0943309a7.webp)\]92830178-874625e356a59ce.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3ccd88a.webp)\]92830178-874625e356a59ce.webp)
 
 。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/31a9892f922e96c4ab04bbd90debaae6.webp)\]92830185-c9760b22d9daaf1.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3f13868.webp)\]92830185-c9760b22d9daaf1.webp)
 
 乘着等候的时间，能够检测一下这个目录文件和NAS的文件映射是否建立
 
 上传一个文件，看看NAS中是否有。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/7bd196874b2692ce5db485102cd86678.webp)\]92830192-3e8ecc62dd20c15.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae404250f.webp)\]92830192-3e8ecc62dd20c15.webp)
 
 等候一会后，总算都装好了，确认一下`NGINX`相关服务是不是都发动正常了。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/6f1ae494e7f601eb325ffc4ed473f532.webp)\]92830198-9520b9326830042.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae400813b.webp)\]92830198-9520b9326830042.webp)
 
 假如Nginx发动失利，能够看看日志。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/24960eab7285203c3a8b5b8047f8c820.webp)\]92830204-7bdfe49a5786634.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae415aa7e.webp)\]92830204-7bdfe49a5786634.webp)
 
 提示`80端口`占用了
 
 测验修正这儿(..default.conf & phpfpm.status.conf)的端口80改其他的不占用的。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/777579c46557a7b8ad2ad5c4de9e4c60.webp)\]92830210-d1fe5a56dbe3969.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae436124b.webp)\]92830210-d1fe5a56dbe3969.webp)
 
 # 二、布置兰空图床
 
@@ -164,19 +164,19 @@ hub.docker.com/r/btpanel/b…
 
 官网中写的装置要求逐个核对
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/891b6b512de2bd49bbf13b080ce3808a.webp)\]92830216-5c81cac3394f3c2.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae43558b3.webp)\]92830216-5c81cac3394f3c2.webp)
 
 在浮屠环境中只需求点点点即可
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/45620a7c9d72bb5d31837ec853ac20a5.webp)\]92830223-b7024a051859eb1.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae473de2f.webp)\]92830223-b7024a051859eb1.webp)
 
 点击**【禁用函数】**，把 `exec`、`shell_exec`、`readlink`、`symlink`、`putenv`、`chown` 这六个被禁用的函数删掉，也便是取消禁用
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/139f4be0eec566499d3dd9a45c30450a.webp)\]92830229-6a12e6278b8e670.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae44ad4a9.webp)\]92830229-6a12e6278b8e670.webp)
 
 ## 2.2 创立网站
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/e331ae613f8d3824b6e7216fe08f8f0c.webp)\]92830235-13bb6d026c14832.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae45ea134.webp)\]92830235-13bb6d026c14832.webp)
 
 现在经过192.168.8.60:16080 能够拜访到这个空项目了，应该会有个欢迎界面(index.html)。
 
@@ -194,11 +194,11 @@ github.com/lsky-org/ls…
 
 假如你**不是**开发者，**请不要**下载名称为 `Source Code` 的压缩包，此为中心[源代码](https://www.6hu.cc/archives/tag/源代码)，需求自己装置拓展。
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/1fdab3644c60c62be3764656a23d622f.webp)\]92830242-b51fa31e35f5844.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae471c4e9.webp)\]92830242-b51fa31e35f5844.webp)
 
 下载后放到项目中
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/79289699d7ef3a38bab8ab7ad5d8ccf8.webp)\]92830248-a95504569133406.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae46f2b85.webp)\]92830248-a95504569133406.webp)
 
 解压一下
 
@@ -223,7 +223,7 @@ github.com/lsky-org/ls…
 
 **在开端之前，我自己建立的图床img.deepe.ren，自己注册账号，然后用自己的token，这样图片便是隐私的。**
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/aadd9a7a0954bade8ccc3c5ccbabdff0.webp)\]92830255-b784f9bb4bc2cc1.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae475f412.webp)\]92830255-b784f9bb4bc2cc1.webp)
 
 # 三、typora + PicGo + lsky 建立主动上传图片
 
@@ -231,25 +231,25 @@ github.com/lsky-org/ls…
 
 PicGo拖文件上传
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/3b7bd866f68345664a8481176a825960.webp)\]92830261-ba059fb06e74297.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4918df9.webp)\]92830261-ba059fb06e74297.webp)
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/25bd9f49458f6176d59bde4452d79ef3.webp)\]92830269-9c2b0a3f34c5c82.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4903bc7.webp)\]92830269-9c2b0a3f34c5c82.webp)
 
 Typora拖转主动转化
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/521a1f6f894c3bebb57986e7110e6e33.webp)\]92830277-e1e443099cb3c87.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae49c5c91.webp)\]92830277-e1e443099cb3c87.webp)
 
 ## 3.1、装置PicGo插件
 
 **打开`Typroa`界面，在菜单栏找到`文件`—>`偏好设置`**
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/37dd41218492a69c1a8df51b3d945755.webp)\]92830284-4013c027dde7ddb.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4b52071.webp)\]92830284-4013c027dde7ddb.webp)
 
 在
 
 点击PicGo(app)装置
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/4df642dfbbf22627826a93adfab34677.webp)\]92830290-bab92566f7d4ca5.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4b5dfd6.webp)\]92830290-bab92566f7d4ca5.webp)
 
 然后点击下面的下载，等候一会…
 
@@ -257,7 +257,7 @@ Typora拖转主动转化
 
 ## 3.2 在PicGo装置lankong的插件
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/e5e93bbd55316d45105575d8c8307b07.webp)\]92830296-fbdc8b92c388f73.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4c1fc8f.webp)\]92830296-fbdc8b92c388f73.webp)
 
 ## 3.3 装备lankong
 
@@ -272,7 +272,7 @@ Auth token：Bearer 1|hCKcAdIFxxxxxxxxxxxxxxxxxxIvSqJZ7q
 
 装备完结：
 
-![image-20230831232300077](/images/2023/08/4a54df5add1a36f29403e8efbccad41d.webp)
+![image-20230831232300077](https://img-cloud.zhoujie218.top/2023/08/31/64f0b0561832b.webp)
 
 #### 3.3.1 怎么获取token
 
@@ -360,19 +360,19 @@ https://img.deepe.ren/api/v1
 
 添加位置 刷新后台 建议使用强制刷新Ctrl+F5
 
-![image-20230831231857987](/images/2023/08/039dfe619a6310e9598635e0528a4557.webp)
+![image-20230831231857987](https://img-cloud.zhoujie218.top/2023/08/31/64f0af643fcab.webp)
 
-![](/images/2023/08/d76e3ddd6d64503e3908b1b09bbb56d0.webp)
+![](https://img-cloud.zhoujie218.top/2023/08/31/64f0af2a10f5b.webp)
 
 ## 效果
 
-![image-20230831231953139](/images/2023/08/acec21ce8e19b511bfb3eaadcc555435.webp)
+![image-20230831231953139](https://img-cloud.zhoujie218.top/2023/08/31/64f0af9b496a5.webp)
 
 ## 3.4 PicGo测验上传
 
 拖个图片测验一下
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/485d91f42898ca583e49d3611038e659.gif)\]92830308-e6ddee438375b8a.gif)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4c10441.gif)\]92830308-e6ddee438375b8a.gif)
 
 ## 3.5 Typora装备
 
@@ -380,10 +380,10 @@ https://img.deepe.ren/api/v1
 
 我的装置途径`C:\Users\xiaozepeng\AppData\Local\Programs\PicGo`
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/28f591ea1d1487852687193ad9019c72.webp)\]92830327-dd8507495903777.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4d1a27c.webp)\]92830327-dd8507495903777.webp)
 
 typora拖图片测验
 
-\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](/images/2023/08/c9f8baa04d5cb4f471c14d23d4b428a2.webp)\]92830339-9357ffeb3b387b6.webp)
+\[![NAS + 宝塔 + typora + PicGo + lsky 搭建自动上传图片](https://img-cloud.zhoujie218.top/2023/08/31/64f0ae4ea55a4.webp)\]92830339-9357ffeb3b387b6.webp)
 
 这样上传的图片是在云端，后续发布在`掘金` `csdn` `社区` 就再也需求手动上传了。

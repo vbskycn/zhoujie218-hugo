@@ -8,9 +8,6 @@ tags:
   - "hugo"
   - "wordpress"
 url: "/archives/2461.html"
-
-
-
 ---
 
 ## 前言
@@ -87,15 +84,14 @@ npm install && node index.js --wizard=false
 
 这部分实际上没有什么好说的，主要使用这两个软件，都是图形化界面，配置一下图床信息，选择一下 markdown 文件或者文件夹地址就可以自动迁移了。后者是免费的，前者虽然收费但是有免费体验期，对于只使用一次的用户来说就是免费。
 
- ![image.png](https://img-cloud.zhoujie218.top/2024/04/22/6626037f4e87e.png) 
+![image.png](https://img-cloud.zhoujie218.top/2024/04/22/6626037f4e87e.png)
 
 ~ 实际上还有[PicGo](https://github.com/Molunerfinn/PicGo)和[picgo-plugin-pic-migrater](https://github.com/PicGo/picgo-plugin-pic-migrater)，可以使用。~ 之前可能有用，但是程序很久都没有更新过了，一堆 bug，根本不能正常迁移。还是推荐大家使用 iPic 和 iPic Mover。
-
-
 
 ### 来个更简单的图片转移方法
 
 我写了一个python程序，自动下载所有md文件中的图片到images文件夹，并且会修改md文章中的相对链接。把图片全部静态托管到hugo所在的服务就OK了,下面是下载链接。如果有解压密码的话就是本站域名。
 
 py程序下载地址：
-https://www.zhoujie218.top/wp-content/uploads/file/wp-img_to_hugo.rar
+
+\[login\_email\] https://www.zhoujie218.top/wp-content/uploads/file/wp-img\_to\_hugo.rar \[/login\_email\]

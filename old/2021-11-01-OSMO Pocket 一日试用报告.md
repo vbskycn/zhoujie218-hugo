@@ -18,7 +18,7 @@ url: "/archives/2342.html"
 
 **到手的第一印象：好小啊。**虽然对 OSMO Pocket 已经提前有所了解，但刚刚接触它时仍惊讶于它的体积。就算有一层保护壳， OSMO Pocket 还是可以被轻松地放进口袋里，相对于手机+稳定器的方案，OSMO Pocket 便携多了，好评。
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/3.jpg](https://img-cloud.zhoujie218.top/pc/202111011912611.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/3.jpg](/images/2021/11/c6949dcffd539151c46e589e2ef27d25.jpg)
 
 **完全启动的速度挺快**，不过屏幕不大。屏幕支持触摸，而机身上的实体按键只有两个。简单试用了下，在屏幕上的操作主要以滑动为主，操作逻辑还算清晰，不过这个触屏对于点击的灵敏度真的挺低的，经常出现点击却没有反应的情况 。两个实体按键之一就是拍摄键，熟悉了之后操作效率还是很高的。好评。
 
@@ -26,7 +26,7 @@ url: "/archives/2342.html"
 
 我拿到 OSMO Pocket 时它已经被使用了一段时间了，手机连接头已经插在机身上了。虽然这个连接头可以卸下并反装（以保护连接头）或者换上接口保护板，但是实际操作中要卸下连接头非常麻烦，所以一般情况下为了方便使用，连接头只能以这种有点难看的姿势插在机身上。DJI 甚至考虑到了这个问题，在保护壳的绑带上切了个口子，方便连接头伸出...
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/2.jpg](https://img-cloud.zhoujie218.top/pc/202111011912612.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/2.jpg](/images/2021/11/36f16d8f34627958f5b1a3ef567df50f.jpg)
 
 奇葩的保护壳
 
@@ -44,7 +44,7 @@ url: "/archives/2342.html"
 
 我第一个使用的功能是延时视频，结果发现没有标准螺口带来的问题比我想象的还要严重。总之最后为了能顺利地拍完延时，我不得不用一种很难受的姿势把它摁在三脚架的云台上并这样保持十几分钟...然而就算是这样后来还是翻车了（
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/15.jpg](https://img-cloud.zhoujie218.top/pc/202111011912894.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/15.jpg](/images/2021/11/8dc84d302ae656965dba1a3694edff55.jpg)
 
 完全没法固定
 
@@ -58,7 +58,7 @@ url: "/archives/2342.html"
 
 为了方便调整云台位置我把手机插上了，然后发现这样的连接方式其实有点别扭。**单手握持是不可能了：**如果握着 OSMO Pocket，不仅整体重心会严重偏向手机，而且连接头大概不能长时间地支撑住悬空的手机；如果握住手机，OSMO Pocket 不算太轻的重量依然会让我担心连接头是否会损坏。算了，还是两个一起握着吧。
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/4.jpg](https://img-cloud.zhoujie218.top/pc/202111011912613.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/4.jpg](/images/2021/11/da75303542e5b972f0f21d8a787c2a59.jpg)
 
 连接手机示意图
 
@@ -76,7 +76,7 @@ url: "/archives/2342.html"
 
 配套的 APP DJI Mimo 在拍摄方面还算好用（不过首页的类抖音风格我真的受不了...）。可设置项不算多，但布局还算清晰，不难上手，跟直接在内建屏幕上操作相比，APP 用起来还是很爽的。搭配 DJI 一贯的“一键制作视频”功能，拍摄剪辑分享可以说是一气呵成。当然如果有精细制作的需求还是导出来用专业软件剪比较好。**不过通过 APP 只能查看机内 SD 卡中的“成品”，比如延时视频只能导出视频而不能导出每一帧的原始图像**，官方称需要使用电脑才能导出其在拍摄延时视频中拍摄的 JPEG 原始图像，不过我没来得及用电脑连上看一看。
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/5.jpg](https://img-cloud.zhoujie218.top/pc/202111011912614.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/5.jpg](/images/2021/11/82ad66e7209cb1bb5ad254c49450379f.jpg)
 
 APP 的拍摄界面
 
@@ -84,29 +84,29 @@ APP 的拍摄界面
 
 说一下“画质”。先看一下官方参数：1/2.3” CMOS，F/2，等效焦距 26mm。**注意一下这个等效焦距并不广，尤其自拍的时候很容易出现“满屏幕都是脸”的情况。**
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/9.jpg](https://img-cloud.zhoujie218.top/pc/202111011912615.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/9.jpg](/images/2021/11/ed6cfdfb66d2d654f6f3351bd16309a8.jpg)
 
 官网截图
 
 直接下结论：**在我看来 OSMO Pocket 在照片/视频的拍摄质量方面与手机相比没有什么优势，甚至不如一些旗舰手机。**照片比较平淡，曝光看看就好，画面放大看有比较严重的涂抹感，同时画面边缘有一些畸变。
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/8.jpg](https://img-cloud.zhoujie218.top/pc/202111011912616.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/8.jpg](/images/2021/11/4f7f52f163ba374082e2d3d99dba1619.jpg)
 
 直出照片及其 EXIF 信息
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/12.jpg](https://img-cloud.zhoujie218.top/pc/202111011912617.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/12.jpg](/images/2021/11/9cf3671a0609e4f438d2f0efb6212a79.jpg)
 
 当时没有拍对比照，另外用手机拍了一张大光比场景做个观感对比 (HDR+直出)
 
 夜景照片没来得及单独测试，不过从夜景延时视频的原始图像来看只能说一般般，噪点有些多，大光比场景看起来难以驾驭。
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/11.jpg](https://img-cloud.zhoujie218.top/pc/202111011912618.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/11.jpg](/images/2021/11/0b0617b457a8a7dbb886ab455ef3d5e2.jpg)
 
 夜景延时视频其中一帧的原始图像
 
 视频也类似，看得出有涂抹感，而且在大光比下容易过曝/欠曝，不过码率挺高，看起来没怎么压缩。照片看起来有所压缩，而全景则被缩放得非常厉害，基本不能放大看，不知道这是不是因为通过 APP 导出的问题，希望可以在 SD 卡中找到未压缩的原始图像。**总之不管这个镜头的素质如何，最后的产出和手机相比并没有什么优势。**甚至在我手机有 Google 的 HDR+ 算法加持的情况下，OSMO Pocket 的照片从观感上来说可以算是被吊打。
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/10.jpg](https://img-cloud.zhoujie218.top/pc/202111011912619.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/10.jpg](/images/2021/11/e0d439bb8aec3ace5d9f5922524e2b9e.jpg)
 
 这张图直出尺寸只有 3984x1006
 
@@ -144,6 +144,6 @@ OSMO Pocket 是一款优点和缺点都非常明显的产品，简单总结一�
 
 顺便一提，由于 OSMO Pocket 在连接 Android 手机时会使用“USB 调试”功能，每当它连上我的手机时...
 
-![https://acdn.flyhigher.top/wp-content/uploads/2019/02/6.jpg](https://img-cloud.zhoujie218.top/pc/202111011912620.jpg)
+![https://acdn.flyhigher.top/wp-content/uploads/2019/02/6.jpg](/images/2021/11/52bdcf531948832d9cdd1e2faf56cc12.jpg)
 
 (╯‵□′)╯︵┻━┻

@@ -10,7 +10,7 @@ url: "/archives/1784.html"
 
 # AdGuard Home 优化配置
 
-![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/chrome_U72f43BnP2-1024x629.png)
+![](/images/2020/07/02c92bd5c26b032364c450d8666ba723.png)
 
  
 
@@ -312,4 +312,4 @@ https://raw.githubusercontent.com/vokins/yhosts/master/data/tvbox.txt
 
 (挑选最合适的DNS服务器,拒绝DNS劫持)
 
-[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-40.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-40.png)https://www.lanzous.com/iaik9vi
+[![](/images/2020/07/c863fdbcb9f95abb4d4d68c06a9f3944.png)](/images/2020/07/c863fdbcb9f95abb4d4d68c06a9f3944.png)https://www.lanzous.com/iaik9vi

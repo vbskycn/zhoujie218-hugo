@@ -68,7 +68,7 @@ bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirro
 
 2）安装过程，可以选择自己喜欢的源！
 
-\[caption id="attachment\_2127" align="aligncenter" width="954"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044652846.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044652846.png) \[/caption\]
+\[caption id="attachment\_2127" align="aligncenter" width="954"\][![](/images/2021/10/3813214858401995ebdd8cbd1cb976bc.png)](/images/2021/10/3813214858401995ebdd8cbd1cb976bc.png) \[/caption\]
 
 #### 4、Docker 一键安装脚本
 

@@ -17,7 +17,7 @@ url: "/archives/2455.html"
 
 **进入如下界面**
 
-![img](/images/2022/07/2e8ec347f448e8e99c591dc7f8825fb9.png)
+![img](https://img-cloud.zhoujie218.top/piggo/202207282053830.png)
 
 **在 1 框中，录入你的 http 的域名，如果查询有记录，那就是这个问题导致了自动跳转。**
 

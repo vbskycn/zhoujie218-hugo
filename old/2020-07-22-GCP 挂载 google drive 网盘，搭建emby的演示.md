@@ -36,6 +36,6 @@ url: "/archives/1793.html"
 
 嘎鱼饭 google drive 资源 挂载 搭建后 效果如下：
 
-\[caption id="attachment\_1795" align="alignnone" width="854"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-42-854x1024.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-42.png) \[/caption\]
+\[caption id="attachment\_1795" align="alignnone" width="854"\][![](/images/2020/07/07e8b83de4cabbcba011662fdc32b6cf.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-42.png) \[/caption\]
 
 **Emby免费体验服务器** 地址：emby.gayufan.com 端口：8096 账号：gayufan.com 密码：在嘎鱼饭官网首页获取 [嘎鱼饭官网](https://gayufan.com/)

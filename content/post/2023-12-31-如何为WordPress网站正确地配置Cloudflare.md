@@ -45,7 +45,7 @@ Cloudflare支持四种SSL/TLS加密模式——Off, Flexible, Full和Full (Stric
 
 如果您使用在子域上托管站点，而根域使用Cloudflare的Flexible SSL，则可以使用Cloudflare页面规则强制子域使用Full或Full (Strict) SSL。
 
-![](/images/2023/12/aeb795ebb6b2fb5cbaa3dfa421097786.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917a247f948.webp)
 
 为具有Cloudflare页面规则的子域启用Full (Strict) SSL
 
@@ -139,7 +139,7 @@ Rocket Loader是一项通过异步加载JavaScript资源来加快加载时间的
 
 Cloudflare的Pro计划具有更强大的Web应用程序防火墙 (WAF)。WAF提供专门的托管规则集，有助于进一步保护您的站点。例如，有一些针对WordPress和PHP站点的规则集。
 
-![](/images/2023/12/98d47718c1a69cb31f6f7b0a5d1d7d81.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917a31de707.webp)
 
 用于WordPress的Cloudflare托管规则集
 
@@ -153,7 +153,7 @@ Cloudflare的Pro计划具有更强大的Web应用程序防火墙 (WAF)。WAF提�
 
 正如我们前面提到的，HTTP/2通过并行化和多路复用为HTTP/1.1带来了一些改进。类似地， HTTP/3通过使用称为QUIC的新的基于UDP的协议而不是传统的TCP，[进一步扩展了HTTP/2的性能](https://www.wbolt.com/http3.html)。
 
-![](/images/2023/12/98d47718c1a69cb31f6f7b0a5d1d7d81.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917a31de707.webp)
 
 启用HTTP/2、HTTP/3和0-RTT连接恢复
 
@@ -165,7 +165,7 @@ Cloudflare的Pro计划具有更强大的Web应用程序防火墙 (WAF)。WAF提�
 
 Cloudflare的页面规则功能允许您自定义特定URL的设置。页面规则对于禁用某些资产的缓存、更改所选页面的安全级别等很有用。Cloudflare页面规则有两个关键组件——URL匹配模式和对匹配的URL执行的操作。在下面的屏幕截图中，您可以看到将www URL重定向到非www版本的Cloudflare页面规则。
 
-![](/images/2023/12/f721928bb5a19ead07e6cd2534d3d742.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/659179556c148.webp)
 
 Cloudflare转发URL页面规则
 
@@ -202,7 +202,7 @@ Cloudflare转发URL页面规则
 
 Cloudflare团队维护一个[官方的WordPress插件](https://www.wbolt.com/go?_=742870ac52aHR0cHM6Ly93b3JkcHJlc3Mub3JnL3BsdWdpbnMvY2xvdWRmbGFyZS8%3D)。虽然这个插件不是绝对要求，但它确实提供了一些不错的功能，包括WordPress优化的Cloudflare设置、WordPress特定的安全规则集、自动缓存清除、HTTP/2服务器推送等。
 
-![](/images/2023/12/1d4b6b072c69acc7442fc99dcf9a581d.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/6591795572e43.webp)
 
 Cloudflare WordPress插件设置
 
@@ -212,7 +212,7 @@ Cloudflare WordPress插件设置
 
 Cloudflare APO for WordPress通过将页面的HTML副本存储在Workers KV中来工作，Workers KV是一种全球分布的键值存储服务。启用APO后，对您站点的请求将由Workers KV或Cloudflare的边缘缓存而不是您的源服务器提供服务。这是WordPress性能领域向前迈出的一大步，因为有了APO，WordPress站点不再受源服务器位置的限制。
 
-![](/images/2023/12/88987eb9c5fda107a1c8a84e4b8bb69b.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917a3d43599.webp)
 
 在Cloudflare仪表盘中为WordPress启用自动平台优化
 
@@ -254,7 +254,7 @@ Railgun仅适用于Cloudflare的商业和企业计划，并且需要您的网络
 
 同样，域已在Cloudflare中配置了适当的A记录。Cloudflare代理也已启用，如橙色云图标所示。
 
-![](/images/2023/12/6cfc63d578b0d403c88bcd0cb10850f8.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917957c1c85.webp)
 
 WordPress多站点的Cloudflare DNS记录
 
@@ -266,7 +266,7 @@ WordPress多站点的Cloudflare DNS记录
 
 在宝塔面板上，你可以轻松生成涵盖所有域的SSL证书。
 
-![](/images/2023/12/da5740164567c7f33124bdc27b5b25b1.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917957cdf2c.webp)
 
 在宝塔面板中为您的多站点生成SSL证书
 
@@ -274,7 +274,7 @@ WordPress多站点的Cloudflare DNS记录
 
 或者，您可以生成涵盖多站点域的Cloudflare Origin SSL证书。要生成原始证书，请导航到SSL/TLS > Origin Server，然后单击“Create Certificate”。
 
-![](/images/2023/12/2003616fdbf71a1b0e644625b251dc32.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/659179581e380.webp)
 
 生成Cloudflare原始证书
 
@@ -296,7 +296,7 @@ Cloudflare的其他安全和性能功能全局适用于您的根域下的所有�
 
 对于此页面规则，我们禁用了HTML、CSS和JS的自动缩小，禁用了Rocket Loader，绕过了Cloudflare缓存，并关闭了自动HTTPS重写。
 
-![](/images/2023/12/b2797420c4a223fb9c8dda01637bf26c.webp)
+![](https://img-cloud.zhoujie218.top/2023/12/31/65917a85a1133.webp)
 
 创建选择性Cloudflare页面规则以定位WordPress子网站
 

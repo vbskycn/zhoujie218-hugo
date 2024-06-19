@@ -10,7 +10,7 @@ url: "/archives/1818.html"
 
 Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和目录，支持常见的 Amazon Drive 、Google Drive 、OneDrive 、Dropbox 等云存储。本文将演示在 Windows 平台下将 OneDrive 挂载为本地硬盘，并使用跨平台的 Rclone GUI 连接到云盘。
 
-![](/images/2020/09/4b99d5f05fe2a8347a1e3eddbae1e350.svg)
+![](https://gitee.com/wang_wx/image_bed/raw/master/202002/68747470733a2f2f72636c6f6e652e6f72672f696d672f6c6f676f5f6f6e5f6c696768745f5f686f72697a6f6e74616c5f636f6c6f722e737667.svg)
 
 ## **1、rclone下载地址**
 
@@ -20,19 +20,19 @@ Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和�
 
 在[rclone官网](https://rclone.org/downloads/)中，Windows 平台下选择下载 AMD64 - 64 Bit
 
-\[caption id="attachment\_1819" align="alignnone" width="966"\][![](/images/2020/09/408e2af6c1e7fcb2d5d71a2ecac0151a.png)](/images/2020/09/408e2af6c1e7fcb2d5d71a2ecac0151a.png) \[/caption\]
+\[caption id="attachment\_1819" align="alignnone" width="966"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-14.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-14.png) \[/caption\]
 
 或者在[github](https://github.com/rclone/rclone/releases)下载。
 
-\[caption id="attachment\_1820" align="alignnone" width="1024"\][![](/images/2020/09/9ea7f2da8f3fdd70c19bdf1d1a2418e8.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15.png) \[/caption\]
+\[caption id="attachment\_1820" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15-1024x527.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15.png) \[/caption\]
 
 下载后解压到一个英文路径中。
 
-\[caption id="attachment\_1821" align="alignnone" width="1002"\][![](/images/2020/09/9ed84424e5f66b24283d79c7f44068f9.png)](/images/2020/09/9ed84424e5f66b24283d79c7f44068f9.png) \[/caption\]
+\[caption id="attachment\_1821" align="alignnone" width="1002"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-16.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-16.png) \[/caption\]
 
 另外在Windows平台使用rclone还需要另一个依赖工具`winfsp`，下载地址：[](http://www.secfs.net/winfsp/download/)[](http://www.secfs.net/winfsp/download/)[http://www.secfs.net/winfsp/download/](http://www.secfs.net/winfsp/download/) ，下载后一路安装即可。
 
-\[caption id="attachment\_1822" align="alignnone" width="618"\][![](/images/2020/09/27fda46b66c233d22c548be6ae0dfb3e.png)](/images/2020/09/27fda46b66c233d22c548be6ae0dfb3e.png) \[/caption\]
+\[caption id="attachment\_1822" align="alignnone" width="618"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-17.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-17.png) \[/caption\]
 
 ## **2、为rclone配置环境变量**
 
@@ -40,13 +40,13 @@ Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和�
 2. 选择“高级系统设置”选项
 3. 在系统变量中找到path，添加刚才解压后的路径
 
-\[caption id="attachment\_1823" align="alignnone" width="677"\][![](/images/2020/09/0bd26fe637ef5c34619e40cce4b2c49a.png)](/images/2020/09/0bd26fe637ef5c34619e40cce4b2c49a.png) \[/caption\]
+\[caption id="attachment\_1823" align="alignnone" width="677"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-18.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-18.png) \[/caption\]
 
 ## **3、检查rclone是否配置成功**
 
 按`win`+`X`，然后按`A` 打开 `powershell` ，当然也可以去打开 `cmd` ，输入`rclone --version`，如果出现下面的输出则安装成功，否则检查上面步骤的环境变量是否配置正确。
 
-\[caption id="attachment\_1824" align="alignnone" width="653"\][![](/images/2020/09/56dde6ffc236224c84502d75447fb229.png)](/images/2020/09/56dde6ffc236224c84502d75447fb229.png) \[/caption\]
+\[caption id="attachment\_1824" align="alignnone" width="653"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-19.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-19.png) \[/caption\]
 
 ## 4、**开始配置rclone**
 
@@ -211,7 +211,7 @@ y/e/d>y                                      //第十二步 输入y
 
 此时，就会出现刚刚配置好的网盘名称了
 
-\[caption id="attachment\_1825" align="alignnone" width="611"\][![](/images/2020/09/81576862378950b85e470c7565b8fc3e.png)](/images/2020/09/81576862378950b85e470c7565b8fc3e.png) \[/caption\]
+\[caption id="attachment\_1825" align="alignnone" width="611"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-20.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-20.png) \[/caption\]
 
 ```
 e) Edit existing remote
@@ -226,7 +226,7 @@ e/n/d/r/c/s/q> q                //最后输入q退出配置即可
 
 在 `C:Users你的用户名.configrclone`文件夹下就可以看见配置文件 rclone.conf 啦。
 
-\[caption id="attachment\_1826" align="alignnone" width="895"\][![](/images/2020/09/1fd36cde1cc32c9d4ef979427a3e8cb3.png)](/images/2020/09/1fd36cde1cc32c9d4ef979427a3e8cb3.png) \[/caption\]
+\[caption id="attachment\_1826" align="alignnone" width="895"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-21.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-21.png) \[/caption\]
 
 ## **5、挂载OneDrive为本地硬盘**
 
@@ -250,11 +250,11 @@ rclone mount OneDrive_local:/  Q: --cache-dir E:OneDrive --vfs-cache-mode writes
 
 然后输入 `exit` 退出终端即可。
 
-\[caption id="attachment\_1827" align="alignnone" width="889"\][![](/images/2020/09/a8ab871a0662ef1780840ae40ff3bedd.png)](/images/2020/09/a8ab871a0662ef1780840ae40ff3bedd.png) \[/caption\]
+\[caption id="attachment\_1827" align="alignnone" width="889"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-22.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-22.png) \[/caption\]
 
 然后就可以看见本地多了一个盘，往里面复制文件就是上传，从里面复制文件到其它盘就是下载。
 
-\[caption id="attachment\_1828" align="alignnone" width="329"\][![](/images/2020/09/760af9dd420974c415d7fbebec85c9db.png)](/images/2020/09/760af9dd420974c415d7fbebec85c9db.png) \[/caption\]
+\[caption id="attachment\_1828" align="alignnone" width="329"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-23.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-23.png) \[/caption\]
 
 ## **6、设置开机自启动挂载**
 
@@ -266,7 +266,7 @@ rclone mount OneDrive_local:/  Q: --cache-dir E:OneDrive --vfs-cache-mode writes
 
 将这个文件放在`C:Users用户名AppDataRoamingMicrosoftWindowsStart MenuProgramsStartup` 中
 
-\[caption id="attachment\_1829" align="alignnone" width="1024"\][![](/images/2020/09/669668a1b4b37980b7927de7af3a6a3a.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-24.png) \[/caption\]
+\[caption id="attachment\_1829" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-24-1024x378.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-24.png) \[/caption\]
 
 重启计算机后就会自动挂设置的云盘了，当然这样做由于调用的是 `cmd` 因此还是不能关闭运行的 `cmd`。下面介绍一种利用 Rclone GUI 的进行管理的使用方法。
 
@@ -274,38 +274,38 @@ rclone mount OneDrive_local:/  Q: --cache-dir E:OneDrive --vfs-cache-mode writes
 
 在 [](https://github.com/kapitainsky/RcloneBrowser/releases)[](https://github.com/kapitainsky/RcloneBrowser/releases)[https://github.com/kapitainsky/RcloneBrowser/releases](https://github.com/kapitainsky/RcloneBrowser/releases)中下载 [RcloneBrowser](https://www.cnblogs.com/mysummerday/p/12661263.html) 。
 
-\[caption id="attachment\_1820" align="alignnone" width="1024"\][![](/images/2020/09/9ea7f2da8f3fdd70c19bdf1d1a2418e8.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15.png) \[/caption\]
+\[caption id="attachment\_1820" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15-1024x527.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15.png) \[/caption\]
 
 下载好后进行安装，然后进行配置。配置 `rclone.exe`的路径还有 `rclone.conf` 配置文件的路径。
 
-\[caption id="attachment\_1831" align="alignnone" width="714"\][![](/images/2020/09/ce849840b4500c3f03d60a8fdd06c518.png)](/images/2020/09/ce849840b4500c3f03d60a8fdd06c518.png) \[/caption\]
+\[caption id="attachment\_1831" align="alignnone" width="714"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-26.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-26.png) \[/caption\]
 
-\[caption id="attachment\_1832" align="alignnone" width="841"\][![](/images/2020/09/2d9b0ba74c1c35aab32c34c48bd2bf8c.png)](/images/2020/09/2d9b0ba74c1c35aab32c34c48bd2bf8c.png) \[/caption\]
+\[caption id="attachment\_1832" align="alignnone" width="841"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-27.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-27.png) \[/caption\]
 
 这是我前面解压rclon的路径以及配置文件的路径
 
 配置好后就可以看见前面配置的 OneDrive 网盘了 ☁️
 
-\[caption id="attachment\_1833" align="alignnone" width="1024"\][![](/images/2020/09/e9b9f787d0bf6ca4fe507f76c1a68ea5.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-28.png) \[/caption\]
+\[caption id="attachment\_1833" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-28-1024x576.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-28.png) \[/caption\]
 
 双击打开就可以看见里面的内容了，可以去愉快的上传或者下载了。
 
-\[caption id="attachment\_1834" align="alignnone" width="1024"\][![](/images/2020/09/1df7fd21841d8de08e5389adfd387cd9.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-29.png) \[/caption\]
+\[caption id="attachment\_1834" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-29-1024x574.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-29.png) \[/caption\]
 
-上传的话，选择要上传的文件或文件夹以及云盘的存放路径，再选择 `copy` 模式，点击 `run` 即可。下载与之类似。 \[caption id="attachment\_1835" align="alignnone" width="793"\][![](/images/2020/09/891797545c702e92dfed495204556441.png)](/images/2020/09/891797545c702e92dfed495204556441.png) \[/caption\]
+上传的话，选择要上传的文件或文件夹以及云盘的存放路径，再选择 `copy` 模式，点击 `run` 即可。下载与之类似。 \[caption id="attachment\_1835" align="alignnone" width="793"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-30.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-30.png) \[/caption\]
 
 在 `Jobs`当中还可以查看任务的进度、速度等。
 
-\[caption id="attachment\_1836" align="alignnone" width="1024"\][![](/images/2020/09/64de5302a9a2bc09a50635c2c1aea410.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-31.png) \[/caption\]
+\[caption id="attachment\_1836" align="alignnone" width="1024"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-31-1024x602.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-31.png) \[/caption\]
 
 另外还可以设置代理，见下图：
 
-\[caption id="attachment\_1837" align="alignnone" width="753"\][![](/images/2020/09/64f7b6ab59b7aba867f304808e9ade46.png)](/images/2020/09/64f7b6ab59b7aba867f304808e9ade46.png) \[/caption\]
+\[caption id="attachment\_1837" align="alignnone" width="753"\][![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-32.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-32.png) \[/caption\]
 
 这样挂载谷歌云端硬盘就很方便了。
 
 如果你觉得rclone 太麻烦，还可以试试 [RaiDrive](https://www.cnblogs.com/mysummerday/p/%20https://www.raidrive.com/) 挂载，安装后选择相应的网盘登录即可，但我用起来感觉比较卡顿。 不推荐了，2020年3月份收到邮件说挂载 Onedrive 、Google Derive 要收费了，无奈?
 
-\[caption id="attachment\_1838" align="alignnone" width="1024"\][![https://www.raidrive.com/](/images/2020/09/6d9906c9c6bbe48ea5efff3dcb91306d.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-33.png) https://www.raidrive.com/\[/caption\]
+\[caption id="attachment\_1838" align="alignnone" width="1024"\][![https://www.raidrive.com/](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-33-1024x667.png)](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-33.png) https://www.raidrive.com/\[/caption\]
 
 参考

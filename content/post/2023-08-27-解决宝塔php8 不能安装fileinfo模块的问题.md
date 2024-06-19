@@ -16,7 +16,7 @@ url: "/archives/2551.html"
 
 因照顾小机器的安装宝塔默认使用了禁用fileinfo参数，可能是检测到了禁用参数所以提示的不支持 可以使用以下命令重装默认开启 fileinfo的php
 
-![image-20230827192340694](/images/2023/08/3545df842e35f4917583d946c78ab2b2.webp)
+![image-20230827192340694](https://img-cloud.zhoujie218.top/2023/08/3545df842e35f4917583d946c78ab2b2.webp)
 
 命令行执行
 
@@ -38,6 +38,6 @@ sed -i "s/--disable-fileinfo/--enable--fileinfo/g" php.sh
 bash php.sh install 8.2
 ```
 
-![image-20230827192416306](/images/2023/08/7efe971de6987b7b67352d82fd7e09ec.webp)
+![image-20230827192416306](https://img-cloud.zhoujie218.top/2023/08/7efe971de6987b7b67352d82fd7e09ec.webp)
 
 官方论坛提几次都说不支持阿里云系统，还是自己动手
