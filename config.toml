@@ -27,9 +27,9 @@ summaryLength = 140
   localSearch = true # 启用本地搜索
 
   # 这里我存放在了主题的static文件夹里，根目录的似乎也可以
-  customCSS = ['douban.css', 'other.css']
+  #customCSS = ['douban.css', 'other.css']
   # if ['custom.css'], load '/static/css/custom.css' file
-  customJS = ['douban.js']
+  #customJS = ['douban.js']
   # if ['custom.js'], load '/static/js/custom.js' file
 
   # 全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能
