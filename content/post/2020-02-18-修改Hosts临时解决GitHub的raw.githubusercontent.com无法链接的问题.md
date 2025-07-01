@@ -15,23 +15,23 @@ url: "/archives/1300.html"
 
 ## 解决方法
 
+使用cloudflare代理吧
+
+![image-20240620114348301](https://img-cloud.zhoujie218.top/2024/06/20/6673a5790c0ab.png)
+
 ### 查询真实IP
 
-通过[`IPAddress.com`](https://www.ipaddress.com/)首页,输入`raw.githubusercontent.com`查询到真实IP地址 [![1.jpg](https://static.ioiox.com/usr/uploads/2019/11/1639029163.jpg "1.jpg")](https://static.ioiox.com/usr/uploads/2019/11/1639029163.jpg)
+通过[`IPAddress.com`](https://www.ipaddress.com/)首页,输入`raw.githubusercontent.com`查询到真实IP地址
 
 ### 修改hosts
 
-CentOS及macOS直接在终端输入
+CentOS及macOS直接在终端输入 \`\`\` sudo vi /etc/hosts~~
 
 ```
-sudo vi /etc/hosts
-```
+添加以下内容保存即可 ```
+199<span class="hljs-selector-class">.232</span><span class="hljs-selector-class">.4</span><span class="hljs-selector-class">.133</span> <span class="hljs-selector-tag">raw</span><span class="hljs-selector-class">.githubusercontent</span><span class="hljs-selector-class">.com
 
-添加以下内容保存即可
-
-```
-199.232.4.133 raw.githubusercontent.com
-
+</span>
 ```
 
 * * *

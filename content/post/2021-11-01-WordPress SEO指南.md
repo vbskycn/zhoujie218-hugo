@@ -23,7 +23,9 @@ WordPress的优势太多了：
 
 虽然WordPress并不能说是完美搜索引擎友好的，但至少是友好度非常高的CMS之一，在各种插件帮助下和适当设置后， WordPress搭建的网站是可以做到比较完美SEO的。
 
-这篇WordPress SEO指南就简单讨论一下优化WordPress网站的几个要素。相同的考虑也适用于其它博客系统。这里只谈技术性优化，关于博客的运营、市场研究、文章写作等问题，可以参考以前翻译的[博客SEO指南](https://www.seozac.com/seo-tips/blog-seo/)。
+这篇WordPress SEO指南就简单讨论一下优化WordPress网站的几个要素。相同的考虑也适用于其它博客系统。这里只谈技术性优化，关于博客的运营、市场研究、文章写作等问题，可以参考以前翻译的博客SEO指南。
+
+![image-20240620114704061](https://img-cloud.zhoujie218.top/2024/06/20/6673a63c77d9f.png)
 
 ## 标题标签和描述标签
 

@@ -94,4 +94,4 @@ npm install && node index.js --wizard=false
 
 py程序下载地址：
 
-\[login\_email\] https://www.zhoujie218.top/wp-content/uploads/file/wp-img\_to\_hugo.rar \[/login\_email\]
+\[login\_email\] https://img-cloud.zhoujie218.top/wp-content/uploads/file/wp-img\_to\_hugo.rar \[/login\_email\]
