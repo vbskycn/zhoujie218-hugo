@@ -22,7 +22,7 @@ summaryLength = 140
   subtitle = "记录生活点滴"
   keywords = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
   description = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
-  busuanzi = true #启用不算子网页统计
+  busuanzi = false #启用不算子网页统计
   googleAd = ""  #ca-pub-xxxxxxxxxxxxxx
   localSearch = true # 启用本地搜索
 
