@@ -1,5 +1,6 @@
-baseURL = "https://www.zhoujie218.cn/"
+baseURL = "https://blog.zhoujie218.top/"
 languageCode = "zh-CN"
+defaultContentLanguage = "zh-hans"
 title = "周杰个人博客"
 theme = "maupassant"
 googleAnalytics = ""  # UA-XXXXXXXX-X/G-XXXXXXXXXX
@@ -20,8 +21,8 @@ summaryLength = 140
 [params]
   author = "zhoujie"
   subtitle = "记录生活点滴"
-  keywords = "zhoujie218,zhoujie218.top,zhou,www.zhoujie218.cn,blog.zhoujie218.top,周杰,记录点滴生活"
-  description = "zhoujie218,zhoujie218.top,zhou,www.zhoujie218.cn,blog.zhoujie218.top,周杰,记录点滴生活"
+  keywords = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
+  description = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
   busuanzi = false #启用不算子网页统计
   googleAd = "ca-pub-6941806026814791"  #ca-pub-xxxxxxxxxxxxxx
   localSearch = true # 启用本地搜索
