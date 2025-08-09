@@ -56,7 +56,7 @@ tags:
 url: "/archives/1018"
 ```
 
-上面的配置文件中使用了**url**，所以该文章最后的链接是[https://img-cloud.zhoujie218.top/archives/1018](https://img-cloud.zhoujie218.top/archives/1018.html)/如果将**url**改为**slug**，如下所示。
+上面的配置文件中使用了**url**，所以该文章最后的链接是[https://www.zhoujie218.top/archives/1018](https://www.zhoujie218.top/archives/1018.html)/如果将**url**改为**slug**，如下所示。
 
 ```yaml
 title: "Drcom下如何优雅地使用路由器上网"
