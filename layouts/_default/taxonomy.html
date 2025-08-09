@@ -23,7 +23,7 @@
         </header>
         {{ partial "post-meta.html" . }}
         <div class="post-content">
-            {{ .Summary }}……
+            {{ (.Summary | plainify) | truncate 180 }}……
             <p class="readmore"><a href="{{ .Permalink }}">{{ i18n "continueReading" }}</a></p>
         </div>
     </article>
