@@ -1,6 +1,6 @@
 <footer id="footer">
     <div>
-        &copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }} By {{ .Site.Author.name }}</a>
+        &copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL | absURL }}">{{ .Site.Title }} By {{ .Site.Params.author }}</a>
         {{ if .Site.Params.beian }}
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">{{.Site.Params.beian}}</a>
         {{ end }}
@@ -130,10 +130,7 @@
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='{{ "js/totop.js?v=0.0.0" | relURL }}' async=""></script>
-{{- /* Remove UA legacy include that causes errors on new Hugo. Only include GA4 if template exists. */ -}}
-{{- if and (hasPrefix .Site.GoogleAnalytics "G-") (templates.Exists "_internal/google_analytics.html") -}}
-    {{ template "_internal/google_analytics.html" . }}
-{{- end -}}
+{{- /* GA include removed to avoid .Site.GoogleAnalytics access on new Hugo */ -}}
 
 {{ partial "copy_button" . }}
 

@@ -112,3 +112,10 @@ summaryLength = 140
     name = "关于"
     url = "/about/"
     weight = 6
+
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

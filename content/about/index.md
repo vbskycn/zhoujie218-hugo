@@ -1,6 +1,6 @@
 ---
 title: "关于"
-date: "2020-08-8"
+date: "2020-08-08"
 description: zhoujie218,zhoujie218.top,zhou,周杰,记录点滴生活
 ---
 
