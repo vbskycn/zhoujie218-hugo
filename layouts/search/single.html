@@ -13,72 +13,81 @@
 <script type="text/javascript">
     function getUrlParameter (sParam) {
         var query = window.location.search || window.location.href.split('?')[1] || '';
-        var sPageURL = query.replace(/^\?/, '');
+        var sPageURL = (query.charAt(0) === '?') ? query.substring(1) : query;
         var sURLVariables = sPageURL.split('&');
-        var sParameterName,
-            i;
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameter = sURLVariables[i].split('=');
+            if (sParameter[0] === sParam) {
+                return sParameter[1] === undefined ? '' : decodeURIComponent(sParameter[1].replace(/\+/g, ' '));
             }
         }
+        return '';
     }
 
-    $(function () {
-        var q = getUrlParameter("q");
-        $("span.keyword").text(q);
-        $("article.post").not('.template').remove();
-        var $container = $("div.res-cons");
-        $container.append($('<p class="loading">正在加载索引…</p>'));
+    document.addEventListener('DOMContentLoaded', function () {
+        var q = getUrlParameter('q');
+        var keywordEl = document.querySelector('span.keyword');
+        if (keywordEl) keywordEl.textContent = q || '';
 
-        $.ajax({
-            url: '{{ "index.json" | relURL }}?v={{ now.Unix }}',
-            dataType: 'json',
-            cache: false
-        }).done(function(items){
-            try {
-                if (typeof items === 'string') {
-                    items = JSON.parse(items);
+        var container = document.querySelector('div.res-cons');
+        // loading hint
+        var loading = document.createElement('p');
+        loading.className = 'loading';
+        loading.textContent = '正在加载索引…';
+        container.appendChild(loading);
+
+        function create(elem, cls, text) {
+            var e = document.createElement(elem);
+            if (cls) e.className = cls;
+            if (text !== undefined) e.textContent = text;
+            return e;
+        }
+
+        // fetch index.json with cache busting
+        var url = '{{ "index.json" | relURL }}' + '?v=' + Date.now();
+        fetch(url, { cache: 'no-store' })
+            .then(function (resp) { return resp.json(); })
+            .then(function (items) {
+                container.removeChild(loading);
+                if (!Array.isArray(items)) items = [];
+                var kw = (q || '').toLowerCase().trim();
+                var hits = 0;
+                items.forEach(function (it) {
+                    var title = (it.title || '').toString();
+                    var desc = (it.description || it.summary || '').toString();
+                    var ok = title.toLowerCase().indexOf(kw) >= 0 || desc.toLowerCase().indexOf(kw) >= 0;
+                    if (ok) {
+                        hits++;
+                        var article = create('article', 'post');
+                        var header = create('header');
+                        var h1 = create('h1', 'post-title');
+                        var a = create('a', null, title);
+                        a.href = it.permalink;
+                        h1.appendChild(a);
+                        header.appendChild(h1);
+                        article.appendChild(header);
+                        if (it.date) {
+                            var t = create('time', 'post-meta meta-date', it.date);
+                            article.appendChild(t);
+                        }
+                        var content = create('div', 'post-content', (desc).substring(0, 180) + '……');
+                        article.appendChild(content);
+                        var more = create('p', 'readmore');
+                        var moreA = create('a', null, '{{ i18n "continueReading" }}');
+                        moreA.href = it.permalink;
+                        more.appendChild(moreA);
+                        article.appendChild(more);
+                        container.appendChild(article);
+                    }
+                });
+                if (hits === 0) {
+                    container.appendChild(create('p', 'noresult', '没有找到匹配内容'));
                 }
-            } catch(e) {
-                console.error('JSON parse error:', e);
-                $container.find('p.loading').remove();
-                $container.append($('<p class="error">索引解析失败</p>'));
-                return;
-            }
-            var kw = (q || '').toLowerCase().trim();
-            var hits = 0;
-            if (!Array.isArray(items)) {
-                console.warn('index.json unexpected shape', items);
-                items = [];
-            }
-            items.forEach(function(it){
-                var title = (it.title || '').toString();
-                var desc = (it.description || it.summary || '').toString();
-                var hit = (title.toLowerCase().indexOf(kw) >= 0) || (desc.toLowerCase().indexOf(kw) >= 0);
-                if (hit) {
-                    hits++;
-                    var url = it.permalink;
-                    var pubDate = it.date || '';
-                    var post = $("<article class='post'></article>");
-                    var header = $("<header><h1 class='post-title'></h1></header>");
-                    header.find('h1').append($('<a></a>').attr('href', url).text(title));
-                    post.append(header);
-                    if (pubDate) post.append($("<time class='post-meta meta-date'></time>").text(pubDate));
-                    post.append($("<div class='post-content'></div>").text((desc).substring(0, 180) + "……"));
-                    post.append($("<p class='readmore'></p>").append($('<a></a>').attr('href', url).text({{ i18n "continueReading" }})));
-                    $container.append(post);
-                }
+            })
+            .catch(function (err) {
+                container.removeChild(loading);
+                container.appendChild(create('p', 'error', '无法加载索引文件 index.json'));
             });
-            $container.find('p.loading').remove();
-            if (hits === 0) {
-                $container.append($('<p class="noresult">没有找到匹配内容</p>'));
-            }
-        }).fail(function(xhr){
-            $container.find('p.loading').remove();
-            $container.append($('<p class="error">无法加载索引文件 index.json（HTTP '+xhr.status+'）</p>'));
-        });
     });
 </script>
 {{ end }} 
