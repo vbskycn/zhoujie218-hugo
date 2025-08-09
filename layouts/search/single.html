@@ -1,0 +1,54 @@
+{{ define "content"}}
+{{- $datetime_format := i18n "Datetime_format" -}}
+<div class="res-cons">
+    <h3 class="archive-title">
+        {{ i18n "Search" }}
+        <span class="keyword">{{ i18n "Search_keyword" }}</span>
+        {{ i18n "Search_results" }}
+    </h3>
+
+    <article class="post template" style="display:none"></article>
+</div>
+
+<script type="text/javascript">
+    function getUrlParameter (sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+    }
+
+    $(function () {
+        var q = getUrlParameter("q");
+        $("span.keyword").text(q);
+        $("article.post").not('.template').remove();
+        $.getJSON('{{ "index.json" | relURL }}', function(items){
+            var kw = q.toLowerCase();
+            items.forEach(function(it){
+                var title = it.title || "";
+                var desc = it.description || it.summary || "";
+                var body = it.content || "";
+                var hit = title.toLowerCase().indexOf(kw) >= 0 || desc.toLowerCase().indexOf(kw) >= 0 || body.toLowerCase().indexOf(kw) >= 0;
+                if (hit) {
+                    var url = it.permalink;
+                    var pubDate = it.date || '';
+                    var post = $("<article class='post'></article>");
+                    var header = $("<header><h1 class='post-title'></h1></header>");
+                    header.find('h1').append($('<a></a>').attr('href', url).text(title));
+                    post.append(header);
+                    if (pubDate) post.append($("<time class='post-meta meta-date'></time>").text(pubDate));
+                    post.append($("<div class='post-content'></div>").text((desc || body).substring(0, 180) + "……"));
+                    post.append($("<p class='readmore'></p>").append($('<a></a>').attr('href', url).text({{ i18n "continueReading" }})));
+                    $("div.res-cons").append(post);
+                }
+            });
+        });
+    });
+</script>
+{{ end }} 
