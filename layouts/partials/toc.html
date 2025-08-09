@@ -90,7 +90,7 @@
             if (!$main.length || !$main.offset()) return;
             var leftPos = $main.offset().left;
             if (leftPos > 220) {
-                var targetWidth = Math.min(leftPos - 20, 260); // cap width to avoid too wide
+                var targetWidth = Math.min(leftPos - 20, 200); // cap width to avoid too wide
                 $postToc.css({ "width": targetWidth, "margin-left": (0 - targetWidth - 10) });
             } else {
                 $postToc.css({ "width": 200, "margin-left": -210 });
