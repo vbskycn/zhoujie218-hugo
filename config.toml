@@ -1,4 +1,4 @@
-baseURL = "https://blog.zhoujie218.top/"
+baseURL = "/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh-hans"
 title = "周杰个人博客"
