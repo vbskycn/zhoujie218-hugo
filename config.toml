@@ -1,9 +1,13 @@
-baseURL = "/"
+baseURL = "https://blog.zhoujie218.top/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh-hans"
 title = "周杰个人博客"
 theme = "maupassant"
 googleAnalytics = ""  # UA-XXXXXXXX-X/G-XXXXXXXXXX
+
+# Enable JSON output for search index
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 ## 保持分类的原始名字（false会做转小写处理）
 preserveTaxonomyNames = true
@@ -78,7 +82,6 @@ summaryLength = 140
 
 ## 配置网站菜单
 [menu]
-
 
   [[menu.main]]
     identifier = "diannaowangruo"

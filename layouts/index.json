@@ -5,7 +5,6 @@
     "permalink" .Permalink
     "description" .Description
     "summary" (.Summary | plainify)
-    "content" (.Plain | plainify)
     "date" (.Date.Format "2006-01-02")
   -}}
   {{- $.Scratch.Add "items" (slice $item) -}}

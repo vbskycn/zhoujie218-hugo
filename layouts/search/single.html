@@ -33,8 +33,7 @@
             items.forEach(function(it){
                 var title = it.title || "";
                 var desc = it.description || it.summary || "";
-                var body = it.content || "";
-                var hit = title.toLowerCase().indexOf(kw) >= 0 || desc.toLowerCase().indexOf(kw) >= 0 || body.toLowerCase().indexOf(kw) >= 0;
+                var hit = title.toLowerCase().indexOf(kw) >= 0 || desc.toLowerCase().indexOf(kw) >= 0;
                 if (hit) {
                     var url = it.permalink;
                     var pubDate = it.date || '';
