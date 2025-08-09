@@ -24,7 +24,7 @@ summaryLength = 140
   keywords = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
   description = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
   busuanzi = false #启用不算子网页统计
-  googleAd = "ca-pub-6941806026814791"  #ca-pub-xxxxxxxxxxxxxx
+  googleAd = "ca-pub-6941806026814791"
   localSearch = false # 关闭本地搜索
 
   # 这里我存放在了主题的static文件夹里，根目录的似乎也可以

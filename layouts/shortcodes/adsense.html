@@ -1,7 +1,7 @@
 <ins class="adsbygoogle"
      style="display:block"
-     data-ad-client="{{ .Site.Params.googleAd }}"
+     data-ad-client="{{ .Get "client" | default .Site.Params.googleAd }}"
      data-ad-slot="{{ .Get "slot" }}"
-     data-ad-format="auto"
+     data-ad-format="{{ .Get "format" | default "auto" }}"
      data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> 
