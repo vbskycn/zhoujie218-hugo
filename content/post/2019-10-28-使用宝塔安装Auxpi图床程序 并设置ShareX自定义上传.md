@@ -23,7 +23,7 @@ Aupxi 是一个集合多家图床 API 的图床程序，可以将图片上传至
 
 ## 安装
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi2-1024x451.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi2-1024x451.png)
 
 #### 安装宝塔
 
@@ -59,7 +59,7 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash i
 
 如下图：
 
-![uud.me-1559046365.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/QLcCQhTAuaVDqWYD20191028-3.jpg "uud.me-1559046365.jpg")
+![uud.me-1559046365.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/QLcCQhTAuaVDqWYD20191028-3.jpg "uud.me-1559046365.jpg")
 
 注意选择 **伪静态**
 
@@ -69,17 +69,17 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash i
 
 如下图：
 
-![uud.me-1559046832.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/WP2rcvBXU4qASoZQ20191028-3.jpg "uud.me-1559046832.jpg") ![uud.me-1559046973.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/tzIQ0RLUXwujc05120191028-3.jpg "uud.me-1559046973.jpg")
+![uud.me-1559046832.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/WP2rcvBXU4qASoZQ20191028-3.jpg "uud.me-1559046832.jpg") ![uud.me-1559046973.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/tzIQ0RLUXwujc05120191028-3.jpg "uud.me-1559046973.jpg")
 
 #### 设置反向代理
 
 如下图：
 
-![uud.me-1559047090.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/uZeMHWLRoJyldayM20191028-3.jpg "uud.me-1559047090.jpg")
+![uud.me-1559047090.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/uZeMHWLRoJyldayM20191028-3.jpg "uud.me-1559047090.jpg")
 
 注意需要**关闭缓存**
 
-![uud.me-1559047141.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6xY4yDrRhuTDu4gt20191028-3.jpg "uud.me-1559047141.jpg")
+![uud.me-1559047141.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6xY4yDrRhuTDu4gt20191028-3.jpg "uud.me-1559047141.jpg")
 
 目标URL填写为 [](http://127.0.0.1/)[http://127.0.0.1](http://127.0.0.1):2333
 
@@ -87,11 +87,11 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash i
 
 提交后，点击**配置文件** 进行修改：
 
-![uud.me-1559047243.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/CJYN3AFwmUpiV99520191028-3.jpg "uud.me-1559047243.jpg")
+![uud.me-1559047243.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/CJYN3AFwmUpiV99520191028-3.jpg "uud.me-1559047243.jpg")
 
 删除红框中的内容：
 
-![uud.me-1559047336.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/DoORJLpuY7NjXLhD20191028-3.jpg "uud.me-1559047336.jpg")
+![uud.me-1559047336.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/DoORJLpuY7NjXLhD20191028-3.jpg "uud.me-1559047336.jpg")
 
 #### 下载图床程序
 
@@ -103,13 +103,13 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/aimerforreimu/A
 
 见到如下显示，即下载完成，并且已经自动初始化
 
-- ![uud.me-1559048538.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/lJ2NwXNs6eVfYWXL20191028-3.jpg "uud.me-1559048538.jpg")
+- ![uud.me-1559048538.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/lJ2NwXNs6eVfYWXL20191028-3.jpg "uud.me-1559048538.jpg")
 
 #### 创建数据库
 
 回到宝塔面板，创建数据库：
 
-![uud.me-1559048716.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/TGNKPGsPIBVTzfzi20191028-3.jpg "uud.me-1559048716.jpg")
+![uud.me-1559048716.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/TGNKPGsPIBVTzfzi20191028-3.jpg "uud.me-1559048716.jpg")
 
 填写好数据库名、数据库用户名、密码，待会要用
 
@@ -135,7 +135,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/aimerforreimu/A
 
 打开`app.conf`，找到以下部分，同样填写创建的数据库信息：
 
-![uud.me-1559049494.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/A137fYMaIhIKmfWg20191028-3.jpg "uud.me-1559049494.jpg")
+![uud.me-1559049494.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/A137fYMaIhIKmfWg20191028-3.jpg "uud.me-1559049494.jpg")
 
 #### 迁移数据库
 
@@ -202,19 +202,19 @@ cd /root/auxpi
 
 运行成功后，就可以打开站点绑定的域名，进入站点，用之前创建的管理员账号登录后台，界面如下：
 
-![uud.me-1559128673.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/JL0Kw8H1KcEvNycX20191028-3.jpg "uud.me-1559128673.jpg")
+![uud.me-1559128673.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/JL0Kw8H1KcEvNycX20191028-3.jpg "uud.me-1559128673.jpg")
 
 点击右上角用户名，进入个人用户后台，然后再次点击左侧菜单栏的 **后台管理** 进入后台：
 
-![uud.me-1559128737.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/qrwHxqOHnMhJRr0f20191028-3.jpg "uud.me-1559128737.jpg")
+![uud.me-1559128737.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/qrwHxqOHnMhJRr0f20191028-3.jpg "uud.me-1559128737.jpg")
 
 之后根据需求进行设置：
 
-![uud.me-1559128757.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/xyeo1BK3bHT5gowR20191028-3.jpg "uud.me-1559128757.jpg")
+![uud.me-1559128757.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/xyeo1BK3bHT5gowR20191028-3.jpg "uud.me-1559128757.jpg")
 
 如果你想使用 API 配合 ShareX 上传的话，似乎需要关闭 **站点设置** 里的 **API认证**：
 
-![uud.me-1559128854.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/x9ef2BdRburEyyFw20191028-3.jpg "uud.me-1559128854.jpg")
+![uud.me-1559128854.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/x9ef2BdRburEyyFw20191028-3.jpg "uud.me-1559128854.jpg")
 
 关闭后，记得点击右上角的 **保存**
 
@@ -222,13 +222,13 @@ cd /root/auxpi
 
 #### 设置自定义目的地
 
-![uud.me-1559128977.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/BqyFgUZVBZqXskj520191028-3.jpg "uud.me-1559128977.jpg")
+![uud.me-1559128977.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/BqyFgUZVBZqXskj520191028-3.jpg "uud.me-1559128977.jpg")
 
 #### 设置Request
 
 需要填写的内容如下：
 
-![uud.me-1559129098.jpg](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6GA3A0h1yDVF5jQy20191028-3.jpg "uud.me-1559129098.jpg")`](mailto:code>123123123</code> 用户名为:<code>hello</code> 邮箱为: <code>auxpi@0w0.tn</code)`[要注意一下第2点的URL，需要换成你自己的域名：](mailto:code>123123123</code> 用户名为:<code>hello</code> 邮箱为: <code>auxpi@0w0.tn</code)[](http://yourname/api/v1/upload)[http://yourname/api/v1/upload](http://yourname/api/v1/upload)
+![uud.me-1559129098.jpg](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6GA3A0h1yDVF5jQy20191028-3.jpg "uud.me-1559129098.jpg")`](mailto:code>123123123</code> 用户名为:<code>hello</code> 邮箱为: <code>auxpi@0w0.tn</code)`[要注意一下第2点的URL，需要换成你自己的域名：](mailto:code>123123123</code> 用户名为:<code>hello</code> 邮箱为: <code>auxpi@0w0.tn</code)[](http://yourname/api/v1/upload)[http://yourname/api/v1/upload](http://yourname/api/v1/upload)
 
 另外需要注意的是，**apiSelect** **的值**需要**注意区分大小写**
 
@@ -236,7 +236,7 @@ cd /root/auxpi
 
 如下图：
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/使用宝塔安装auxpi图床程序-并设置sharex自定义上传20191119.png) ![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/使用宝塔安装auxpi图床程序-并设置sharex自定义上传20191119-1.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/使用宝塔安装auxpi图床程序-并设置sharex自定义上传20191119.png) ![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/使用宝塔安装auxpi图床程序-并设置sharex自定义上传20191119-1.png)
 
 这里共享一份我的图床服务器
 
@@ -266,4 +266,4 @@ location / { rewrite ^/$ /Ali last; #加在反向代理里面 proxy_pass [http:/
 
 这样就可以了
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi.png)`
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi.png)`

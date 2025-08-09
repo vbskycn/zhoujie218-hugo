@@ -57,7 +57,7 @@ sudo nginx -s reload
 
 到[](https://release.larsjung.de/h5ai/develop/)[https://release.larsjung.de/h5ai/develop/](https://release.larsjung.de/h5ai/develop/)下载最新版的h5ai，并解压到开放下载的目录，目录层级如下图
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/202330f4b941ccgmlm6ogg20190723-1.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/202330f4b941ccgmlm6ogg20190723-1.png)
 
 将以下两个目录开启777权限 ./software/\_h5ai/private/cache ./software/\_h5ai/public/cache
 
@@ -67,7 +67,7 @@ http(s)://IP或域名:18081/\_h5ai/public/index.php可以查看 \_h5ai 的全部
 
 http(s)://IP或域名:18081/ 应该能直接打开了，最好修改下\_h5aiprivateconfoptions.json里面的配置内容。 比如搜索定位到"hidden"，添加隐藏目录规则。其他设置参考官方文件说明。 "hidden": \["^.", "^\_h5ai", "^@eaDir"\],
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/201649nrodmdx8r48hdd0720190723-1.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/201649nrodmdx8r48hdd0720190723-1.png)
 
 # 群晖web开启目录浏览功能
 

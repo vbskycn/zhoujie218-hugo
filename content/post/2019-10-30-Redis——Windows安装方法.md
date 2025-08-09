@@ -18,23 +18,23 @@ url: "/archives/971.html"
 
 现在进行客户端调用，因为只有临时服务，所以不要关闭上面窗口，我们打开文件夹下redis-cli.exe执行文件，进入客户端Dos窗口，敲入Set uid 1 返回OK ，表示写入内存中；我们再敲 Get uid，会返回一个Value值1，如下图：
 
-![2](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030.jpg)
+![2](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030.jpg)
 
 **2.默认服务安装** 我们不可能每次要用Redis都去开一下临时服务，可不可以跟其它服务一样能够开机自启？当然是可以得，但是有点区别，后续会讲。进入Redis安装包文件下，敲入命令注册服务：redis-server.exe --service-install redis.windows.conf --loglevel verbose（一定要把临时服务关闭，否则安装不上）。
 
 根据英文提示显然服务已经安装了，在window Service列表中能看到，但是没启动，也无法手动启动，只有敲命令启动/暂停/卸载服务：redis-server.exe --service-start；redis-server.exe --service-stop；redis-server.exe --service-uninstall。
 
-![4](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-1.jpg)
+![4](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-1.jpg)
 
 **3.自定义服务安装** 所谓自定义服务安装，就是将服务重命名。进入Redis安装包文件下，注册服务：redis-server.exe --service-install redis.windows.conf --Service-name RedisServer1 --loglevel verbose
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-2.jpg)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-2.jpg)
 
 备注：通过以上面命令，会在window  Service列表出现"redisserver1"服务，但此服务不是启动状态，需要调下面命令启动服务。
 
 与默认安装一样，唯一不同的就是在相应安装服务、启动、关闭、卸载服务时需要加上自定义Redis服务名：redis-server.exe --service-start --Service-name RedisServer1；redis-server.exe --service-stop --Service-name RedisServer1； redis-server.exe --service-uninstall --Service-name RedisServer1通过命令行卸载自定义服务后，电脑重启一下，卸载服务会全部完成。
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030.png)
 
 **4.Redis主从服务安装** 主从服务可以实现负载均衡，其实就是把上面Redis安装文件包，拷贝到相应目录，修改主、从服务器配置文件中IP、Port，同时从服务器要指定主服务器 的IP、Port，按照Redis自定义服务安装中命令进行服务安装、服务启动、服务关闭、服务卸载即可使用。
 
@@ -44,7 +44,7 @@ url: "/archives/971.html"
 
 从服务器（RedisServer2）redis.windows.conf修改如下：port  6380；slaveof  127.0.0.1  6379，修改地方看下图：
 
-![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-1.png) ![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-2.png) ![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-3.png) ![](http://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-4.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-1.png) ![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-2.png) ![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-3.png) ![](https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis——windows安装方法20191030-4.png)
 
 我们用RedisManagement分别进行两个端口连接做客户端，在主服务添加键可以同步到从服务，从服务添加无效。如果从服务没有配置从属关系，我们可以在Redis管理器中对从服务进行配置，打开控制台，输入slaveof 127.0.0.1 6379，效果一样。
 

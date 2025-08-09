@@ -15,7 +15,7 @@ url: "/archives/2436.html"
 
 　　【注意】Frp分为服务器端和客户端，服务器端名为：frps，客户端名为frpc。安装时务必注意区分。
 
-![](/images/2022/07/098a8b1f8aae20e9bcfb1ad628aec981.png)
+![](https://img-cloud.zhoujie218.top/wp-content/uploads/2022/07/20220701041650268.png)
 
 一、资源获取
 

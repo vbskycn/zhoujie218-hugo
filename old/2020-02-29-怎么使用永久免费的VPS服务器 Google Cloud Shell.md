@@ -17,29 +17,29 @@ Google Cloud Shell 让您可以直接在浏览器中通过命令行访问云端�
 
 官方文档： [https://cloud.google.com/shell/docs](https://cloud.google.com/shell/docs)
 
-![](/images/2020/02/561b9e5c2e1ab301f403771314d6a5b9.gif)
+![](https://cloud.google.com/shell/docs/images/cloud-shell-activate.gif)
 
 已登录的用户在网络浏览器中从 GOOGLE CLOUD CONSOLE 启动 CLOUD SHELL 实例，并检查 GOOGLE CLOUD 组件的版本。
 
-![](/images/2020/02/3d8ef6db51aad6372d7b98267c993e79.png)
+![](https://cloud.google.com/images/products/cloud-shell/full-power-access.png)
 
 ## 安全可靠且默认经过全面身份验证
 
 Cloud Shell 提供内置授权，方便您访问 Google Cloud Platform 上托管的项目和资源。
 
-![](/images/2020/02/b5b9d55fbcad0713d923fb5fc3ef53df.png)
+![](https://cloud.google.com/images/products/cloud-shell/secure-fully-authenticated.png)
 
 ## 您喜爱的工具已预先装好，并且是最新版本
 
 Cloud Shell 预装了许多您喜爱的命令行工具，包括 bash 和 sh，以及 emacs 和 vim，并且均为最新版本。MySQL 客户端、Docker 和 Kubernetes 等管理工具已配置完毕并准备就绪，因此您无需费神思考如何安装最新版本工具及其所有依赖项，只要连接到 Cloud Shell 即可使用！
 
-![](/images/2020/02/92890bfa3e1977d0da5a17d3ae4de958.png)
+![](https://cloud.google.com/images/products/cloud-shell/pre-installed-tools.png)
 
 ## 方便开发者使用
 
 开发者可以轻松使用所有自己喜欢的且预先配置好的开发工具，包括 Java、Go、Python、Node.js、PHP 及 Ruby 开发和部署工具。您可以在 Cloud Shell 实例中运行 Web 应用，并通过浏览器进行预览，然后使用预先配置的 Git 和 Mercurial 客户端将其提交回代码库。
 
-![](/images/2020/02/1a219a3bf0ef1ab27ea448bb83d6db3f.png)
+![](https://cloud.google.com/images/products/cloud-shell/developer-ready.png)
 
 ## 5GB 永久性磁盘存储空间
 
@@ -93,7 +93,7 @@ ssh -p 6000 root@devshell-vm-38591f26-0c1a-4990-8066-eef88a294bd1.cloudshell.dev
 
 目前还没有 好方法，但是可以用ssh隧道代理
 
-![](/images/2020/02/a345d6cf4065c4d22da4df316234c52e.png)
+![](https://1.bp.blogspot.com/-VdjgoaiBqaU/XlPCBNCROjI/AAAAAAAAB2g/YG5n4Rj6IhEMnGBoGWN6XNIptgpUt04ZACLcBGAsYHQ/s1600/20200224202948.png)
 
 注意
 
