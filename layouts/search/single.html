@@ -28,13 +28,19 @@
         var q = getUrlParameter("q");
         $("span.keyword").text(q);
         $("article.post").not('.template').remove();
-        $.getJSON('{{ "index.json" | relURL }}', function(items){
-            var kw = q.toLowerCase();
+        var $container = $("div.res-cons");
+        $container.append($('<p class="loading">正在加载索引…</p>'));
+
+        $.getJSON('{{ "index.json" | relURL }}?v={{ now.Unix }}')
+          .done(function(items){
+            var kw = (q || '').toLowerCase();
+            var hits = 0;
             items.forEach(function(it){
                 var title = it.title || "";
                 var desc = it.description || it.summary || "";
-                var hit = title.toLowerCase().indexOf(kw) >= 0 || desc.toLowerCase().indexOf(kw) >= 0;
+                var hit = (title.toLowerCase().indexOf(kw) >= 0) || (desc.toLowerCase().indexOf(kw) >= 0);
                 if (hit) {
+                    hits++;
                     var url = it.permalink;
                     var pubDate = it.date || '';
                     var post = $("<article class='post'></article>");
@@ -42,12 +48,20 @@
                     header.find('h1').append($('<a></a>').attr('href', url).text(title));
                     post.append(header);
                     if (pubDate) post.append($("<time class='post-meta meta-date'></time>").text(pubDate));
-                    post.append($("<div class='post-content'></div>").text((desc || body).substring(0, 180) + "……"));
+                    post.append($("<div class='post-content'></div>").text((desc).substring(0, 180) + "……"));
                     post.append($("<p class='readmore'></p>").append($('<a></a>').attr('href', url).text({{ i18n "continueReading" }})));
-                    $("div.res-cons").append(post);
+                    $container.append(post);
                 }
             });
-        });
+            $container.find('p.loading').remove();
+            if (hits === 0) {
+                $container.append($('<p class="noresult">没有找到匹配内容</p>'));
+            }
+          })
+          .fail(function(){
+            $container.find('p.loading').remove();
+            $container.append($('<p class="error">无法加载索引文件 index.json（可能未生成或路径不对）。</p>'));
+          });
     });
 </script>
 {{ end }} 
