@@ -19,6 +19,7 @@
         box-sizing: border-box;
         z-index: 999;
         cursor: pointer;
+        max-width: 260px;
         max-height: 70%;
         overflow-y: auto;
         overflow-x: hidden;
@@ -89,7 +90,8 @@
             if (!$main.length || !$main.offset()) return;
             var leftPos = $main.offset().left;
             if (leftPos > 220) {
-                $postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) });
+                var targetWidth = Math.min(leftPos - 20, 260); // cap width to avoid too wide
+                $postToc.css({ "width": targetWidth, "margin-left": (0 - targetWidth - 10) });
             } else {
                 $postToc.css({ "width": 200, "margin-left": -210 });
             }
