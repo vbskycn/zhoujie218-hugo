@@ -14,7 +14,7 @@
         -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
         box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
         word-wrap: break-word;
-        white-space: nowrap;
+        white-space: normal;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         z-index: 999;
@@ -36,6 +36,18 @@
 
     .post-toc .post-toc-content {
         font-size: 15px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .post-toc .post-toc-content a {
+        display: inline-block;
+        max-width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        line-height: 1.6;
     }
 
     .post-toc .post-toc-content>nav>ul {
