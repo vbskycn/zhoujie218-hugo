@@ -3,7 +3,7 @@
 <div class="res-cons">
     <h3 class="archive-title">
         {{ i18n "Search" }}
-        <span class="keyword">{{ i18n "Search_keyword" }}</span>
+        <span class="keyword"></span>
         {{ i18n "Search_results" }}
     </h3>
 
@@ -12,9 +12,10 @@
 
 <script type="text/javascript">
     function getUrlParameter (sParam) {
-        var sPageURL = window.location.search.substring(1),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
+        var query = window.location.search || window.location.href.split('?')[1] || '';
+        var sPageURL = query.replace(/^\?/, '');
+        var sURLVariables = sPageURL.split('&');
+        var sParameterName,
             i;
         for (i = 0; i < sURLVariables.length; i++) {
             sParameterName = sURLVariables[i].split('=');
@@ -31,13 +32,30 @@
         var $container = $("div.res-cons");
         $container.append($('<p class="loading">正在加载索引…</p>'));
 
-        $.getJSON('{{ "index.json" | relURL }}?v={{ now.Unix }}')
-          .done(function(items){
-            var kw = (q || '').toLowerCase();
+        $.ajax({
+            url: '{{ "index.json" | relURL }}?v={{ now.Unix }}',
+            dataType: 'json',
+            cache: false
+        }).done(function(items){
+            try {
+                if (typeof items === 'string') {
+                    items = JSON.parse(items);
+                }
+            } catch(e) {
+                console.error('JSON parse error:', e);
+                $container.find('p.loading').remove();
+                $container.append($('<p class="error">索引解析失败</p>'));
+                return;
+            }
+            var kw = (q || '').toLowerCase().trim();
             var hits = 0;
+            if (!Array.isArray(items)) {
+                console.warn('index.json unexpected shape', items);
+                items = [];
+            }
             items.forEach(function(it){
-                var title = it.title || "";
-                var desc = it.description || it.summary || "";
+                var title = (it.title || '').toString();
+                var desc = (it.description || it.summary || '').toString();
                 var hit = (title.toLowerCase().indexOf(kw) >= 0) || (desc.toLowerCase().indexOf(kw) >= 0);
                 if (hit) {
                     hits++;
@@ -57,11 +75,10 @@
             if (hits === 0) {
                 $container.append($('<p class="noresult">没有找到匹配内容</p>'));
             }
-          })
-          .fail(function(){
+        }).fail(function(xhr){
             $container.find('p.loading').remove();
-            $container.append($('<p class="error">无法加载索引文件 index.json（可能未生成或路径不对）。</p>'));
-          });
+            $container.append($('<p class="error">无法加载索引文件 index.json（HTTP '+xhr.status+'）</p>'));
+        });
     });
 </script>
 {{ end }} 
