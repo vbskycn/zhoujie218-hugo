@@ -25,7 +25,7 @@ summaryLength = 140
   description = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
   busuanzi = false #启用不算子网页统计
   googleAd = "ca-pub-6941806026814791"  #ca-pub-xxxxxxxxxxxxxx
-  localSearch = true # 启用本地搜索
+  localSearch = false # 关闭本地搜索
 
   # 这里我存放在了主题的static文件夹里，根目录的似乎也可以
   #customCSS = ['douban.css', 'other.css']
@@ -79,11 +79,7 @@ summaryLength = 140
 ## 配置网站菜单
 [menu]
 
-  [[menu.main]]
-    identifier = "search"
-    name = "搜索"
-    url = "/search/"
-    weight = 1
+
   [[menu.main]]
     identifier = "diannaowangruo"
     name = "电脑网络"
