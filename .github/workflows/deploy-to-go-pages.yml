@@ -1,0 +1,75 @@
+name: Deploy Hugo to go-pages branch
+
+on:
+  # 推送到main分支时触发
+  push:
+    branches: ["main"]
+  
+  # 手动触发
+  workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: write
+
+# 并发控制
+concurrency:
+  group: "go-pages-deploy"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+      
+      - name: Build Hugo site
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo --minify --baseURL "/"
+      
+      - name: Deploy to go-pages branch
+        run: |
+          # 配置git身份
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 创建或切换到go-pages分支
+          if git show-ref --verify --quiet refs/remotes/origin/go-pages; then
+            git checkout -B go-pages origin/go-pages
+          else
+            git checkout --orphan go-pages
+          fi
+          
+          # 删除所有现有文件（除了.git目录）
+          git rm -rf . || true
+          
+          # 复制构建的静态文件
+          cp -r public/* .
+          
+          # 添加所有文件
+          git add .
+          
+          # 提交更改
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Deploy Hugo site to go-pages branch - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          fi
+          
+          # 强制推送到go-pages分支
+          git push origin go-pages --force
+          
+          echo "Successfully deployed to go-pages branch" 
