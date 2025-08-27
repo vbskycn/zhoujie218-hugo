@@ -31,6 +31,7 @@ summaryLength = 140
   googleAd = "ca-pub-6941806026814791"
   enableGoogleAds = false # 暂时关闭Google Ads
   enable51Analytics = false # 暂时关闭51统计
+  useLocalCDN = true # 使用本地CDN资源，提高加载速度
   localSearch = false # 关闭本地搜索
 
   # 这里我存放在了主题的static文件夹里，根目录的似乎也可以
