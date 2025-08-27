@@ -29,8 +29,8 @@ summaryLength = 140
   description = "zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"
   busuanzi = false #启用不算子网页统计
   googleAd = "ca-pub-6941806026814791"
-  enableGoogleAds = false # 暂时关闭Google Ads
-  enable51Analytics = false # 暂时关闭51统计
+  enableGoogleAds = true # 暂时关闭Google Ads
+  enable51Analytics = true # 暂时关闭51统计
   useLocalCDN = true # 使用本地CDN资源，提高加载速度
   localSearch = false # 关闭本地搜索
 
