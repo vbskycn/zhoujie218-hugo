@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on 周杰个人博客</title><link>/tags/docker/</link><description>Recent content in Docker on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>最近docker很难访问了,教你白嫖Cloudflare Workers 搭建 Docker Hub镜像加速服务</title><link>/archives/2626.html</link><pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate><guid>/archives/2626.html</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;最近docker很难访问了，很多镜像都关了，自己动免费辱一个专用镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="请不要使用我的地址随时可能关闭建议花5分钟时间自己搭一个"&gt;请不要使用我的地址，随时可能关闭，建议花5分钟时间自己搭一个&lt;/h2&gt;
+&lt;p&gt;基于Cloudflare Workers 搭建 Docker Hub镜像加速服务。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先要注册一个Cloudflare账号。&lt;/li&gt;
+&lt;li&gt;Cloudflare账号下域名的一级域名，推荐万网注册个top域名，再转移到Cloudflare，很便宜的。&lt;/li&gt;
+&lt;li&gt;注意 Worker 每天每免费账号有次数限制，为10万次。每分钟为1000次。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="步骤"&gt;步骤&lt;/h2&gt;
+&lt;p&gt;登录到CF的仪表盘 &lt;a href="https://dash.cloudflare.com/"&gt;https://dash.cloudflare.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击 workers-and-pages &amp;gt; 创建应用程序 &amp;gt; 创建 Worker &amp;gt; 点击保存 &amp;gt;点击完成 &amp;gt; 编辑代码&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/18/667157ca0b354.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/06/18/667157ca0b354.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="编辑代码"&gt;编辑代码&lt;/h3&gt;
+&lt;h4 id="编辑-workerjs-文件"&gt;编辑 worker.js 文件&lt;/h4&gt;
+&lt;p&gt;编辑覆盖后，ctrl + s 即可保存。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;HTML&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;./docker.html&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;export&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;default&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;async&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fetch&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;request&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;url&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;URL&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;request&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;url&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;path&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;url&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;pathname&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;originalHost&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;request&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;get&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;host&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;registryHost&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;registry-1.docker.io&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;path&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;startsWith&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;/v2/&amp;#34;&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Headers&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;request&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;set&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;host&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;registryHost&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;registryUrl&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;`https://&lt;/span&gt;&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;registryHost&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}${&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;path&lt;/span&gt;&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;`&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;registryRequest&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Request&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;registryUrl&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;method&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;request&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;method&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;body&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;request&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;body&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// redirect: &amp;#34;manual&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;redirect&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;follow&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;registryResponse&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;await&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fetch&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;registryRequest&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;console&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;log&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;registryResponse&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;status&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;responseHeaders&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Headers&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;registryResponse&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;responseHeaders&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;set&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;access-control-allow-origin&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;originalHost&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;responseHeaders&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;set&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;access-control-allow-headers&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;Authorization&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Response&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;registryResponse&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;body&lt;/span&gt;, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;status&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;registryResponse&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;status&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;statusText&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;registryResponse&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;statusText&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;responseHeaders&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; } &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Response&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;HTML&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;replace&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;/{{host}}/g&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;originalHost&lt;/span&gt;), {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;status&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;200&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;headers&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;text/html&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;1234567891011121314151617181920212223242526272829303132333435363738&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="编辑-dockerhtml-文件"&gt;编辑 docker.html 文件&lt;/h4&gt;
+&lt;p&gt;点击新建文件，创建此文件。ctrl + s 即可保存。&lt;/p&gt;</description></item><item><title>套娃：自用宝塔docker镜像</title><link>/archives/2596.html</link><pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate><guid>/archives/2596.html</guid><description>&lt;p&gt;&lt;strong&gt;套娃：自用宝塔docker镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目的：1分钟快速搭建 nginx php mysql 环境用于测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240216215522103" src="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;生产环境请用官方版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是我自用的宝塔docker镜像，用于测试&lt;/p&gt;
+&lt;h2 id="宝塔76"&gt;&lt;strong&gt;宝塔7.6&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;底层系统：官方centos7.9&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:one&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刚安装好宝塔，什么都没有&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:npm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装好了 nginx 1.21 php 7.4 mysql 5.7&lt;/p&gt;
+&lt;p&gt;phpmyadmin 5.0 redis 6.2&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -idt \
+ -p 3081:80 \
+ -p 3443:443 \
+ -p 38888:8888 \
+ -p 3888:888 \
+ --privileged \
+ -v /www1/wwwroot:/www/wwwroot \
+ -v /www1/server/data:/www/server/data \
+ -v /www1/server/panel/vhost:/www/server/panel/vhost \
+ -v /www1/backup:/www/backup \
+ --network=bridge \
+ --name baota \
+ --restart always \
+ zhoujie218/baota:npm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;端口可以自己定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;38888: 宝塔web管理端口&lt;/p&gt;
+&lt;p&gt;3888: phpmyadmin管理端口&lt;/p&gt;</description></item><item><title>通过 Docker 自建 Lsky Pro 图片审核接口</title><link>/archives/2557.html</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>/archives/2557.html</guid><description>&lt;h2 id="nsfw-是什么"&gt;NSFW 是什么&lt;/h2&gt;
+&lt;p&gt;NSFW 是一个英文网络用语，是 Not Safe For Work 或者 Not Suitable For Work 的缩写，意思是某个网络内容不适合上班时间浏览。&lt;/p&gt;
+&lt;p&gt;它通常被用于标记那些带有淫秽色情、暴力血腥、极端另类等内容的邮件、视频、博客、论坛帖子里等，以免读者不恰当的点击浏览。常见的用法是，在链接的后面，加上一对括号，括号中标记 NSFW。&lt;/p&gt;
+&lt;h2 id="部署方法"&gt;部署方法&lt;/h2&gt;
+&lt;p&gt;使用如下命令部署，其中&lt;code&gt;-p 3000:3000&lt;/code&gt; 是端口映射，&lt;code&gt;--restart=always&lt;/code&gt; 是自动重启：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYdocker run -p 3000:3000 --restart=always penndu/nsfw-api:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如 Docker Hub 下载较慢，也可使用下面阿里云镜像源：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYdocker run -p 3000:3000 --restart=always registry.cn-beijing.aliyuncs.com/dusays/nsfw-api:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="食用方法"&gt;食用方法&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;POST /classify&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYPOST /classify HTTP/1.1
+Content-Type: multipart/form-data
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 &lt;code&gt;image&lt;/code&gt; 字段中提供图像。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;响应示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYHTTP/1.1 200 OK
+Content-Type: application/json
+COPY{
+ &amp;#34;porn&amp;#34;: 0.59248286485672,
+ &amp;#34;sexy&amp;#34;: 0.39802199602127075,
+ &amp;#34;hentai&amp;#34;: 0.006243097595870495,
+ &amp;#34;neutral&amp;#34;: 0.0031403270550072193,
+ &amp;#34;drawing&amp;#34;: 0.00011181648733327165
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="图床演示"&gt;图床演示&lt;/h2&gt;
+&lt;p&gt;管理员进入后台角色组设置，选择指定的角色组点击编辑，进入图片审核标签，开启图片审核，设置审核动作，驱动调整为 NsfwJs，接口地址设置为 &lt;code&gt;http://127.0.0.1:3000/classify&lt;/code&gt;，属性为 &lt;code&gt;image&lt;/code&gt;，阈值为 &lt;code&gt;60&lt;/code&gt;「以上参数根据实际情况调整」&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/09/01/64f18a83430ec.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230901145352560" src="https://img-cloud.zhoujie218.top/2023/09/01/64f18a83430ec.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>DOCKER安装CUPS容器实现无线打印（支持大部分ARM设备）</title><link>/archives/2540.html</link><pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2540.html</guid><description>&lt;h1 id="一锐角云等x86机器"&gt;一.锐角云等X86机器&lt;/h1&gt;
+&lt;p&gt;执行代码拉取镜像并运行容器，这里仍然选择&lt;code&gt;tigerj/cups-airprint&lt;/code&gt;的，因为其他的我都试过识别不了我的&lt;code&gt;M1005&lt;/code&gt;，不知道是不是个案。而且这个镜像带&lt;code&gt;avahi&lt;/code&gt;，能实现&lt;code&gt;airprint&lt;/code&gt;，支持安卓及苹果设备直接使用系统自带打印服务搜索到打印机，非常方便。只是有点瑕疵，让我花了点时间解决了。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run \
+ --name=cups \
+ --restart=always \
+ --net=host \
+ -v /var/run/dbus:/var/run/dbus \
+ -v ~/airprint_data/config:/config \
+ -v ~/airprint_data/services:/services \
+ --device /dev/bus \
+ --device /dev/usb \
+ -e CUPSADMIN=&amp;#34;admin&amp;#34; \
+ -e CUPSPASSWORD=&amp;#34;password&amp;#34; \
+ tigerj/cups-airprint
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;后面步骤都一样，参考老版步骤，选择驱动，共享打印机，直到&lt;code&gt;cups&lt;/code&gt;里能打印出测试页面。这时如果去电脑或者手机的打印服务里搜索打印机是搜索不到的。接下来执行命令&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker exec cups service dbus start
+
+docker exec cups service avahi-daemon start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行之后去电脑或者手机系统自带的打印服务里搜索打印机，怎么样，是不是搜索到了？&lt;/p&gt;
+&lt;p&gt;这时候打印机能正常工作了，但是不能关，一关，再打开，打印作业就会被挂起，无法继续打印，只有手动重启&lt;code&gt;cups&lt;/code&gt;，要想实现打印机上电自动重启&lt;code&gt;cups&lt;/code&gt;，解决方法如下：&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;/etc/udev/rules.d&lt;/code&gt;目录下新建一条规则，如&lt;code&gt;m1005.rules&lt;/code&gt; 内容如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ACTION==&amp;#34;add&amp;#34;, SUBSYSTEM==&amp;#34;usb&amp;#34;, ENV{DEVTYPE}==&amp;#34;usb_device&amp;#34;, ENV{ID_VENDOR_ID}==&amp;#34;03f0&amp;#34;, ENV{ID_MODEL_ID}==&amp;#34;3b17&amp;#34;, RUN+=&amp;#34;/root/cupsstart.sh&amp;#34;
+
+ACTION==&amp;#34;remove&amp;#34;, SUBSYSTEM==&amp;#34;usb&amp;#34;, ENV{DEVTYPE}==&amp;#34;usb_device&amp;#34;, ENV{PRODUCT}==&amp;#34;3f0/3b17/100&amp;#34;, RUN+=&amp;#34;/root/cupsstop.sh&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这步操作是让系统在发现打印机接入及断开时执行脚本，这段代码也是百度来的，原本&lt;code&gt;add&lt;/code&gt;和&lt;code&gt;remove&lt;/code&gt;两段代码是一样的，唯一区别是最后执行的脚本不一样，但是实际执行的时候我发现只有打印机接入能执行&lt;code&gt;add&lt;/code&gt;这段代码，而打印机断电，不能执行&lt;code&gt;remove&lt;/code&gt;这段代码，继续百度，从&lt;a href="https://www.musz.cn/?golink=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMDYxMDQzMS9hcnRpY2xlL2RldGFpbHMvMTE0NTYyMzM1"&gt;https://blog.csdn.net/weixin_30610431/article/details/114562335&lt;/a&gt;找到了答案，执行 &lt;code&gt;udevadm monitor --kernel --property --subsystem-match=usb&lt;/code&gt;之后分别给打印机通电和断电，对比输出发现，断电时没有 &lt;code&gt;MODEL_ID&lt;/code&gt;参数，所以代码不执行了，根据实际输出，将断电代码如上修改之后，就顺利执行了。其中add段代码中的&lt;code&gt;03f0&lt;/code&gt; &lt;code&gt;3b17&lt;/code&gt; 两个数据要跟你你的实际修改，这两个参数可以通过执行&lt;code&gt;lsusb&lt;/code&gt;查看到 然后在&lt;code&gt;/root&lt;/code&gt;目录里建立两个脚本:&lt;code&gt;cupsstart.sh&lt;/code&gt;和&lt;code&gt;cupsstop.sh&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#!/bin/sh
+
+docker restart cups
+
+docker exec cups cupsaccept M1005
+
+docker exec cups service dbus start
+
+docker exec cups service avahi-daemon start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个脚本实现系统一发现打印机接入，就重启&lt;code&gt;cups&lt;/code&gt;容器，并设置打印机接受打印任务，另外将&lt;code&gt;avahi&lt;/code&gt;服务启动起来。&lt;/p&gt;</description></item></channel></rss>

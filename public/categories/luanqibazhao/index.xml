@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Luanqibazhao on 周杰个人博客</title><link>/categories/luanqibazhao/</link><description>Recent content in Luanqibazhao on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/luanqibazhao/index.xml" rel="self" type="application/rss+xml"/><item><title>OSMO Pocket 一日试用报告</title><link>/archives/2342.html</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>/archives/2342.html</guid><description>&lt;p&gt;计划寒假出门练练延时视频的拍摄，碰巧得知老师买了一个 &lt;a href="https://www.dji.com/osmo-pocket"&gt;OSMO Pocket&lt;/a&gt;，正好我对这玩意儿有点兴趣，就向老师借了一天玩了玩，带着它在城市里跑了一圈，这篇文章算是试用后的总结报告。不过这毕竟只是一天快速试用之后的总结，如果有不正确或是不完善的地方还请见谅。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; 这款产品目前应该只适用于重度 Vlog 拍摄者，相对其他拍摄方案有一些优势，但也有很多不足。对我来说，我本来没有太强烈的购买 OSMO Pocket 的欲望，试用过后依然没有太大的购买欲望。&lt;strong&gt;请谨慎考虑购买。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（如果出二代我可能会买吧&amp;hellip;（小声）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这篇文章中所有图片和视频&lt;strong&gt;都经过二次压缩以缩短在网页上的加载时间，不代表 OSMO Pocket 的真实拍摄水平&lt;/strong&gt;（当然所有评测都基于未压缩的原始图像），如果需要原始图像可以直接联系我。另外，本文中的多数照片/视频都是“为评测而拍”，没有刻意追求美感，虽然观感不一定好，但这不代表 OSMO Pocket 就拍不出好看的照片/视频——&lt;strong&gt;毕竟“人”才是一张照片是否“美”的决定因素。&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h1 id="初印象"&gt;初印象&lt;/h1&gt;
+&lt;p&gt;**到手的第一印象：好小啊。**虽然对 OSMO Pocket 已经提前有所了解，但刚刚接触它时仍惊讶于它的体积。就算有一层保护壳， OSMO Pocket 还是可以被轻松地放进口袋里，相对于手机+稳定器的方案，OSMO Pocket 便携多了，好评。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011912611.jpg"&gt;
+ &lt;img class="mx-auto" alt="https://acdn.flyhigher.top/wp-content/uploads/2019/02/3.jpg" src="https://img-cloud.zhoujie218.top/pc/202111011912611.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;完全启动的速度挺快&lt;/strong&gt;，不过屏幕不大。屏幕支持触摸，而机身上的实体按键只有两个。简单试用了下，在屏幕上的操作主要以滑动为主，操作逻辑还算清晰，不过这个触屏对于点击的灵敏度真的挺低的，经常出现点击却没有反应的情况 。两个实体按键之一就是拍摄键，熟悉了之后操作效率还是很高的。好评。&lt;/p&gt;
+&lt;p&gt;不过由于屏幕小，实际情况下很多操作无法在屏幕上完成，**因此连接手机后的 OSMO Pocket 才算得上是完整体。**其与手机的连接通过物理连接（连接头）实现（不过可以通过配件实现无线连接）。&lt;/p&gt;
+&lt;p&gt;我拿到 OSMO Pocket 时它已经被使用了一段时间了，手机连接头已经插在机身上了。虽然这个连接头可以卸下并反装（以保护连接头）或者换上接口保护板，但是实际操作中要卸下连接头非常麻烦，所以一般情况下为了方便使用，连接头只能以这种有点难看的姿势插在机身上。DJI 甚至考虑到了这个问题，在保护壳的绑带上切了个口子，方便连接头伸出&amp;hellip;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011912612.jpg"&gt;
+ &lt;img class="mx-auto" alt="https://acdn.flyhigher.top/wp-content/uploads/2019/02/2.jpg" src="https://img-cloud.zhoujie218.top/pc/202111011912612.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;奇葩的保护壳&lt;/p&gt;
+&lt;p&gt;机身底部是一个 USB Type-C 接口，用来充电，好评。不过没有标准螺口，没法直接固定在三脚架上，需要购买额外配件，很难受。&lt;/p&gt;
+&lt;p&gt;此外使用时需要从机身侧面插入一张 SD 卡用于存储拍摄内容，通过配套的 DJI Mimo APP 可以将拍摄的内容传输到手机上。DJI Mimo 同时可以在 OSMO Pocket 连接到手机后作为拍摄控制器使用。&lt;/p&gt;
+&lt;p&gt;第一眼看上去，OSMO Pocket 的镜头看起来跟普通手机的镜头差不多，不过具体表现还是要在试用后才能知道。&lt;/p&gt;
+&lt;h1 id="绝赞试用中"&gt;绝赞试用中&lt;/h1&gt;
+&lt;p&gt;大概熟悉了一下操作，我第二天就带着 OSMO Pocket 出门了。&lt;strong&gt;最大的感受是太小巧了，至少比手机+稳定器的组合甚至是 GoPro+延长杆的组合要小很多&lt;/strong&gt;，这带来了两方面的影响，一是我可以更快地进入拍摄状态，实测我从摸口袋到 OSMO Pocket 完成启动进入拍摄状态不超过 10 秒钟；二是小巧的机身也让 OSMO Pocket 在拍摄时显得更加低调，让我这种脸皮比较薄的人减少了很多心理压力。&lt;strong&gt;综合起来就是让我更愿意经常取出它来拍摄了。&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>修改 Proxmox 虚拟机 ID</title><link>/archives/1886.html</link><pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate><guid>/archives/1886.html</guid><description>&lt;p&gt;在安装虚拟机时，我们往往会对虚拟机 ID 做一些规划，比如 100~199 为服务器，200-299 为客户端。当你安装好系统，部署完服务后却发现忘记设置虚拟机 ID 时，作为一名强迫症患者，此时会选择删除重装？还是就此妥协？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;关闭需要更改 ID 的虚拟机&lt;/li&gt;
+&lt;li&gt;进入 &lt;code&gt;/etc/pve/nodes/&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;进入该目录下的节点目录，名称即为你的 Proxmox 服务器名称&lt;/li&gt;
+&lt;li&gt;KVM 虚拟机进入 &lt;code&gt;qemu-server&lt;/code&gt; 目录，LXC 容器进入 &lt;code&gt;lxc&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;重命名原 ID 配置文件为目标 ID&lt;/li&gt;
+&lt;li&gt;编辑该配置文件，修改硬盘存放目录 (共 2 处)&lt;/li&gt;
+&lt;li&gt;进入 &lt;code&gt;/var/lib/vz/images&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;重命名原 ID 目录后进入该目录&lt;/li&gt;
+&lt;li&gt;重命名磁盘文件(/dev/pve/)&lt;/li&gt;
+&lt;li&gt;刷新 Web 控制台，并启动虚拟机&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>999系列广告</title><link>/archives/1672.html</link><pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate><guid>/archives/1672.html</guid><description>&lt;p&gt; &lt;/p&gt;
+&lt;h1 id="广-告"&gt;&lt;strong&gt;广 告&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵高腰暖心秋裤-不凉少年&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵-穿久保灵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵-跪舔客户&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵-养生朋克&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999皮炎-色号够坦橙&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999皮炎-色号鹤顶红&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999皮炎-色号夕阳红&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>中兴F650 v2.0.03 通用 光猫无需开盖破解超级密码</title><link>/archives/796.html</link><pubDate>Sun, 13 Oct 2019 00:00:00 +0000</pubDate><guid>/archives/796.html</guid><description>&lt;p&gt;先来张破解后的图图&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/2-1-300x281.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/2-1-300x281.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;在破解要准备的： 1.宽带账号和密码  客户端里有，密码可以自行修改或者找客服！！！ 2.puttytel软件 Telnet 登录用的&lt;/p&gt;
+&lt;p&gt;操作步骤： 1.恢复出厂设置（捅菊花）     灯闪3下就可以了   然后拔掉光纤线   登录192.168.1.1&lt;/p&gt;
+&lt;p&gt;telecomadmin nE7jA%5m&lt;/p&gt;
+&lt;p&gt;这时候原始的超级密码可以登录了  找到自己的宽带识别码记好&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221417raal6z64z6dba6n620191013-5.png"&gt;
+ &lt;img class="mx-auto" alt="中兴F650光猫无需开盖破解超级密码" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221417raal6z64z6dba6n620191013-5.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;**2.**插上光纤线   新建一个窗口  打开192.168.1.1 最底下有个快速维修  输入自己的宽带识别码 &lt;strong&gt;到30%&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221437ldogo2bbi2bcppob20191013-5.png"&gt;
+ &lt;img class="mx-auto" alt="中兴F650光猫无需开盖破解超级密码" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221437ldogo2bbi2bcppob20191013-5.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;拔掉电源或者光纤线 防止ITMS注册成功后修改超级密码！！&lt;/strong&gt; &lt;strong&gt;手速慢也没事  重新开始就行了！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.切换地区获得telnet root权限&lt;/strong&gt; &lt;a href="http://192.168.1.1:8080/hidden_version_switch.gch"&gt;&lt;/a&gt;&lt;a href="http://192.168.1.1:8080/hidden_version_switch.gch"&gt;http://192.168.1.1:8080/hidden_version_switch.gch&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221513yagb22iiial4qg8020191013-5.png"&gt;
+ &lt;img class="mx-auto" alt="中兴F650光猫无需开盖破解超级密码" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221513yagb22iiial4qg8020191013-5.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.配置自己的上网络信息&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221540c9ll69dl04ydd0yb20191013-5.png"&gt;
+ &lt;img class="mx-auto" alt="中兴F650光猫无需开盖破解超级密码" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221540c9ll69dl04ydd0yb20191013-5.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221554qfu0micdvq0v0hjq20191013-5.png"&gt;
+ &lt;img class="mx-auto" alt="中兴F650光猫无需开盖破解超级密码" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221554qfu0micdvq0v0hjq20191013-5.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;以上是本人的配置 仅供参考 地区可能不一样！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5.由于****ITMS未注册 所有连接会解析到192.168.1.1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这时候我们就去修改****ITMS认证状态&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;puttytel&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221613qc9ij9y41ywgiyd420191013-5.png"&gt;
+ &lt;img class="mx-auto" alt="中兴F650光猫无需开盖破解超级密码" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/221613qc9ij9y41ywgiyd420191013-5.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;root&lt;/strong&gt; &lt;strong&gt;Zte521&lt;/strong&gt; &lt;strong&gt;最后一步粘贴下面3行代码&lt;/strong&gt; sendcmd 1 DB set PDTCTUSERINFO 0 Status 0 sendcmd 1 DB set PDTCTUSERINFO 0 Result 1 sendcmd 1 DB save&lt;/p&gt;</description></item><item><title>江西电信iptv直播源，没技术纯手工贴出来的</title><link>/archives/736.html</link><pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate><guid>/archives/736.html</guid><description>&lt;p&gt;&lt;strong&gt;闲来无事测试下，12个台同时开无压力，受限电脑性能再多cpu不行了，看来电信没有限速&lt;/strong&gt; &lt;strong&gt;电脑上pot，都是高清台，每个台约占10Mb宽带，我家是300M的&lt;/strong&gt; &lt;strong&gt;来个图吧&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/175638z1sjexpjhch7ps8120190825-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/175638z1sjexpjhch7ps8120190825-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;[video width=&amp;ldquo;960&amp;rdquo; height=&amp;ldquo;544&amp;rdquo; mp4=&amp;ldquo;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/2.mp4%22"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/2.mp4&amp;quot;&lt;/a&gt;][/video]&lt;/p&gt;
+&lt;p&gt;江西电信iptv直播源，目前测试南昌电信，家里没有安装iptv的可以直接播，高清秒换台 外地的不太清楚&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/p1-191x300.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/p1-191x300.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/p2-300x159.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/p2-300x159.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;附件里面是江西的地方台全家桶，欢迎食用！其它的台到处都有就不贴了 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/rar20190823.gif"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/rar20190823.gif" /&gt;
+ &lt;/a&gt;
+  &lt;a href="https://www.right.com.cn/forum/forum.php?mod=attachment&amp;amp;aid=MzA0MzI4fDZlZGU0MDBmfDE1NjY1NDM4ODF8MTM5OTk2fDkyMzA0Nw%3D%3D"&gt;江西地方台.rar&lt;/a&gt;&lt;/p&gt;</description></item><item><title>电信IPTV直播源抓取</title><link>/archives/729.html</link><pubDate>Thu, 22 Aug 2019 00:00:00 +0000</pubDate><guid>/archives/729.html</guid><description>&lt;p&gt;1.环境准备 电信IPTV机顶盒 支持openwrt的路由器 或者爱快 Wireshark&lt;/p&gt;
+&lt;p&gt;2.抓取步骤 将电信IPTV盒子连接到路由器的LAN口&lt;/p&gt;
+&lt;p&gt;配置盒子，使盒子处于观看电视频道状态待用&lt;/p&gt;
+&lt;p&gt;获取电信盒子IP（本次抓取ip为192.168.1.126）&lt;/p&gt;
+&lt;p&gt;ssh登录路由器执行命令&lt;/p&gt;
+&lt;p&gt;1, 安装支持库（openwrt）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;opkg update
+opkg install libpcap
+opkg install tcpdump
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/11.png"&gt;
+ &lt;img class="mx-auto" alt="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/11.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/08/11.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h1 id="进入u盘挂载目录根据实际情况选择也可以不用u盘路由本身空间够的话20m左右用路由本身的空间"&gt;进入u盘挂载目录，根据实际情况选择,也可以不用U盘，路由本身空间够的话（20M左右）用路由本身的空间&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /tmp/mnt/disk/
+tcpdump -i br-lan src host 192.168.1.126 -w ./target.cap
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;方法1：&lt;/p&gt;
+&lt;p&gt;执行完命令后开始将电视机顶盒重启，到能正常播放电视台，随便播几个频道就可以了&lt;/p&gt;
+&lt;p&gt;ssh客户端CTRL+C结束抓取&lt;/p&gt;
+&lt;p&gt;scp或者使用Samba服务拷贝target.cap到本地&lt;/p&gt;
+&lt;p&gt;方法2：&lt;/p&gt;
+&lt;p&gt;执行完命令后开始将电视机顶盒换台，把所以需要抓取的电视台都换一遍&lt;/p&gt;
+&lt;p&gt;换台完毕后ssh客户端CTRL+C结束抓取&lt;/p&gt;
+&lt;p&gt;scp或者使用Samba服务拷贝target.cap到本地&lt;/p&gt;
+&lt;p&gt;方法3：利用爱快本身的抓包功能，最简单，&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202206201027465.png"&gt;
+ &lt;img class="mx-auto" alt="image-20220620102310583" src="https://img-cloud.zhoujie218.top/piggo/202206201027465.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h1 id="重点"&gt;重点：&lt;/h1&gt;
+&lt;p&gt;通过Wireshark打开文件分析&lt;/p&gt;
+&lt;p&gt;输入过滤信息rtsp，导出过滤结果，其中Info信息里的PLAY地址即为IPTV直播地址，可以通过播放器直接播放验证&lt;/p&gt;
+&lt;p&gt;文件-导出分组解析结果 .txt&lt;/p&gt;
+&lt;p&gt;打开excel，找到数据～来自文本～打开你保存的txt节目源（提前把双引号和问号替换成空格）～勾选分割符号下一步～勾选空格（要是还有别的需要分割的地方可以勾选其他，再填写文本中需要分割的符号）点下一步完成～然后你就看到节目名和节目源地址被分开了，然后把这两列复制下来粘贴到新建的excel2文档中，然后合并一下，中间记得加上英文下的逗号，合并完就可以了&lt;/p&gt;
+&lt;p&gt;数据筛选 排序，可以直接选出节目单&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/09/20210901185903.jpg"&gt;
+ &lt;img class="mx-auto" alt="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/09/20210901185903.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/09/20210901185903.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h1 id="iptv数据分析"&gt;IPTV数据分析&lt;/h1&gt;
+&lt;p&gt;1.用Wireshark打开刚才的“pcapng ”文件，然后在软件工具栏下面有个“过滤器工具栏”，在文本框中输入“http”，软件会过滤出http的协议内容。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202206201027998.jpeg"&gt;
+ &lt;img class="mx-auto" alt="《Wireshark 抓 IPTV 数据包详细教程》" src="https://img-cloud.zhoujie218.top/piggo/202206201027998.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.出来“http”协议的内容后别急，电脑上按下CTRL+F键，会在第一步中的“过滤器工具栏”下方出现一个查找框，在下图的左数第二个红框中下拉选择“字符串”，在左数第三个红框用输入我们要查找的关键字“channel”。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202206201027933.jpeg"&gt;
+ &lt;img class="mx-auto" alt="《Wireshark 抓 IPTV 数据包详细教程》" src="https://img-cloud.zhoujie218.top/piggo/202206201027933.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;3.进行关键字“channel”查找后，软件就自动搜索出“channel”相关的数据流了。&lt;/p&gt;
+&lt;p&gt;4.在软件右侧的“info”这一列，找到有关“HTTP/1.1 200 OK (text/html)”字样的数据行，随便哪一条都行，用鼠标选中它这一行数据，在菜单栏中选择『文件』→『导出对象』→『HTTP』。&lt;/p&gt;</description></item><item><title>群晖新手进阶指南：root+transmission安装+增强汉化web+远程控制(转）</title><link>/archives/611.html</link><pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate><guid>/archives/611.html</guid><description>&lt;h2 id="1-添加套件源"&gt;1 添加套件源&lt;/h2&gt;
+&lt;p&gt;1.1 用管理员 ad­min 账号登录 DSM 桌面，打开 “套件中心”，点击 “设置” &amp;mdash;&amp;gt; “常规”，选择 “任何发行者”；&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/ec9d47220bd841f5de548b32984ba3be.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/ec9d47220bd841f5de548b32984ba3be.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;1.2 “套件中心”，“设置” &amp;mdash;&amp;gt; “套件来源”，点击 “新增”，位置填入第三方源的网址，完成即可完成第三方源的添加&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/70bcf7226b338ce3af4674eb1797ae53.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/70bcf7226b338ce3af4674eb1797ae53.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;第三方源网址：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://link.zhihu.com/?target=https%3A//packages.synocommunity.com"&gt;https://packages.synocommunity.com&lt;/a&gt; //（建议选择这个，支持HTTPS）&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//packages.pcloadletter.co.uk"&gt;http://packages.pcloadletter.co.uk&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//www.cphub.net"&gt;http://www.cphub.net&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//synology.sysco.ch"&gt;http://synology.sysco.ch&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//packages.quadrat4.de"&gt;http://packages.quadrat4.de&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//synology.acmenet.ru"&gt;http://synology.acmenet.ru&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//cytec.us/spk"&gt;http://cytec.us/spk&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//spk.naefmarco.ch/spkrepo/packages/"&gt;http://spk.naefmarco.ch/spkrepo/packages/&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//spk.nas-mirror.de/spkrepo/packages"&gt;http://spk.nas-mirror.de/spkrepo/packages&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//spk.unzureichende.info/"&gt;http://spk.unzureichende.info/&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//packages.synocommunity.com/%3Fbeta%3D1"&gt;http://packages.synocommunity.com/?beta=1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1.3 刷新 “套件中心”，找到 “社群”。这个就是第三方源&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/636aa7851ce672ddce17d7ded81627b0.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/636aa7851ce672ddce17d7ded81627b0.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="2-安装transmission"&gt;2 安装Transmission&lt;/h2&gt;
+&lt;p&gt;2.1 在 “套件中心” 的 “社群” 找到 “Trans­mis­sion”，点击 “安装套件”，会自动下载安装&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/9b0f25deed3ac4b1db7c7b2e072d8af7.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/9b0f25deed3ac4b1db7c7b2e072d8af7.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.2 Trans­mis­sion 下载设置&lt;/p&gt;
+&lt;p&gt;Down­load di­irec­tory：下载文件存储目录（设置前需要事先建立好文件夹）&lt;/p&gt;
+&lt;p&gt;Watch di­rec­tory：保存种子存储目录，留空表示禁用（可以填写下载文件存储目录）&lt;/p&gt;
+&lt;p&gt;In­com­plete di­rec­tory：未完成下载目录，留空表示禁用（建议不填写，留空）&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/4f9ec1f204d82b69db906478a93f7135.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/4f9ec1f204d82b69db906478a93f7135.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.3 设置用户账号和密码（每次进入 TR 需要输入的用户名和密码）&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/77c381dfdd1d4fe359f661503c0452fd.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/77c381dfdd1d4fe359f661503c0452fd.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.4 权限提示，直接 “下一步”&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/f88107e341508a6bd9bb4c7ae918c8a9.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/f88107e341508a6bd9bb4c7ae918c8a9.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.5 安装完成后后，打开 “套件中心” &amp;mdash;&amp;gt; “Trans­mis­sion”，找到 URL，可以直接打开 Web UI（如果你用内网地址安装，则显示内网地址）&lt;/p&gt;</description></item><item><title>免费使用OneDrive5T空间当前无期限-2018年</title><link>/archives/577.html</link><pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate><guid>/archives/577.html</guid><description>&lt;p&gt;一、获取免费oneDrive5T空间&lt;/p&gt;
+&lt;p&gt;获取教育邮箱或者其他企业授权的邮箱，下面随便选一个即可； &lt;a href="http://free365.tw/"&gt;http://free365.tw/&lt;/a&gt; &lt;a href="http://officevip.club/"&gt;http://officevip.club/&lt;/a&gt; &lt;a href="http://gfw.ac.nz/"&gt;http://gfw.ac.nz/&lt;/a&gt; &lt;a href="http://5gb.me/"&gt;http://5gb.me/&lt;/a&gt; &lt;a href="http://ccc.ccccccccccccccccccccccccccccccccccccc.cc/"&gt;http://ccc.ccccccccccccccccccccccccccccccccccccc.cc/&lt;/a&gt; &lt;a href="http://mail.xgdfz.tech/"&gt;http://mail.xgdfz.tech/&lt;/a&gt; &lt;a href="http://1.jjkl.ac.nz/"&gt;http://1.jjkl.ac.nz/&lt;/a&gt;  亲试 &lt;a href="http://ac.gua.bi/"&gt;http://ac.gua.bi/&lt;/a&gt; &lt;a href="http://free365.ooo/"&gt;http://free365.ooo/&lt;/a&gt; &lt;a href="http://od.office365vip.cn/"&gt;http://od.office365vip.cn/&lt;/a&gt; &lt;a href="http://mail.ac.id/"&gt;http://mail.ac.id/&lt;/a&gt; &lt;a href="http://5gd.me/"&gt;http://5gd.me/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;获取5T空间 访问：&lt;a href="https://products.office.com/en-us/student?tab=students"&gt;https://products.office.com/en-us/student?tab=students&lt;/a&gt; ； 访问上面任意一个邮箱； 获取一个临时的邮箱，如图操作，邮箱不行了就自己换一个，整体操作步骤一样：&lt;/p&gt;
+&lt;p&gt;选择自己是学生即可：&lt;/p&gt;
+&lt;p&gt;填写个人信息，我一般是默认密码Chinamobile@123&lt;/p&gt;
+&lt;p&gt;这个地方选择取消，不要点什么设置，设置以后，你就没法用了，他就发现你是没花钱的用户；&lt;/p&gt;
+&lt;p&gt;安装即可；&lt;/p&gt;
+&lt;p&gt;二、应用到自己的电脑上 一种是安装上面提到这个软件，然后登录即可； 另一种是添加账户， 右击这个图标；&lt;/p&gt;
+&lt;p&gt;选择设置，&lt;/p&gt;
+&lt;p&gt;登录即可；&lt;/p&gt;</description></item><item><title>长虹iho-3000 电信itv机顶盒 破解安装第三方，itv可用</title><link>/archives/567.html</link><pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate><guid>/archives/567.html</guid><description>&lt;p&gt;&lt;strong&gt;全网找了很多天，什么方法都没用！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;改exe  adb  刷机什么的，都是骗人的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;znds&lt;/a&gt;&lt;strong&gt;下载个固件居然要80元&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自己没有技术，只能万能的淘宝，花50元买了个技术&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;完美破解，可以安装第三方软件 iqiyi youku  当呗市场 悟空遥控 之类的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最主要的是：不影响原机电信itv，原机遥控照用，超级简单&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;准备工作： &lt;strong&gt;1，一个2G或以上u盘，选fat32格式化（一般都是）&lt;/strong&gt; &lt;strong&gt;2，电脑一台。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.下载好软件，解压后放 U盘根目录&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://pan.baidu.com/s/1nuu__fB46F7xR1K5q0kM0w"&gt;https://pan.baidu.com/s/1nuu__fB46F7xR1K5q0kM0w&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;开始：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1，将软件update.zip拷贝到u盘根目录，插进机顶盒usb口&lt;/strong&gt; &lt;strong&gt;2，给盒子通电， 打开设置-高级设置-右边更多功能-下面U盘升级—确定升级&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;喝杯茶-很快升级完成会自动重启的—首次开机选当呗桌面哈-OK&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;成功后强烈建议手机安装悟空遥控器，用手机安装软件非常方便&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用手机连上后设置鼠标模式选中 始终当呗）以后开机就是桌面不用再选了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;当然你不破解悟空遥控是连不上的！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/1-225x300.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/1-225x300.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/2-225x300.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/2-225x300.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/3-300x225.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/3-300x225.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/4-300x225.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/4-300x225.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/5-300x225.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/11/5-300x225.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;软件花钱买的，也花了时间研究，还花时间包教会（要约我有空的时候）&lt;/p&gt;
+&lt;p&gt;收30元一次的技术费哈（老婆管的紧，赚包烟钱）&lt;/p&gt;
+&lt;p&gt;QQ：88164962&lt;/p&gt;</description></item><item><title>中兴B860AV1.1-T2刷机教程</title><link>/archives/382.html</link><pubDate>Mon, 15 Oct 2018 00:00:00 +0000</pubDate><guid>/archives/382.html</guid><description>&lt;p&gt;&lt;strong&gt;中兴B860AV1.1-T2纯净精简包&lt;/strong&gt; &lt;strong&gt;ROM介绍：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.此固件只适用中兴B860AV1.1-T2纯净精简包，当贝桌面加当贝市场，纯净版。&lt;/p&gt;
+&lt;p&gt;2.刷机后将导致原IPTV失效，介意勿刷！&lt;/p&gt;
+&lt;p&gt;3.刷机后可支持自由安装第三方应用；&lt;/p&gt;
+&lt;p&gt;4.注意：四川地区等高安CA版本请勿下载，不可刷入！&lt;/p&gt;
+&lt;p&gt;需要的刷机的同学，请注意：严谨操作，谨慎刷机&lt;/p&gt;
+&lt;p&gt;**1、准备工具：****1.1刷机包下载（&lt;strong&gt;免费奉上&lt;/strong&gt;）：&lt;/p&gt;
+&lt;p&gt;**链 &lt;a href="https://share.weiyun.com/5mct1Tu"&gt;https://share.weiyun.com/5mct1Tu&lt;/a&gt; 密 7mw3g6&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载后解压，得到主要2个文件：&lt;strong&gt;ota.zip&lt;/strong&gt;和&lt;/strong&gt;recovery.img**，&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011344543.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/pc/202111011344543.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;电脑插上一个U盘（请格式为FAT32的），将&lt;strong&gt;recovery.img&lt;/strong&gt;复制U盘根目录， 然后再新建一个文件夹，命名ZTESTBUSB**，&lt;strong&gt;并将&lt;/strong&gt;ota.zip**复制到ZTESTBUSB文件夹里，&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011344727.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/pc/202111011344727.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;**复制完毕后，将U盘插到机顶盒的USB接口上。&lt;strong&gt;1.2 ADB组件下载&lt;/strong&gt;：&lt;a href="http://cdn.tvapk.com/zndsjc/adb.zip"&gt;http://cdn.tvapk.com/zndsjc/adb.zip&lt;/a&gt;**将下载好的ADB组件解压到C盘的根目录&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011344086.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/pc/202111011344086.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;1.3 最新ADB密码计算器下载：&lt;a href="http://cdn.tvapk.com/zndsrom/app/zikaikeji.apk"&gt;http://cdn.tvapk.com/zndsrom/app/zikaikeji.apk&lt;/a&gt;找一台安卓手机，将最新的ADB密码计算器安装上（如果没有安卓手机或平板，也可以电脑安装一个电脑安卓模拟器）&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011344733.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/pc/202111011344733.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2、进入中兴盒子的设置，一般密码为：6321或运营商的号码（10086、10000、10010），连接wifi（或者网线）（机顶盒和电脑处于同个网段），接着选择运维调试—&lt;strong&gt;打开ADB&lt;/strong&gt;调试，然后&lt;strong&gt;运行ADB密码计算器&lt;/strong&gt;，将对应的MAC地址与随机数填入，这里需要注意，如果随机数是不带C的就选第一个“计算20170106”，如果随机数是带C的就选择“计算20180207”，然后将计算的密码填入，&lt;strong&gt;成功激活ADB&lt;/strong&gt;！&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011344769.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/pc/202111011344769.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;3、回到电脑操作，按下键盘快捷键“WIN+R”，输入“cmd”确定，进入命令终端&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011344223.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/pc/202111011344223.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;复制加粗的命令即可：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;C:UsersJack&amp;gt;cd c:/adb
+
+c:adb&amp;gt;adb connect 192.168.1.110 （不要以我的为准，盒子设置里可以找到你的盒子IP地址，输入自己盒子的IP）
+
+* daemon not running. starting it now on port 5037 *
+
+* daemon started successfully
+
+*connected to 192.168.0.101:5555
+
+c:adb&amp;gt;adb shell
+
+255|shell@square:/ $ su
+
+su
+
+root@square:/ # mount -o remount -o rw /system
+
+mount -o remount -o rw /system
+
+root@square:/ # df
+
+df
+
+Filesystem Size Used Free Blksize
+
+/dev 495.0M 128.0K 494.9M 4096
+
+/sys/fs/cgroup 495.0M 0.0K 495.0M 4096
+
+/mnt/asec 495.0M 0.0K 495.0M 4096
+
+/mnt/obb 495.0M 0.0K 495.0M 4096
+
+/tmp 495.0M 792.0K 494.2M 4096
+
+/var 495.0M 468.0K 494.5M 4096
+
+/system 991.9M 482.1M 509.8M 4096
+
+/cache 743.9M 336.1M 407.8M 4096
+
+/data 5.0G 198.3M 4.8G 4096
+
+/data/var 495.0M 0.0K 495.0M 4096
+
+/mnt/shell/emulated 5.0G 198.3M 4.8G 4096
+
+/mnt/media_rw/sda 10.0M 0.0K 10.0M 4096
+
+/storage/sda 10.0M 0.0K 10.0M 4096/mnt/media_
+
+rw/sda/part1 7.5G 3.4G 4.0G 32768
+
+/storage/sda/part1 7.5G 3.4G 4.0G 32768 （这行可以看出是你插在盒子上的U盘，得出U盘路径）
+
+找到u盘路径后，开始刷机：
+
+root@square:/ #dd if=/storage/sda/part1/recovery.img of=/dev/block/recovery
+
+root@square:/ #cp /storage/sda/part1/ZTESTBUSB/ota.zip /cache/upgrade
+
+root@square:/ # reboot update （这里2条选1条命令即可）
+
+root@square:/ # reboot recovery （这里2条选1条命令即可）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重启后刷机完成，进入桌面：&lt;/p&gt;</description></item><item><title>手机被Google账号锁了，没关系，我们跳过去</title><link>/archives/332.html</link><pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate><guid>/archives/332.html</guid><description>&lt;p&gt;&lt;strong&gt;1.把家里的无线路由搭上梯子，不会就百度，不在此贴讨论范围内，或者你用别的设备爬出去开热点共享也可以&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.具体的我不打字，全部图片自己看呀（花钱在网上请人教的，现在免费共享给大家看）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/1.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/1.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/2.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/2.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/3.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/3.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/4.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/4.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/5.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/5.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/6.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/6.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/7.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/7.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/8.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/8.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/9.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/9.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/10.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/10.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/11.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/11.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/12.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/12.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/13.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/13.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/14.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/14.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/15.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/15.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/16.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/16.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/17.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/17.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/18.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/18.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/19.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/19.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/20.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/20.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/21.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/21.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.此方法核心就是运行一个apk，以防别人删除网盘的软件，我再上传了一个&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.lanzous.com/i1wl8he"&gt;&lt;/a&gt;&lt;a href="https://www.lanzous.com/i1wl8he"&gt;https://www.lanzous.com/i1wl8he&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本站也传一个&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/09/Bypass_FRP_By_Pluk.rar"&gt;Bypass_FRP_By_Pluk&lt;/a&gt;  如果上面的失效点这自己下好放网盘就可以了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5.请不要乱传播，以防方法被封&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>看出什么了吗？</title><link>/archives/259.html</link><pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate><guid>/archives/259.html</guid><description>&lt;p&gt;你看出什么了？人多力量大，众志成城，齐心协力！&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;No&lt;/p&gt;
+&lt;p&gt;是几个领导，带着7个包工头，指挥一群人卖苦力，&lt;/p&gt;
+&lt;p&gt;123，加油&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/img_4600.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/img_4600.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>Kodi播放器出现乱码的解决方法，超简单!</title><link>/archives/106.html</link><pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate><guid>/archives/106.html</guid><description>&lt;p&gt;Kodi播放器是我最近才接触了解的一款播放器，感觉挺有意思，孤陋寡闻直到现在才知道它；&lt;/p&gt;
+&lt;p&gt;之前没有玩过，所以一开始遇到了麻烦，Kodi默认是英文的，如果直接改成中文则会出现乱码，通过Google搜索发现原来是默认的字体我的中文windows当中没有，所以显示识别不出就造成乱码了；&lt;/p&gt;
+&lt;p&gt;知道原因之后搞定Kodi播放器乱码问题就很简单，不过得凭记忆解决，不过好在运气好没记错很快就找到设置字体的地方给重新设置了一个当前系统能识别的字体，很简单的办法就瞬间解决掉了Kodi乱码问题；&lt;/p&gt;
+&lt;p&gt;下面的图片是我解决乱码问题时的操作截图笔记，对着设置很快就能搞定；&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-120180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="Kodi播放器出现乱码的解决方法，超简单!" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-120180615.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-220180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="Kodi播放器出现乱码的解决方法，超简单!" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-220180615.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-320180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="Kodi播放器出现乱码的解决方法，超简单!" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-320180615.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-420180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="Kodi播放器出现乱码的解决方法，超简单!" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/9148-420180615.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>Kodi或XBMC 安卓TV版 设置中文图文 教程</title><link>/archives/113.html</link><pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate><guid>/archives/113.html</guid><description>&lt;p&gt;&lt;a href="http://www.mz6.net/special/Kodi/"&gt;Kodi&lt;/a&gt;是一款非常强大的媒体播放器，在国内也拥有大量的用户，但该播放器默认使用英文，很多新用户不知该怎样设置中文，下面小编带来三种方法与大家分享！&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209445254220180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209445254220180615.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一、Kodi在线安装中文插件教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、打开Kodi后，主导航中依次打开【SYSTEM】【Settings】【Appearance】；&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209134428720180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209134428720180615.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2、在【Skin】皮肤设置里面找到【Fonts】字体，点击【Skin default】，选择【Arial based】字体；&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209174524320180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209174524320180615.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;3、点击【Internatlonal】栏目，找到【Language】选择，将【English】改成【Chinese（Simple）】即可下载中文插件；&lt;/p&gt;
+&lt;p&gt;注意：如果中文插件下载失败，请参考方法二，离线安装中文插件~&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209203974120180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209203974120180615.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;**二、**&lt;strong&gt;Kodi离线安装中文插件教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、首先下载《中文插件》 &lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/resource.language.zh_cn-1.0.3.zip"&gt;resource.language.zh_cn-1.0.3&lt;/a&gt;，然后把zip文放入到能访问的地方；&lt;/p&gt;
+&lt;p&gt;2、设置字体，与上面方法相同（SYSTEM-&amp;gt;Appearance-&amp;gt;Skin-&amp;gt;Fonts，将【SKin default】改成【Arial based】）；&lt;/p&gt;
+&lt;p&gt;2、安装本地中文插件(SYSTEM&amp;ndash;&amp;gt;Add-ons&amp;ndash;&amp;gt;install from zip file&amp;ndash;&amp;gt;External Storage)，找到放入手机中的zip文件；&lt;/p&gt;
+&lt;p&gt;3、插件安装完成后，会弹出是否修改语言，选择【yes】就可以显示中文了；&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209311924620180615.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/2016090209311924620180615.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三、安装第三方修改过****Kodi中文版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果感觉以上方法比较麻烦，那么直接下载安装《&lt;a href="http://down5.mz6.net/file/2016/06/org.xbmc.kodi.apk"&gt;Kodi中文版&lt;/a&gt;》吧！虽然版本有些老，但功能和新版基本相同！&lt;/p&gt;</description></item><item><title>10年又10年</title><link>/archives/24.html</link><pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate><guid>/archives/24.html</guid><description>&lt;p&gt;10年又10年 不知不觉人生已过30&lt;/p&gt;</description></item><item><title>最新华为悦盒V9_V9U_V9E_V9A_V8通用傻瓜式破解教程</title><link>/archives/221.html</link><pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate><guid>/archives/221.html</guid><description>&lt;p&gt;&lt;strong&gt;破解包下载地址（三个都可以试试）：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本站附件打包下载&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/wp-content/uploads/2017/06/6108v.rar"&gt;6108v&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;华为悦盒电脑破解教程（11月更新不影响IPTV，破解、篡改 ） &lt;a href="http://bbs.shafa.com/thread-1426975-1-1.html"&gt;&lt;/a&gt;&lt;a href="http://bbs.shafa.com/thread-1426975-1-1.html"&gt;&lt;/a&gt;&lt;a href="http://bbs.shafa.com/thread-1426975-1-1.html"&gt;http://bbs.shafa.com/thread-1426975-1-1.html&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;2017年10月10日更新&lt;/strong&gt; &lt;strong&gt;链接：&lt;a href="http://pan.baidu.com/s/1jHCyBFg"&gt;&lt;/a&gt;&lt;a href="http://pan.baidu.com/s/1jHCyBFg"&gt;&lt;/a&gt;&lt;a href="http://pan.baidu.com/s/1jHCyBFg"&gt;http://pan.baidu.com/s/1jHCyBFg&lt;/a&gt; 密码：ulg7&lt;/strong&gt; &lt;strong&gt;2017年10月7日更新&lt;/strong&gt; &lt;strong&gt;V9e和V9I如无法刷入&lt;a href="http://app.shafa.com/"&gt;沙发管家&lt;/a&gt;，先恢复出厂设置后，再用下方的破解包重新破解一遍&lt;/strong&gt; &lt;strong&gt;链接：****&lt;a href="http://pan.baidu.com/s/1geUf4l1"&gt;&lt;/a&gt;&lt;a href="http://pan.baidu.com/s/1geUf4l1"&gt;http://pan.baidu.com/s/1geUf4l1&lt;/a&gt; 密码：8iow&lt;/strong&gt; &lt;strong&gt;2017年10月以前：&lt;/strong&gt; &lt;strong&gt;链接：&lt;a href="http://pan.baidu.com/s/1nuO37FN"&gt;&lt;/a&gt;&lt;a href="http://pan.baidu.com/s/1nuO37FN"&gt;&lt;/a&gt;&lt;a href="http://pan.baidu.com/s/1nuO37FN"&gt;http://pan.baidu.com/s/1nuO37FN&lt;/a&gt; 密码：gm1v&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.zhoujie218.top/archives/221.html"&gt;&lt;/a&gt;&lt;strong&gt;&lt;a href="http://www.zhoujie218.top/archives/221.html"&gt;&lt;/a&gt;&lt;a href="http://www.zhoujie218.top/archives/221.html"&gt;http://www.zhoujie218.top/archives/221.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**适用型号：**&lt;strong&gt;华为悦盒V9_V9U_V9E_V9A_V8&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;文件截图：&lt;/strong&gt; &lt;strong&gt;根据自己的型号打开相对应的的程序，型号如何查看呢？打开机顶盒，选择设置——版本信息即可查看到！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184035u0ua8078dxa0vf0x20180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184035u0ua8078dxa0vf0x20180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;根据提示操作：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184120xtbbip40rbbtbtpi20180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184120xtbbip40rbbtbtpi20180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方法（重要必看）：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用华为目前市面上所有运营商定制盒子，及能打开ADB端口的绝大部份其它盒子使用，可以自动安装软件；&lt;/strong&gt; &lt;strong&gt;注意：使用该方法务必将网线拔掉，wifi连接路由器，电脑与盒子确保在同一个路由器下面；&lt;/strong&gt; &lt;strong&gt;先将你要安装的软件提前放入rootinstall里面，确保文件名为英文或数字型式，比如：123.apk/abc.apk文件名当中不能有空格，全部文件均放在电脑，无需用U盘插盒子，更加不用进装备测试模式，免拆机破解；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;简单检查是否有ROOT权限方法：用RE管理器直接打开/DATA文件夹,能打开说明已ROOT；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;华为定制盒部份：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1，先将盒子跟电脑置在同一网下，进盒子：设置&amp;ndash;更多（或高级）&amp;ndash;远程连接控制，设为“允许”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184550ewjod62par8pjhrm20180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184550ewjod62par8pjhrm20180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184110tzfjsppeyzn6o6b520180617-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184110tzfjsppeyzn6o6b520180617-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184110i34bnykn9q9ngamk20180617-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184110i34bnykn9q9ngamk20180617-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2，运行附件的STBManageTool，导入许可证，填入IP地址，密码：&lt;strong&gt;&lt;strong&gt;.287aW&lt;/strong&gt;&lt;/strong&gt;(前面有个点哈）&lt;strong&gt;&lt;strong&gt;,如出现DEBUG模式，则输入验证码即可后（下图所示）&lt;/strong&gt;&lt;/strong&gt;，&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/202403toi2236e62e32uuk20180617-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/202403toi2236e62e32uuk20180617-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;点连接，连上后，点击浏览，找到STB下的dat文件，选择导入即可；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184331oin1mbl141m2zn1m20180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184331oin1mbl141m2zn1m20180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184338gzx5yc9dsyyuyddd20180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/184338gzx5yc9dsyyuyddd20180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;看右下角启用远程登陆，选“开”，点提交；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/191209co9g12f9z39qqzq920180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/191209co9g12f9z39qqzq920180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3，根据你的盒子型号，建议两个红色箭头文件都打开试试，选择运行，按提示输入IP地址回车，稍等破解完成；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/215242fxkkuvbcfoifhfiw20180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/215242fxkkuvbcfoifhfiw20180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/185154jomv8vz9zoya66a620180617-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/185154jomv8vz9zoya66a620180617-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;破解完成后如出现“&lt;/p&gt;
+&lt;p&gt;系统已被篡改，XXXX&lt;/p&gt;
+&lt;p&gt;”解决办法：&lt;/p&gt;
+&lt;p&gt;华为EC6108V9/9U/9A/9E通用完美破解方法！不提示篡改待机：&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbs.shafa.com/thread-1362757-1-1.html"&gt;http://bbs.shafa.com/thread-1362757-1-1.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;四、 后续操作（重要）&lt;/strong&gt; 1. 设置“&lt;a href="http://app.shafa.com/apk/shafazhuomian.html"&gt;沙发桌面&lt;/a&gt;”为默认桌面程序 盒子重启后，屏幕上会提示“选择主屏幕应用”，此时应先选择“沙发桌面”，然后再选择“始终”即可。千万别手贱选择IPTV。&lt;strong&gt;注意：&lt;strong&gt;&lt;strong&gt;还有一个放就是破解包中已经内置&lt;/strong&gt;&lt;/strong&gt;ES文件浏览器，破解完成后自动安装到盒子中， 然后找一个U盘正常开机之后插到盒子上，会弹出一个ES的外部存储界面提示，点击进去之后是ES界面文件管理，寻找“首页”的“应用”图标点进去，上边有个“用户已安装应用”，点开旁边向下箭头切换到“系统应用”里，看看有没有沙发相关的 软件，如果有也可以从里边切换到沙发桌面 后续的再弄默认桌面。&lt;/strong&gt; &lt;strong&gt;其它品牌（通用部份）： 盒子先开ADB，比如创维E900用遥控打开USB调试，或用TTL输入adbd&amp;amp;打开等，选“通用破解及V8”运行；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;注意： 1) 第一次重启可能不会弹出桌面设置相关的提示，此时可尝试按遥控器上“主页键”呼出沙发桌面。 2) 部分运营商固件限制了第三方桌面的使用，你可以在确认盒子工作正常的情况下，使用RE管理器删除 /system/app 目录下的带有 launcher 字样的apk以解除限制。 例如：湖南电信的 TvLauncher_0813_new.apk ，青岛联通的 Launcher2.apk，山东移动的 SD_YD_Launcher.apk。 删除之前最好先备份，以防万一。 &lt;strong&gt;参考教程：&lt;/strong&gt; &lt;strong&gt;1.教你一招替换智能电视&amp;amp;机顶盒系统桌面，永不反弹 &lt;a href="http://bbs.shafa.com/thread-317495-1-1.html"&gt;&lt;/a&gt;&lt;a href="http://bbs.shafa.com/thread-317495-1-1.html"&gt;&lt;/a&gt;&lt;a href="http://bbs.shafa.com/thread-317495-1-1.html"&gt;http://bbs.shafa.com/thread-317495-1-1.html&lt;/a&gt;&lt;/strong&gt; 2. 更新SU二进制文件（非必要操作，可跳过） 盒子启动后，需要更新SU二进制文件，请在沙发桌面上选择“系统应用”→“SuperSU”，接下来按照屏幕提示依次点击“继续”→“常规方式”→“重启”即可。如无法更新，建议尝试：&lt;a href="http://bbs.shafa.com/thread-1314937-1-1.html"&gt;&lt;/a&gt;&lt;strong&gt;&lt;a href="http://bbs.shafa.com/thread-1314937-1-1.html"&gt;&lt;/a&gt;&lt;a href="http://bbs.shafa.com/thread-1314937-1-1.html"&gt;http://bbs.shafa.com/thread-1314937-1-1.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudflare on 周杰个人博客</title><link>/tags/cloudflare/</link><description>Recent content in Cloudflare on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</title><link>/archives/2673.html</link><pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate><guid>/archives/2673.html</guid><description>&lt;h4 id="已优选"&gt;已优选&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/07/13/6873817265d92.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250713175038879" src="https://img-cloud.zhoujie218.top/2025/07/13/6873817265d92.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;结论：可见，优选过的网站响应速度有很大提升，并且出口IP也变多了。这能让你的网站可用性大大提高，并且加载速度显著变快。&lt;/p&gt;
+&lt;p&gt;Cloudflare 优选域名：www.visa.cn&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="worker路由反代全球并优选新"&gt;Worker路由反代全球并优选（新）&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本方法的原理为通过Worker反代你的源站，然后将Worker的入口节点进行优选。此方法不是传统的优选，源站接收到的Hosts头仍然是直接指向源站的解析&lt;/p&gt;
+&lt;p&gt;以下代码是原Github全站反代代码的二改以实现Worker路由接入优选，可能有多余逻辑或者不完全适配于优选需求&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;创建一个Cloudflare Worker，写入代码&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;// 域名前缀映射配置
+const domain_mappings = {
+ &amp;#39;live-1vz.pages.dev&amp;#39;: &amp;#39;live&amp;#39;,
+//例如：
+//&amp;#39;live-1vz.pages.dev&amp;#39;: &amp;#39;live&amp;#39;,
+//则你设置Worker路由为live*.都将会反代到live-1vz.pages.dev
+};
+
+addEventListener(&amp;#39;fetch&amp;#39;, event =&amp;gt; {
+ event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+ const url = new URL(request.url);
+ const current_host = url.host;
+
+ // 强制使用 HTTPS
+ if (url.protocol === &amp;#39;http:&amp;#39;) {
+ url.protocol = &amp;#39;https:&amp;#39;;
+ return Response.redirect(url.href, 301);
+ }
+
+ const host_prefix = getProxyPrefix(current_host);
+ if (!host_prefix) {
+ return new Response(&amp;#39;Proxy prefix not matched&amp;#39;, { status: 404 });
+ }
+
+ // 查找对应目标域名
+ let target_host = null;
+ for (const [origin_domain, prefix] of Object.entries(domain_mappings)) {
+ if (host_prefix === prefix) {
+ target_host = origin_domain;
+ break;
+ }
+ }
+
+ if (!target_host) {
+ return new Response(&amp;#39;No matching target host for prefix&amp;#39;, { status: 404 });
+ }
+
+ // 构造目标 URL
+ const new_url = new URL(request.url);
+ new_url.protocol = &amp;#39;https:&amp;#39;;
+ new_url.host = target_host;
+
+ // 创建新请求
+ const new_headers = new Headers(request.headers);
+ new_headers.set(&amp;#39;Host&amp;#39;, target_host);
+ new_headers.set(&amp;#39;Referer&amp;#39;, new_url.href);
+
+ try {
+ const response = await fetch(new_url.href, {
+ method: request.method,
+ headers: new_headers,
+ body: request.method !== &amp;#39;GET&amp;#39; &amp;amp;&amp;amp; request.method !== &amp;#39;HEAD&amp;#39; ? request.body : undefined,
+ redirect: &amp;#39;manual&amp;#39;
+ });
+
+ // 复制响应头并添加CORS
+ const response_headers = new Headers(response.headers);
+ response_headers.set(&amp;#39;access-control-allow-origin&amp;#39;, &amp;#39;*&amp;#39;);
+ response_headers.set(&amp;#39;access-control-allow-credentials&amp;#39;, &amp;#39;true&amp;#39;);
+ response_headers.set(&amp;#39;cache-control&amp;#39;, &amp;#39;public, max-age=600&amp;#39;);
+ response_headers.delete(&amp;#39;content-security-policy&amp;#39;);
+ response_headers.delete(&amp;#39;content-security-policy-report-only&amp;#39;);
+
+ return new Response(response.body, {
+ status: response.status,
+ statusText: response.statusText,
+ headers: response_headers
+ });
+ } catch (err) {
+ return new Response(`Proxy Error: ${err.message}`, { status: 502 });
+ }
+}
+
+function getProxyPrefix(hostname) {
+ for (const prefix of Object.values(domain_mappings)) {
+ if (hostname.startsWith(prefix)) {
+ return prefix;
+ }
+ }
+ return null;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建路由&lt;/p&gt;</description></item><item><title>开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</title><link>/archives/2651.html</link><pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate><guid>/archives/2651.html</guid><description>&lt;h1 id="cloudflare-pages-部署记录清理工具"&gt;Cloudflare Pages 部署记录清理工具&lt;/h1&gt;
+&lt;p&gt;你是否遇到过Cloudflare Pages项目删除失败，workes项目记录太多，网页不能删除？&lt;/p&gt;
+&lt;p&gt;这个工具就是解决 Cloudflare Pages 部署记录过多，导致无法创建新部署，无法删除项目的问题。&lt;/p&gt;
+&lt;p&gt;强烈推荐大家都用上，给我们的大善人节约一点硬盘空间：）&lt;/p&gt;
+&lt;p&gt;这是一个利用GitHub Actions 自动化运行的工具。该工具会保留每个项目最新的 10 个部署记录，删除更早的部署以节省空间。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/01/07/677cdb5eca982.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250107154422056" src="https://img-cloud.zhoujie218.top/2025/01/07/677cdb5eca982.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="功能特点"&gt;功能特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;自动获取账号下所有的 Cloudflare Pages 项目（一次运行获取最活跃的10个）&lt;/li&gt;
+&lt;li&gt;对每个项目只保留最新的 10 个部署记录&lt;/li&gt;
+&lt;li&gt;自动删除较早的部署记录&lt;/li&gt;
+&lt;li&gt;支持批量处理多个项目&lt;/li&gt;
+&lt;li&gt;循环处理直到清理完所有旧记录&lt;/li&gt;
+&lt;li&gt;支持通过 GitHub Actions 自动运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="使用方法推荐-github-actions-自动运行"&gt;使用方法（推荐 GitHub Actions 自动运行）&lt;/h2&gt;
+&lt;h3 id="1-fork-本项目"&gt;1. Fork 本项目&lt;/h3&gt;
+&lt;p&gt;#### 点击下方链接一键 Fork&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/vbskycn/delete-cloudflare-deployments/fork"&gt;https://github.com/vbskycn/delete-cloudflare-deployments/fork&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="2-获取必要信息"&gt;2. 获取必要信息&lt;/h3&gt;
+&lt;p&gt;首先需要获取以下信息：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cloudflare Account ID&lt;/li&gt;
+&lt;li&gt;Cloudflare API Token（需要有 Pages 的编辑权限）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="获取-api-token"&gt;获取 API Token&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;登录 Cloudflare 控制台：&lt;a href="https://dash.cloudflare.com/profile/api-tokens"&gt;https://dash.cloudflare.com/profile/api-tokens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;点击 &amp;ldquo;Create Token&amp;rdquo; 按钮&lt;/li&gt;
+&lt;li&gt;选择 &amp;ldquo;Create Custom Token&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;设置以下权限：
+&lt;ul&gt;
+&lt;li&gt;Account - Cloudflare Pages - Edit&lt;/li&gt;
+&lt;li&gt;Zone - DNS - Edit（如果需要）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;在 &amp;ldquo;Account Resources&amp;rdquo; 中选择你的账号&lt;/li&gt;
+&lt;li&gt;设置 Token 名称（例如：pages-deployment-cleanup）&lt;/li&gt;
+&lt;li&gt;点击 &amp;ldquo;Continue to summary&amp;rdquo; 然后创建 Token&lt;/li&gt;
+&lt;li&gt;保存显示的 Token 值（这个值只会显示一次）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;重要提示： API Token 只会显示一次，请务必立即保存。&lt;/p&gt;</description></item><item><title>如何为WordPress网站正确地配置Cloudflare</title><link>/archives/2580.html</link><pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate><guid>/archives/2580.html</guid><description>&lt;p&gt;通过在您的站点前充当[反向代理]，Cloudflare是一种一体化的安全和性能产品，被全球超过12%的网站使用。作为WordPress 用户，将Cloudflare添加到您的网站有助于提高网站性能并减少恶意机器人和黑客的影响。&lt;/p&gt;
+&lt;p&gt;正确配置后，对您站点的所有请求将首先到达Cloudflare服务器，然后该服务器将确定是否应将请求转发到源服务器、从缓存中提供服务、阻止或使用自定义规则进行处理。&lt;/p&gt;
+&lt;p&gt;在本指南中，我们将深入探讨WordPress的最佳Cloudflare设置，讨论缓存和安全设置，并向您展示如何为WordPress多站点安装配置Cloudflare 。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;如何为WordPress配置Cloudflare&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare WordPress插件&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WordPress的Cloudflare自动平台优化&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare Argo和Railgun&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;如何为WordPress多站点配置Cloudflare&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="如何为wordpress配置cloudflare"&gt;如何为WordPress配置Cloudflare&lt;/h3&gt;
+&lt;p&gt;Cloudflare提供了多种安全和性能优势，但并非所有这些优势都与WordPress完全兼容。让我们深入了解Cloudflare的设置，以确定适合您的WordPress网站的最佳功能。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;SSL&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;速度&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓存&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;防火墙&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="ssl"&gt;SSL&lt;/h4&gt;
+&lt;p&gt;Cloudflare支持四种SSL/TLS加密模式——Off, Flexible, Full和Full (Strict)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;**Off –**不加密。&lt;/li&gt;
+&lt;li&gt;**Flexible –**仅加密浏览器和Cloudflare之间的连接。&lt;/li&gt;
+&lt;li&gt;**Full –**端到端加密，但允许在源服务器上使用自签名证书。&lt;/li&gt;
+&lt;li&gt;**Ful (Strict) –**端到端加密，需要来自Cloudflare的免费原始证书或来自受信任CA（证书颁发机构）的证书。我们建议使用Full (Strict) SSL模式以获得最大的安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于希望在其WordPress网站上使用Cloudflare的用户，我们建议&lt;a href="https://www.wbolt.com/how-to-install-ssl-certificate.html"&gt;在宝塔面板中生成免费的Let’s Encrypt SSL证书&lt;/a&gt;，并在Cloudflare中使用Full或Full (Strict) 选项。&lt;/p&gt;
+&lt;p&gt;或者，您还可以生成Cloudflare原始证书以安装在您的原始服务器上。如果您的主机不提供免费的SSL证书，则在您的服务器上安装Cloudflare原始证书将允许您使用Full (Strict) SSL模式。&lt;/p&gt;
+&lt;p&gt;如果您使用在子域上托管站点，而根域使用Cloudflare的Flexible SSL，则可以使用Cloudflare页面规则强制子域使用Full或Full (Strict) SSL。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/12/31/65917a247f948.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/12/31/65917a247f948.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;为具有Cloudflare页面规则的子域启用Full (Strict) SSL&lt;/p&gt;
+&lt;p&gt;此选项允许您使用Cloudflare的Flexible SSL，同时确保子域的Cloudflare Full (Strict) SSL。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;始终使用HTTPS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们建议启用此选项以自动&lt;a href="https://www.wbolt.com/redirect-http-to-https.html"&gt;将所有HTTP请求转发到HTTPS&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HSTS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HSTS代表“HTTP Strict Transport Security”，用于强制Web浏览器使用安全的HTTPS连接。在Cloudflare上启用HSTS可确保&lt;a href="https://www.wbolt.com/make-fewer-http-requests.html"&gt;HTTP请求&lt;/a&gt;永远不会到达您的源服务器。如果您的站点已设置为使用HTTPS，我们建议您也在源服务器上&lt;a href="https://www.wbolt.com/hsts-strict-transport-security.html"&gt;配置HSTS&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最低TLS版本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.wbolt.com/tls-1-3.html"&gt;TLS（传输层安全性）&lt;/a&gt;是一种加密协议，允许通过网络安全传输数据。默认情况下，Cloudflare为协议版本设置TLS 1.0。某些安全标准（例如 PCI DSS 3.2）需要更新版本的TLS协议以实现合规性。如果您的站点需要某个TLS版本，您可以通过转到&lt;strong&gt;SSL/TLS &amp;gt; Edge Certificates &amp;gt; Minimum TLS Version&lt;/strong&gt;来更改设置。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,352 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>开源免费的全平台远程控制软件 RustDesk | 周杰个人博客</title><meta property="og:title" content="开源免费的全平台远程控制软件 RustDesk - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2023-11-15T00:00:00+08:00'><meta property="article:modified_time" content='2023-11-15T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="开源免费的全平台远程控制软件 RustDesk"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/2570.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#服务器>服务器</a></li></ul><ul><li><a href=#启动实例>启动实例</a></li><li><a href=#连接服务器>连接服务器</a></li><li><a href=#创建新用户>创建新用户</a></li></ul><ul><li><a href=#下载服务端>下载服务端</a></li><li><a href=#尝试运行>尝试运行</a></li><li><a href=#本地配置>本地配置</a></li></ul><ul><li><a href=#使用pm2运行>使用pm2运行</a></li><li><a href=#使用systemctl运行>使用Systemctl运行</a></li></ul><ul><li><a href=#如何开启强制加密>如何开启强制加密</a></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>开源免费的全平台远程控制软件 RustDesk</h1></header><time datetime=2023-11-15T00:00:00Z class="post-meta meta-date dt-published">2023年11月15日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/it-related>it-related</a>
+<a href=/categories/diannaowangruo>diannaowangruo</a></div><div class=post-content><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595414915268.webp><img class=mx-auto alt=image-20240103191312350 src=https://img-cloud.zhoujie218.top/2024/01/03/6595414915268.webp></a></p><p>什么时候需要远程协助呢？ 可能是远程自己在家的电脑，方便游戏排队或者下载文件；也可能是远程单位电脑，进行远程办公；当然，我觉得更多情况是远程小伙伴，帮小伙伴解决一些技术问题。</p><p>远程协助，除了可以用向日葵、QQ远程和Todesk等软件，有没有一款安全、经济和快速的软件呢？</p><h1 id=文章最后有彩蛋>文章最后有彩蛋</h1><h1 id=rustdesk>RustDesk</h1><p>本次教程，推荐大家部分RustDesk，部署自己的自建远程平台。</p><p>主要的优点：</p><ul><li>安全性：RustDesk使用安全的加密通信协议来保护数据传输，确保远程桌面连接的安全性和隐私保护。</li><li>跨平台支持：RustDesk支持跨多个操作系统平台，包括Windows、macOS和Linux、Android等，这使得它非常灵活和适用于不同的工作环境。</li></ul><p>而且从名字可以看出，RustDesk是使用Rust所编写，而使用Rust编写的程序，两大特点就是高效和并发，实际使用上，一台亚马逊入门（1C1G）EC2或者Lightsail（1C2G）给个人或者小型团队使用是没有问题的。</p><h1 id=准备工具>准备工具</h1><h2 id=服务器>服务器</h2><p>目前，RustDesk支持Linux Server和Windows Server服务器；看自己的取舍，Linux比较节约资源，而Windows方便小白上手。</p><p>为了重新体现我们是Linux技术博主，本次搭建使用Linux Server进行演示（亚马逊 EC2）。</p><p>如果你并没有服务器设备，需要一个购买/租借，可以先访问亚马逊的用户试用，免费试用。等试用期过，Linux差不多也使用熟练，EC2也不贵；甚至可以买亚马逊的Lightsail，性价比很高。</p><ul><li>亚马逊试用地址: <a href=https://aws.amazon.com/cn/free>https://aws.amazon.com/cn/free</a></li></ul><p>当然，如果你需要大陆服务器，强烈推荐：</p><ul><li>腾讯云轻量应用服务器Lighthouse</li><li>腾讯云轻量应用服务器学生优惠</li></ul><p>另外，为大家争取到优惠*(੭ˊᵕˋ)੭ଘ：</p><ul><li><a href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=38xk7t2q">本站专属阿里云秒杀链接（可低价购买轻量应用服务器）</a></li></ul><p>根据RustDesk官网描述和实际测试，一台1C 1G的亚马逊EC2，中继模式下，8对设备远程依旧不卡</p><p>实际上，就算再翻翻，估计也不会卡；亚马逊的EC2免费套餐的网络，可是300Mbps~1000Mbps的速度；理论上，一个中型企业使用都够，就是套餐内的100G流量中继情况下可能不够。</p><p>如果你是Windows Server用户，那么建议至少选择2C 4G的服务器配置，毕竟需要让Windows Server可以跑起来；本文主要演示Linux Server的方法。</p><h1 id=辅助视频>辅助视频</h1><p>部分东西，还是视频比较清晰。</p><p>这里做个视频，主要内容：</p><ul><li>演示如何初始化亚马逊EC2</li><li>如何在SSH连接服务器</li><li>如何部署RustDesk服务</li><li>如何注册为服务（Systemctl版本）</li></ul><iframe class=bilibili src="https://player.bilibili.com/player.html?aid=233309412&amp;bvid=BV148411i7DR&amp;cid=1261360701&amp;page=1&amp;autoplay=0" scrolling=no border=0 frameborder=no framespacing=0 allowfullscreen style="box-sizing:border-box;position:relative;width:800px;height:40em;max-width:50em;color:#2c3e50;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,liberation sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:16px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:.32px;orphans:2;text-align:left;text-indent:0;text-transform:none;widows:2;word-spacing:0;-webkit-text-stroke-width:0;white-space:normal;background-color:#fff;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial"></iframe><p>做教程视频不易（B站根本不会推荐引流），请务必<strong>一键三连</strong>嗷～</p><ul><li>B站视频地址：<a href=https://www.bilibili.com/video/BV148411i7DR>https://www.bilibili.com/video/BV148411i7DR</a></li></ul><h1 id=服务器初始化>服务器初始化</h1><p>因为是第一次介绍亚马逊的EC2服务器，这里我们来详细介绍一下如何初始化亚马逊服务器。</p><h2 id=启动实例>启动实例</h2><p>我们在拥有了亚马逊AWS的账号并绑定了VISA信用卡，就可以启动EC2的实例了，也就是启动一台服务器。 我们这里就启动一台服务器进行演示。</p><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954023af7f3.webp><img class=mx-auto alt=部署新的实例 src=https://img-cloud.zhoujie218.top/2024/01/03/65954023af7f3.webp>
+</a>]</p><p>部署新的实例</p><p>出于个人习惯，我使用Debian系列的系统镜像；你可以和我一样，也可以按个人喜好选择Ubuntu、CentOS等，不过我不是很推荐CentOS、Redhat（毕竟CentOS现在已经停止维护）</p><p><a href=#newServerEC2Dtl.webp><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540251e1a7.webp><img class=mx-auto alt=本次部署新的实例 src=https://img-cloud.zhoujie218.top/2024/01/03/659540251e1a7.webp></a></a></p><p>本次部署新的实例</p><p>在**密钥对（登录）**中，我们最好创建RSA密钥对，方便我们一会进行SSH的远程登录： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540254a4b8.webp><img class=mx-auto alt=创建密钥对 src=https://img-cloud.zhoujie218.top/2024/01/03/659540254a4b8.webp>
+</a>]</p><p>创建密钥对</p><p>创建好后，密钥会自动下载： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540202a210.webp><img class=mx-auto alt=创建并下载下来的密钥 src=https://img-cloud.zhoujie218.top/2024/01/03/659540202a210.webp>
+</a>]</p><p>创建并下载下来的密钥</p><p>关于安全组，<strong>如果你是第一次使用服务器</strong>，那么我建议你刚开始可以放行所有端口；<strong>如果你已经对安全组轻车熟路</strong>，那么需要放行本次使用使用的端口：</p><ul><li>TCP (21115, 21116, 21117, 21118, 21119)</li><li>UDP (21116)</li></ul><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540257b7cf.webp><img class=mx-auto alt=放行全部端口 src=https://img-cloud.zhoujie218.top/2024/01/03/659540257b7cf.webp>
+</a>]</p><p>放行全部端口</p><h2 id=连接服务器>连接服务器</h2><p>之后，我们就可以连接服务器；举个例子，我这次最后购买的EC2: [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954024ec07e.webp><img class=mx-auto alt=本次使用的EC2实例 src=https://img-cloud.zhoujie218.top/2024/01/03/65954024ec07e.webp>
+</a>]</p><p>本次使用的EC2实例</p><p>点击进入，我们的可以使用公网IP进行登录（这里我分配了弹性IP）： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595402acdf49.webp><img class=mx-auto alt=公网IPV4 src=https://img-cloud.zhoujie218.top/2024/01/03/6595402acdf49.webp>
+</a>]</p><p>公网IPV4</p><p>打开我们本地的SSH工具。macOS和Linux用户可直接使用自带的Terminal工具；Windows11可以使用自带的Windows Terminal（Windows10可以在自带的应用商店内找到Windows Terminal）。</p><p>连接的SSH命令：</p><pre tabindex=0><code>ssh admin@&lt;AWS的IP&gt; -i &lt;RSA地址&gt;
+
+BASH
+</code></pre><p>其中：</p><ul><li><strong>admin</strong>为AWS服务器默认用户；</li><li><code>&lt;AWS的IP></code>为上文我们创建的EC2公网IP；</li><li><code>&lt;RSA地址></code>为上文我们创建并自动下载的<strong>密钥对</strong>。</li></ul><p>比如我远程登录成功： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595402d1bb7e.webp><img class=mx-auto alt=使用RSA远程登录成功 src=https://img-cloud.zhoujie218.top/2024/01/03/6595402d1bb7e.webp>
+</a>]</p><p>使用RSA远程登录成功</p><p>登录好以后，记得更新软件包管理器:</p><pre tabindex=0><code>sudo apt update -y
+
+BASH
+</code></pre><p>建议更改一下时区，方便我们后续查看日志时候，时间和本地统一：</p><pre tabindex=0><code># 设置时区为东八区的上海
+sudo timedatectl set-timezone Asia/Shanghai
+
+BASH
+</code></pre><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595402c2a027.webp><img class=mx-auto alt=设置时区 src=https://img-cloud.zhoujie218.top/2024/01/03/6595402c2a027.webp>
+</a>]</p><p>设置时区</p><h2 id=创建新用户>创建新用户</h2><p>为了方便我们后续操作，我们创建一个新用户，便于隔离我们后续的操作：</p><pre tabindex=0><code># 创建名叫mintimate的用户
+sudo useradd -m mintimate
+
+BASH
+</code></pre><p>之后，设置mintimate的默认用户密码：</p><pre tabindex=0><code>sudo passwd mintimate
+
+BASH
+</code></pre><p>设置过程中，密码会自动隐藏。</p><blockquote><p>如果你想直接使用新用户进行SSH的登录，你可以修改SSH服务端配置(<code>/etc/ssh/sshd_config</code>)，其中的运行密码登录注释或者设置为<strong>yes</strong>的： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595402ee05a2.webp><img class=mx-auto alt=允许密码登录 src=https://img-cloud.zhoujie218.top/2024/01/03/6595402ee05a2.webp>
+</a>]</p></blockquote><p>最后，重启SSH服务：</p><pre tabindex=0><code># 重启SSH服务
+sudo systemctl restart sshd
+
+BASH
+</code></pre><p>这样，就可以使用用户进行密码登录： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595402ef19fb.webp><img class=mx-auto alt=密码登录成功 src=https://img-cloud.zhoujie218.top/2024/01/03/6595402ef19fb.webp>
+</a>]</p><p>密码登录成功</p><blockquote><p>当然，设置密码登录是完全可选的；你也可以直接使用自带的<code>admin</code>用户配合密钥进行登录。</p></blockquote><h1 id=rustdesk部署>RustDesk部署</h1><p>现在，我们就可以进行RustDesk的部署。如果你不是使用创建的用户进行登录，那么你可以使用<code>su</code>命令进行切换：</p><pre tabindex=0><code># 切换到mintimate用户
+sudo su - mintimate
+
+BASH
+</code></pre><p>为了方便管理，我们创建一个目录，便于管理：</p><pre tabindex=0><code># 创建一个空目录，用于安装RustDesk
+mkdir ~/myApplication
+
+BASH
+</code></pre><h2 id=下载服务端>下载服务端</h2><p>进入RustDesk的Github地址：</p><ul><li><a href=https://github.com/rustdesk/rustdesk-server/releases>RustDesk Server Github 发布地址</a></li></ul><p>我们使用的是X86版本服务器，所以这里我们下载X86版本的服务包： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954030d6376.webp><img class=mx-auto alt=下载X86版本的服务端 src=https://img-cloud.zhoujie218.top/2024/01/03/65954030d6376.webp>
+</a>]</p><p>下载X86版本的服务端</p><p>拷贝下载地址，到服务器上使用wget进行下载和解压：</p><pre tabindex=0><code># 使用wget进行下载1.1.8-2版本（最新版本可以看上述发布地址）
+wget https://github.com/rustdesk/rustdesk-server/releases/download/1.1.8-2/rustdesk-server-linux-amd64.zip
+# 使用unzip解压
+unzip rustdesk-server-linux-amd64.zip
+# 重命名解压后文件（方便管理）
+mv amd64 RustDesk
+
+BASH
+</code></pre><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540314bc3b.webp><img class=mx-auto alt=下载解压并重命名 src=https://img-cloud.zhoujie218.top/2024/01/03/659540314bc3b.webp>
+</a>]</p><p>下载解压并重命名</p><p>现在，我们的RustDesk前期的准备就完成了。接下来，我们尝试运行，之后再注册为服务。</p><h2 id=尝试运行>尝试运行</h2><p>我们可以先尝试运行一下；确保可以使用后，我们再使用<code>pm2</code>挂起访问，或者<code>systemctl</code>注册为服务。</p><p>为了方便我们测试，这里使用<code>screen</code>双开两个虚拟终端，并以前台模式挂起后端进程：</p><pre tabindex=0><code># 安装screen
+sudo apt install screen
+
+BASH
+</code></pre><p>之后，在刚刚我们的RustDesk解压后的目录内，可以看到相关的文件：</p><pre tabindex=0><code>RustDesk
+├── hbbr
+├── hbbs
+└── rustdesk-utils
+
+TXT
+</code></pre><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954031dd5ea.webp><img class=mx-auto alt="RustDesk Server内包含的内容" src=https://img-cloud.zhoujie218.top/2024/01/03/65954031dd5ea.webp>
+</a>]</p><p>RustDesk Server内包含的内容</p><p>解释一下各个作用：</p><ul><li>hbbs: RustDesk的ID服务，用于分配和注册ID；</li><li>hbbr: RustDesk的中继服务，主要远程访问就是这个，如果直连远程不行，会使用hbbr进行流量中继。</li></ul><p>之后，我们使用两个screen进行启动：</p><pre tabindex=0><code># 创建一个叫myHbbs的虚拟终端：
+screen -R myHbbs
+# 运行hbbs
+./hbbs
+
+BASH
+</code></pre><p>通常情况下就会启动成功： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954034bf262.webp><img class=mx-auto alt=使用screen启动hbbs src=https://img-cloud.zhoujie218.top/2024/01/03/65954034bf262.webp>
+</a>]</p><p>使用screen启动hbbs</p><p>紧接着，<code>Ctrl+a</code>和<code>d</code>返回主终端，启动<strong>hbbr</strong>。</p><pre tabindex=0><code># 创建一个叫yHbb的虚拟终端：
+screen -R myHbbr
+# 运行hbbr
+./hbbr
+
+BASH
+</code></pre><p>到此，如果没什么防火墙、安全组问题，RustDesk就启动完成了。 [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540365ee96.webp><img class=mx-auto alt=使用screen启动hbbr src=https://img-cloud.zhoujie218.top/2024/01/03/659540365ee96.webp>
+</a>]</p><p>使用screen启动hbbr</p><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954033b7560.webp><img class=mx-auto alt=使用screen启动完成 src=https://img-cloud.zhoujie218.top/2024/01/03/65954033b7560.webp>
+</a>]</p><p>使用screen启动完成</p><p>查看这个<strong>RustDesk</strong>目录，就可以发现，多了一些数据库文件和一个证书文件：</p><pre tabindex=0><code>RustDesk
+├── db_v2.sqlite3
+├── db_v2.sqlite3-shm
+├── db_v2.sqlite3-wal
+├── hbbr
+├── hbbs
+├── id_ed25519
+├── id_ed25519.pub
+└── rustdesk-utils
+
+TXT
+</code></pre><p>我们需要拷贝<code>.pub</code>这个公钥文件，用于接下来的<strong>本地配置</strong>： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540385c21f.webp><img class=mx-auto alt=拷贝公钥文件 src=https://img-cloud.zhoujie218.top/2024/01/03/659540385c21f.webp>
+</a>]</p><p>拷贝公钥文件</p><p>比如，我的公钥文件内容：<code>C6bJn7*******************50nCK3y4=</code></p><p>接下来，我们可以进行本地的配置。</p><h2 id=本地配置>本地配置</h2><p>到RustDesk上的客户端下载地址，下载我们的客户端：</p><ul><li><a href=https://github.com/rustdesk/rustdesk/releases>RustDesk 客户端 Github 发布地址</a></li></ul><p>通常情况下，我们下载最新的发布版本即可： <a href=#downloadRustDeskClient.webp><a data-fancybox=gallery href=#downloadRustDeskClient.webp><img class=mx-auto alt=下载最新版本客户端 src=#downloadRustDeskClient.webp></a></a></p><p>下载最新版本客户端</p><p>比如： 我这里安装macOS，并打开： <a href=#openRustDeskClient_macOS.webp><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954039ac404.webp><img class=mx-auto alt=在macOS上打开RustDesk src=https://img-cloud.zhoujie218.top/2024/01/03/65954039ac404.webp></a></a></p><p>在macOS上打开RustDesk</p><p>点击上面的三个点，进入配置： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595403e2e9ec.webp><img class=mx-auto alt=进入RustDesk的配置界面 src=https://img-cloud.zhoujie218.top/2024/01/03/6595403e2e9ec.webp>
+</a>]</p><p>进入RustDesk的配置界面</p><p>找到网络配置： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595403cdd00d.webp><img class=mx-auto alt=网络配置界面 src=https://img-cloud.zhoujie218.top/2024/01/03/6595403cdd00d.webp>
+</a>]</p><p>网络配置界面</p><p>解锁网络配置，上方两个输入你的服务器IP，下方的Key输入上一步内我们拷贝的公钥（对于我是<code>C6bJn7*******************50nCK3y4=</code>），如果你有使用域名，IP部分也可以使用域名（CDN不行）： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595403e771e9.webp><img class=mx-auto alt=配置我们自己的服务器 src=https://img-cloud.zhoujie218.top/2024/01/03/6595403e771e9.webp>
+</a>]</p><p>配置我们自己的服务器</p><blockquote><p>我们没有开启强制加密，所以理论上key不填写，也可以进行连接；只是，不填写key，网络传输可能不安全。</p></blockquote><p>到此，我们的配置配置就完成了。我们可以体验一下。</p><h1 id=测试使用>测试使用</h1><p>现在，我使用一台Linux虚拟机和我的macOS进行演示，首先在Kali Linux上安装RustDesk：</p><pre tabindex=0><code># 下载最新版本的RustDesk Debian客户端
+wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.deb
+# 使用dpkg进行安装
+sudo dpkg -i rustdesk-1.2.2-aarch64.deb
+
+BASH
+</code></pre><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/659540401136d.webp><img class=mx-auto alt=Linux上安装RustDesk src=https://img-cloud.zhoujie218.top/2024/01/03/659540401136d.webp>
+</a>]</p><p>Linux上安装RustDesk</p><p>安装好后，打开RustDesk： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/65954042d6a76.webp><img class=mx-auto alt=Linux上打开RustDesk src=https://img-cloud.zhoujie218.top/2024/01/03/65954042d6a76.webp>
+</a>]</p><p>Linux上打开RustDesk</p><p>和刚刚一样，我们需要配置好我们自己的服务器参数。在macOS上就可以远程它了： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404999f24.webp><img class=mx-auto alt=macOS上发起远程请求 src=https://img-cloud.zhoujie218.top/2024/01/03/6595404999f24.webp>
+</a>] macOS上发起远程请求</p><p>这个时候，实际上Linux上也是可以直接点击接受的： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404b493ad.webp><img class=mx-auto alt=Linux上接受远程请求 src=https://img-cloud.zhoujie218.top/2024/01/03/6595404b493ad.webp>
+</a>]</p><p>Linux上接受远程请求</p><p>最后的“套娃”效果： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404d6dffd.webp><img class=mx-auto alt=远程协助的效果 src=https://img-cloud.zhoujie218.top/2024/01/03/6595404d6dffd.webp>
+</a>] 远程协助的效果</p><h1 id=注册服务>注册服务</h1><p>现在，我们回到服务端。刚刚使用的<code>screen</code>可能不太优雅，这里我们准备了两个方案注册为访问，方便管理。</p><h2 id=使用pm2运行>使用pm2运行</h2><p>如果要使用pm2运行，需要提前安装nodejs，使用nodejs的软件包管理器（npm或者yarn）安装pm2。</p><p>安装nodejs的方法，我在之前的文章内已经说的十分详细，这里就不再过多介绍，如果不知道如何操作，可以参考：</p><ul><li><a href=https://www.mintimate.cn/2021/07/26/nvmNode>Windows/macOS/Linux上安装Node.js，并使用NVM管理多版本Node.js</a></li></ul><p>就简单说一下思路和使用命令吧：</p><pre tabindex=0><code># 安装nvm
+git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+# 追加到环境变量
+echo &#39;export NVM_DIR=&#34;$HOME/.nvm&#34;&#39; &gt;&gt; ~/.zshrc
+echo &#39;[ -s &#34;$NVM_DIR/nvm.sh&#34; ] &amp;&amp; \. &#34;$NVM_DIR/nvm.sh&#34; # This loads nvm&#39; &gt;&gt; ~/.zshrc
+# 重载环境变量
+source ~/.zshrc
+# 使用nvm安装18版本nodejs
+nvm install 18
+# 使用nodejs的npm安装pm2
+npm install -g pm2
+
+BASH
+</code></pre><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404818c7d.webp><img class=mx-auto alt=安装好nvm src=https://img-cloud.zhoujie218.top/2024/01/03/6595404818c7d.webp>
+</a>]</p><p>安装好nvm</p><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404998487.webp><img class=mx-auto alt=安装好pm2 src=https://img-cloud.zhoujie218.top/2024/01/03/6595404998487.webp>
+</a>]</p><p>安装好pm2</p><p>之后，使用pm2的命令，启动hbbr和hbbs：</p><pre tabindex=0><code># 当前正在RustDesk的目录内
+pm2 start hbbs
+pm2 start hbbr
+
+BASH
+</code></pre><p>之后，就可以发现。RustDesk已经启动。 具体的pm2使用，以后有机会和大家讲解。</p><h2 id=使用systemctl运行>使用Systemctl运行</h2><p>我其实挺喜欢用systemctl的；但是上篇文章，其实已经足够详细，这里就直接给配置的脚本吧，我们需要创建两个Server，首先是<strong>hbbs</strong>:</p><pre tabindex=0><code>[Unit]
+Description=RustDesk Hbbs
+After=network.target
+
+[Service]
+User=mintimate
+Type=simple
+WorkingDirectory=/home/mintimate/myApplication/RustDesk
+ExecStart=/home/mintimate/myApplication/RustDesk/hbbs
+ExecStop=/bin/kill -TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
+BASH
+</code></pre><p>之后是<strong>hbbr</strong>:</p><pre tabindex=0><code>[Unit]
+Description=RustDesk Hbbr
+After=network.target
+
+[Service]
+User=mintimate
+Type=simple
+WorkingDirectory=/home/mintimate/myApplication/RustDesk
+ExecStart=/home/mintimate/myApplication/RustDesk/hbbr
+ExecStop=/bin/kill -TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
+BASH
+</code></pre><p>[
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404c34b71.webp><img class=mx-auto alt=启动完成后 src=https://img-cloud.zhoujie218.top/2024/01/03/6595404c34b71.webp>
+</a>]</p><p>启动完成后</p><p>到此，使用Systemctl注册为服务就完成啦。其实也可以使用screen，就是重启系统后，再次启动比较麻烦。</p><h1 id=qa>Q&amp;A</h1><p>个人的一些使用经验，还有一些常见的问题。</p><h2 id=如何开启强制加密>如何开启强制加密</h2><p>如果你搭建好了RustDesk后，会发发现： 不需要设置key，也可以进行RustDesk的连接。</p><p>这是因为RustDesk默认服务器端会开启加密，但是并不强制。</p><p>如何你想开启强制加密，可以在启动hbbr和hbbs的时候，加上参数<code>-k _</code>:</p><pre tabindex=0><code>./hbbr -k _
+./hbbs -k _
+
+BASH
+</code></pre><p>这样，客户端建立的连接，就需要强制设置好key，也就是我们的<code>*.pub</code>文件，否则无法建立通讯和远程连接： [
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/01/03/6595404e4e8d0.webp><img class=mx-auto alt=强制密钥验证 src=https://img-cloud.zhoujie218.top/2024/01/03/6595404e4e8d0.webp>
+</a>]</p><p>强制密钥验证</p><h1 id=end>END</h1><p>好啦，本次的RustDesk演示就到这里；总的来说，还是很简单的；当然，对于小白用户可能会有一定的难度，建议配合教程和官方文档的同时，还需要配合一些网上Linux教程使用，尤其是亚马逊服务器的使用教程。</p><p>我在注册亚马逊服务器的时候，其实就卡了挺久的。</p><p>有什么问题，可以评论区留言哦。爱发电用户可以优先快速处理，我们有机会再见?。</p><h1 id=是不是看晕头了直接薅站长的羊毛吧>是不是看晕头了，直接薅站长的羊毛吧</h1><p><strong>安装好客户端，直接薅站长的中继服务器即可</strong></p><p>软件官网：</p><p><a href=https://rustdesk.com/zh/>https://rustdesk.com/zh/</a></p><p>官方下载地址：<a href=https://github.com/rustdesk/rustdesk/releases>https://github.com/rustdesk/rustdesk/releases</a></p><p><strong>自编译带站长中继服务器的版本：下载运行即可使用，有手机、电视、win、mac、linux、arm\x86 等版本</strong></p><p><a href=https://github.com/vbskycn/rustdesk/releases>https://github.com/vbskycn/rustdesk/releases</a></p><p>有的朋友链接github比较慢，直接给你贴出直连下载地址了</p><p>适用于: Android 系统安装包，适用于: ARM64 架构的 Android 设备 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-aarch64.apk>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-aarch64.apk</a></p><p>适用于: Android 系统安装包，适用于: ARMv7 架构的 Android 设备 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-armv7.apk>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-armv7.apk</a></p><p>适用于: Android 系统安装包，适用于: 支持所有 Android 设备的通用 APK <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-universal.apk>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-universal.apk</a></p><p>适用于: Android 系统安装包，适用于: 64位 x86 架构的 Android 设备 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.apk>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.apk</a></p><p>适用于: Linux (Debian/Ubuntu) 系统安装包，使用 <code>dpkg -i</code> 命令安装 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.deb>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.deb</a></p><p>适用于: macOS 系统安装包，双击安装 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-aarch64-aarch64.dmg>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-aarch64-aarch64.dmg</a></p><p>适用于: macOS 系统安装包，双击安装 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64-x86_64.dmg>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64-x86_64.dmg</a></p><p>适用于: Windows 系统可执行文件，双击直接运行 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86-sciter.exe>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86-sciter.exe</a></p><p>适用于: Windows 系统可执行文件，双击直接运行 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.exe>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.exe</a></p><p>适用于: Windows 系统安装包，适合批量部署 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.msi>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-x86_64.msi</a></p><p>适用于: Linux (Arch/Manjaro) 系统安装包，使用 <code>pacman -U</code> 命令安装 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-0-x86_64.pkg.tar.zst>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-0-x86_64.pkg.tar.zst</a></p><p>适用于: Linux (RHEL/Fedora/SUSE) 系统安装包，使用 <code>rpm -ivh</code> 或 <code>yum install</code> 命令安装 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-0.x86_64-suse.rpm>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-0.x86_64-suse.rpm</a></p><p>适用于: Linux (RHEL/Fedora/SUSE) 系统安装包，使用 <code>rpm -ivh</code> 或 <code>yum install</code> 命令安装 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-0.x86_64.rpm>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-0.x86_64.rpm</a></p><p>适用于: Linux 通用压缩包，手动解压并执行 <a href=https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-unsigned.tar.gz>https://mirror.ghproxy.com/https://github.com/vbskycn/rustdesk/releases/download/nightly/rustdesk-1.3.0-unsigned.tar.gz</a></p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/2570.html>/archives/2570.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/rustdesk>rustdesk</a></li><li><a href=/tags/%E8%BF%9C%E7%A8%8B>远程</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

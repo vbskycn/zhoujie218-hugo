@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cf on 周杰个人博客</title><link>/tags/cf/</link><description>Recent content in Cf on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/cf/index.xml" rel="self" type="application/rss+xml"/><item><title>定时输出最新的优选IP</title><link>/archives/2371.html</link><pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate><guid>/archives/2371.html</guid><description>&lt;h3 id="这是我每日跑的cf优选ip需要的直接复制就可以了"&gt;这是我每日跑的CF优选IP，需要的直接复制就可以了！&lt;/h3&gt;
+&lt;p&gt;网络环境: 江西电信300M&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://cfip.zhoujie218.top" title="点我查看最新IP："&gt;点我查看最新IP：&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="项目地址"&gt;项目地址：&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/XIU2/CloudflareSpeedTest/releases"&gt;https://github.com/XIU2/CloudflareSpeedTest/releases&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="下载地址"&gt;下载地址：&lt;/h3&gt;
+&lt;p&gt;CloudflareST_linux_amd64.tar.gz&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gh.api.99988866.xyz/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;美国 1&lt;/a&gt;&lt;a href="https://github.91chifun.workers.dev/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;美国 2&lt;/a&gt;&lt;a href="https://gh.xiu2.xyz/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;美国 3&lt;/a&gt;&lt;a href="https://gh.argv.cc/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;美国 4&lt;/a&gt;&lt;a href="https://pd.zwc365.com/seturl/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;美国 5&lt;/a&gt;&lt;a href="https://git.yumenaka.net/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;美国 6&lt;/a&gt;&lt;a href="https://download.fastgit.org/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;日本&lt;/a&gt;&lt;a href="https://ghproxy.com/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_linux_amd64.tar.gz"&gt;韩国&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CloudflareST_windows_amd64.zip&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gh.api.99988866.xyz/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;美国 1&lt;/a&gt;&lt;a href="https://github.91chifun.workers.dev/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;美国 2&lt;/a&gt;&lt;a href="https://gh.xiu2.xyz/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;美国 3&lt;/a&gt;&lt;a href="https://gh.argv.cc/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;美国 4&lt;/a&gt;&lt;a href="https://pd.zwc365.com/seturl/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;美国 5&lt;/a&gt;&lt;a href="https://git.yumenaka.net/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;美国 6&lt;/a&gt;&lt;a href="https://download.fastgit.org/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;日本&lt;/a&gt;&lt;a href="https://ghproxy.com/https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.1/CloudflareST_windows_amd64.zip"&gt;韩国&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="如果是第一次使用则建议创建新文件夹后续更新请跳过该步骤"&gt;如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;mkdir CloudflareST
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="进入文件夹后续更新只需要从这里重复下面的下载解压命令即可"&gt;进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd CloudflareST
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="下载-cloudflarest-压缩包自行根据需求替换-url-中版本号和文件名"&gt;下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -N https://github.com/XIU2/CloudflareSpeedTest/releases/download/v1.5.0/CloudflareST_linux_amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="解压不需要删除旧文件会直接覆盖自行根据需求替换-文件名"&gt;解压（不需要删除旧文件，会直接覆盖，自行根据需求替换 文件名）&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;tar -zxf CloudflareST_linux_amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="赋予执行权限"&gt;赋予执行权限&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;chmod +x CloudflareST
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="运行"&gt;运行&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;./CloudflareST
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="宝塔定时任务"&gt;宝塔定时任务&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/wwwroot/cf.zhoujie218.top
+bash /www/wwwroot/cf.zhoujie218.top/cfst_hosts.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="openwrt定时任务"&gt;openwrt定时任务&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;0 08 * * * bash /root/cf/cfst_hosts.sh &amp;gt; /dev/null
+0 19 * * * bash /root/cf/cfst_hosts.sh &amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="php获取文件修改时间"&gt;php获取文件修改时间&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;?php
+header(&amp;#39;content-type:text/html;charset=utf-8&amp;#39;);
+echo &amp;#34;本次获取IP时间: &amp;#34;.date(&amp;#34;Y-m-d H:i:s&amp;#34;,filemtime(&amp;#34;result.csv&amp;#34;));
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="php插入框架"&gt;php插入框架&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;?php include &amp;#34;ip.html&amp;#34;; ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="html调用csv内容还可以是网络文件"&gt;html调用csv内容，还可以是网络文件&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt;
+
+&amp;lt;head&amp;gt;
+ &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;
+ &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;
+ &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+ &amp;lt;script src=&amp;#34;http://libs.baidu.com/jquery/1.9.0/jquery.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
+
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body&amp;gt;
+ &amp;lt;div class=&amp;#34;userlist&amp;#34;&amp;gt;
+
+ &amp;lt;table id=&amp;#34;ut&amp;#34;&amp;gt;
+
+ &amp;lt;tr&amp;gt;
+
+ &amp;lt;td&amp;gt;name&amp;lt;/td&amp;gt;
+
+ &amp;lt;td&amp;gt;age&amp;lt;/td&amp;gt;
+
+ &amp;lt;td&amp;gt;id&amp;lt;/td&amp;gt;
+
+ &amp;lt;/tr&amp;gt;
+
+ &amp;lt;/table&amp;gt;
+
+ &amp;lt;/div&amp;gt;
+ &amp;lt;script&amp;gt;
+
+ //url转blob
+ function urlToBlob() {
+ let file_url =
+ &amp;#39;http://cf.zhoujie218.top:50086/result.csv&amp;#39;
+ let xhr = new XMLHttpRequest();
+ xhr.open(&amp;#34;get&amp;#34;, file_url, true);
+ xhr.responseType = &amp;#34;blob&amp;#34;;
+ xhr.onload = function () {
+ if (this.status == 200) {
+ // if (callback) {
+ // callback();
+ console.log(this.response)
+ const reader = new FileReader()
+ reader.onload = function () {
+ console.log(&amp;#39;reader.result&amp;#39;, reader.result)
+ csvToTable(reader.result)
+ }
+ reader.readAsText(this.response);
+ }
+ };
+ xhr.send();
+ }
+ urlToBlob()
+ function csvToTable(content){
+ var mtr = document.getElementById(&amp;#34;ut&amp;#34;);
+ var frag = document.createDocumentFragment();
+ // 对csv文件的数据先以行分割
+ var userList = content.split(&amp;#34;\n&amp;#34;);
+ // 我们在对每一行以逗号作分割
+ for (i = 0; i &amp;lt; userList.length; i++) {
+
+ userary = userList[i].split(&amp;#34;,&amp;#34;);
+ tr = document.createElement(&amp;#34;tr&amp;#34;);
+ // 对每行的内容遍历到td标签去
+
+ for (j = 0; j &amp;lt; userary.length; j++) {
+
+ td = document.createElement(&amp;#34;td&amp;#34;);
+ td.append(userary[j]);
+ tr.appendChild(td);
+ }
+ frag.appendChild(tr);
+ }
+ // 加载到web页面
+ mtr.appendChild(frag);
+ }
+ &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111052012389.png"&gt;
+ &lt;img class="mx-auto" alt="image-20211105200244459" src="https://img-cloud.zhoujie218.top/pc/202111052012389.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

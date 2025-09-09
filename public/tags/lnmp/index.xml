@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lnmp on 周杰个人博客</title><link>/tags/lnmp/</link><description>Recent content in Lnmp on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 23 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/lnmp/index.xml" rel="self" type="application/rss+xml"/><item><title>LNMP环境安装h5ai索引目录与基本配置</title><link>/archives/706.html</link><pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate><guid>/archives/706.html</guid><description>&lt;p&gt;h5ai是一款PHP开发的索引目录程序，与之前介绍过的&lt;a href="https://www.xiaoz.me/archives/7251"&gt;Fdscript&lt;/a&gt;、&lt;a href="https://www.xiaoz.me/archives/7912"&gt;PHP Directory Lister&lt;/a&gt;类似，从实际体验来看感觉h5ai功能更加丰富，于是小z将软件库更换到了h5ai，分享下配置过程。&lt;/p&gt;
+&lt;p&gt;在开始之前请先确保您已经安装了PHP环境，推荐使用&lt;a href="https://oneinstack.com/" title="OneinStack"&gt;OneinStack&lt;/a&gt;，如果是新手可以安装宝塔面板。&lt;/p&gt;
+&lt;h3 id="下载"&gt;下载&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官方下载地址：&lt;a href="https://release.larsjung.de/h5ai/h5ai-0.29.0.zip" title="h5ai-0.29.0.zip"&gt;h5ai-0.29.0.zip&lt;/a&gt; 软件库下载：&lt;a href="http://soft.xiaoz.org/website/h5ai-0.29.0.zip" title="h5ai-0.29.0.zip"&gt;h5ai-0.29.0.zip&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#在站点根目录执行
+wget http://soft.xiaoz.org/website/h5ai-0.29.0.zip
+unzip h5ai-0.29.0.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下载后解压至网站根目录，目录结构如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;DOC_ROOT
+ ├─ _h5ai
+ ├─ your files
+ └─ and folders
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="nginx配置"&gt;Nginx配置&lt;/h3&gt;
+&lt;p&gt;接着访问&lt;code&gt;[](http://your-domain.tld/_h5ai/public/index.php)[http://YOUR-DOMAIN.TLD/_h5ai/public/index.php](http://YOUR-DOMAIN.TLD/_h5ai/public/index.php)&lt;/code&gt;测试能否打开，如果正常应该会看到如下界面。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16042020190723.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16042020190723.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;如果您安装的Oneinstack配置文件一般在&lt;code&gt;/usr/local/nginx/conf/vhost/domain.com.conf&lt;/code&gt;，修改这个配置文件，将&lt;code&gt;/_h5ai/public/index.php&lt;/code&gt;设置为默认首页，配置如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;index index.html index.htm index.php /_h5ai/public/index.php;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改后别忘记重载nginx（&lt;code&gt;service nginx reload&lt;/code&gt;），如果不出意外，再次访问您的域名就可以看到效果了。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16163920190723.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16163920190723.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="修改默认语言"&gt;修改默认语言&lt;/h3&gt;
+&lt;p&gt;h5ai支持多语言，但默认显示的是英文，可修改配置文件&lt;code&gt;_h5ai/private/conf/options.json&lt;/code&gt;将&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;l10n&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;lang&amp;#34;: &amp;#34;en&amp;#34;,
+ &amp;#34;useBrowserLang&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;en&lt;/code&gt;修改为&lt;code&gt;zh-cn&lt;/code&gt;，这样默认就是中文界面啦。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;l10n&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;lang&amp;#34;: &amp;#34;zh-cn&amp;#34;,
+ &amp;#34;useBrowserLang&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="开启搜索功能"&gt;开启搜索功能&lt;/h3&gt;
+&lt;p&gt;依然是修改&lt;code&gt;options.json&lt;/code&gt;这个文件，将&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;search&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: false,
+ &amp;#34;advanced&amp;#34;: true,
+ &amp;#34;debounceTime&amp;#34;: 300,
+ &amp;#34;ignorecase&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;false&lt;/code&gt;修改为&lt;code&gt;true&lt;/code&gt;就OK了&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;search&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;advanced&amp;#34;: true,
+ &amp;#34;debounceTime&amp;#34;: 300,
+ &amp;#34;ignorecase&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="显示二维码"&gt;显示二维码&lt;/h3&gt;
+&lt;p&gt;某些手机软件为了方便下载，可以开启二维码显示功能，直接用手机扫描下载，非常方便。修改&lt;code&gt;options.json&lt;/code&gt;配置文件，&lt;/p&gt;</description></item></channel></rss>

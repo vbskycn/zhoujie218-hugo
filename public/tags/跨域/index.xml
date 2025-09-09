@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>跨域 on 周杰个人博客</title><link>/tags/%E8%B7%A8%E5%9F%9F/</link><description>Recent content in 跨域 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%B7%A8%E5%9F%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>解决pdf.js不支持跨域问题</title><link>/archives/2623.html</link><pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate><guid>/archives/2623.html</guid><description>&lt;h1 id="解决pdfjs不支持跨域问题"&gt;解决pdf.js不支持跨域问题&lt;/h1&gt;
+&lt;h2 id="pdfjs是什么"&gt;pdf.js是什么&lt;/h2&gt;
+&lt;p&gt;PDF.js是一个使用HTML5构建的可移植文档格式（PDF）查看器。&lt;/p&gt;
+&lt;h2 id="解决跨域问题"&gt;解决跨域问题&lt;/h2&gt;
+&lt;p&gt;首先直接打开任何一个链接pdf文件是不存在跨域问题的，正是因为pdf.js需要通过ajax以文件流的形式去解析才造成了跨域问题。&lt;/p&gt;
+&lt;p&gt;当pdf.js从 &lt;a href="http://localhost/"&gt;http://localhost&lt;/a&gt; 请求 &lt;a href="http://localhost:8081/files/demo.pdf"&gt;http://localhost:8081/files/demo.pdf&lt;/a&gt; , 很遗憾啊，pdf.js发出了个警告：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;file origin does not match viewer&amp;#39;s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;因为当前源与目标源不一样，pdf.js直接拦截了。&lt;/p&gt;
+&lt;h3 id="解决方法一代理方式"&gt;&lt;strong&gt;解决方法一（代理方式）：&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在&lt;a href="http://localhost/"&gt;http://localhost&lt;/a&gt; 服务器配置代理，nginx如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;location /files {
+ proxy_pass http://localhost:8081/;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用方法，不要带上前缀&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http://localhost/pdf.js/web/viewer.html?file=/demo.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;这种方法有缺点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、不能使用完整链接，如：&lt;a href="http://localhost:8081/files/demo.pdf"&gt;http://localhost:8081/files/demo.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、如果目标存在多个目录需要增加配置，如： /files/demo.pdf 、 /pdf/demo.pdf&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="解决方法二配置cors跨域"&gt;&lt;strong&gt;解决方法二（配置CORS跨域）：&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在目标服务器 &lt;a href="http://localhost:8081/"&gt;http://localhost:8081&lt;/a&gt; 新增下面头部即可。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS
+Access-Control-Expose-Headers: Accept-Ranges, Content-Encoding, Content-Length, Content-Range
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;nginx（其他服务器类似）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;location / &lt;span style="color:#f92672"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; add_header Access-Control-Allow-Origin &lt;span style="color:#e6db74"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; add_header Access-Control-Allow-Methods &lt;span style="color:#e6db74"&gt;&amp;#39;GET, POST, PUT, OPTIONS&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; add_header Access-Control-Expose-Headers &lt;span style="color:#e6db74"&gt;&amp;#39;Accept-Ranges, Content-Encoding, Content-Length, Content-Range&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http://localhost/pdf.js/web/viewer.html?file=http://localhost:8081/demo.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以为这样就大功告成了吗？ 很遗憾，还是报了之前的错误&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;file origin does not match viewer&amp;#39;s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;翻了翻官方文档，然而没有找到解决方案。但是并不能主档我前进，现在只好从源码入手。&lt;/p&gt;</description></item></channel></rss>

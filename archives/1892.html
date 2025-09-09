@@ -1,0 +1,185 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>NAS挂载谷歌云盘，用Emby实现云盘媒体文件在线播放。兼容全平台、全客户端 | 周杰个人博客</title><meta property="og:title" content="NAS挂载谷歌云盘，用Emby实现云盘媒体文件在线播放。兼容全平台、全客户端 - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2020-11-07T00:00:00+08:00'><meta property="article:modified_time" content='2020-11-07T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="NAS挂载谷歌云盘，用Emby实现云盘媒体文件在线播放。兼容全平台、全客户端"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/1892.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#前言>前言</a></li><li><a href=#准备工作>准备工作</a></li><li><a href=#开始表演>开始表演</a><ul><li><a href=#一检查谷歌云盘>一、检查谷歌云盘</a></li><li><a href=#二开启nas的终端机设置root连接>二、开启NAS的终端机设置ROOT连接</a></li><li><a href=#三安装-rclone>三、安装 rclone</a></li><li><a href=#四初始化并配置-rclone>四、初始化并配置 rclone</a></li><li><a href=#五在nas创建-rclone-挂载所需目录>五、在NAS创建 rclone 挂载所需目录</a></li><li><a href=#六设置-rclone-开机自启>六、设置 rclone 开机自启</a></li></ul></li><li><a href=#设置emby媒体库>设置EMBY媒体库</a></li><li><a href=#重启群晖后记得重新执行此命令>重启群晖后记得重新执行此命令</a></li><li><a href=#renderd128的文件权限为666devdri文件夹权限为755执行以下指令-sudo-chmod-666-devdrirenderd128-sudo-chmod-755-devdri>renderD128的文件权限为666，/dev/dri文件夹权限为755，执行以下指令： sudo chmod 666 /dev/dri/renderD128 sudo chmod 755 /dev/dri</a></li><li><a href=#后记>后记</a></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>NAS挂载谷歌云盘，用Emby实现云盘媒体文件在线播放。兼容全平台、全客户端</h1></header><time datetime=2020-11-07T00:00:00Z class="post-meta meta-date dt-published">2020年11月7日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a></div><div class=post-content><h2 id=前言>前言</h2><p>上期视频（<a href="https://www.v2rayssr.com/go?url=https://youtu.be/TME3LNxyJLk">点击观看</a>）我们讲到了如何在NAS里面搭建EMBY的媒体中心，来管理我们本地的片源，大家应该都去尝试了一下。群里小伙伴们都觉得这个媒体中心挺不错的，只是自己的片源太少。上期视频作者也是说到了，片源少可以通过拓展的方式取得片源，比如我们谷歌云的团队共享盘。</p><p>本身来讲，团队共享盘就是一个无限空间的个人网盘，但是有一部分团队在团队共享盘里面装载着精品的资源，并有专人的团队去维护这些资源，所以我们把这类的共享盘称之为精英盘。顾名思义，里面都是精英内容。今天这期视频我们就基于一个装载着大部分奈飞影音的精英盘为大家开展。</p><p>奈飞（Netflix）影音 – 谷歌团队共享精英盘官网地址：<a href="https://www.v2rayssr.com/go?url=https://m.gayufan.com">点击访问</a></p><p>本期视频教程：<a href="https://www.v2rayssr.com/go?url=https://youtu.be/77zWn8zSRus">点击播放</a></p><h2 id=准备工作>准备工作</h2><p>1、NAS一台</p><p>2、已经搭建EMBY媒体中心（<a href=https://www.v2rayssr.com/j3455emby.html>不会请点击</a>）</p><p>3、谷歌共享团队盘一个（<a href="https://www.v2rayssr.com/go?url=https://m.gayufan.com/">奈飞影视精英盘官网直达</a>）</p><p>4、NAS的科学上网环境（<a href=https://www.v2rayssr.com/j3455emby.html>不会请点击</a>）</p><p>5、其他的相关客户端在上期视频均有介绍</p><h2 id=开始表演>开始表演</h2><h3 id=一检查谷歌云盘>一、检查谷歌云盘</h3><p>检查GOOGLE云端硬盘里面是否有共享的云端云盘，当然你只有默认的15G的个人云盘也是可以完成挂载的。</p><p>快速直达谷歌云盘：<a href="https://www.v2rayssr.com/go?url=https://drive.google.com/drive/my-drive">点击直达</a></p><p>作者这边就只有一个购买的 <a href="https://www.v2rayssr.com/go?url=https://m.gayufan.com/">影视精英盘</a> ，如图：</p><p>[caption id=&ldquo;attachment_2138&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;679&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044657641.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044657641.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044657641.png>
+</a></a>[/caption]</p><h3 id=二开启nas的终端机设置root连接>二、开启NAS的终端机设置ROOT连接</h3><p>我们首先在NAS里面找到“控制面板” – “终端机和SNMP”，启动SSH功能，并应用。</p><p>[caption id=&ldquo;attachment_2139&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;832&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044658345.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044658345.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044658345.png>
+</a></a>[/caption]</p><p>打开FinalShell（或是其他SSH工具），用管理员的账号的密码连接我们的NAS。</p><p>输入 <code>sudo -i</code> 并输入密码，切换root用户，然后</p><ol><li>cd /etc/ssh</li><li>chmod 755 sshd_config</li><li>vim /etc/ssh/sshd_config</li></ol><p>找到 <code>#PermitRootLogin</code>  开头的一行代码，按键盘 i 键进入改写模式，改为 <code>#PermitRootLogin yes</code> ，改写完成按键盘 ESC 键，输入 <code>:wq</code> 保存退出，然后输入 <code>reboot</code> 重启NAS。</p><p>重启完成，继续用管理员的用户登录SSH工具，输入 <code>sudo -i</code> 取得 root 用户权限，，输入 <code>synouser --setpw root 密码</code></p><p>关闭SSH窗口，重新用 root 用户登录。</p><h3 id=三安装-rclone>三、安装 rclone</h3><p>rclone的官方安装教程：<a href="https://www.v2rayssr.com/go?url=https://rclone.org/install/">点击访问</a></p><p>输入以下代码安装 rclone</p><ol><li>curl <a href=https://rclone.org/install.sh>https://rclone.org/install.sh</a> | sudo bash</li></ol><p>提示如下图就安装成功了，rclone本身也不大，所以安装还是很快的。</p><p>[caption id=&ldquo;attachment_2140&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;638&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044659722.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044659722.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044659722.png>
+</a></a>[/caption]</p><h3 id=四初始化并配置-rclone>四、初始化并配置 rclone</h3><p>输入以下代码，我们对rclone进行初始化的配置。</p><ol><li>rclone config</li></ol><blockquote><p>下面的步骤比较多，请大家仔细观看视频教程或是详细阅读博客。若是配置输入错误了请重新执行上面的配置代码。</p></blockquote><p>这里我们选择N，创建一个名字，当然是随便的，建议简单一些，作者的名字是 gdnf （Google Drive NetFlix）</p><p>以下所有选项作者这边全部保存并注释了一下，大家请详细阅读。（根据提示选择你的选项，########后面为你修改的选项，请看清楚）</p><ol><li><p>root@NAS:~# rclone config</p></li><li><p>2020/06/15 23:25:54 NOTICE: Config file &ldquo;/root/.config/rclone/rclone.conf&rdquo; not found - using defaults</p></li><li><p>No remotes found - make a new one</p></li><li><p>n) New remote</p></li><li><p>s) Set configuration password</p></li><li><p>q) Quit config</p></li><li><p>n/s/q> n ######## 这里选择N来创建我们磁盘的名字</p></li><li><p>name> gdnf ######## 我们这里创建gdnf（Google Drive NetFlix）越简单越好</p></li><li><p>Type of storage to configure.</p></li><li><p>Enter a string value. Press Enter for the default ("").</p></li><li><p>Choose a number from below, or type in your own value</p></li><li><p>1 / 1Fichier</p></li><li><p>&ldquo;fichier&rdquo;</p></li><li><p>2 / Alias for an existing remote</p></li><li><p>&ldquo;alias&rdquo;</p></li><li><p>3 / Amazon Drive</p></li><li><p>&ldquo;amazon cloud drive&rdquo;</p></li><li><p>4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)</p></li><li><p>&ldquo;s3&rdquo;</p></li><li><p>5 / Backblaze B2</p></li><li><p>&ldquo;b2&rdquo;</p></li><li><p>6 / Box</p></li><li><p>&ldquo;box&rdquo;</p></li><li><p>7 / Cache a remote</p></li><li><p>&ldquo;cache&rdquo;</p></li><li><p>8 / Citrix Sharefile</p></li><li><p>&ldquo;sharefile&rdquo;</p></li><li><p>9 / Dropbox</p></li><li><p>&ldquo;dropbox&rdquo;</p></li><li><p>10 / Encrypt/Decrypt a remote</p></li><li><p>&ldquo;crypt&rdquo;</p></li><li><p>11 / FTP Connection</p></li><li><p>&ldquo;ftp&rdquo;</p></li><li><p>12 / Google Cloud Storage (this is not Google Drive)</p></li><li><p>&ldquo;google cloud storage&rdquo;</p></li><li><p>13 / Google Drive</p></li><li><p>&ldquo;drive&rdquo;</p></li><li><p>14 / Google Photos</p></li><li><p>&ldquo;google photos&rdquo;</p></li><li><p>15 / Hubic</p></li><li><p>&ldquo;hubic&rdquo;</p></li><li><p>16 / In memory object storage system.</p></li><li><p>&ldquo;memory&rdquo;</p></li><li><p>17 / Jottacloud</p></li><li><p>&ldquo;jottacloud&rdquo;</p></li><li><p>18 / Koofr</p></li><li><p>&ldquo;koofr&rdquo;</p></li><li><p>19 / Local Disk</p></li><li><p>&ldquo;local&rdquo;</p></li><li><p>20 / Mail.ru Cloud</p></li><li><p>&ldquo;mailru&rdquo;</p></li><li><p>21 / Mega</p></li><li><p>&ldquo;mega&rdquo;</p></li><li><p>22 / Microsoft Azure Blob Storage</p></li><li><p>&ldquo;azureblob&rdquo;</p></li><li><p>23 / Microsoft OneDrive</p></li><li><p>&ldquo;onedrive&rdquo;</p></li><li><p>24 / OpenDrive</p></li><li><p>&ldquo;opendrive&rdquo;</p></li><li><p>25 / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)</p></li><li><p>&ldquo;swift&rdquo;</p></li><li><p>26 / Pcloud</p></li><li><p>&ldquo;pcloud&rdquo;</p></li><li><p>27 / Put.io</p></li><li><p>&ldquo;putio&rdquo;</p></li><li><p>28 / QingCloud Object Storage</p></li><li><p>&ldquo;qingstor&rdquo;</p></li><li><p>29 / SSH/SFTP Connection</p></li><li><p>&ldquo;sftp&rdquo;</p></li><li><p>30 / Sugarsync</p></li><li><p>&ldquo;sugarsync&rdquo;</p></li><li><p>31 / Tardigrade Decentralized Cloud Storage</p></li><li><p>&ldquo;tardigrade&rdquo;</p></li><li><p>32 / Transparently chunk/split large files</p></li><li><p>&ldquo;chunker&rdquo;</p></li><li><p>33 / Union merges the contents of several upstream fs</p></li><li><p>&ldquo;union&rdquo;</p></li><li><p>34 / Webdav</p></li><li><p>&ldquo;webdav&rdquo;</p></li><li><p>35 / Yandex Disk</p></li><li><p>&ldquo;yandex&rdquo;</p></li><li><p>36 / http Connection</p></li><li><p>&ldquo;http&rdquo;</p></li><li><p>37 / premiumize.me</p></li><li><p>&ldquo;premiumizeme&rdquo;</p></li><li><p>38 / seafile</p></li><li><p>&ldquo;seafile&rdquo;</p></li><li><p>Storage> 13 ######## 这里选择 Google Drive ，所以我们选择13，大家看清楚自己的选项</p></li><li><p>** See help for drive backend at: <a href=https://rclone.org/drive/>https://rclone.org/drive/</a> **</p></li><li><p>Google Application Client Id</p></li><li><p>Setting your own is recommended.</p></li><li><p>See <a href=https://rclone.org/drive/#making-your-own-client-id>https://rclone.org/drive/#making-your-own-client-id</a> for how to create your own.</p></li><li><p>If you leave this blank, it will use an internal key which is low performance.</p></li><li><p>Enter a string value. Press Enter for the default ("").</p></li><li><p>client_id> ######## 这里直接回车</p></li><li><p>Google Application Client Secret</p></li><li><p>Setting your own is recommended.</p></li><li><p>Enter a string value. Press Enter for the default ("").</p></li><li><p>client_secret> ######## 这里直接回车</p></li><li><p>Scope that rclone should use when requesting access from drive.</p></li><li><p>Enter a string value. Press Enter for the default ("").</p></li><li><p>Choose a number from below, or type in your own value</p></li><li><p>1 / Full access all files, excluding Application Data Folder.</p></li><li><p>&ldquo;drive&rdquo;</p></li><li><p>2 / Read-only access to file metadata and file contents.</p></li><li><p>&ldquo;drive.readonly&rdquo;</p></li><li><p>/ Access to files created by rclone only.</p></li><li><p>3 | These are visible in the drive website.</p></li><li><p>| File authorization is revoked when the user deauthorizes the app.</p></li><li><p>&ldquo;drive.file&rdquo;</p></li><li><p>/ Allows read and write access to the Application Data folder.</p></li><li><p>4 | This is not visible in the drive website.</p></li><li><p>&ldquo;drive.appfolder&rdquo;</p></li><li><p>/ Allows read-only access to file metadata but</p></li><li><p>5 | does not allow any access to read or download file content.</p></li><li><p>&ldquo;drive.metadata.readonly&rdquo;</p></li><li><p>scope> 1 ######## 这里选择1</p></li><li><p>ID of the root folder</p></li><li><p>Leave blank normally.</p></li><li><p>Fill in to access &ldquo;Computers&rdquo; folders (see docs), or for rclone to use</p></li><li><p>a non root folder as its starting point.</p></li><li><p>Note that if this is blank, the first time rclone runs it will fill it</p></li><li><p>in with the ID of the root folder.</p></li><li><p>Enter a string value. Press Enter for the default ("").</p></li><li><p>root_folder_id> ######## 这里直接回车</p></li><li><p>Service Account Credentials JSON file path</p></li><li><p>Leave blank normally.</p></li><li><p>Needed only if you want use SA instead of interactive login.</p></li><li><p>Enter a string value. Press Enter for the default ("").</p></li><li><p>service_account_file> ######## 这里直接回车</p></li><li><p>Edit advanced config? (y/n)</p></li><li><p>y) Yes</p></li><li><p>n) No (default)</p></li><li><p>y/n> n ######## 这里选择N</p></li><li><p>Remote config</p></li><li><p>Use auto config?</p></li><li><p>* Say Y if not sure</p></li><li><p>* Say N if you are working on a remote or headless machine</p></li><li><p>y) Yes (default)</p></li><li><p>n) No</p></li><li><p>y/n> n ######## 这里选择N</p></li><li><p>Please go to the following link: <a href=https://accounts.google.com/o/oauth2/auth?access>https://accounts.google.com/o/oauth2/auth?access</a>_type=offline&amp;client_id=202264815644.apps.googleusercontent.com&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;state=M4gv7ED98GhPMGgHUIs9wg</p></li><li><p>Log in and authorize rclone for access</p></li><li><p>Enter verification code> ######## 这里输入上面HTTPS里面打开并授权的秘钥</p></li><li><p>Configure this as a team drive?</p></li><li><p>y) Yes</p></li><li><p>n) No (default)</p></li><li><p>y/n> y ######## 这里选择Y</p></li><li><p>Fetching team drive list&mldr;</p></li><li><p>Choose a number from below, or type in your own value</p></li><li><p>1 / homenet6精英nas盘</p></li><li><p>&ldquo;0AAf4ySrzi3ORUk9PVA&rdquo;</p></li><li><p>Enter a Team Drive ID> 1 ######## 这里选择1（根据自己的序号来，选择自己需要加载的共享盘）</p></li><li><p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p></li><li><p>[gdnf]</p></li><li><p>type = drive</p></li><li><p>scope = drive</p></li><li><p>token = {&ldquo;access_token&rdquo;:&ldquo;ya29.a0AfH6SMBF-_s-7-UcRq4WsAPqDj3V5Wa3UHNDFjfijAVTXrh5Ye15cUl7rhTpHo2S6wIYBGOnt9d7MV_gYckcHfk49n-yQ1BAb0Kj3P2e62vz2dGZ_BLoll2YlxWYo7aQnHvcw8UM7MZV7v83sdmGgSoDugo6OdXjT5k&rdquo;,&ldquo;token_type&rdquo;:&ldquo;Bearer&rdquo;,&ldquo;refresh_token&rdquo;:&ldquo;1//0eXNMszwdN8SvCgYIARAAGA4SNwF-L9Irl7qUev1cdWPJn3ovGQTxqmomauTFfOqShjmtMmnB8V2_0PLexmJJGU-eH3hIaw9FvXE&rdquo;,&ldquo;expiry&rdquo;:&ldquo;2020-06-16T00:26:29.034414257+08:00&rdquo;}</p></li><li><p>team_drive = 0AAf4ySrzi3ORUk9PVA</p></li><li><p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p></li><li><p>y) Yes this is OK (default)</p></li><li><p>e) Edit this remote</p></li><li><p>d) Delete this remote</p></li><li><p>y/e/d> y ######## 这里选择Y</p></li><li><p>Current remotes:</p></li><li><p>Name Type</p></li><li><p>==== ====</p></li><li><p>gdnf drive</p></li><li><p>e) Edit existing remote</p></li><li><p>n) New remote</p></li><li><p>d) Delete remote</p></li><li><p>r) Rename remote</p></li><li><p>c) Copy remote</p></li><li><p>s) Set configuration password</p></li><li><p>q) Quit config</p></li><li><p>e/n/d/r/c/s/q> q ######## 这里选择q</p></li><li><p>root@NAS:~#</p></li></ol><p>到此我们的 rclone 就配置完毕了。</p><h3 id=五在nas创建-rclone-挂载所需目录>五、在NAS创建 rclone 挂载所需目录</h3><p>打开“控制面板” – “共享文件夹”，随便创建一个目录（推荐英文名字）作为我们rclone的挂载映射目录。</p><p>[caption id=&ldquo;attachment_2141&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;767&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044659557.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044659557.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044659557.png>
+</a></a>[/caption]</p><p>一直下一步，直到出现权限窗口，赋予embyserver读写的权限，如下图</p><p>[caption id=&ldquo;attachment_2142&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;852&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044700359.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044700359.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044700359.png>
+</a></a>[/caption]</p><p>回到我们的SSH窗口，继续输入如下代码</p><ol><li>rclone mount gdnf:/ /volume1/GDNF --allow-other --allow-non-empty --vfs-cache-mode writes &</li></ol><p>简单解释一下代码</p><p>gndf 为我们开始配置时候的 name，:/是挂载你刚才选定共享盘根文件夹里面所有东西，/volume1/GDNF 为NAS我们刚才创建的文件夹（第一块磁盘根目录下面的GDNF文件夹）</p><p>若是对于 /volume1/GDNF 路径地址不了解，可以看下图</p><p>打开NAS桌面的 File Station ，在刚才新建的文件夹上面点击鼠标右键 – 属性，会出现如下图，里面的位置就是我们需要填写的路径。</p><p>[caption id=&ldquo;attachment_2143&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;924&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044700362.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044700362.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044700362.png>
+</a></a>[/caption]</p><p>代码运行成功以后会提示类似的信息：（数字不用管）</p><ol><li>root@NAS:~# rclone mount gdnf:/ /volume1/GDNF --allow-other --allow-non-empty --vfs-cache-mode writes &</li><li>[1] 24591</li></ol><p>你可以在SSH窗口输入 <code>df -h</code> 进行验证，会多了一个 gdnf 的磁盘。如图：</p><p>[caption id=&ldquo;attachment_2144&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;551&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044701995.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044701995.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044701995.png>
+</a></a>[/caption]</p><blockquote><p>输入以下命令可以卸载磁盘，里面的路径同上所述 <code>fusermount -qzu /volume1/GDNF</code></p></blockquote><p>挂载成功以后，我们在NAS里面刚才新建的文件夹里面可以看到和共享盘里面同样的目录，如图[caption id=&ldquo;attachment_2145&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;915&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044702778.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044702778.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044702778.png>
+</a></a>[/caption]</p><h3 id=六设置-rclone-开机自启>六、设置 rclone 开机自启</h3><p>下载如下脚本并编辑，命令如下</p><ol><li>wget <a href=https://www.v2rayssr.com/wp-content/uploads/rcloned>https://www.v2rayssr.com/wp-content/uploads/rcloned</a> && vim rcloned</li><li>#备份地址 <a href=https://raw.githubusercontent.com/V2RaySSR/Tools/master/rcloned>https://raw.githubusercontent.com/V2RaySSR/Tools/master/rcloned</a> && vim rcloned</li></ol><p>我们修改配置文件如下：(按下键盘的 i 键进入编辑模式)</p><ol><li>REMOTE=&lsquo;gdnf:/&rsquo; （配置rclone时候设置的名字，后面加上:/，代表挂载所有文件夹）</li><li>LOCAL=&rsquo;/volume1/GDNF&rsquo; （上面NAS里面新建文件夹的绝对路径）</li><li>CONFIG=&rsquo;/root/.config/rclone/rclone.conf&rsquo;</li><li>DEMO=&lsquo;rclone&rsquo;</li></ol><p>按下键盘 esc 键退出编辑模式，然后输入 :wq 对刚才的编辑进行保存。</p><p>输入以下命令</p><ol><li>bash /root/rcloned start</li></ol><p>然后我们转到NAS面板，找到“控制面板” – “计划任务” – “新增” – “触发的任务” – “用户定义的脚本” – “任务设置”，在 “用户定义的脚本” 里面输入 <code>bash /root/rcloned start</code>，在 “常规” 里面设置任务的名字。</p><p>[caption id=&ldquo;attachment_2146&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;993&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044702514.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044702514.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044702514.png>
+</a></a>[/caption]</p><p>然后启用这项计划任务，并保存！</p><p>[caption id=&ldquo;attachment_2147&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;996&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044703649.png>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044703649.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044703649.png>
+</a></a>[/caption]</p><p>七、至此，rclone 安装设置完毕</p><p>附带其他的命令</p><ol><li>开始挂载 bash /root/rcloned start</li><li>停止挂载 bash /root/rcloned stop</li><li>重新挂载 bash /root/rcloned restart</li><li>查看日志 tail -f /$HOME/.rclone/rcloned.log</li></ol><h2 id=设置emby媒体库>设置EMBY媒体库</h2><blockquote><p>因为本身这个共享给我们的<a href="https://www.v2rayssr.com/go?url=https://m.gayufan.com/">精英盘</a>人家已经是做好了维护，也就意味着很多硬盘的元数据包括字幕等信息，其实是包含在我们的云盘里面的，所以其实我们是不需要设置搜刮器去搜刮相应的元数据。所以，推荐按照作者的后台设置进行设置，由于图片比较多，博文就不详细写明了，请大家对照视频进行设置</p></blockquote><blockquote><p>上期视频我们也讲到了，在EMBY里面电影和电视剧我们需要分开存放，不然会严重的影响使用，我们注意到这个<a href="https://www.v2rayssr.com/go?url=https://m.gayufan.com/">精品盘</a>里面的视频是有五个文件夹，其中分别是 奈飞电影（NetflixFilm）、热门电影（HotFilm）、奈飞电视剧（NetflixTV）、热门电视剧（HotTV）、儿童专区（P_Child），所以意味着我们需要在EMBY里面设置五个媒体库。具体请看视频教程</p></blockquote><h2 id=重启群晖后记得重新执行此命令>重启群晖后记得重新执行此命令</h2><h2 id=renderd128的文件权限为666devdri文件夹权限为755执行以下指令-sudo-chmod-666-devdrirenderd128-sudo-chmod-755-devdri>renderD128的文件权限为666，/dev/dri文件夹权限为755，执行以下指令： sudo chmod 666 /dev/dri/renderD128 sudo chmod 755 /dev/dri</h2><h2 id=后记>后记</h2><p>说句实话，若是大家有这个心思去自己整理电影数据，那是最好不过，若是懒得整理这些头疼的资源，不妨来一个别人已经整理好的共享精英盘。方便，实用！若你仅仅只是对精英盘里面的电影感兴趣，又没有奈飞账号或是合适的梯子，那么这里也是提供收费的影视服务。</p><p>原文：<a href=https://www.v2rayssr.com/embygoogledrive.html></a><a href=https://www.v2rayssr.com/embygoogledrive.html></a><a href=https://www.v2rayssr.com/embygoogledrive.html>https://www.v2rayssr.com/embygoogledrive.html</a></p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/1892.html>/archives/1892.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class="post-meta meta-tags">没有标签</div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Webdav on 周杰个人博客</title><link>/tags/webdav/</link><description>Recent content in Webdav on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/webdav/index.xml" rel="self" type="application/rss+xml"/><item><title>宝塔中用nginx编译安装webdav</title><link>/archives/2568.html</link><pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate><guid>/archives/2568.html</guid><description>&lt;p&gt;**方法一：**借助宝塔使用nginx搭建webdav&lt;/p&gt;
+&lt;p&gt;选择安装nginx的时候选择编译安装并且添加自定义模块，目的是补全nginx的webdav功能&lt;/p&gt;
+&lt;p&gt;模块名称：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http_dav_module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;模块描述：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;webdev
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;模块参数：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;--with-http_dav_module --add-module=/root/nginx-dav-ext-module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;前置脚本：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone https://github.com/arut/nginx-dav-ext-module.git /root/nginx-dav-ext-module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建网页，自己命名，php版本选择纯静态并且在配置文件中添加&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;location / {
+ root /www/wwwroot/webdav;#这里写你webdav的路径
+ #client_max_body_size 102400M;#大文件支持
+ autoindex on;
+ dav_methods PUT DELETE MKCOL COPY MOVE;
+ # 需要 nginx-dav-ext-module 才有下面的选项
+ dav_ext_methods PROPFIND OPTIONS LOCK UNLOCK;
+ create_full_put_path on;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后再&lt;strong&gt;网站目录&lt;/strong&gt;添加账号密码即可，如果需要用到webdav的话，账号就是你添加的账号，密码就是你添加的密码，地址就是你的webdav的网页。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但第一种方法貌似有问题，一直编译失败，故采取第二种方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个有效果&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我个人测试了另一种方法，就是先按第一种方法安装，然而安装失败后，在不勾选添加自定义模块后再次编译安装即可成功。或者到方法二第4步后就成功了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/6544882f22c46.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20231103134206075" src="https://img-cloud.zhoujie218.top/2023/11/03/6544882f22c46.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;**方法二：**宝塔面板nginx编译webdav模块&lt;/p&gt;
+&lt;p&gt;1，nighx必须是编译安装（安装过的卸载重新安装）&lt;/p&gt;
+&lt;p&gt;2，通过ps命令查看nginx文件的路径&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ps -elf | grep nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;得到宝塔面板nginx的具体路径：&lt;code&gt;/www/server/nginx/sbin/nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3，执行：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/server/nginx/sbin/ #进入到路径
+cp nginx nginx.bak #备份nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4，下载nginx-dav-ext-module&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone https://github.com/arut/nginx-dav-ext-module.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5，拷贝至src目录&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cp -R ./nginx-dav-ext-module /www/server/nginx/src
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;6，nignx-V（V大写）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/server/nginx/src
+nginx -V
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看nignx安装了哪些模块&lt;/p&gt;</description></item></channel></rss>

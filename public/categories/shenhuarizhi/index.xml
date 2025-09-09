@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shenhuarizhi on 周杰个人博客</title><link>/categories/shenhuarizhi/</link><description>Recent content in Shenhuarizhi on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 19 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/shenhuarizhi/index.xml" rel="self" type="application/rss+xml"/><item><title>阅读｜书源分享</title><link>/archives/2107.html</link><pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate><guid>/archives/2107.html</guid><description>&lt;h1 id="阅读书源分享"&gt;阅读｜书源分享&lt;/h1&gt;
+&lt;h2 id="更新公告"&gt;更新公告&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;「书源」&lt;/li&gt;
+&lt;li&gt;⒈除个别详情页规则，全部规则做了简化。&lt;/li&gt;
+&lt;li&gt;⒉修复失效书源&lt;/li&gt;
+&lt;li&gt;⒊优化所有不规整的发现分类&lt;/li&gt;
+&lt;li&gt;⒋新增冷门小说源&lt;/li&gt;
+&lt;li&gt;⒌其他一些细节优化&lt;/li&gt;
+&lt;li&gt;⒍书源红袖招（正文内容无法完整显示，下载并应用此字体可完整显示！ &lt;a href="https://wwi.lanzoui.com/b05hl9sf"&gt;https://wwi.lanzoui.com/b05hl9sf&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;「订阅」&lt;/li&gt;
+&lt;li&gt;⒈修复失效源&lt;/li&gt;
+&lt;li&gt;⒉增加大部分订阅分类规则&lt;/li&gt;
+&lt;li&gt;⒊删除宕机及没什么用的源&lt;/li&gt;
+&lt;li&gt;⒋增加? 下载分类订阅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="30书源"&gt;3.0书源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;书源：&lt;code&gt;290书源&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://shuyuan.miaogongzi.net/shuyuan/1633024206.json"&gt;3.0书源链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wwi.lanzoui.com/b05hl9sf"&gt;书源下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;更新日期：2021年10月01日（星期五）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="订阅源"&gt;订阅源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;订阅源：&lt;code&gt;193订阅源&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://shuyuan.miaogongzi.net/shuyuan/1633030418.json"&gt;订阅源链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wwi.lanzoui.com/b05hl9sf"&gt;订阅下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;更新日期：2021年10月01日（星期五）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="导入方案"&gt;导入方案&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;建议删除旧书源，从新导入最新书源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="导入教程"&gt;导入教程&lt;/h2&gt;
+&lt;h4 id="书源导入教程"&gt;书源导入教程&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;复制上面发布的“3.0书源”&lt;/li&gt;
+&lt;li&gt;打开阅读APP&lt;/li&gt;
+&lt;li&gt;在“我的”一栏选择“书源管理”&lt;/li&gt;
+&lt;li&gt;点击右上角三个点&lt;/li&gt;
+&lt;li&gt;选择“网络导入”&lt;/li&gt;
+&lt;li&gt;粘贴链接点确定&lt;/li&gt;
+&lt;li&gt;弹出书源确定对话框，如果显示未全选，请先全选再点确定，因为有些源的规则有修改&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="订阅源导入教程"&gt;订阅源导入教程&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;下载上面发布的“订阅源”&lt;/li&gt;
+&lt;li&gt;打开阅读APP&lt;/li&gt;
+&lt;li&gt;在“订阅”一栏选择右上角“”图标&lt;/li&gt;
+&lt;li&gt;点击右上角三个点&lt;/li&gt;
+&lt;li&gt;选择“本地导入”&lt;/li&gt;
+&lt;li&gt;找到并选择下载好的文件&lt;/li&gt;
+&lt;li&gt;弹出订阅源确定对话框，如果显示未全选，请先全选再点确定，因为有些源的规则有修改&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="主页导航"&gt;主页导航&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/gedoor/legado/releases/"&gt;开源阅读&lt;/a&gt;（阅读APP）&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://yck.mumuceo.com/"&gt;源仓库&lt;/a&gt;（书源网站）&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gualemang.com/"&gt;网站挂了吗&lt;/a&gt;（链接检测）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="温馨提示"&gt;温馨提示&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;本站所有内容仅供书友交流学习，勿做商用。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gitee.com/vpq/yd"&gt;https://gitee.com/vpq/yd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yuedu.xiu2.xyz/"&gt;https://yuedu.xiu2.xyz/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>999系列广告</title><link>/archives/1672.html</link><pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate><guid>/archives/1672.html</guid><description>&lt;p&gt; &lt;/p&gt;
+&lt;h1 id="广-告"&gt;&lt;strong&gt;广 告&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵高腰暖心秋裤-不凉少年&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵-穿久保灵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵-跪舔客户&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999感冒灵-养生朋克&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999皮炎-色号够坦橙&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999皮炎-色号鹤顶红&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;999皮炎-色号夕阳红&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>iPhone怎么导入照片到系统相册？导入照片到iPhone相册</title><link>/archives/1627.html</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><guid>/archives/1627.html</guid><description>&lt;p&gt;iPhone怎么导入照片到系统相册？导入照片到iPhone相册重新刷机之后,未使用过iCloud或者itune备份过的.导入相片到相册一直是一个比较麻烦的事.网上也找了很多方法.在这里给大家分享一下.&lt;/p&gt;
+&lt;p&gt;目前其它方式导入之后.照片的排序是错乱的.或者是在手机上不能删除这样导入的好处就是.&lt;/p&gt;
+&lt;p&gt;导入速度快.就是通过数据线直接导入.&lt;/p&gt;
+&lt;p&gt;照片导入顺序不会错乱.照片地理位置.拍摄时间等照片属性数据完整.&lt;/p&gt;
+&lt;p&gt;是直接导入系统相册.跟直接拍摄的照片一样.可编辑.可删除.&lt;/p&gt;
+&lt;p&gt;电脑上安装一个iTools或者PP助手之类的工具&lt;/p&gt;
+&lt;p&gt;利用文件管理功能进入/DCIM，然后就会看到100APPLE的文件夹。如果没有自己新建一个也行.(或者自己先拍一张照片.)&lt;/p&gt;
+&lt;p&gt;把你的照片导入到这个100APPLE文件夹中&lt;/p&gt;
+&lt;p&gt;删除PhotoData目录下的Photos.sqlite(这个文件就是记录照片信息的.重启之后会重新生成) 然后重启手机&lt;/p&gt;
+&lt;p&gt;重启之后.就是初始化照片了.&lt;/p&gt;
+&lt;p&gt;如果想要按照拍摄时间顺序导入.那么你把照片按照拍摄时间.排序.就行了.&lt;/p&gt;
+&lt;p&gt;介绍一下windows系统照片按照拍摄时间排序的方法.&lt;/p&gt;
+&lt;p&gt;鼠标右键&amp;mdash;&amp;ldquo;排序方式&amp;rdquo;&amp;ndash;&amp;ldquo;更多&amp;rdquo;&amp;ndash;在更多里面往下拉.找到&amp;quot;拍摄日期&amp;quot;勾选.确定&lt;/p&gt;
+&lt;p&gt;然后在 &amp;ldquo;排序方式&amp;rdquo; 里面就有了拍摄日期这个选项了.最后在选择递增就可以了.&lt;/p&gt;
+&lt;p&gt;这样导入之后..无论是在照片.还是相簿里面.照片的排序都很完美.地理位置等.&lt;/p&gt;</description></item><item><title>爱阅书香-ios手机上最好的阅读小说软件，没有之一</title><link>/archives/1328.html</link><pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1328.html</guid><description>&lt;p&gt;&lt;strong&gt;爱阅书香-ios手机上最好的阅读小说软件，没有之一（20年电子书的老书友）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;今天第一次在吾爱上发现有网友推荐，用一次就喜欢上了，其它的都删除了，在这里推荐给大家&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;爱阅书香是一个工具软件，本身不存小说，但是可以导入网络源，自动搜索成千上万的网站&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;给你找到你需要的免费VIP小说&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a3d3a2a86.png"&gt;
+ &lt;img class="mx-auto" alt="image-20240620113647480" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a3d3a2a86.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.苹果商店下载软件 &amp;ndash; &lt;strong&gt;爱阅书香&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.最重要的一步就是导入源&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我这里提供300个书源给你，自己用自带浏览器safari下载导入就可以了，其它的设置我就不说了很简单&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这真是一个超级良心的作者,&lt;a href="https://img-cloud.zhoujie218.top"&gt;我&lt;/a&gt;只好纯手工编辑截图做个教程给你&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/aysx.ibs"&gt;点我下载&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://1drv.ms/u/s!Apykcp0nAEllrg7W4z9jOGlhdSNW?e=tjOYyp"&gt;&lt;strong&gt;备用下载&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新版的ios系统,下载后直接就可以显示拷贝到&lt;strong&gt;&lt;strong&gt;爱阅书香，你点进去就OK了&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;没有显示的接着往下看&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;要用****自带浏览器safari打开本站，点上面下载链接，确认下载，下面是我手机截图，根着做就可以了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/H47a651a9bf654546b1dd1e59efcded361.jpg"&gt;
+ &lt;img alt="1.jpg" src="https://ae01.alicdn.com/kf/H47a651a9bf654546b1dd1e59efcded361.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;1.jpg&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a2e68d5cc.webp"&gt;
+ &lt;img alt="2.jpg" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a2e68d5cc.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;2.jpg&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/Hf54ea6a0e0e4450caafcf97de47eaeaaw.jpg"&gt;
+ &lt;img alt="3.jpg" src="https://ae01.alicdn.com/kf/Hf54ea6a0e0e4450caafcf97de47eaeaaw.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;3.jpg&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/H308f91af03834ed7a23a2c28de5de04aM.jpg"&gt;
+ &lt;img alt="4.jpg" src="https://ae01.alicdn.com/kf/H308f91af03834ed7a23a2c28de5de04aM.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;4.jpg&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/H1f26c6daaca24440bccb2e72deb2d5136.jpg"&gt;
+ &lt;img alt="5.jpg" src="https://ae01.alicdn.com/kf/H1f26c6daaca24440bccb2e72deb2d5136.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;5.jpg&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/H1679b18a58844a25bd05b069596999f0V.jpg"&gt;
+ &lt;img alt="7.jpg" src="https://ae01.alicdn.com/kf/H1679b18a58844a25bd05b069596999f0V.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;7.jpg&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/H4f38101e9a1142d89e6381c65e6bc2d5B.jpg"&gt;
+ &lt;img alt="8.jpg" src="https://ae01.alicdn.com/kf/H4f38101e9a1142d89e6381c65e6bc2d5B.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;8.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;手机的操作的话这里就搞定了，找你需要的书吧！&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id="收集的书源仓库"&gt;收集的书源仓库&lt;/h1&gt;
+&lt;p&gt;（按发给我的时间为顺序）&lt;/p&gt;
+&lt;p&gt;若你有自己的书源，并愿意共享给别人使用，请将地址发给我。谢谢。 我会在博客与公众号（iosRead）上进行发布&lt;/p&gt;
+&lt;p&gt;复制下面的内容，就这10几行网址的就是书源&lt;/p&gt;
+&lt;p&gt;相逢应不识 &lt;a href="https://gitee.com/ift123/iFreeTimeBookConfigs"&gt;https://gitee.com/ift123/iFreeTimeBookConfigs&lt;/a&gt; wxdjs &lt;a href="https://github.com/wxdjs/iFreeTimebookConfigs"&gt;https://github.com/wxdjs/iFreeTimebookConfigs&lt;/a&gt; 踏雪流云 &lt;a href="https://gitee.com/q7478729/books"&gt;https://gitee.com/q7478729/books&lt;/a&gt; Superman &lt;a href="https://gitee.com/superman1024/iFreeTimeBooks"&gt;https://gitee.com/superman1024/iFreeTimeBooks&lt;/a&gt; 奪情畢自斃 &lt;a href="https://gitee.com/qzlivn/BookConfig"&gt;https://gitee.com/qzlivn/BookConfig&lt;/a&gt; abc君 &lt;a href="https://gitee.com/weiniff/ibooks"&gt;https://gitee.com/weiniff/ibooks&lt;/a&gt; BlackTouma &lt;a href="https://github.com/BlackTouma/iFreeTimeBookConfigs"&gt;https://github.com/BlackTouma/iFreeTimeBookConfigs&lt;/a&gt; gangxiaoji &lt;a href="https://github.com/gangxiaoji/bookConfigs"&gt;https://github.com/gangxiaoji/bookConfigs&lt;/a&gt; wangyingbo &lt;a href="https://github.com/wangyingbo/iFreeTimeBookConfigs"&gt;https://github.com/wangyingbo/iFreeTimeBookConfigs&lt;/a&gt; feifeiadmim &lt;a href="https://gitee.com/feifeiadmim/book_yuan"&gt;https://gitee.com/feifeiadmim/book_yuan&lt;/a&gt; mm0809 &lt;a href="https://github.com/mm0809/BUUK"&gt;https://github.com/mm0809/BUUK&lt;/a&gt;&lt;/p&gt;</description></item><item><title>在家无聊！分享个直播电视软件给大家</title><link>/archives/1284.html</link><pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1284.html</guid><description>&lt;h1 id="分享个直播电视软件给大家详细介绍"&gt;&lt;a href="http://tv.zhoujie218.top"&gt;&lt;strong&gt;分享个直播电视软件给大家(详细介绍)&lt;/strong&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;源码来源网络，频道源来自网络(有支持江西电信的在线学习频道哦)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;支持安卓手机，安卓电视，安卓机顶盒&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a353d51e0.webp"&gt;
+ &lt;img alt="2.png" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a353d51e0.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;2.png&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://ae01.alicdn.com/kf/Haec6d8895bce49c1ab858a066bcd93040.png"&gt;
+ &lt;img alt="4.png" src="https://ae01.alicdn.com/kf/Haec6d8895bce49c1ab858a066bcd93040.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;4.png&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a35769eb7.webp"&gt;
+ &lt;img alt="1.png" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a35769eb7.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;1.png&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a35ccdd2c.webp"&gt;
+ &lt;img alt="3.png" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a35ccdd2c.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;3.png&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id="下面是最新版的下载网址"&gt;&lt;a href="http://tv.zhoujie218.top"&gt;&lt;strong&gt;下面是最新版的下载网址&lt;/strong&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://dianshi.zhoujie218.top/1.html"&gt;&lt;strong&gt;如果你是门店使用，强烈建议使用定制版&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;有独立的网站后台程序，完全自定义软件内的跑马灯公告，版权信息，logo图片等&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>孩子网络点播在线学习卡的看过来，这里有不卡的方法(仅江西）</title><link>/archives/1230.html</link><pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1230.html</guid><description>&lt;p&gt;&lt;strong&gt;家里有两个小孩，在线学习，电视只有一个机顶盒，不太方便&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;手机屏幕小而且点播会卡，所以想到这个方法，目前测试399元的红米手机500元的网络电视都能流畅观看&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特殊时期，国家在尽一且办法克服疫情，也不落下孩子们的学习!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;尽自己所能写下这篇教程，给大家分享一下了，也算是尽点绵力吧&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id="中国加油武汉加油江西加油"&gt;&lt;strong&gt;中国加油！武汉加油！江西加油！&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;文章不设版权，支持任意转发&lt;/p&gt;
+&lt;h2 id="请注意目前测试只能江西电信的网络才能使用下面的方法"&gt;&lt;strong&gt;请注意：目前测试只能江西电信的网络才能使用下面的方法&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;安卓设备&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;手机，平板，智能电视  ，没有安装有线机顶盒的，网络点播卡的用下面的方法可以做到同步不卡&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新方法1，只要一步安装最新的软件就可以了，下载地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lanzous.com/ibbsjqf"&gt;下载链接1&lt;/a&gt; &lt;a href="https://my.zhoujie218.top:58066/web/zbds/zbdsvipf20200411.apk"&gt;下载链接2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装好在最下面的儿童栏目里面就所有的学习频道&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一，安装直播软件 可以点下面的链接安装，或是扫码安装&lt;/p&gt;
+&lt;p&gt;（电视只能自己用浏览器打开网址或是用U盘把这个软件copy上去安装） &lt;a href="https://www.lanzous.com/i97fmoh"&gt;&lt;/a&gt;&lt;a href="https://www.lanzous.com/i97fmoh"&gt;https://www.lanzous.com/i97fmoh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;二，安装好软件必须输入源地址&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装好软件里面是什么都没有的，双击屏幕是调出频道列表（上下滑动可选频道），按住屏幕不放可调出设置菜单&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在屏幕空白处按住不放可以调出菜单&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在网络接口地址那里输入下面的网址，一个字都不能错&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/tv/jxgq.php"&gt;https://img-cloud.zhoujie218.top/tv/jxgq.php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1603&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;450&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file.jpg"&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file.jpg"&gt;
+ &lt;img alt="2.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;2.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/a&gt; 2.jpg[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1604&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;450&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-1.jpg"&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-1.jpg"&gt;
+ &lt;img alt="1.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-1.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;1.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/a&gt; 1.jpg[/caption]&lt;/p&gt;
+&lt;h2 id="注意播放不了的播放器选成-ijk播放器"&gt;&lt;strong&gt;注意播放不了的，播放器选成  ijk 播放器&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1605&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;450&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-2.jpg"&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-2.jpg"&gt;
+ &lt;img alt="3.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-2.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;3.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/a&gt; 3.jpg[/caption]&lt;/p&gt;
+&lt;p&gt;输完返回就可以了，选择你需要的频道开始学习吧&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1606&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;450&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-3.jpg"&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-3.jpg"&gt;
+ &lt;img alt="4.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-3.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;4.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/a&gt; 4.jpg[/caption]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ios设备方法比较简单&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>20200209江西电信最新iptv源，包括一年级到高三的在线</title><link>/archives/1220.html</link><pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1220.html</guid><description>&lt;p&gt;&lt;strong&gt;因为疫情的原因&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;孩子都上不了课，我们江西教育局搞的在线上课还是非常不错的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;每个年级的课都有&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;就是家有两个小孩的看电视不太方便&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;所以就重新抓取了包&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;总共134个频道，包括新增加的31个教育台，从一年级到高三都有了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但是2月10日才正式开播，所以频道名字可能会有点乱，后面会调整的，不过也不影响观看&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目前测试好像只能江西电信的网络可以看这个源哈&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;觉得对你有用就给个评分!&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667252b1e02b4.png"&gt;
+ &lt;img class="mx-auto" alt="image-20240619113728254" src="https://img-cloud.zhoujie218.top/2024/06/19/667252b1e02b4.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667252b0121b2.png"&gt;
+ &lt;img class="mx-auto" alt="image-20240619113758664" src="https://img-cloud.zhoujie218.top/2024/06/19/667252b0121b2.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/iptv20200209%E6%8A%93%E5%8C%85%E9%A2%91%E9%81%93%E5%88%97%E8%A1%A8.txt"&gt;iptv20200209抓包频道列表&lt;/a&gt;&lt;/p&gt;</description></item><item><title>小学数学口算测试出题模板V5.0</title><link>/archives/1163.html</link><pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1163.html</guid><description>&lt;p&gt;&lt;strong&gt;excel做的小学生计算/口算题模板，随时打开就可以出题+打印。wps/excel测试都可以！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;只要一个excel就可以了不用什么其它的软件，非常好用，不敢独享，所以就给家长们分享了，需要的自取!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用说明：&lt;/strong&gt; &lt;strong&gt;1.运行时要“启用宏”&lt;/strong&gt; &lt;strong&gt;2.如果打不开工程或者用不了，肯定是excel的vba控件有问题或者没有安装vba，自行度娘&lt;/strong&gt; &lt;strong&gt;3.标题，格式，大小，字体都可以自己改哈&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载地址：&lt;a href="https://www.lanzoui.com/i91h75e"&gt;点这里&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2008&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;768&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144629.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144629.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144629.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption] [caption id=&amp;ldquo;attachment_2009&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;800&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144636.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144636.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144636.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption] [caption id=&amp;ldquo;attachment_2010&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;800&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144638.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144638.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144638.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption] [caption id=&amp;ldquo;attachment_2011&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;800&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144645.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144645.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144645.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption] [caption id=&amp;ldquo;attachment_2012&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;800&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144647.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144647.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/07/20210711144647.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;</description></item><item><title>又要当宝爸了，很开心</title><link>/archives/283.html</link><pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate><guid>/archives/283.html</guid><description>&lt;p&gt;大宝6岁了，之前走过了很长一段备孕的经历，之后又是几年，心已沉寂！近些天隐隐有感，果不负所望，荣升中队长！&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/07/img_5022.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/07/img_5022.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/07/img_5029.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/07/img_5029.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>看出什么了吗？</title><link>/archives/259.html</link><pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate><guid>/archives/259.html</guid><description>&lt;p&gt;你看出什么了？人多力量大，众志成城，齐心协力！&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;No&lt;/p&gt;
+&lt;p&gt;是几个领导，带着7个包工头，指挥一群人卖苦力，&lt;/p&gt;
+&lt;p&gt;123，加油&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/img_4600.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/img_4600.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>想不到我已活了一万多年了</title><link>/archives/253.html</link><pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate><guid>/archives/253.html</guid><description>&lt;p&gt;哦，是天呐&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/img_4612.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/img_4612.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>宝宝黄疸</title><link>/archives/129.html</link><pubDate>Wed, 20 Feb 2013 00:00:00 +0000</pubDate><guid>/archives/129.html</guid><description>&lt;p&gt;宝宝2月6日出生，2月13日的时候去医院采血，好像是什么新生儿检查！都要查的！&lt;/p&gt;
+&lt;p&gt;   查完的时候护来一句说我宝宝脸有点黄，要测个黄疸,又要给我宝宝来一针了，心疼，刚刚怎么不一次采！&lt;/p&gt;
+&lt;p&gt;    挂号，采血，测黄疸，数值18.1 ! 医生说要住院照蓝光，说的吓人，之前没有看过这方面的资料，只好听&lt;/p&gt;
+&lt;p&gt;医生的，后悔！&lt;/p&gt;
+&lt;p&gt;  &lt;/p&gt;
+&lt;p&gt;    这个蓝光是隔离病房，看不到宝宝的！还要打点滴！大人打都痛，宝宝那么小怎么打？？一家人心急的都&lt;/p&gt;
+&lt;p&gt;睡不着，两天后降到13.4(正常12.9下)，强烈要求出院，因为都说不用照的，吃母乳的宝宝高点正常，时间长点&lt;/p&gt;
+&lt;p&gt;也正常！&lt;/p&gt;
+&lt;p&gt;   在医院，一个护士照看几个宝宝，哭都根本不管！出来的时候脸上好多红点，无精打采的，嗓子都哭亚了！&lt;/p&gt;
+&lt;p&gt;还有就是小鸡鸡都有点胀气！真是心疼！！！！&lt;/p&gt;
+&lt;p&gt;    写这文章也不是说医院不好，只是告诉各位要做爸爸妈妈的人要自己多学习宝宝各方面的知识，没有必&lt;/p&gt;
+&lt;p&gt;要，还是不要去医院吧！下面附上一些黄疸的知识！&lt;/p&gt;
+&lt;p&gt;    新生儿黄疸，有真有假，真黄疸是指病理性黄疸，如新生儿溶血病，新生  小儿黄疸 儿败血症、新生儿肝炎、先天性胆管闭锁等等。而假黄疸特指小儿生理性黄疸，是不需要治疗的。小儿出生24小时以后发现黄疸，并能够在14天以内自然消失，没有其它症状，称之为生理性黄疸，有50%正常出生的小儿会出现生理性黄疸，对于早产儿来言，生理性黄疽的发生率要更高，可达80%。 生理性黄疸，大都在生后第3天出现。早者在生后第二天出现，迟者可在第5天出现黄染，其色泽—般较轻浅，呈浅黄色，—般2-3天消退。稍重者可延迟到出黄疸的5-6天后消退，而早产儿的黄疸，最多也不应超过7-10天。超过14天的黄疸为迁延性黄疸，或由它病引起的病理性黄疸。生理性黄疸出现的顺序，一般先见于面部、颈部、然后遍及胸腹及四肢，巩膜——即眼睛中发白的部分也出现黄染。生理性黄疸产生的原因，是与小儿山生后体内胆红素的代谢有关。有一种能够消除体内多余的胆红素的转移酶，要在小儿小生后3—5天才能成熟，所以此期间，新生儿体内会出现过多的胆红索而表现为黄疸。当这种转移酶成熟后，就会将多余部分的胆红素消除，黄疸也就消失了。所以生理性黄疸是不需要治疗的，它是人生长过程中的一种自然现象。 病理性黄疸则不然，它是因各种病因引起。有些疾病还相当严重，可危及到小儿的生命。新生儿溶血是最常见的黄疸性疾病，它是由于新生儿与母亲的血型不合而导致胎儿红细胞凝集破坏出现溶血，引起贫血、水肿、肝脾肿大、高胆红素血症。若体内大量的胆红素侵犯到人的中枢神经细胞核，其发生的黄疸就比较严重，医学上称之为核黄疸，其病死率较高，并且容易留有后遗症。最常见的治疗办法是换血。轻症可采用光疗，又叫蓝光照射，此法为治标之法，不能治本。因此，光疗不能代替换血，但可减少换血的次数。新生儿肝炎的主要表现为黄疸，常常出现在新生儿期，因生理性黄疸持续不退而就诊，在检查确诊后，经一定的治疗60—70%的病人可以治愈，并且预后较好。先天性胆管闭锁的病人出生时，外表均正常，在生后1—1周后，开始出现皮肤黄染，并逐渐加重，其黄色较暗，略带棕绿色。西医称之为绿色黄疸，中医认为属阴黄范畴，其粪便为灰白色是其另一大特点。由于外科手术技术的限制，只有部分病人可采用手术治疗。此外还可采用激素疗法，但本病预后较差，儿3个月后，肝脏开始硬化，6个月到2岁内因肝功衰竭而死亡，仅少数患者存活较长。 新生儿黄疸生理性和病理性原因　医学上把未满月（出生28天内）宝宝的黄疸，称之为新生儿黄疸，新生儿黄疸是指新生儿时期，由于胆红素代谢异常引起血中胆红素水平升高而出现于皮肤、黏膜及巩膜黄疸为特征的病症，本病有生理性和病理性之分。 1、生理性黄疸 生理性黄疸在出生后2～3天出现，4～6天达到高峰，7～10天消退，早产儿持续时间较长，除有轻微食欲不振外，无其他临床症状。 2、病理性黄疸 若生后24小时即出现黄疸，2～3周仍不退，甚至继续加深加重或消退后重复出现或生后一周至数周内才开始出现黄疸，均为病理性黄疸。 新生儿黄疸的正常值是以血清胆红素为参考指标的，只要足月儿不超过204μmol/L（12mg/dl），早产儿不超过255μmol/L（15mg/dl）即为正常。&lt;/p&gt;</description></item><item><title>宝宝出生随感！！！</title><link>/archives/68.html</link><pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate><guid>/archives/68.html</guid><description>&lt;p&gt;&lt;strong&gt;2013年2月6日，农历腊月二十六，这是难忘的一天！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;经过多次的训练，科目三总算一次过关！昨天晚上挑灯奋战，今日前付科四考场，准备一举拿下，成为有照一族！ 2月5日早上9点，怀孕9个多月的老婆说肚子有点痛，咚咚咚&amp;hellip;&amp;hellip;不会是要生了吧，我快要做爸爸了&amp;hellip;&amp;hellip;果断缺考，在家照顾老婆!  想去医院吧，老婆说只有点点痛，怕宝宝给摆个乌龙，不去又有点紧张！心情就像是热锅上的蚂蚁，还不能表现出来以免影响老婆的心情！急急急 吃过中饭，还是那样有点隐隐的痛，吃过晚饭，还是那样！到了晚上10点，老婆说痛的历害了点，看来真的要生了！怀着紧张而又喜悦的心情，拿着早就准备好的物品，驱车前去妇保医院！ 到了医院，挂急诊确认是发动了！办入院，各种检查，各种准备工作，搞到凌晨3点！有个小插曲，做胎心监护的时候没做好，值班医生说心跳减速，要剖腹产，说得吓人！后来有经验的主任医生过来看了下就走了，说宝宝正常的很，根本就没问题，生下来也验证了是对的！ 没经验的医生真是伤不起呀，吓得我和老婆都一身冷汉！一直到凌晨9点，都是痛，但不是很痛的那种,护士隔一小时来检查下，到9点半还是只开一指！疼痛超过10小时了，给直接推入产房催产了！ 说是打安定，滴催产素，人工破膜！那种痛，居老婆说真是一个很大的考验，为了宝宝，期间还拒绝了医生多次的无痛针建议。老婆，好样的！ 就这样的疼痛一直到晚上的6点，痛到快无法忍受的时候，医生才给让到产床上，开始接生！中间痛了快20个小时，怪不得国家挑选女宇航员时有一条是要生产过而且是顺产的的女姓,能忍受这种痛的女人还有什么苦不能忍呢！ 一直在产房外等待的我，焦急难安！看着一个个的宝宝抱出来了，又紧张，又有一种喜悦！快要为人父了！6点55分，接到了老婆亲自打来的电话，用颤抖的声音告诉我，生了一个健康可有爱的男宝宝！真的是好开心，终于升级做爸爸了，怀着激动的心情安慰着宝妈!在产房外面等待宝宝和宝妈出来！ 附张宝宝出生12小时的照片！！那个手是我老妈呀！&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/62e2b4c1gd6205dd37fa7amp690.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2018/06/62e2b4c1gd6205dd37fa7amp690.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

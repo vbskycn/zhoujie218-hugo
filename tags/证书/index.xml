@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>证书 on 周杰个人博客</title><link>/tags/%E8%AF%81%E4%B9%A6/</link><description>Recent content in 证书 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%AF%81%E4%B9%A6/index.xml" rel="self" type="application/rss+xml"/><item><title>宝塔免费申请泛域名SSL证书教程(并且自动续期)</title><link>/archives/1591.html</link><pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate><guid>/archives/1591.html</guid><description>&lt;p&gt;Let’s Encrypt官方在2018年上线泛域名免费SSL证书。下面是SEOGO申请泛域名证书的操作过程。&lt;/p&gt;
+&lt;h2 id="一安装依赖程序"&gt;一、安装依赖程序&lt;/h2&gt;
+&lt;p&gt;首先登陆ssh，根据自己服务器系统选择下面命令安装依赖程序。&lt;/p&gt;
+&lt;p&gt;1、Centos&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;yum update &amp;amp;&amp;amp; yum install curl -y &amp;amp;&amp;amp; yum install cron -y &amp;amp;&amp;amp; yum install socat -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、Debian/Ubuntu&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt-get update &amp;amp;&amp;amp; apt-get install curl -y &amp;amp;&amp;amp; apt-get install cron -y &amp;amp;&amp;amp; apt-get install socat -y
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="二下载acmesh"&gt;二、下载ACME.SH&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;curl https://get.acme.sh | sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="三获取域名api"&gt;三、获取域名API&lt;/h2&gt;
+&lt;p&gt;1、如果是阿里云域名，获取阿里云域名Access Key ID和Access Key Secre&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://usercenter.console.aliyun.com/"&gt;Access Key ID、Access Key Secre申请地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-9.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-9.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;宝塔免费申请通配符SSL证书教程（泛域名SSL）&lt;/p&gt;
+&lt;p&gt;回到服务器执行以下命令，export Ali_Key为Access Key ID，export Ali_Secret为Access Key Secre。&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;&lt;/th&gt;
+ &lt;th&gt;export Ali_Key=&amp;ldquo;abcdef&amp;rdquo;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;export Ali_Secret=&amp;ldquo;abcdefh8Hs5BHs5BHs5B&amp;rdquo;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-10.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-10.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

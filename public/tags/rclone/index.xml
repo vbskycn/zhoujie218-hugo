@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rclone on 周杰个人博客</title><link>/tags/rclone/</link><description>Recent content in Rclone on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/rclone/index.xml" rel="self" type="application/rss+xml"/><item><title>rclone自动挂载网盘，并在后台监控，实时同步（记录）</title><link>/archives/2566.html</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>/archives/2566.html</guid><description>&lt;h2 id="rclone挂载教程"&gt;rclone挂载教程&lt;/h2&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/02/6543648577cb0.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20231102165740637" src="https://img-cloud.zhoujie218.top/2023/11/02/6543648577cb0.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;结束自动挂载进程&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ps aux | grep &amp;#34;/root/gz_rclone.sh&amp;#34; | grep -v grep | awk &amp;#39;{print $2}&amp;#39; | xargs kill
+rm -rf /tmp/gz_rclone.lock
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结束自动同步进程&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ps aux | grep &amp;#34;/root/syn_rclone.sh&amp;#34; | grep -v grep | awk &amp;#39;{print $2}&amp;#39; | xargs kill
+rm -rf /tmp/syn_rclone.lock
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重启rclone&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ps -ef | grep rclone | grep -v grep | awk &amp;#39;{print $2}&amp;#39; | xargs kill -9
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;同步&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/usr/bin/rclone sync -P gphotos:media/by-month/2023 /webdav/lsgphotos/2023 --transfers 16 --checkers 64 --ignore-errors
+
+--stats-one-line
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;强制卸载已经挂载的目录&lt;/p&gt;</description></item><item><title>群晖硬盘不够用？？把电影放到阿里云盘挂到EMBY来播放吧（EMBY挂载阿里云网盘教程）</title><link>/archives/2520.html</link><pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate><guid>/archives/2520.html</guid><description>&lt;p&gt;自从CHIA这个虚拟币出来后，机械硬盘的价格扶揺直上，曾经到了有钱都买不到的地步（我说的是全新12T、14T、18T这种大硬盘），现在虽然慢慢有货了，但是价格也是很贵，买不起硬盘了，我的小姐姐住哪啊？还好有大容量的阿里云盘，感谢马爸爸~感谢~~好吧，既然电影放到阿里云盘了，那么就用EMBY来看吧！还没有注册有阿里云盘账号的，点【&lt;a href="https://www.alipan.com/"&gt;这里&lt;/a&gt;】注册账号。&lt;/p&gt;
+&lt;p&gt;一、先把阿里云盘用WEBDAV协议加载到群晖（此步骤已经做了的，可以跳过。还没做的，请按照《&lt;a href="https://www.zhoujie218.top/archives/2520.html"&gt;群晖同步阿里云盘及Win电脑加载阿里云盘变成本地磁盘（网络磁盘）&lt;/a&gt;》教程设置）。&lt;/p&gt;
+&lt;p&gt;二、群晖控制面板开启SSH，然后在Windows系统的电脑上用MobaXterm 、xShell 之类的软件，以root用户登录到群晖SSH状态下，输入下面的命令回车，下载Rclone并安装 ：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;curl https://rclone.org/install.sh | sudo bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981271-1.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab78934607.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab78934607.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;三、文件在下载中（如果发现不能正常下载的，最好挂上科学出国）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981275-2.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab797d339a.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab797d339a.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;四、安装完成；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981276-3.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab797a6690.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab797a6690.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;五、输入下面的命令回车，开始配置Rclone：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981277-4.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab797960d2.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab797960d2.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;六、由于我之前已经加载过一个网盘，所以上面会显示有已经加载过的网盘名称和类型，如果你的NAS没加载过，是不会显示的。这次需要加载的是阿里云盘，所以输入n回车，新建一个；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981277-5.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab9fb8e83a.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab9fb8e83a.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;七、需要设置挂载的名称，我这写：aliyunpan ；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981278-6.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab798d658c.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab798d658c.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;八、接下来这里会跳出一长串，需要选的Webdav协议序号是38，所以输入38回车（这个菜单的序号有可能会变，不要照搬，先看清楚是Webdav的序号再输入）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981278-7.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b75bb7.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b75bb7.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;九、输入在第一步设置的群晖IP地址和webdav端口（注意，http:// 这个不能省）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981279-8.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b669fc.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b669fc.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十、由于阿里网盘不在列表中，所以选择5 其它站点，回车；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981279-9.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79d50a93.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79d50a93.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十一、在user&amp;gt;的后面输入在第一个步骤设置webdav的用户名（默认是admin）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981280-10.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79cf360f.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79cf360f.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十二、输入y，自己设置密码；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981280-11.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79bd52bb.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79bd52bb.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十三、在password：的后面，输入在第一个步骤设置webdav的密码（输入密码时，屏幕是不显示的，无需理会，输完密码直接回车，然后再输入一次密码，两次输入要一致）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981281-12.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79c464b9.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79c464b9.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十四、在bearer_token后面回车；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981281-13.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79fbefbf.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79fbefbf.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十五、不需要高级配置，输入n回车；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981282-15.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f40dbc.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f40dbc.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十六、这里会再次显示出我们前面设置的阿里云盘的Webdav配置，确认无误后，输入y回车；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981291-16.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a079fd5.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a079fd5.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十七、可以看到阿里云盘已经配置好了，输入q回车退出配置；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981291-17.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a06fb61.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a06fb61.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十八、接下来设置Rclone自动启动，输入以下命令下载自动启动的配置文件并编辑：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget https://wp.gxnas.com/wp-content/uploads/2021/08/rcloned &amp;amp;&amp;amp; vi rcloned
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981291-18.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f9cdf8.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f9cdf8.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;</description></item><item><title>把webdav挂载为电脑本地硬盘</title><link>/archives/2446.html</link><pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate><guid>/archives/2446.html</guid><description>&lt;h1 id="把webdav挂载为电脑本地硬盘"&gt;把webdav挂载为电脑本地硬盘&lt;/h1&gt;
+&lt;p&gt;我们都知道Windows有一个“映射网络驱动器”和“添加一个网络位置”的功能，但这个功能很鸡肋，不支持大多数常用协议。下面要介绍的命令行工具叫Rclone，它可以将webdav协议的共享文件夹挂载到电脑本地硬盘。此外，Rclone还支持HTTP、WebDav、FTP、SFTP、dlna、Amazon S3、阿里云OSS……等多达40+种常用网络共享协议。&lt;/p&gt;
+&lt;p&gt;使用的软件叫Rclone，它是一个全平台命令行工具，下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://link.zhihu.com/?target=https%3A//rclone.org/downloads/"&gt;https://rclone.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://link.zhihu.com/?target=https%3A//github.com/rclone/rclone/releases/"&gt;https://github.com/rclone/rclone/releases/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用Rclone前需要先安装WinFsp，它是一个开源的Windows文件系统代理软件，支持基于网络的文件系统 ：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://link.zhihu.com/?target=https%3A//winfsp.dev/"&gt;https://winfsp.dev/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://link.zhihu.com/?target=https%3A//github.com/winfsp/winfsp/"&gt;https://github.com/winfsp/winfsp/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;将Rclone复制到&lt;code&gt;C:\Windows&lt;/code&gt;或其他可以全局调用的地方。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入rclone config，开始添加或修改你的webdav服务器，假设这里你添加的服务器name叫webdav-test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将webdav挂载到X盘：&lt;code&gt;rclone mount webdav-test:/ X: --vfs-cache-mode full&lt;/code&gt; 或者指定要挂载的远程目录：&lt;code&gt;rclone mount webdav-test:/sub-dir X: --vfs-cache-mode full&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;不使用 &amp;ndash;vfs-cache-mode 只能顺序写入文件，读取时只能查找。 这意味着如果没有 &amp;ndash;vfs-cache-mode writes 或 &amp;ndash;vfs-cache-mode full，许多应用程序将无法在 rclone 挂载上使用它们的文件。 有关详细信息，请参阅 VFS 文件缓存部分。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这里再推荐一款图形化的映射软件——RaiDrive（&lt;a href="https://link.zhihu.com/?target=https%3A//www.raidrive.com/"&gt;RaiDrive | Cloud Storage like a USB drive&lt;/a&gt;），方便普通人使用。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202207101412947.png"&gt;
+ &lt;img class="mx-auto" alt="explorer_W9uM1ZiTTJ" src="https://img-cloud.zhoujie218.top/piggo/202207101412947.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;例子:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;rclone mount alist:/ v: --vfs-cache-mode full
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>pve下lxc模式挂载google drive硬盘</title><link>/archives/1954.html</link><pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate><guid>/archives/1954.html</guid><description>&lt;p&gt;1、进入母鸡 1.1、以root身份运行 要在母鸡下中获取你的小鸡编号例如：100.conf，请按以下方式编辑100.conf 这里100.conf是你小鸡的编号&lt;/p&gt;
+&lt;p&gt;root@pve:/etc/pve/nodes/你的host名称/lxc# nano 100.conf&lt;/p&gt;
+&lt;h1 id="最下面加入"&gt;最下面加入&lt;/h1&gt;
+&lt;h1 id="mp0-rootgg-web-bakmpwebbak"&gt;mp0: /root/gg-web-bak,mp=/webbak&lt;/h1&gt;
+&lt;p&gt;lxc.mount.entry = /dev/fuse dev/fuse none bind,create=file Bash 1.2、重启小鸡 编辑id为100的小鸡，也以root身份运行！&lt;/p&gt;
+&lt;p&gt;&lt;a href="mailto:root@e9china.net"&gt;root@e9china.net&lt;/a&gt;:~# reboot 然后小鸡执行命令&lt;/p&gt;
+&lt;p&gt;mknod -m 666 /dev/fuse c 10 229 Bash 1.3、配置rclone rclone教程按照这个做：利用Google Drive的无限网盘做数据定时备份 教程的版本比较老，选择google drive的时候自己留意一下编号！ 结束可以正常使用&lt;/p&gt;
+&lt;p&gt;2、设置开机启动挂载 上面的命令重启以后不会主动挂载我们想要写个开机挂载&lt;/p&gt;
+&lt;p&gt;2.1、下载并编辑脚本 使用命令：&lt;/p&gt;
+&lt;p&gt;wget &lt;a href="https://zhoujie218.top/soft/rcloned"&gt;&lt;/a&gt;&lt;a href="https://zhoujie218.top/soft/rcloned"&gt;&lt;/a&gt;&lt;a href="https://zhoujie218.top/soft/rcloned"&gt;https://zhoujie218.top/soft/rcloned&lt;/a&gt; &amp;amp;&amp;amp; nano rcloned 增加内容：&lt;/p&gt;
+&lt;p&gt;在NAME=&amp;ldquo;webbak&amp;rdquo; #rclone name ^p^m下面增加一行代码&lt;/p&gt;
+&lt;p&gt;mknod -m 666 /dev/fuse c 10 229 Bash 修改一下内容：&lt;/p&gt;
+&lt;p&gt;NAME=&amp;quot;&amp;quot; #rclone name名，及配置时输入的Name REMOTE=&amp;rsquo;&amp;rsquo; #远程文件夹，Google Drive网盘里的挂载的一个文件夹 LOCAL=&amp;rsquo;&amp;rsquo; #挂载地址，VPS本地挂载目录&lt;/p&gt;
+&lt;p&gt;2.2、执行&lt;/p&gt;
+&lt;h1 id="debianubuntu-系统"&gt;Debian/Ubuntu 系统&lt;/h1&gt;
+&lt;p&gt;apt-get install sudo -y&lt;/p&gt;</description></item><item><title>Windows平台下使用 Rclone 挂载 OneDrive 为本地硬盘</title><link>/archives/1818.html</link><pubDate>Tue, 08 Sep 2020 00:00:00 +0000</pubDate><guid>/archives/1818.html</guid><description>&lt;p&gt;Rclone (rsync for cloud storage) 是一个命令行程序,用于同步文件和目录，支持常见的 Amazon Drive 、Google Drive 、OneDrive 、Dropbox 等云存储。本文将演示在 Windows 平台下将 OneDrive 挂载为本地硬盘，并使用跨平台的 Rclone GUI 连接到云盘。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a6c8e6803.png"&gt;
+ &lt;img class="mx-auto" alt="image-20240620114925585" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a6c8e6803.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="1rclone下载地址"&gt;&lt;strong&gt;1、rclone下载地址&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;首先下载适用于 Windows 的 rclone ?&lt;/p&gt;
+&lt;p&gt;官网下载：&lt;a href="https://rclone.org/downloads/"&gt;&lt;/a&gt;&lt;a href="https://rclone.org/downloads/"&gt;https://rclone.org/downloads/&lt;/a&gt; GitHub下载：&lt;a href="https://github.com/ncw/rclone"&gt;&lt;/a&gt;&lt;a href="https://github.com/ncw/rclone"&gt;https://github.com/ncw/rclone&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;a href="https://rclone.org/downloads/"&gt;rclone官网&lt;/a&gt;中，Windows 平台下选择下载 AMD64 - 64 Bit&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1819&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;966&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-14.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-14.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-14.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;
+&lt;p&gt;或者在&lt;a href="https://github.com/rclone/rclone/releases"&gt;github&lt;/a&gt;下载。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1820&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;1024&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15-1024x527.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-15-1024x527.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;
+&lt;p&gt;下载后解压到一个英文路径中。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1821&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;1002&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-16.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-16.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-16.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;
+&lt;p&gt;另外在Windows平台使用rclone还需要另一个依赖工具&lt;code&gt;winfsp&lt;/code&gt;，下载地址：&lt;a href="http://www.secfs.net/winfsp/download/"&gt;&lt;/a&gt;&lt;a href="http://www.secfs.net/winfsp/download/"&gt;http://www.secfs.net/winfsp/download/&lt;/a&gt; ，下载后一路安装即可。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1822&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;618&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-17.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-17.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-17.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;
+&lt;h2 id="2为rclone配置环境变量"&gt;&lt;strong&gt;2、为rclone配置环境变量&lt;/strong&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在电脑桌面右键点击“此电脑”的“属性”选项&lt;/li&gt;
+&lt;li&gt;选择“高级系统设置”选项&lt;/li&gt;
+&lt;li&gt;在系统变量中找到path，添加刚才解压后的路径&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1823&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;677&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-18.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-18.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-18.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;</description></item><item><title>centos 挂载 群晖nfs共享木录</title><link>/archives/1560.html</link><pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate><guid>/archives/1560.html</guid><description>&lt;p&gt;群辉开启NFS共享&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011325002.jpeg"&gt;
+ &lt;img class="mx-auto" alt="Centos挂载群辉的NFS共享文件夹" src="https://img-cloud.zhoujie218.top/pc/202111011325002.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;在客户端linux系统中安装NFS客户端工具&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg"&gt;
+ &lt;img class="mx-auto" alt="点击复制代码" src="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg" /&gt;
+ &lt;/a&gt;
+ Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yum install nfs-utils -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在linux中检测开启NFS服务的群辉主机IP&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg"&gt;
+ &lt;img class="mx-auto" alt="点击复制代码" src="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg" /&gt;
+ &lt;/a&gt;
+ Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;showmount -e 192.168.137.136
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# showmount -e 192.168.137.136&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Export list &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; 192.168.137.136:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/volume1/NFSfile *
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建目录并挂载&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg"&gt;
+ &lt;img class="mx-auto" alt="点击复制代码" src="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg" /&gt;
+ &lt;/a&gt;
+ Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# mkdir /NFSfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# mount -t nfs 192.168.137.136:/volume1/NFSfile /NFSfile -o proto=tcp -o nolock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# df -h&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Filesystem Size Used Avail Use% Mounted on
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/dev/mapper/centos-root 50G 5.6G 45G 12% /
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;devtmpfs 897M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 897M 0% /dev
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 912M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 912M 0% /dev/shm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 912M 9.0M 903M 1% /run
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 912M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 912M 0% /sys/fs/cgroup
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/dev/sda1 1014M 179M 836M 18% /boot
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/dev/mapper/centos-home 147G 33M 147G 1% /home
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 183M 8.0K 183M 1% /run/user/42
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 183M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 183M 0% /run/user/0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;192.168.137.136:/volume1/NFSfile 6.7G 278M 6.4G 5% /NFSfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘</title><link>/archives/1042.html</link><pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1042.html</guid><description>&lt;p&gt;经常听说有人撸到无限容量的谷歌网络硬盘，或者是 5T 容量的，都是利用学生认证实现的，现在淘宝上也有一大堆，但是感觉这种都不一定稳，随时可能翻车，我自己是用的 &lt;strong&gt;google&lt;/strong&gt; drive 个人版的免费 15G 空间，其实也够用了，可以&lt;strong&gt;挂载&lt;/strong&gt;到服务器上，当一个普通的本地磁盘样操作，多 15G 随便放点什么都好，还稳定，不怕翻车，&lt;strong&gt;挂载&lt;/strong&gt;主要通过 &lt;strong&gt;RCLONE&lt;/strong&gt; 这个软件实现，需要服务器或者至少 KVM 架构的 VPS，因为需要用到 FUSE，而一般 OPENVZ 架构是不开启这个功能的，教程如下：&lt;/p&gt;
+&lt;p&gt;本教程基于 CENTOS 系统&lt;/p&gt;
+&lt;p&gt;1、安装 EPEL 源（这一步国外 VPS 一般可不用操作）:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;yum -y install epel-release
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、安装一些基本组件和依赖:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;yum -y install wget unzip screen fuse fuse-devel
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、下载 &lt;strong&gt;Rclone&lt;/strong&gt; 解压然后进入目录:（64 位系统就下载 &lt;strong&gt;rclone&lt;/strong&gt;-current-linux-amd64.zip，32 位系统就下载 &lt;strong&gt;rclone&lt;/strong&gt;-current-linux-386.zip 替换下面代码中的链接就行了）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget https://downloads.rclone.org/rclone-current-linux-amd64.zip 
+unzip rclone-current-linux-amd64.zip
+cd rclone-v*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意&lt;code&gt;cd **rclone**-v*&lt;/code&gt;这一步如果系统执行出错，你可以输入&lt;code&gt;ls&lt;/code&gt;命令查看一下具体目录名，因为这个是使用最新版本，版本号不一定一样,然后根据真实的目录cd 进去一下&lt;/p&gt;
+&lt;p&gt;4、接下来运行 &lt;strong&gt;Rclone&lt;/strong&gt; 开始配置:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;./rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5、第一步选择 n （n 为新建配置）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&amp;gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;6、然后回车输入一个 name,建议这个 name 设置的简单好记一点,比如我们这边叫 gp，这个下面&lt;strong&gt;挂载&lt;/strong&gt;磁盘时会用到如下所示:&lt;/p&gt;</description></item><item><title>使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案）</title><link>/archives/1033.html</link><pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1033.html</guid><description>&lt;p&gt;2019年7月 Google 更新政策，Google Photos 与 Google Drive 不会双向同步，之前通过 Google Drive，使用 &lt;a href="https://cyhour.com/825/"&gt;rclone 备份 Google Photos&lt;/a&gt; 这个方法就失效了。在&lt;a href="https://cyhour.com/go/aHR0cHM6Ly93d3cuZGF4aWJsb2cuY29tL-S9v-eUqGdwaG90b3Mtc3luY-Wkh-S7vWdvb2dsZS3nm7jlhowv" title="https://www.daxiblog.com/使用gphotos-sync备份google-相册/"&gt;博友&lt;/a&gt;那里看到了新工具：&lt;a href="https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8" title="https://pypi.org/project/gphotos-sync/"&gt;gphotos-sync&lt;/a&gt; · &lt;a href="https://cyhour.com/go/aHR0cHM6Ly9naXRodWIuY29tL2dpbGVza25hcC9ncGhvdG9zLXN5bmM" title="https://github.com/gilesknap/gphotos-sync"&gt;GitHub&lt;/a&gt; 折腾一圈，发现 gphotos-sync 无法直接保存照片到使用 rclone 挂载的 OneDrive 上（2019.10.14，后记，博友 @NSFW 缓解了这个问题，加&amp;ndash;db-path参数，把数据库文件保存在本地即可运行2分钟左右）。放弃……&lt;/p&gt;
+&lt;p&gt;接着找&lt;a href="https://cyhour.com/1110/"&gt;大硬盘 VPS&lt;/a&gt;，不得不说，&lt;a href="https://cyhour.com/go/aHR0cHM6Ly9teS5mcmFudGVjaC5jYS9hZmYucGhwP2FmZj0zMTE2JnBpZD0xNDM5" title="https://my.frantech.ca/aff.php?aff=3116&amp;amp;pid=1439"&gt;BuyVM&lt;/a&gt; 这货真心便宜。&lt;/p&gt;
+&lt;h2 id="安装-python-3"&gt;安装 Python 3&lt;/h2&gt;
+&lt;p&gt;gphotos-sync 需要 Python 3，CentOS 自带 Python 2，得安装，方法参考：&lt;a href="https://cyhour.com/1115"&gt;CentOS 7 编译安装 Python 3.7.4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;嫌麻烦的话还是一键脚本安装吧，比如：&lt;a href="https://cyhour.com/go/aHR0cHM6Ly93d3cubW9lcmF0cy5jb20vYXJjaGl2ZXMvNTA3Lw" title="https://www.moerats.com/archives/507/"&gt;Python 3.6一键安装脚本 for CentOS/Debian&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;amp;&amp;amp; sh CentOS_Python3.6.sh
+
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;amp;&amp;amp; sh Debian_Python3.6.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="安装-gphotos-sync"&gt;安装 gphotos-sync&lt;/h2&gt;
+&lt;p&gt;官网：&lt;a href="https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8" title="https://pypi.org/project/gphotos-sync/"&gt;Google Photos Sync&lt;/a&gt;，目前版本 2.9.2。执行下面命令安装即可：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;pip3 install gphotos-sync
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完成，执行 gphotos-sync &amp;ndash;help 就能看到帮助信息▼展开&lt;/p&gt;
+&lt;h2 id="申请-google-photos-访问-api-client-id"&gt;申请 Google Photos 访问 API client id&lt;/h2&gt;
+&lt;h3 id="创建项目"&gt;创建项目&lt;/h3&gt;
+&lt;p&gt;打开 &lt;a href="https://developers.google.com/console/" title="https://developers.google.com/console/"&gt;Google Developer Console&lt;/a&gt; 控制台，创建一个新项目，如：google-photos-sync&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,1876 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wangyesheji on 周杰个人博客</title><link>/categories/wangyesheji/</link><description>Recent content in Wangyesheji on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 08 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="/categories/wangyesheji/index.xml" rel="self" type="application/rss+xml"/><item><title>免费使用的密钥管理系统 (License Management System)（暂未开源）</title><link>/archives/2677.html</link><pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate><guid>/archives/2677.html</guid><description>&lt;h1 id="密钥管理系统-license-management-system"&gt;密钥管理系统 (License Management System)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;现代化License管理系统，支持密钥生成、验证、设备管理等功能&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/08/08/6895620ddd447.png"&gt;
+ &lt;img class="mx-auto" alt="系统截图1" src="https://img-cloud.zhoujie218.top/2025/08/08/6895620ddd447.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/08/08/6895621d7c746.png"&gt;
+ &lt;img class="mx-auto" alt="系统截图2" src="https://img-cloud.zhoujie218.top/2025/08/08/6895621d7c746.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/08/08/689562205aa4f.png"&gt;
+ &lt;img class="mx-auto" alt="系统截图3" src="https://img-cloud.zhoujie218.top/2025/08/08/689562205aa4f.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="系统特性"&gt;系统特性&lt;/h2&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/08/08/68956233c2cdf.png"&gt;
+ &lt;img class="mx-auto" alt="系统截图4" src="https://img-cloud.zhoujie218.top/2025/08/08/68956233c2cdf.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/08/08/6895622d2aa60.png"&gt;
+ &lt;img class="mx-auto" alt="系统截图5" src="https://img-cloud.zhoujie218.top/2025/08/08/6895622d2aa60.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="-文档导航"&gt;📚 文档导航&lt;/h2&gt;
+&lt;p&gt;本系统提供完整的技术文档，按照不同用户角色进行分类：&lt;/p&gt;
+&lt;h3 id="-用户指南"&gt;📖 用户指南&lt;/h3&gt;
+&lt;p&gt;面向最终用户的使用文档：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide"&gt;用户指南&lt;/a&gt; - 完整的安装、部署、使用指南&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-开发者指南"&gt;🔧 开发者指南&lt;/h3&gt;
+&lt;p&gt;面向开发者的技术文档：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/developer-guide"&gt;开发者指南&lt;/a&gt; - 技术架构、API接口、集成指南&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-管理员指南"&gt;⚙️ 管理员指南&lt;/h3&gt;
+&lt;p&gt;面向系统管理员的运维文档：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/admin-guide"&gt;管理员指南&lt;/a&gt; - 系统配置、备份恢复、故障排除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="根据您的需求快速选择相应的文档"&gt;根据您的需求，快速选择相应的文档：&lt;/h2&gt;
+&lt;h3 id="-我是最终用户"&gt;👤 我是最终用户&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;想要安装和使用系统&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/"&gt;📖 用户指南&lt;/a&gt; - 完整的安装、部署、使用指南
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/#_1"&gt;🚀 快速开始&lt;/a&gt; - 环境要求和基本安装&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/#_6"&gt;📦 安装指南&lt;/a&gt; - 详细的安装步骤&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/#docker"&gt;🐳 Docker部署&lt;/a&gt; - 容器化部署方案&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/#_12"&gt;📖 使用指南&lt;/a&gt; - 系统操作说明&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/#_21"&gt;⚙️ 配置说明&lt;/a&gt; - 环境变量配置&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://license.zhoujie8.cn/user-guide/#_27"&gt;🔧 故障排除&lt;/a&gt; - 常见问题解决&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-我是开发者"&gt;👨‍💻 我是开发者&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;想要集成API或了解技术细节&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>重构开源FlowMaster - 专业的网络流量实时监控系统</title><link>/archives/2674.html</link><pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate><guid>/archives/2674.html</guid><description>&lt;p&gt;觉得还不错的佬友给个star 免流 开源地址：&lt;a href="https://github.com/vbskycn/FlowMaster"&gt;https://github.com/vbskycn/FlowMaster&lt;/a&gt; 演示地址：&lt;a href="https://flowmaster.zhoujie218.top/"&gt;https://flowmaster.zhoujie218.top/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="flowmaster---专业的网络流量实时监控系统"&gt;FlowMaster - 专业的网络流量实时监控系统&lt;/h1&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/08/08/6895652145add.png"&gt;
+ &lt;img class="mx-auto" alt="1754621216830.png" src="https://img-cloud.zhoujie218.top/2025/08/08/6895652145add.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="-目录"&gt;📋 目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"&gt;项目介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"&gt;✨ 核心特性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%EF%B8%8F-%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"&gt;🛠️ 技术架构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"&gt;📦 快速开始&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E"&gt;🔧 配置说明&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-api-%E6%96%87%E6%A1%A3"&gt;📚 API 文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD"&gt;🚀 高级功能&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4"&gt;🔍 故障排除&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"&gt;⚡ 性能优化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97"&gt;👨‍💻 开发指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97"&gt;🤝 贡献指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#-%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE"&gt;📄 开源协议&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-项目介绍"&gt;📝 项目介绍&lt;/h2&gt;
+&lt;p&gt;FlowMaster 是一个基于 &lt;strong&gt;vnstat&lt;/strong&gt; 的专业网络流量监控系统，采用现代化的 Web 技术栈构建。系统提供实时流量监控、多维度数据分析、智能缓存管理、性能监控等高级功能，让网络流量监控变得简单而强大。&lt;/p&gt;
+&lt;h3 id="-设计理念"&gt;🎯 设计理念&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高性能&lt;/strong&gt;: 智能缓存系统，LRU算法优化，内存使用监控&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高可用&lt;/strong&gt;: 完善的错误处理，自动诊断，降级机制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;易扩展&lt;/strong&gt;: 模块化设计，RESTful API，支持多网卡&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用户友好&lt;/strong&gt;: 响应式界面，深色主题，实时更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-核心特性"&gt;✨ 核心特性&lt;/h2&gt;
+&lt;h3 id="-实时监控"&gt;🚀 实时监控&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;实时流量图表&lt;/strong&gt;: 基于Chart.js的动态图表，支持实时数据更新&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;速度监控&lt;/strong&gt;: 接收/发送速度实时显示（kb/秒）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据包统计&lt;/strong&gt;: 实时数据包传输统计&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动刷新&lt;/strong&gt;: 可配置的自动刷新间隔（1秒-60秒）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-多维度统计"&gt;📊 多维度统计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;分钟统计&lt;/strong&gt;: 最近5分钟流量数据，30秒缓存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;小时统计&lt;/strong&gt;: 最近12小时数据，1分钟缓存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;日统计&lt;/strong&gt;: 最近12天数据，2分钟缓存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;月统计&lt;/strong&gt;: 最近30天数据，5分钟缓存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;年统计&lt;/strong&gt;: 年度数据，10分钟缓存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-智能网卡管理"&gt;🌐 智能网卡管理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自动检测&lt;/strong&gt;: 自动发现和验证可用网络接口&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优先级排序&lt;/strong&gt;: 物理网卡优先，虚拟接口靠后&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多接口支持&lt;/strong&gt;: 支持eth、ens、enp、wlan、bond、docker等接口&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接口验证&lt;/strong&gt;: 自动验证接口有效性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-智能缓存系统"&gt;💾 智能缓存系统&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LRU缓存&lt;/strong&gt;: 最近最少使用算法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内存监控&lt;/strong&gt;: 实时监控缓存内存使用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓存统计&lt;/strong&gt;: 命中率、缓存条目、内存使用统计&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动清理&lt;/strong&gt;: 定期清理过期缓存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可配置&lt;/strong&gt;: 支持自定义缓存大小和内存限制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-系统监控"&gt;🔍 系统监控&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;性能监控&lt;/strong&gt;: 响应时间、请求计数、平均响应时间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内存监控&lt;/strong&gt;: RSS、堆内存、外部内存使用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;服务器状态&lt;/strong&gt;: 运行时间、平台信息、vnstat状态&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;诊断功能&lt;/strong&gt;: 自动诊断连接问题和vnstat配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-用户界面"&gt;🎨 用户界面&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;响应式设计&lt;/strong&gt;: 完美适配桌面和移动设备&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;深色主题&lt;/strong&gt;: 支持深色/浅色主题切换&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时图表&lt;/strong&gt;: 基于Chart.js的交互式图表&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据表格&lt;/strong&gt;: 格式化的数据展示&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加载状态&lt;/strong&gt;: 优雅的加载动画&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-高级查询"&gt;📅 高级查询&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;日期范围查询&lt;/strong&gt;: 自定义时间段数据查询&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位统一&lt;/strong&gt;: 自动单位转换和归一化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据过滤&lt;/strong&gt;: 智能过滤无效数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图表渲染&lt;/strong&gt;: 查询结果图表展示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-技术架构"&gt;🛠️ 技术架构&lt;/h2&gt;
+&lt;h3 id="后端技术栈"&gt;后端技术栈&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;组件&lt;/th&gt;
+ &lt;th&gt;技术&lt;/th&gt;
+ &lt;th&gt;版本&lt;/th&gt;
+ &lt;th&gt;说明&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;运行时&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Node.js&lt;/td&gt;
+ &lt;td&gt;14.0.0+&lt;/td&gt;
+ &lt;td&gt;JavaScript运行时环境&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Web框架&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Express.js&lt;/td&gt;
+ &lt;td&gt;4.18.2+&lt;/td&gt;
+ &lt;td&gt;轻量级Web应用框架&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;跨域处理&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;CORS&lt;/td&gt;
+ &lt;td&gt;2.8.5+&lt;/td&gt;
+ &lt;td&gt;跨域资源共享&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;进程管理&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;PM2&lt;/td&gt;
+ &lt;td&gt;最新&lt;/td&gt;
+ &lt;td&gt;生产环境进程管理器&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;监控工具&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;vnstat&lt;/td&gt;
+ &lt;td&gt;2.0.0+&lt;/td&gt;
+ &lt;td&gt;网络流量监控工具&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="前端技术栈"&gt;前端技术栈&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;组件&lt;/th&gt;
+ &lt;th&gt;技术&lt;/th&gt;
+ &lt;th&gt;版本&lt;/th&gt;
+ &lt;th&gt;说明&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;框架&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Vue.js&lt;/td&gt;
+ &lt;td&gt;3.2.31+&lt;/td&gt;
+ &lt;td&gt;渐进式JavaScript框架&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;UI框架&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Bootstrap&lt;/td&gt;
+ &lt;td&gt;5.1.3+&lt;/td&gt;
+ &lt;td&gt;响应式CSS框架&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;图表库&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Chart.js&lt;/td&gt;
+ &lt;td&gt;4.4.1+&lt;/td&gt;
+ &lt;td&gt;交互式图表库&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;HTTP客户端&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Axios&lt;/td&gt;
+ &lt;td&gt;0.26.0+&lt;/td&gt;
+ &lt;td&gt;Promise-based HTTP客户端&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;图标库&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Bootstrap Icons&lt;/td&gt;
+ &lt;td&gt;1.8.0+&lt;/td&gt;
+ &lt;td&gt;图标字体库&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="系统架构"&gt;系统架构&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ 前端界面 │ │ API网关 │ │ vnstat工具 │
+│ (Vue.js) │◄──►│ (Express) │◄──►│ (系统命令) │
+└─────────────────┘ └─────────────────┘ └─────────────────┘
+ │
+ ▼
+ ┌─────────────────┐
+ │ 缓存系统 │
+ │ (LRU Cache) │
+ └─────────────────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-快速开始"&gt;📦 快速开始&lt;/h2&gt;
+&lt;h3 id="环境要求"&gt;环境要求&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;组件&lt;/th&gt;
+ &lt;th&gt;最低版本&lt;/th&gt;
+ &lt;th&gt;推荐版本&lt;/th&gt;
+ &lt;th&gt;说明&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Node.js&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;14.0.0&lt;/td&gt;
+ &lt;td&gt;18.0.0+&lt;/td&gt;
+ &lt;td&gt;JavaScript运行时&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;vnstat&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;2.0.0&lt;/td&gt;
+ &lt;td&gt;2.10+&lt;/td&gt;
+ &lt;td&gt;网络监控工具&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;6.0.0&lt;/td&gt;
+ &lt;td&gt;8.0.0+&lt;/td&gt;
+ &lt;td&gt;包管理器&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;操作系统&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Linux&lt;/td&gt;
+ &lt;td&gt;Ubuntu 20.04+&lt;/td&gt;
+ &lt;td&gt;支持vnstat的系统&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="-一键部署"&gt;🚀 一键部署&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;国际网络：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</title><link>/archives/2673.html</link><pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate><guid>/archives/2673.html</guid><description>&lt;h4 id="已优选"&gt;已优选&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/07/13/6873817265d92.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250713175038879" src="https://img-cloud.zhoujie218.top/2025/07/13/6873817265d92.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;结论：可见，优选过的网站响应速度有很大提升，并且出口IP也变多了。这能让你的网站可用性大大提高，并且加载速度显著变快。&lt;/p&gt;
+&lt;p&gt;Cloudflare 优选域名：www.visa.cn&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="worker路由反代全球并优选新"&gt;Worker路由反代全球并优选（新）&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本方法的原理为通过Worker反代你的源站，然后将Worker的入口节点进行优选。此方法不是传统的优选，源站接收到的Hosts头仍然是直接指向源站的解析&lt;/p&gt;
+&lt;p&gt;以下代码是原Github全站反代代码的二改以实现Worker路由接入优选，可能有多余逻辑或者不完全适配于优选需求&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;创建一个Cloudflare Worker，写入代码&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;// 域名前缀映射配置
+const domain_mappings = {
+ &amp;#39;live-1vz.pages.dev&amp;#39;: &amp;#39;live&amp;#39;,
+//例如：
+//&amp;#39;live-1vz.pages.dev&amp;#39;: &amp;#39;live&amp;#39;,
+//则你设置Worker路由为live*.都将会反代到live-1vz.pages.dev
+};
+
+addEventListener(&amp;#39;fetch&amp;#39;, event =&amp;gt; {
+ event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+ const url = new URL(request.url);
+ const current_host = url.host;
+
+ // 强制使用 HTTPS
+ if (url.protocol === &amp;#39;http:&amp;#39;) {
+ url.protocol = &amp;#39;https:&amp;#39;;
+ return Response.redirect(url.href, 301);
+ }
+
+ const host_prefix = getProxyPrefix(current_host);
+ if (!host_prefix) {
+ return new Response(&amp;#39;Proxy prefix not matched&amp;#39;, { status: 404 });
+ }
+
+ // 查找对应目标域名
+ let target_host = null;
+ for (const [origin_domain, prefix] of Object.entries(domain_mappings)) {
+ if (host_prefix === prefix) {
+ target_host = origin_domain;
+ break;
+ }
+ }
+
+ if (!target_host) {
+ return new Response(&amp;#39;No matching target host for prefix&amp;#39;, { status: 404 });
+ }
+
+ // 构造目标 URL
+ const new_url = new URL(request.url);
+ new_url.protocol = &amp;#39;https:&amp;#39;;
+ new_url.host = target_host;
+
+ // 创建新请求
+ const new_headers = new Headers(request.headers);
+ new_headers.set(&amp;#39;Host&amp;#39;, target_host);
+ new_headers.set(&amp;#39;Referer&amp;#39;, new_url.href);
+
+ try {
+ const response = await fetch(new_url.href, {
+ method: request.method,
+ headers: new_headers,
+ body: request.method !== &amp;#39;GET&amp;#39; &amp;amp;&amp;amp; request.method !== &amp;#39;HEAD&amp;#39; ? request.body : undefined,
+ redirect: &amp;#39;manual&amp;#39;
+ });
+
+ // 复制响应头并添加CORS
+ const response_headers = new Headers(response.headers);
+ response_headers.set(&amp;#39;access-control-allow-origin&amp;#39;, &amp;#39;*&amp;#39;);
+ response_headers.set(&amp;#39;access-control-allow-credentials&amp;#39;, &amp;#39;true&amp;#39;);
+ response_headers.set(&amp;#39;cache-control&amp;#39;, &amp;#39;public, max-age=600&amp;#39;);
+ response_headers.delete(&amp;#39;content-security-policy&amp;#39;);
+ response_headers.delete(&amp;#39;content-security-policy-report-only&amp;#39;);
+
+ return new Response(response.body, {
+ status: response.status,
+ statusText: response.statusText,
+ headers: response_headers
+ });
+ } catch (err) {
+ return new Response(`Proxy Error: ${err.message}`, { status: 502 });
+ }
+}
+
+function getProxyPrefix(hostname) {
+ for (const prefix of Object.values(domain_mappings)) {
+ if (hostname.startsWith(prefix)) {
+ return prefix;
+ }
+ }
+ return null;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建路由&lt;/p&gt;</description></item><item><title>(原创)哪吒监控流量告警规则公告配置规则配置工具</title><link>/archives/2668.html</link><pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate><guid>/archives/2668.html</guid><description>&lt;h1 id="哪吒监控配置工具使用指南"&gt;哪吒监控配置工具使用指南&lt;/h1&gt;
+&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;p&gt;哪吒监控配置工具是一个专为哪吒监控系统设计的Web配置生成工具，它能够帮助用户快速生成标准的JSON配置文件。该工具提供了两个主要功能：流量告警规则生成器和公告配置生成器，让配置过程变得更加简单和直观。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/04/29/68104995e1c15.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250429113650041" src="https://img-cloud.zhoujie218.top/2025/04/29/68104995e1c15.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="工具概述"&gt;工具概述&lt;/h2&gt;
+&lt;p&gt;哪吒监控配置工具基于Web技术构建，具有以下特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;响应式设计，支持各种设备访问&lt;/li&gt;
+&lt;li&gt;直观的用户界面&lt;/li&gt;
+&lt;li&gt;实时配置预览&lt;/li&gt;
+&lt;li&gt;一键复制生成的配置&lt;/li&gt;
+&lt;li&gt;支持多规则配置&lt;/li&gt;
+&lt;li&gt;自动格式化和验证&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="功能详解"&gt;功能详解&lt;/h2&gt;
+&lt;h3 id="流量告警规则生成器"&gt;流量告警规则生成器&lt;/h3&gt;
+&lt;p&gt;流量告警规则生成器允许用户设置服务器流量监控规则，主要功能包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;监控范围设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可选择监控所有服务器&lt;/li&gt;
+&lt;li&gt;可指定特定服务器进行监控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流量类型配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;周期入站流量&lt;/li&gt;
+&lt;li&gt;周期出站流量&lt;/li&gt;
+&lt;li&gt;周期总流量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流量限制设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持多种单位：KB、MB、GB、TB&lt;/li&gt;
+&lt;li&gt;可设置具体的流量上限值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;告警周期配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持多种时间单位：小时、天、周、月、年&lt;/li&gt;
+&lt;li&gt;可设置周期开始时间&lt;/li&gt;
+&lt;li&gt;可配置周期间隔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/04/29/681049918c6f6.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250429113715817" src="https://img-cloud.zhoujie218.top/2025/04/29/681049918c6f6.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="公告配置生成器"&gt;公告配置生成器&lt;/h3&gt;
+&lt;p&gt;公告配置生成器用于生成服务器公告相关的配置，包含以下功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;账单信息配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开始日期和结束日期设置&lt;/li&gt;
+&lt;li&gt;自动续费选项&lt;/li&gt;
+&lt;li&gt;计费周期选择（月付/季付/年付）&lt;/li&gt;
+&lt;li&gt;金额设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带宽设置（Mbps）&lt;/li&gt;
+&lt;li&gt;流量配置（TB/每月）&lt;/li&gt;
+&lt;li&gt;流量类型选择（入站/出站/总流量）&lt;/li&gt;
+&lt;li&gt;IPv4/IPv6数量配置&lt;/li&gt;
+&lt;li&gt;网络线路说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/04/29/6810499069ee9.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250429113744149" src="https://img-cloud.zhoujie218.top/2025/04/29/6810499069ee9.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="使用指南"&gt;使用指南&lt;/h2&gt;
+&lt;h3 id="流量告警规则生成器使用步骤"&gt;流量告警规则生成器使用步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;访问工具首页，点击&amp;quot;流量告警规则生成器&amp;quot;&lt;/li&gt;
+&lt;li&gt;配置监控范围
+&lt;ul&gt;
+&lt;li&gt;选择是否监控所有服务器&lt;/li&gt;
+&lt;li&gt;如果选择指定服务器，输入服务器ID（多个ID用逗号分隔）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;设置流量类型和限制
+&lt;ul&gt;
+&lt;li&gt;选择需要监控的流量类型&lt;/li&gt;
+&lt;li&gt;输入流量上限值&lt;/li&gt;
+&lt;li&gt;选择适当的单位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;配置告警周期
+&lt;ul&gt;
+&lt;li&gt;设置周期开始时间&lt;/li&gt;
+&lt;li&gt;选择周期间隔和单位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;生成配置&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;复制生成的JSON配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="公告配置生成器使用步骤"&gt;公告配置生成器使用步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;访问工具首页，点击&amp;quot;公告配置生成器&amp;quot;&lt;/li&gt;
+&lt;li&gt;填写账单信息
+&lt;ul&gt;
+&lt;li&gt;设置开始和结束日期&lt;/li&gt;
+&lt;li&gt;选择是否自动续费&lt;/li&gt;
+&lt;li&gt;选择计费周期&lt;/li&gt;
+&lt;li&gt;输入金额&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;配置网络参数
+&lt;ul&gt;
+&lt;li&gt;设置带宽和流量&lt;/li&gt;
+&lt;li&gt;选择流量类型&lt;/li&gt;
+&lt;li&gt;配置IP地址数量&lt;/li&gt;
+&lt;li&gt;填写网络线路信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;添加额外说明（可选）&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;生成配置&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;复制生成的JSON配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="最佳实践"&gt;最佳实践&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;流量告警规则配置建议&lt;/p&gt;</description></item><item><title>OpenWrt哪吒监控Agent一键安装脚本</title><link>/archives/2666.html</link><pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate><guid>/archives/2666.html</guid><description>&lt;h1 id="openwrt哪吒监控agent一键安装脚本"&gt;OpenWrt哪吒监控Agent一键安装脚本&lt;/h1&gt;
+&lt;h2 id="项目简介"&gt;项目简介&lt;/h2&gt;
+&lt;p&gt;这是一个用于在OpenWrt系统上安装哪吒监控Agent的一键安装脚本。哪吒监控是一个开源的服务器监控系统，可以帮助您实时监控服务器的运行状态。 脚本会自动从官方github仓库下载最新版本的Agent，并进行安装。&lt;/p&gt;
+&lt;h2 id="系统要求"&gt;系统要求&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenWrt系统&lt;/li&gt;
+&lt;li&gt;Root权限&lt;/li&gt;
+&lt;li&gt;网络连接&lt;/li&gt;
+&lt;li&gt;支持的系统架构：
+&lt;ul&gt;
+&lt;li&gt;x86_64 (amd64)&lt;/li&gt;
+&lt;li&gt;aarch64/arm64&lt;/li&gt;
+&lt;li&gt;armv7l/armv6l&lt;/li&gt;
+&lt;li&gt;mips&lt;/li&gt;
+&lt;li&gt;mips64&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="安装步骤"&gt;安装步骤&lt;/h2&gt;
+&lt;h3 id="一键安装命令"&gt;一键安装命令&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O nezha_openwrt.sh https://raw.githubusercontent.com/vbskycn/nezha_openwrt/main/nezha_openwrt.sh &amp;amp;&amp;amp; chmod +x nezha_openwrt.sh &amp;amp;&amp;amp; ./nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="国内网无法访问github的用下面的如果失效请自己更换代理"&gt;国内网无法访问github的用下面的，如果失效请自己更换代理&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O nezha_openwrt.sh https://gh-proxy.com/raw.githubusercontent.com/vbskycn/nezha_openwrt/main/nezha_openwrt.sh &amp;amp;&amp;amp; chmod +x nezha_openwrt.sh &amp;amp;&amp;amp; ./nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="分步安装"&gt;分步安装&lt;/h3&gt;
+&lt;h4 id="1-下载脚本"&gt;1. 下载脚本&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget https://raw.githubusercontent.com/vbskycn/nezha_openwrt/main/nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="2-添加执行权限"&gt;2. 添加执行权限&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;chmod +x nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="3-运行安装脚本"&gt;3. 运行安装脚本&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;./nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="配置说明"&gt;配置说明&lt;/h2&gt;
+&lt;p&gt;安装过程中需要配置以下参数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;服务器地址：哪吒监控面板的地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;客户端密钥：在面板中生成的客户端密钥&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/vbskycn/nezha_openwrt/blob/main/assets/image-20250421141640256.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/04/22/68077ea23e136.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250421141640256" src="https://img-cloud.zhoujie218.top/2025/04/22/68077ea23e136.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;复制安装地址后里面有一串密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TLS：是否启用TLS加密连接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GPU监控：是否启用GPU监控&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;温度监控：是否启用温度监控&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="使用说明"&gt;使用说明&lt;/h2&gt;
+&lt;h3 id="服务管理"&gt;服务管理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;启动服务：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/etc/init.d/nezha-service start
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;停止服务：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/etc/init.d/nezha-service stop
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;重启服务：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/etc/init.d/nezha-service restart
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="配置文件位置"&gt;配置文件位置&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装目录：&lt;code&gt;/etc/nezha&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;配置文件：&lt;code&gt;/etc/nezha/config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="常见问题"&gt;常见问题&lt;/h2&gt;
+&lt;h3 id="1-安装失败"&gt;1. 安装失败&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;检查是否具有root权限&lt;/li&gt;
+&lt;li&gt;检查网络连接是否正常&lt;/li&gt;
+&lt;li&gt;检查系统架构是否支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-服务无法启动"&gt;2. 服务无法启动&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;检查配置文件是否正确&lt;/li&gt;
+&lt;li&gt;检查服务器地址是否可以访问&lt;/li&gt;
+&lt;li&gt;检查客户端密钥是否正确&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-监控数据不显示"&gt;3. 监控数据不显示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;检查网络连接&lt;/li&gt;
+&lt;li&gt;检查服务是否正常运行&lt;/li&gt;
+&lt;li&gt;检查面板配置是否正确&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="注意事项"&gt;注意事项&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装前请确保系统有足够的存储空间&lt;/li&gt;
+&lt;li&gt;建议在安装前备份重要数据&lt;/li&gt;
+&lt;li&gt;确保网络环境稳定&lt;/li&gt;
+&lt;li&gt;建议使用TLS加密连接以提高安全性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="技术支持"&gt;技术支持&lt;/h2&gt;
+&lt;p&gt;如有问题，请提交Issue或Pull Request：&lt;/p&gt;</description></item><item><title>解决pdf.js不支持跨域问题</title><link>/archives/2623.html</link><pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate><guid>/archives/2623.html</guid><description>&lt;h1 id="解决pdfjs不支持跨域问题"&gt;解决pdf.js不支持跨域问题&lt;/h1&gt;
+&lt;h2 id="pdfjs是什么"&gt;pdf.js是什么&lt;/h2&gt;
+&lt;p&gt;PDF.js是一个使用HTML5构建的可移植文档格式（PDF）查看器。&lt;/p&gt;
+&lt;h2 id="解决跨域问题"&gt;解决跨域问题&lt;/h2&gt;
+&lt;p&gt;首先直接打开任何一个链接pdf文件是不存在跨域问题的，正是因为pdf.js需要通过ajax以文件流的形式去解析才造成了跨域问题。&lt;/p&gt;
+&lt;p&gt;当pdf.js从 &lt;a href="http://localhost/"&gt;http://localhost&lt;/a&gt; 请求 &lt;a href="http://localhost:8081/files/demo.pdf"&gt;http://localhost:8081/files/demo.pdf&lt;/a&gt; , 很遗憾啊，pdf.js发出了个警告：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;file origin does not match viewer&amp;#39;s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;因为当前源与目标源不一样，pdf.js直接拦截了。&lt;/p&gt;
+&lt;h3 id="解决方法一代理方式"&gt;&lt;strong&gt;解决方法一（代理方式）：&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在&lt;a href="http://localhost/"&gt;http://localhost&lt;/a&gt; 服务器配置代理，nginx如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;location /files {
+ proxy_pass http://localhost:8081/;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用方法，不要带上前缀&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http://localhost/pdf.js/web/viewer.html?file=/demo.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;这种方法有缺点：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、不能使用完整链接，如：&lt;a href="http://localhost:8081/files/demo.pdf"&gt;http://localhost:8081/files/demo.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、如果目标存在多个目录需要增加配置，如： /files/demo.pdf 、 /pdf/demo.pdf&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="解决方法二配置cors跨域"&gt;&lt;strong&gt;解决方法二（配置CORS跨域）：&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在目标服务器 &lt;a href="http://localhost:8081/"&gt;http://localhost:8081&lt;/a&gt; 新增下面头部即可。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, PUT, OPTIONS
+Access-Control-Expose-Headers: Accept-Ranges, Content-Encoding, Content-Length, Content-Range
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;nginx（其他服务器类似）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;location / &lt;span style="color:#f92672"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; add_header Access-Control-Allow-Origin &lt;span style="color:#e6db74"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; add_header Access-Control-Allow-Methods &lt;span style="color:#e6db74"&gt;&amp;#39;GET, POST, PUT, OPTIONS&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; add_header Access-Control-Expose-Headers &lt;span style="color:#e6db74"&gt;&amp;#39;Accept-Ranges, Content-Encoding, Content-Length, Content-Range&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http://localhost/pdf.js/web/viewer.html?file=http://localhost:8081/demo.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以为这样就大功告成了吗？ 很遗憾，还是报了之前的错误&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;file origin does not match viewer&amp;#39;s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;翻了翻官方文档，然而没有找到解决方案。但是并不能主档我前进，现在只好从源码入手。&lt;/p&gt;</description></item><item><title>甲骨文ARM机器宝塔面板安装网站监控报表和nginx防火墙</title><link>/archives/2599.html</link><pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate><guid>/archives/2599.html</guid><description>&lt;p&gt;用甲骨文ARM机器建站大半年了，每日一备份还是很不错的，宝塔对arm的支持不是很好，有个小问题&lt;/p&gt;
+&lt;p&gt;宝塔面板的nginx 编译脚本直接忽略 ARM 对 LuaJIT 的支持，这导致了许多依赖 lua 语言的插件失效，例如 Nginx 防火墙、网站监控报表。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/01/65e1497709732.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240301112014964" src="https://img-cloud.zhoujie218.top/2024/03/01/65e1497709732.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="先决条件"&gt;先决条件&lt;/h2&gt;
+&lt;p&gt;需要debian11系统。debian10无法解决。甲骨文自带的ubuntu没测试过不清楚，甲骨文自带的系统太难用了，我每次都是dd系统&lt;/p&gt;
+&lt;p&gt;如果系统是debian11，那可以直接解决，网站不受影响。暂时卸载nginx和防火墙插件，其他软件不动。然后再运行下面命令&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cat&amp;gt;/www/server/panel/install/nginx_prepare.sh&amp;lt;&amp;lt;EOL
+#!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+wget -c -O LuaJIT-2.1.zip https://github.com/LuaJIT/LuaJIT/archive/refs/heads/v2.1.zip -T 10
+unzip LuaJIT-2.1.zip
+if [ -e LuaJIT-2.1 ]; then
+ cd LuaJIT-2.1
+ make linux
+ make install
+ export LUAJIT_LIB=/usr/local/lib
+ export LUAJIT_INC=/usr/local/include/luajit-2.1/
+ ln -sf /usr/local/lib/libluajit-5.1.so.2 /usr/local/lib64/libluajit-5.1.so.2
+ if [ `grep -c /usr/local/lib /etc/ld.so.conf` -eq 0 ]; then
+ echo &amp;#34;/usr/local/lib&amp;#34; &amp;gt;&amp;gt; /etc/ld.so.conf
+ fi
+ ldconfig
+ cd ..
+fi
+rm -rf LuaJIT-2.1*
+Install_cjson
+EOL
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;sed -i &amp;#39;s/\r//g&amp;#39; /www/server/panel/install/nginx_prepare.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;cat&amp;gt;/www/server/panel/install/nginx_configure.pl&amp;lt;&amp;lt;EOL
+--add-module=/www/server/nginx/src/ngx_devel_kit --add-module=/www/server/nginx/src/lua_nginx_module
+EOL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装lua5。&lt;/p&gt;</description></item><item><title>套娃：自用宝塔docker镜像</title><link>/archives/2596.html</link><pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate><guid>/archives/2596.html</guid><description>&lt;p&gt;&lt;strong&gt;套娃：自用宝塔docker镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目的：1分钟快速搭建 nginx php mysql 环境用于测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240216215522103" src="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;生产环境请用官方版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是我自用的宝塔docker镜像，用于测试&lt;/p&gt;
+&lt;h2 id="宝塔76"&gt;&lt;strong&gt;宝塔7.6&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;底层系统：官方centos7.9&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:one&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刚安装好宝塔，什么都没有&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:npm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装好了 nginx 1.21 php 7.4 mysql 5.7&lt;/p&gt;
+&lt;p&gt;phpmyadmin 5.0 redis 6.2&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -idt \
+ -p 3081:80 \
+ -p 3443:443 \
+ -p 38888:8888 \
+ -p 3888:888 \
+ --privileged \
+ -v /www1/wwwroot:/www/wwwroot \
+ -v /www1/server/data:/www/server/data \
+ -v /www1/server/panel/vhost:/www/server/panel/vhost \
+ -v /www1/backup:/www/backup \
+ --network=bridge \
+ --name baota \
+ --restart always \
+ zhoujie218/baota:npm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;端口可以自己定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;38888: 宝塔web管理端口&lt;/p&gt;
+&lt;p&gt;3888: phpmyadmin管理端口&lt;/p&gt;</description></item><item><title>如何为WordPress网站正确地配置Cloudflare</title><link>/archives/2580.html</link><pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate><guid>/archives/2580.html</guid><description>&lt;p&gt;通过在您的站点前充当[反向代理]，Cloudflare是一种一体化的安全和性能产品，被全球超过12%的网站使用。作为WordPress 用户，将Cloudflare添加到您的网站有助于提高网站性能并减少恶意机器人和黑客的影响。&lt;/p&gt;
+&lt;p&gt;正确配置后，对您站点的所有请求将首先到达Cloudflare服务器，然后该服务器将确定是否应将请求转发到源服务器、从缓存中提供服务、阻止或使用自定义规则进行处理。&lt;/p&gt;
+&lt;p&gt;在本指南中，我们将深入探讨WordPress的最佳Cloudflare设置，讨论缓存和安全设置，并向您展示如何为WordPress多站点安装配置Cloudflare 。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;如何为WordPress配置Cloudflare&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare WordPress插件&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WordPress的Cloudflare自动平台优化&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare Argo和Railgun&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;如何为WordPress多站点配置Cloudflare&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="如何为wordpress配置cloudflare"&gt;如何为WordPress配置Cloudflare&lt;/h3&gt;
+&lt;p&gt;Cloudflare提供了多种安全和性能优势，但并非所有这些优势都与WordPress完全兼容。让我们深入了解Cloudflare的设置，以确定适合您的WordPress网站的最佳功能。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;SSL&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;速度&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓存&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;防火墙&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="ssl"&gt;SSL&lt;/h4&gt;
+&lt;p&gt;Cloudflare支持四种SSL/TLS加密模式——Off, Flexible, Full和Full (Strict)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;**Off –**不加密。&lt;/li&gt;
+&lt;li&gt;**Flexible –**仅加密浏览器和Cloudflare之间的连接。&lt;/li&gt;
+&lt;li&gt;**Full –**端到端加密，但允许在源服务器上使用自签名证书。&lt;/li&gt;
+&lt;li&gt;**Ful (Strict) –**端到端加密，需要来自Cloudflare的免费原始证书或来自受信任CA（证书颁发机构）的证书。我们建议使用Full (Strict) SSL模式以获得最大的安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于希望在其WordPress网站上使用Cloudflare的用户，我们建议&lt;a href="https://www.wbolt.com/how-to-install-ssl-certificate.html"&gt;在宝塔面板中生成免费的Let’s Encrypt SSL证书&lt;/a&gt;，并在Cloudflare中使用Full或Full (Strict) 选项。&lt;/p&gt;
+&lt;p&gt;或者，您还可以生成Cloudflare原始证书以安装在您的原始服务器上。如果您的主机不提供免费的SSL证书，则在您的服务器上安装Cloudflare原始证书将允许您使用Full (Strict) SSL模式。&lt;/p&gt;
+&lt;p&gt;如果您使用在子域上托管站点，而根域使用Cloudflare的Flexible SSL，则可以使用Cloudflare页面规则强制子域使用Full或Full (Strict) SSL。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/12/31/65917a247f948.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/12/31/65917a247f948.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;为具有Cloudflare页面规则的子域启用Full (Strict) SSL&lt;/p&gt;
+&lt;p&gt;此选项允许您使用Cloudflare的Flexible SSL，同时确保子域的Cloudflare Full (Strict) SSL。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;始终使用HTTPS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们建议启用此选项以自动&lt;a href="https://www.wbolt.com/redirect-http-to-https.html"&gt;将所有HTTP请求转发到HTTPS&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HSTS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;HSTS代表“HTTP Strict Transport Security”，用于强制Web浏览器使用安全的HTTPS连接。在Cloudflare上启用HSTS可确保&lt;a href="https://www.wbolt.com/make-fewer-http-requests.html"&gt;HTTP请求&lt;/a&gt;永远不会到达您的源服务器。如果您的站点已设置为使用HTTPS，我们建议您也在源服务器上&lt;a href="https://www.wbolt.com/hsts-strict-transport-security.html"&gt;配置HSTS&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最低TLS版本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.wbolt.com/tls-1-3.html"&gt;TLS（传输层安全性）&lt;/a&gt;是一种加密协议，允许通过网络安全传输数据。默认情况下，Cloudflare为协议版本设置TLS 1.0。某些安全标准（例如 PCI DSS 3.2）需要更新版本的TLS协议以实现合规性。如果您的站点需要某个TLS版本，您可以通过转到&lt;strong&gt;SSL/TLS &amp;gt; Edge Certificates &amp;gt; Minimum TLS Version&lt;/strong&gt;来更改设置。&lt;/p&gt;</description></item><item><title>宝塔中用nginx编译安装webdav</title><link>/archives/2568.html</link><pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate><guid>/archives/2568.html</guid><description>&lt;p&gt;**方法一：**借助宝塔使用nginx搭建webdav&lt;/p&gt;
+&lt;p&gt;选择安装nginx的时候选择编译安装并且添加自定义模块，目的是补全nginx的webdav功能&lt;/p&gt;
+&lt;p&gt;模块名称：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http_dav_module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;模块描述：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;webdev
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;模块参数：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;--with-http_dav_module --add-module=/root/nginx-dav-ext-module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;前置脚本：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone https://github.com/arut/nginx-dav-ext-module.git /root/nginx-dav-ext-module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建网页，自己命名，php版本选择纯静态并且在配置文件中添加&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;location / {
+ root /www/wwwroot/webdav;#这里写你webdav的路径
+ #client_max_body_size 102400M;#大文件支持
+ autoindex on;
+ dav_methods PUT DELETE MKCOL COPY MOVE;
+ # 需要 nginx-dav-ext-module 才有下面的选项
+ dav_ext_methods PROPFIND OPTIONS LOCK UNLOCK;
+ create_full_put_path on;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后再&lt;strong&gt;网站目录&lt;/strong&gt;添加账号密码即可，如果需要用到webdav的话，账号就是你添加的账号，密码就是你添加的密码，地址就是你的webdav的网页。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但第一种方法貌似有问题，一直编译失败，故采取第二种方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个有效果&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我个人测试了另一种方法，就是先按第一种方法安装，然而安装失败后，在不勾选添加自定义模块后再次编译安装即可成功。或者到方法二第4步后就成功了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/6544882f22c46.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20231103134206075" src="https://img-cloud.zhoujie218.top/2023/11/03/6544882f22c46.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;**方法二：**宝塔面板nginx编译webdav模块&lt;/p&gt;
+&lt;p&gt;1，nighx必须是编译安装（安装过的卸载重新安装）&lt;/p&gt;
+&lt;p&gt;2，通过ps命令查看nginx文件的路径&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ps -elf | grep nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;得到宝塔面板nginx的具体路径：&lt;code&gt;/www/server/nginx/sbin/nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3，执行：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/server/nginx/sbin/ #进入到路径
+cp nginx nginx.bak #备份nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4，下载nginx-dav-ext-module&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone https://github.com/arut/nginx-dav-ext-module.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5，拷贝至src目录&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cp -R ./nginx-dav-ext-module /www/server/nginx/src
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;6，nignx-V（V大写）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/server/nginx/src
+nginx -V
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看nignx安装了哪些模块&lt;/p&gt;</description></item><item><title>typora + PicGo + lsky 自动上传到图床(更新最快自动获取兰空图床token的方法，点一下就可以了)</title><link>/archives/2556.html</link><pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2556.html</guid><description>&lt;h1 id="typora--picgo--lsky-建立主动上传图片"&gt;typora + PicGo + lsky 建立主动上传图片&lt;/h1&gt;
+&lt;p&gt;更新最快自动获取兰空图床token的方法，点一下就可以了&lt;/p&gt;
+&lt;h1 id="简介"&gt;&lt;strong&gt;简介：&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;世界上最让人安心的事情是什么，可能每个人心中都有自己的答案。&lt;/p&gt;
+&lt;p&gt;但我作为一个&lt;code&gt;developer&lt;/code&gt;，在大量数据泄露的时代，觉得最重要的还是把数据掌握在自己的手上，最让我安心！&lt;/p&gt;
+&lt;p&gt;近期写&lt;code&gt;markdown&lt;/code&gt;，上传图片到&lt;code&gt;博客&lt;/code&gt;时、本地的图片，无法快速的粘贴到博客等各大平台。&lt;/p&gt;
+&lt;p&gt;大概便是各个博客的图片是受维护的，不能够复制粘贴。&lt;/p&gt;
+&lt;p&gt;这就想着自己建立&lt;code&gt;图床&lt;/code&gt;吧。&lt;/p&gt;
+&lt;p&gt;本次教程分为两大部分，假如不想自己布置和建立图床，能够直接看第三步。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一、在&lt;a href="https://www.6hu.cc/archives/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8"&gt;服务器&lt;/a&gt;或NAS中布置浮屠&lt;/li&gt;
+&lt;li&gt;二、建立图床（能够不建立，自己直接我现已建立好的）&lt;/li&gt;
+&lt;li&gt;三、Typora + PicGo 装备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="一建立运转环境"&gt;一、建立运转环境&lt;/h1&gt;
+&lt;p&gt;本次建立的图床环境是NAS + docker + 浮屠 + Lsky&lt;/p&gt;
+&lt;p&gt;因为要比较安稳的条件，自己的黑群晖环境不是很安稳。&lt;/p&gt;
+&lt;p&gt;我的软路由ikuai openwrt都是安稳122天，而黑群晖只99天安稳运转&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3aaa0cd.webp"&gt;
+ &lt;img class="mx-auto" alt="NAS &amp;#43; 宝塔 &amp;#43; typora &amp;#43; PicGo &amp;#43; lsky 搭建自动上传图片" src="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3aaa0cd.webp" /&gt;
+ &lt;/a&gt;
+ ]92830130-db4e159ca2f31e8.webp)&lt;/p&gt;
+&lt;p&gt;为了确保图床的&lt;code&gt;7*24&lt;/code&gt;小时能拜访，本次就把图床放在&lt;code&gt;NAS&lt;/code&gt;上了。&lt;/p&gt;
+&lt;h2 id="11-nas-docker装置布置浮屠"&gt;1.1 NAS-docker装置布置浮屠&lt;/h2&gt;
+&lt;p&gt;在继续阅览前，主张先了解一下再NAS中怎么布置&lt;code&gt;浮屠&lt;/code&gt;(&lt;a href="https://www.bt.cn/new/index.h"&gt;www.bt.cn/new/index.h&lt;/a&gt;…&lt;/p&gt;
+&lt;p&gt;我在极空间运用的是kangkang223大佬制造的&lt;a href="https://www.6hu.cc/archives/tag/%E9%95%9C%E5%83%8F"&gt;镜像&lt;/a&gt;（解决了权限问题）。&lt;/p&gt;
+&lt;p&gt;hub.docker.com/r/kangkang2…&lt;/p&gt;
+&lt;p&gt;官网浮屠官网（为什么用浮屠，因为装置各种环境太方便了）&lt;/p&gt;
+&lt;p&gt;hub.docker.com/r/btpanel/b…&lt;/p&gt;
+&lt;p&gt;好了正式开端：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;拉取镜像&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull baotaoserver/bt-nginx:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于镜像创立&lt;a href="https://www.6hu.cc/archives/tag/%E5%AE%B9%E5%99%A8"&gt;容器&lt;/a&gt;-基本设置&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a86e56.webp"&gt;
+ &lt;img class="mx-auto" alt="NAS &amp;#43; 宝塔 &amp;#43; typora &amp;#43; PicGo &amp;#43; lsky 搭建自动上传图片" src="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a86e56.webp" /&gt;
+ &lt;/a&gt;
+ ]92830136-e20421f1ed677ed.webp)&lt;/p&gt;</description></item><item><title>快速挂载oss到esc服务器目录</title><link>/archives/2550.html</link><pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2550.html</guid><description>&lt;h3 id="快速挂载oss到esc服务器"&gt;快速挂载oss到esc服务器&lt;/h3&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/09/19/650933c32b52f.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230827191344502" src="https://img-cloud.zhoujie218.top/2023/09/19/650933c32b52f.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;ossfs允许您在Linux系统中将对象存储OSS的存储空间（Bucket）挂载到本地文件系统。挂载完成后，您能够像操作本地文件一样操作OSS的对象（Object），从而实现数据共享。&lt;/p&gt;
+&lt;h2 id="运行环境"&gt;运行环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Linux系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CentOS 7.0及以上版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ubuntu 14.04及以上版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Anolis7及以上版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;fuse 2.8.4以上版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="下载地址"&gt;下载地址&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载并使用ossfs前，建议您先了解ossfs相关使用限制。更多信息，请参见&lt;a href="https://help.aliyun.com/zh/oss/developer-reference/overview-60#section-bjn-gcy-ug5"&gt;使用限制&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Linux发行版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu 22.04 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_ubuntu22.04_amd64.deb"&gt;ossfs_1.91.1_ubuntu22.04_amd64.deb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu 20.04 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_ubuntu20.04_amd64.deb"&gt;ossfs_1.91.1_ubuntu20.04_amd64.deb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu 18.04 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_ubuntu18.04_amd64.deb"&gt;ossfs_1.91.1_ubuntu18.04_amd64.deb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu 16.04 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_ubuntu16.04_amd64.deb"&gt;ossfs_1.91.1_ubuntu16.04_amd64.deb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu 14.04 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_ubuntu14.04_amd64.deb"&gt;ossfs_1.91.1_ubuntu14.04_amd64.deb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CentOS 8.0 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_centos8.0_x86_64.rpm"&gt;ossfs_1.91.1_centos8.0_x86_64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CentOS 7.0 (x64)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_centos7.0_x86_64.rpm"&gt;ossfs_1.91.1_centos7.0_x86_64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Anolis8/Alibaba Cloud Linux 3&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_anolisos8.0_x86_64.rpm"&gt;ossfs_1.91.1_anolisos8.0_x86_64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Anolis7/Alibaba Cloud Linux 2&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_anolisos7.0_x86_64.rpm"&gt;ossfs_1.91.1_anolisos7.0_x86_64.rpm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以上列表中提供了常用系统的安装包，如果您的系统版本不在以上列表，请通过源码编译。源码地址以及如何进行源码编译，请参见&lt;a href="https://github.com/aliyun/ossfs#ossfs"&gt;GitHub ossfs&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重要&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;复制下载链接时会自动加上spm编码内容，使用wget命令下载时，请删除链接中的&lt;code&gt;?spm=xxxx&lt;/code&gt;，否则会导致下载失败。&lt;/p&gt;
+&lt;h2 id="快速安装"&gt;快速安装&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载安装包。&lt;/p&gt;
+&lt;p&gt;以下载CentOS 7.0 (x64)版本为例：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-null" data-lang="null"&gt;sudo wget http://gosspublic.alicdn.com/ossfs/ossfs_1.91.1_centos7.0_x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装ossfs。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ubuntu系统&lt;/p&gt;
+&lt;p&gt;以Ubuntu 16.04 (x64)版本为例，安装命令如下：&lt;/p&gt;</description></item><item><title>完美迁移博客从wordpress到hugo</title><link>/archives/2461.html</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>/archives/2461.html</guid><description>&lt;h2 id="前言"&gt;前言&lt;/h2&gt;
+&lt;p&gt;博客写了很多年，都没有写出什么有技术含量的文章。网络互联，你抄我也抄：） 这篇文章也是借鉴网友的 下面有他的链接完美从wordpress转到hugo&lt;/p&gt;
+&lt;h2 id="网站情况简介"&gt;网站情况简介&lt;/h2&gt;
+&lt;p&gt;开始介绍迁移过程之前，我先简单说一下我网站的基本情况供大家参考。如果大家网站情况和我一样，那完全可以采用跟我相同的迁移方案。 笔者从 06 年开始学做网站，那个时候还是im286 的时代。以前一直转战于各种免费空间，各种程序，体验的是那种安装折腾的过程，现在年纪大了，折腾不动了，就想越简单越好。本人没有什么技术，只是出于业余爱好，喜欢捣鼓一些网页程序之类的东东。3年前入手阿里云ESC，域名也备案了，也就绑在阿里了，也不想天天给网站搬家，真的是一件累人的事！&lt;/p&gt;
+&lt;p&gt;前几天看到一个博客特别漂亮，折腾之火熊熊燃烧。一路baidu过来，发现是静态博客hexo 。现在还可以结合cloudfare pages,netlifi,vercel ，github，这些国外大厂提供网站托管，cdn,免费，速度也不错。 最终我选的是cloudfare pages + github +hugo 因为cf不支持hexo集成,后面又研究hugo，有集成的更简单，鼠标键盘点点点，几分钟就建好了一个网站，更新也方便，写好文章，用github推上去，网站就自动更新了。&lt;/p&gt;
+&lt;h2 id="建一个网站的流程"&gt;建一个网站的流程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fork好喜欢的主题仓库&lt;/li&gt;
+&lt;li&gt;设置好网站信息，设置好cloudfare pages&lt;/li&gt;
+&lt;li&gt;github推送，OK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;原来我用的程序是wordpress,虽然没有写出什么技术文章，但是也有100多篇，也算是回忆吧。丢是不能丢的，转格式吧 baiduing&amp;hellip;.. 找了很多方法，下面这个是最完美的。 我们要迁移文章，还有图片。图床迁移实际上并不是一件容易的事情，因为目前所有的迁移工具都是只能&lt;strong&gt;识别 markdown 语法&lt;/strong&gt;的图片链接而不是&lt;strong&gt;html 标签&lt;/strong&gt;里面的链接。这就导致我们必须将 Wordpress 中的所有文章全部转成&lt;strong&gt;markdown 语法&lt;/strong&gt;。 最后一个问题就是保证文章的链接迁移前后没有变化，这样就可以保证拥有旧链接的人们可以正常访问。 综上，我们需要解决三个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;解析 Wordpress 备份的 &amp;ldquo;XML&amp;rdquo; 为拥有 markdown 语法的 &amp;ldquo;.md&amp;rdquo; 文件；&lt;/li&gt;
+&lt;li&gt;图床迁移；&lt;/li&gt;
+&lt;li&gt;固定链接。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="方案对比"&gt;方案对比&lt;/h2&gt;
+&lt;p&gt;当然，我们可以直接选择官网给出的方案&lt;a href="https://gohugo.io/tools/migrations/"&gt;Migrate to Hugo&lt;/a&gt;。对于 wordpress，主要有以下几种。 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202208011522171.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/piggo/202208011522171.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;这几种方案我都尝试过，各有优势却都不完美。以下是详细说明&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/SchumacherFM/wordpress-to-hugo-exporter"&gt;wordpress-to-hugo-exporter&lt;/a&gt;： 可以导出，且文件名称就是带有日期和中文的标题名称。但是不是原生 markdown 格式。而是如下图所示的结构。不满足需求 1，2，所以&lt;strong&gt;排除&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;exitwp-for-hugo: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037f5b5f3.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037f5b5f3.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/wooni005/exitwp-for-hugo"&gt;exitwp-for-hugo&lt;/a&gt;: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa9c14.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa9c14.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/palaniraja/blog2md"&gt;blog2md&lt;/a&gt;: 与&lt;a href="https://github.com/wooni005/exitwp-for-hugo"&gt;exitwp-for-hugo&lt;/a&gt;类似，文件名太乱且不包含日期。
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa20bd.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa20bd.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/nantipov/wordhugopress"&gt;wordhugopress&lt;/a&gt;: java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037f54bc2.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037f54bc2.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后突然发现一个仓库&lt;a href="https://github.com/AvantaR/wordpress-export-to-markdown"&gt;wordpress-export-to-markdow_L 版&lt;/a&gt;，这个只需要自己在电脑上安装 node.js 环境，然后就可以直接运行了。它可以解决除&lt;strong&gt;固定链接&lt;/strong&gt;以外的所有问题，是一个近乎完美的方案。基于 L 版，&lt;a href="https://github.com/AvantaR"&gt;AvantaR&lt;/a&gt;，在 markdown 的 yaml 头文件中添加了&lt;strong&gt;slug&lt;/strong&gt;参数，详细实现见该仓库&lt;a href="https://github.com/AvantaR/wordpress-export-to-markdown"&gt;wordpress-export-to-markdow_A 版&lt;/a&gt;。 实际上&lt;strong&gt;slug&lt;/strong&gt;和&lt;strong&gt;url&lt;/strong&gt;还是有区别的。以下面这个 yaml 头和网站https://img-cloud.zhoujie218.top/archives/1018.html为例：&lt;/p&gt;</description></item><item><title>免费图床大集合</title><link>/archives/2415.html</link><pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate><guid>/archives/2415.html</guid><description>&lt;h2 id="前言"&gt;前言&lt;/h2&gt;
+&lt;p&gt;分享一下我自用的图床，都是不要钱或者需要很少钱的（排序不代表推荐顺序）大家有更好用的来分享一下吧。 &lt;strong&gt;==本文中测试图片统一采用同一张1.5MB的图，基本上所有图床都没有压缩，能够更好的对比速度。==&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2022/06/20220602121337274.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2022/06/20220602121337274.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="1-免费他人图床"&gt;1 免费他人图床&lt;/h3&gt;
+&lt;p&gt;这里指的是别人搭建好的图床，好多热心人搭建好了图床共享出来供我们使用，但是需要注意的是，99%的都会跑路，这里分享一些比较稳定速度又快的图床。&lt;/p&gt;
+&lt;p&gt;特点：这类大佬搭建好的图床一般都是用的Chevereto，还有些用的imgurl，Chevereto的特点是大部分都需要注册，图片会返回给你丰富的链接格式（大部分都是默认反回图床内缩略地址，博客使用请选择直接源文件地址或者Markdown格式），基本上都会在首页放自己收录了多少图片，并且&lt;strong&gt;注册用户能看到自己上传过的图片，支持API&lt;/strong&gt;。imgurl特点是会返回给你丰富的链接格式。&lt;strong&gt;请注意，这类图床都是严格鉴黄的！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这里插一个别的大佬做的图床导航页，里面都是收录的别人搭建好的图床&lt;/strong&gt;：&lt;a href="http://imgdh.com/"&gt;http://imgdh.com/&lt;/a&gt; （类似smms这种稳定并且图量大但是速度慢的图床我就不推荐了）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下面是这类图床的推荐&lt;/strong&gt; 比较推荐路过，img.tg，hello，聚合图床，鸡霸&lt;/p&gt;
+&lt;h4 id="11-路过图床"&gt;1.1 路过图床&lt;/h4&gt;
+&lt;p&gt;该图床没有cdn，但是稳定，图量很大，收录了大概一千六百万张图，速度不太行，直连国外图片存储机器。&lt;strong&gt;测试图片打开速度国内基本在3-4S左右。最大单张支持10 MB&lt;/strong&gt; 地址：&lt;a href="https://imgtu.com/"&gt;https://imgtu.com/&lt;/a&gt; 测试图片地址：&lt;a href="https://z3.ax1x.com/2021/08/15/fcAd3R.png"&gt;https://z3.ax1x.com/2021/08/15/fcAd3R.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="12-imgtg"&gt;1.2 IMG.TG&lt;/h4&gt;
+&lt;p&gt;我自己十分喜欢的一个图床，有国内百度云cdn节点加速，4年的老图床了，&lt;strong&gt;测试图片打开速度国内基本在1s以内。图片最大单张5MB&lt;/strong&gt; 地址：&lt;a href="https://img.tg/"&gt;https://img.tg/&lt;/a&gt; 测试图片地址：&lt;a href="https://i.w3tt.com/2021/08/15/qlZtY.png"&gt;https://i.w3tt.com/2021/08/15/qlZtY.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="13-imgloc"&gt;1.3 imgloc&lt;/h4&gt;
+&lt;p&gt;hostloc论坛常用的图床，美国it7机房，应该是美国的CN2线路机器，目前托管将近六百万张图，&lt;strong&gt;游客最大上传8MB图，注册用户最大上传10MB图，测试图片打开速度国内基本在3-4S左右&lt;/strong&gt; 地址：&lt;a href="https://imgloc.com/"&gt;https://imgloc.com/&lt;/a&gt; 测试图片地址：&lt;a href="https://s1.328888.xyz/2021/08/15/png.png"&gt;https://s1.328888.xyz/2021/08/15/png.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="14-鸡霸图床"&gt;1.4 鸡霸图床&lt;/h4&gt;
+&lt;p&gt;也是hostloc一个大佬做的图床，运营了两年多。速度不错，江苏移动的机器加速，目前托管4万张图**，测试图片打开速度国内基本在1-2s，最大上传10MB的图** 地址：&lt;a href="https://img.gejiba.com/"&gt;https://img.gejiba.com/&lt;/a&gt; 测试图片地址：&lt;a href="https://img.gejiba.com/images/fef4b426d6a87a6f96e0604b1c18f2f8.png"&gt;https://img.gejiba.com/images/fef4b426d6a87a6f96e0604b1c18f2f8.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="15-聚合图床"&gt;1.5 聚合图床&lt;/h4&gt;
+&lt;p&gt;这是我比较推荐的一个图床，因为这个图床有丰富的客户端和接口，还可以挂载自己的oss，cos，七牛云等存储，自己有足够的盈利措施去长时间运营，并且免费用户的速度也很快，有国内cdn，必须登陆后上传 &lt;strong&gt;测试图片打开速度国内基本在1s，免费用户最大上传5MB图&lt;/strong&gt; 地址：&lt;a href="https://www.superbed.cn/"&gt;https://www.superbed.cn/&lt;/a&gt; 测试图片地址：&lt;a href="https://pic.imgdb.cn/item/6117f8e55132923bf8c3c3f0.png"&gt;https://pic.imgdb.cn/item/6117f8e55132923bf8c3c3f0.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="16-笑果图床"&gt;1.6 笑果图床&lt;/h4&gt;
+&lt;p&gt;一个运营两年多的图床，目前托管超过20万张图，全球cdn加速，但是没有国内机器加速，&lt;strong&gt;测试图片打开速度国内基本在2-4s，游客最大上传5MB的图，注册用户最大上传10MB图&lt;/strong&gt; 地址：&lt;a href="https://imagelol.com/"&gt;https://imagelol.com/&lt;/a&gt; 测试图片地址：&lt;a href="https://s3.jpg.cm/2021/08/15/Ict9Hp.png"&gt;https://s3.jpg.cm/2021/08/15/Ict9Hp.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="17-z4a"&gt;1.7 z4a&lt;/h4&gt;
+&lt;p&gt;也是一个比较稳定的图床，&lt;strong&gt;最大上传64MB图&lt;/strong&gt;，cloudflare加速，速度一般，但是图可以比较大，测试图片打开速度国内基本在1-3S，&lt;strong&gt;必须注册后才能上传！&lt;/strong&gt; 地址：&lt;a href="https://www.z4a.net/"&gt;https://www.z4a.net/&lt;/a&gt; 测试图片地址：&lt;a href="https://www.z4a.net/image/gf1oZf"&gt;https://www.z4a.net/image/gf1oZf&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="18-hello图床"&gt;1.8 hello图床&lt;/h4&gt;
+&lt;p&gt;国内百度云cdn加速，运行一年半左右，&lt;strong&gt;必须注册后上传&lt;/strong&gt;，最大上传20MB的图，测试图片打开速度国内基本在1S以内。 地址：&lt;a href="https://www.helloimg.com/"&gt;https://www.helloimg.com/&lt;/a&gt; 测试图片地址：&lt;a href="https://www.helloimg.com/images/2021/08/15/C4OKNh.png"&gt;https://www.helloimg.com/images/2021/08/15/C4OKNh.png&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="2-云盘做图床"&gt;2 云盘做图床&lt;/h3&gt;
+&lt;p&gt;这里呢推荐几个方案，基本都不是直接使用的，但是比较取巧，大家可以试试。&lt;/p&gt;
+&lt;h4 id="21-onedrive图床"&gt;2.1 onedrive图床&lt;/h4&gt;
+&lt;p&gt;对于个人用户来说，onedrive空间有5G到15G，大家也可以去搞那种5T的账号去做图床，国内访问速度一般，有条件的可以上世纪互联，那个国内速度起飞。onedrive做图床最简单的就是电脑打开图片然后点嵌入，提取链接。麻烦一点的就是用oneindex等程序，提取直链做图床。（oneindex是一个onedrive的目录程序，相当于让你自己的onedrive变成一个所有人都可以访问下载的网站）&lt;/p&gt;
+&lt;p&gt;当然，也有很多云盘都是管理员薅的世纪互联的账号，比如以前的6pan，白熊云盘，我自己现在还在用&lt;a href="https://www.duangvps.com/archives/mofile.own-cloud.cn"&gt;小麦魔方&lt;/a&gt;，这个提取的链接是国内世纪互联的链接，图片打开速度起飞。不过第三方套onedrive这种，需要先访问第三方网站，再转到onedrive，所以世纪互联的速度实际用起来也没想象中那么快， 小麦魔方测试图片地址：&lt;a href="https://x.panbaidu.io/s/1mgKySq/%E6%B5%8B%E9%80%9F%E5%9B%BE8%E6%9C%88/%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95png.png"&gt;https://x.panbaidu.io/s/1mgKySq/测速图8月/图床测试png.png&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="22谷歌云盘"&gt;2.2谷歌云盘&lt;/h4&gt;
+&lt;p&gt;也是利用oneindex这类软件，提取直链，这里就不放链接了。&lt;/p&gt;
+&lt;p&gt;其余还有学习通，淘宝等云盘做直链，但是需要一定的程序去做静态链接，比较麻烦，有兴趣的可以去百度搜搜。&lt;/p&gt;
+&lt;h3 id="3-云存储做云盘"&gt;3 云存储做云盘&lt;/h3&gt;
+&lt;p&gt;这里指的是oss/cos/七牛云/又拍云这类云存储，这类存储再除购买空间费用后，下行流量也需要钱。阿里的oss自己买的话是9元40G的空间，流量是5毛1G，速度很快，阿里云oss有自己的域名，cos需要自己绑定备案域名，文件上传后回返回文件地址，直接打开就是下载，很方便。并且oss和cos有丰富的第三方插件和软件使用，比如wordpress博客就有这类插件，picgo也有挂载oss和cos的插件，非常好用！ 这里放一个别人的oss做图床的文章，里面的图都是放在oss的，大家可以打开看看速度：&lt;a href="https://www.cnblogs.com/progor/p/9850514.html"&gt;https://www.cnblogs.com/progor/p/9850514.html&lt;/a&gt;&lt;/p&gt;</description></item><item><title>proxmox ve (PVE) 调整虚拟机(VM)的磁盘大小</title><link>/archives/2410.html</link><pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate><guid>/archives/2410.html</guid><description>&lt;p&gt;每个虚拟机都是需要一块硬盘的，实际是从宿主机划分出来的给虚拟机使用的。&lt;/p&gt;
+&lt;p&gt;PVE虚拟机是基于linux的，它使用LVM管理宿主机磁盘，所以每个虚拟机仅仅是从LVM的VG（volume group卷组）中新建一个固定大小的LV（logical volume），提供给特定的一个虚拟机实例作为虚拟化的硬盘使用。&lt;/p&gt;
+&lt;p&gt;想实现虚拟机硬盘动态扩容，我们必须明白linux的LVM硬盘管理，因为只有LVM可以实现对一个已有的硬盘分区扩容。&lt;/p&gt;
+&lt;p&gt;为了说LVM，我们先得搞明白传统的硬盘管理，传统的硬盘管理包含4步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块设备：插在机器上的一块硬盘。&lt;/li&gt;
+&lt;li&gt;硬盘分区：把块设备分成多个分区，每个分区固定大小。&lt;/li&gt;
+&lt;li&gt;文件系统：如果想要使用硬盘某分区，需要在这个分区上制作文件系统，比如：ext4格式。&lt;/li&gt;
+&lt;li&gt;挂载目录：最终把做好的文件系统通过mount命令挂载到某个目录下，就可以读写分区内的数据了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;传统硬盘分区方案的问题是，一旦我们把操作系统安装到某个分区内，那么这个分区大小就无法改变了，随着数据变多硬盘就塞满了。想要扩容的话，我们只能选定某个目录挂载一块新的硬盘，然后把一些较大的数据手动迁移进去，总之我们会因为容量问题严重影响到使用体验。&lt;/p&gt;
+&lt;p&gt;LVM则可以对一个已有的文件系统（当然对应一个硬盘分区）进行扩容，这就是它厉害的地方。&lt;/p&gt;
+&lt;p&gt;LVM的使用过程是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块设备：给机器插上新的硬盘。&lt;/li&gt;
+&lt;li&gt;硬盘分区：把块设备分成多个分区（1个分区用尽整块磁盘也可以，无所谓），每个分区的大小也是固定的。&lt;/li&gt;
+&lt;li&gt;创建物理卷（PV）：按照LVM的规则，把每个硬盘分区创建为一个物理卷（physical volume）。&lt;/li&gt;
+&lt;li&gt;创建卷池（VG）：新建的物理卷就像一桶矿泉水，把它们加入到一个VG大池子里面，这样池子里的水（硬件空间）就会变多。&lt;/li&gt;
+&lt;li&gt;创建逻辑卷（LV）：想要划分一块硬盘空间拿来使用，只需要从VG里面取一瓢水出来即可，这个划分出来的硬盘空间叫做一个LV（logical volume）。&lt;/li&gt;
+&lt;li&gt;文件系统：现在可以对LV制作文件系统，比如：ext4格式。&lt;/li&gt;
+&lt;li&gt;挂载目录：现在可以把在做好文件系统的LV挂载到某个目录，就可以访问了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们在安装操作系统的时候可以选择基于LVM管理硬盘，安装程序默认会把整个硬盘作为1个分区，创建分区对应的PV，创建1个VG并把该PV加入到VG中，然后从VG中划出1个LV格式化ext文件系统，然后把整个操作系统安装到这个LV里。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;大家可以看一下&lt;a href="https://linux.cn/article-3218-1.html"&gt;LVM的一个简明教程&lt;/a&gt;，了解从一块裸硬盘到一个LV的全过程命令。&lt;/p&gt;
+&lt;h2 id="lvm与虚拟机的关系"&gt;LVM与虚拟机的关系&lt;/h2&gt;
+&lt;p&gt;首先，PVE本身是把宿主机硬盘做成了LVM，新建虚拟机则划分一个LV给它作为虚拟化的硬盘使用。&lt;/p&gt;
+&lt;p&gt;所以，我们很容易给虚拟机新增更多虚拟化硬盘，只需要在宿主机上划分更多LV挂给KVM即可。&lt;/p&gt;
+&lt;p&gt;通过宿主机划分更多的LV，可以全部虚拟化成硬盘提供给某个虚拟机，这样可以让虚拟机中识别的硬盘越来越多。&lt;/p&gt;
+&lt;p&gt;虚拟机内其实并不知道宿主机上的LVM，它看到的只是若干硬盘对应的块设备，所以它自身也需要使用LVM，才能将更多的块设备加入到VG中，并且对已有的LV进行扩容。&lt;/p&gt;
+&lt;h4 id="proxmox-ve-pve-调整虚拟机vm的磁盘大小"&gt;proxmox ve (PVE) 调整虚拟机(VM)的磁盘大小&lt;/h4&gt;
+&lt;p&gt;proxmox ve resize guest disk&lt;/p&gt;
+&lt;h3 id="第一步"&gt;第一步&lt;/h3&gt;
+&lt;p&gt;通过web ui中调整磁盘大小功能，先设置分配给虚拟机的磁盘空间，如下图&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg"&gt;
+ &lt;img class="mx-auto" alt="QQ20200101-235116@2x" src="https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;我这里是从105G，调整到205个G&lt;/p&gt;
+&lt;h3 id="第二步"&gt;第二步&lt;/h3&gt;
+&lt;p&gt;进入虚拟机系统，我这里的系统是CentOS，其他Linux系统应该类似。&lt;/p&gt;
+&lt;p&gt;查看磁盘信息，可以看到磁盘的总大小已经变化了，但是下边两个分区没有变&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-tap" data-lang="tap"&gt;[root@localhost ~]# fdisk -l
+磁盘 /dev/sda：220.1 GB, 220117073920 字节，429916160 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x000c264f
+ 设备 Boot Start End Blocks Id System
+/dev/sda1 * 2048 2099199 1048576 83 Linux
+/dev/sda2 2099200 220200959 109050880 8e Linux LVM
+磁盘 /dev/mapper/centos-root：109.5 GB, 109517471744 字节，213901312 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘 /dev/mapper/centos-swap：2147 MB, 2147483648 字节，4194304 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+第三步
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;给 /dev/sda2分区增加空间，注意里边的命令 resizepart 2 100% ，是把剩余的空间全部给到/dev/sda2&lt;/p&gt;</description></item><item><title>宝塔部署最新版 Solo 博客</title><link>/archives/2048.html</link><pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate><guid>/archives/2048.html</guid><description>&lt;p&gt;[toc]&lt;/p&gt;
+&lt;p&gt;宝塔部署最新版 Solo 博客,并每天自动更新升级。&lt;/p&gt;
+&lt;h2 id="基础环境"&gt;基础环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;宝塔&lt;/li&gt;
+&lt;li&gt;Mysql&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上为基础环境，怎么搭建基础环境就不再赘述了&lt;/p&gt;
+&lt;h3 id="新建站点数据库"&gt;新建站点、数据库&lt;/h3&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2054&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;642&amp;rdquo;][caption id=&amp;ldquo;attachment_2129&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;642&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044653423.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044653423.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044653423.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; image.png[/caption] image.png[/caption]&lt;/p&gt;
+&lt;p&gt;642 x 637&lt;/p&gt;
+&lt;p&gt;在网站中新建站点，填入域名，选择创建数据库。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2055&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;683&amp;rdquo;][caption id=&amp;ldquo;attachment_2130&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;683&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654336.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654336.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654336.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; image.png[/caption] image.png[/caption]&lt;/p&gt;
+&lt;p&gt;683 x 278&lt;/p&gt;
+&lt;p&gt;记录数据库相关配置&lt;/p&gt;
+&lt;h3 id="配置计划任务"&gt;配置计划任务&lt;/h3&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2056&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;998&amp;rdquo;][caption id=&amp;ldquo;attachment_2131&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;998&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654688.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654688.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654688.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; image.png[/caption] image.png[/caption]&lt;/p&gt;
+&lt;p&gt;728 x 458998 x 628&lt;/p&gt;
+&lt;p&gt;在计划任务中，添加新的计划任务，选择 Shell 脚本，执行周期按照自己的需求更改，我这里是每天&lt;/p&gt;
+&lt;p&gt;然后在脚本内容中填入&lt;strong&gt;如下配置&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Solo docker 更新重启脚本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 1. 请注意修改参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 2. 可将该脚本加入 crontab，每日凌晨运行来实现自动更新&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;restart_solo&lt;span style="color:#f92672"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker stop solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker rm solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker run --detach --name solo --network&lt;span style="color:#f92672"&gt;=&lt;/span&gt;host 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env RUNTIME_DB&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;MYSQL&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_USERNAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;you mysql user&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;you mysql user password&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_DRIVER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;com.mysql.cj.jdbc.Driver&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_URL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;jdbc:mysql://127.0.0.1:3306/solo?useUnicode=yes&amp;amp;characterEncoding=UTF-8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; b3log/solo --listen_port&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;8080&lt;/span&gt; --server_scheme&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https --server_host&lt;span style="color:#f92672"&gt;=&lt;/span&gt;you domain
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;update_solo&lt;span style="color:#f92672"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Pulling Solo&amp;#39;s image&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; isUpdate&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;docker pull b3log/solo | grep &lt;span style="color:#e6db74"&gt;&amp;#34;Downloaded&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z $isUpdate &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Solo is up to date&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; restart_solo &amp;gt;&amp;gt; /dev/null 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Restarted Solo&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 检查当前容器状态，如果状态正常进行升级操作，否则重新进行部署&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;update_and_test_service&lt;span style="color:#f92672"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; isCrash&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;docker ps | grep &lt;span style="color:#e6db74"&gt;&amp;#34;b3log/solo&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z $isCrash &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Solo&amp;#39;s status is unexpected, trying to restart it&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker pull b3log/solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; restart_solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sleep &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; isSecondCrash&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;docker ps | grep &lt;span style="color:#e6db74"&gt;&amp;#34;b3log/solo&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z $isSecondCrash &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Failed to restart Solo, please check logs via &amp;#39;docker logs solo&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; update_solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;update_and_test_service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意修改以上配置中的数据库相关配置为自己的配置，端口 8080 如果占用，请修改成其他的，server_host 中填入自己的域名&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>阿里云盘列表AList部署教程</title><link>/archives/1945.html</link><pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate><guid>/archives/1945.html</guid><description>&lt;p&gt;[toc] AList是一款阿里云盘的目录文件列表程序，后端基于&lt;code&gt;golang&lt;/code&gt;最好的&lt;code&gt;http&lt;/code&gt;框架&lt;code&gt;gin&lt;/code&gt;，前端使用&lt;code&gt;vue&lt;/code&gt;和&lt;code&gt;ant design&lt;/code&gt;。没有专门学过前端，大佬轻喷?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;点击链接加入群聊【Alist使用交流】：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=OVPJcv2b"&gt;https://jq.qq.com/?_wv=1027&amp;amp;k=OVPJcv2b&lt;/a&gt; 或搜索群号：920516758 更新计划：&lt;a href="https://www.notion.so/AList-993f3a1a43fc464588f018b46369672e"&gt;https://www.notion.so/AList-993f3a1a43fc464588f018b46369672e&lt;/a&gt;，有好的建议可以评论或在issue中告诉我。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;本程序仅供学习研究使用！！！发现任何bug请提issue，部署上遇到问题欢迎加群交流。 更新的时候后端和前端文件都需要替换！！！！以及补上配置文件新的配置项！！！！第一次启动需要网页底部rebuild！！！ 更新的时候后端和前端文件都需要替换！！！！以及补上配置文件新的配置项！！！！第一次启动需要网页底部rebuild！！！ 更新的时候后端和前端文件都需要替换！！！！以及补上配置文件新的配置项！！！！第一次启动需要网页底部rebuild！！！&lt;/p&gt;
+&lt;h1 id="项目地址"&gt;项目地址：&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Xhofe/alist"&gt;https://github.com/Xhofe/alist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Xhofe/alist-web"&gt;https://github.com/Xhofe/alist-web&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="快捷部署by大白一号"&gt;快捷部署（by &lt;a href="https://www.cooluc.com/"&gt;大白一号&lt;/a&gt;）&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本安装：&lt;code&gt;bash -c &amp;quot;$(curl -sS https://www.cooluc.com/alist-install.sh)&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;refresh_token获取：&lt;a href="https://media.cooluc.com/decode_token/"&gt;https://media.cooluc.com/decode_token/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Heroku部署： &lt;a href="https://github.com/sbwml/alist-heroku"&gt;https://github.com/sbwml/alist-heroku&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="更新"&gt;更新&lt;/h1&gt;
+&lt;h2 id="202151"&gt;2021.5.1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在线预览视频时间延长到4小时 (&lt;a href="https://github.com/Xhofe/alist/pull/96"&gt;#96&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;指定路径与深度rebuild&lt;/li&gt;
+&lt;li&gt;优化请求：分次请求&lt;/li&gt;
+&lt;li&gt;增加右键菜单&lt;/li&gt;
+&lt;li&gt;支持多选、导出直链/秒传（需要rebuild，借助&lt;a href="https://bbs.tampermonkey.net.cn/thread-427-1-1.html"&gt;https://bbs.tampermonkey.net.cn/thread-427-1-1.html&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;直链编码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2021331"&gt;2021.3.31&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;优化路径栏&lt;/li&gt;
+&lt;li&gt;修复了因为Referer导致不能下载的问题（&lt;a href="https://github.com/122cygf"&gt;122cygf&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;增加了视频转码选项&lt;/li&gt;
+&lt;li&gt;图片缩略图预览&lt;/li&gt;
+&lt;li&gt;修复了json文件无法预览的bug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2021317"&gt;2021.3.17&lt;/h2&gt;
+&lt;p&gt;本次更新需要修改配置文件，更新之后/首次运行都需要手动rebuild一下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持多盘&lt;/li&gt;
+&lt;li&gt;直链url密码哈希&lt;/li&gt;
+&lt;li&gt;修复不需要密码的文件复制直链也会携带密码的bug&lt;/li&gt;
+&lt;li&gt;数据库支持mysql&lt;/li&gt;
+&lt;li&gt;修复从文件返回目录Readme不更新的bug&lt;/li&gt;
+&lt;li&gt;重建目录时遮罩，优化体验&lt;/li&gt;
+&lt;li&gt;支持flv视频（部分浏览器可能不支持，详见&lt;a href="https://github.com/Bilibili/flv.js/"&gt;https://github.com/Bilibili/flv.js/&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2021313"&gt;2021.3.13&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;后端引入sqlite3，列表部分不再依赖api，提高响应速度&lt;/li&gt;
+&lt;li&gt;支持搜索功能&lt;/li&gt;
+&lt;li&gt;前端使用vue3+ts重构&lt;/li&gt;
+&lt;li&gt;url支持按照目录结果展示&lt;/li&gt;
+&lt;li&gt;音乐播放支持列表&lt;/li&gt;
+&lt;li&gt;支持隐藏文件夹&lt;/li&gt;
+&lt;li&gt;更好的密码支持&lt;/li&gt;
+&lt;li&gt;更早的更新：&lt;a href="https://www.nn.ci/archives/alist-v0.html"&gt;https://www.nn.ci/archives/alist-v0.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="预览"&gt;预览&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://alist.nn.ci/"&gt;https://alist.nn.ci&lt;/a&gt; (稳定版本,即Github Release的最新版本)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://alist.now.sh/"&gt;https://alist.now.sh&lt;/a&gt; (开发版本,随着GitHub提交更新)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044657931.png"&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044657931.png"&gt;
+ &lt;img alt="alist预览" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044657931.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;alist预览&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="如何部署"&gt;如何部署&lt;/h1&gt;
+&lt;p&gt;首先第一步，Star本项目&lt;a href="https://github.com/Xhofe/alist"&gt;AList&lt;/a&gt;(bushi&lt;/p&gt;</description></item><item><title>浏览器 User-Agent 大全</title><link>/archives/1646.html</link><pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate><guid>/archives/1646.html</guid><description>&lt;p&gt;一、基础知识 Http Header之User-Agent&lt;/p&gt;
+&lt;p&gt;User Agent中文名为用户代理，是Http协议中的一部分，属于头域的组成部分，User Agent也简称UA。它是一个特殊字符串头，是一种向访问网站提供你所使用的浏览器类型及版本、操作系统及版本、浏览器内核、等信息的标识。通过这个标识，用户所访问的网站可以显示不同的排版从而为用户提供更好的体验或者进行信息统计；例如用手机访问谷歌和电脑访问是不一样的，这些是谷歌根据访问者的UA来判断的。UA可以进行伪装。&lt;/p&gt;
+&lt;p&gt;浏览器的UA字串的标准格式：浏览器标识 (操作系统标识; 加密等级标识; 浏览器语言) 渲染引擎标识版本信息。但各个浏览器有所不同。&lt;/p&gt;
+&lt;p&gt;字串说明：&lt;/p&gt;
+&lt;p&gt;1、浏览器标识&lt;/p&gt;
+&lt;p&gt;出于兼容及推广等目的，很多浏览器的标识相同，因此浏览器标识并不能说明浏览器的真实版本，真实版本信息在 UA 字串尾部可以找到。&lt;/p&gt;
+&lt;p&gt;2、操作系统标识&lt;/p&gt;
+&lt;p&gt;3、加密等级标识&lt;/p&gt;
+&lt;p&gt;N: 表示无安全加密 I: 表示弱安全加密 U: 表示强安全加密&lt;/p&gt;
+&lt;p&gt;4、浏览器语言&lt;/p&gt;
+&lt;p&gt;在首选项 &amp;gt; 常规 &amp;gt; 语言中指定的语言&lt;/p&gt;
+&lt;p&gt;5、渲染引擎&lt;/p&gt;
+&lt;p&gt;显示浏览器使用的主流渲染引擎有：Gecko、WebKit、KHTML、Presto、Trident、Tasman等，格式为：渲染引擎/版本信息&lt;/p&gt;
+&lt;p&gt;6、版本信息&lt;/p&gt;
+&lt;p&gt;显示浏览器的真实版本信息，格式为：浏览器/版本信息&lt;/p&gt;
+&lt;p&gt;注： 1、在广告定向设定中，浏览器定向和操作系统定向均是针对User-Agent中的信息进行定向。 2、欲了解更多的User-Agent信息，请参考User-agent 字串史&lt;/p&gt;
+&lt;p&gt;浏览器User-Agent的详细信息&lt;/p&gt;
+&lt;p&gt;PC端： safari 5.1 – MAC User-Agent:Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50&lt;/p&gt;
+&lt;p&gt;safari 5.1 – Windows User-Agent:Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50&lt;/p&gt;</description></item><item><title>宝塔免费申请泛域名SSL证书教程(并且自动续期)</title><link>/archives/1591.html</link><pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate><guid>/archives/1591.html</guid><description>&lt;p&gt;Let’s Encrypt官方在2018年上线泛域名免费SSL证书。下面是SEOGO申请泛域名证书的操作过程。&lt;/p&gt;
+&lt;h2 id="一安装依赖程序"&gt;一、安装依赖程序&lt;/h2&gt;
+&lt;p&gt;首先登陆ssh，根据自己服务器系统选择下面命令安装依赖程序。&lt;/p&gt;
+&lt;p&gt;1、Centos&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;yum update &amp;amp;&amp;amp; yum install curl -y &amp;amp;&amp;amp; yum install cron -y &amp;amp;&amp;amp; yum install socat -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、Debian/Ubuntu&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt-get update &amp;amp;&amp;amp; apt-get install curl -y &amp;amp;&amp;amp; apt-get install cron -y &amp;amp;&amp;amp; apt-get install socat -y
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="二下载acmesh"&gt;二、下载ACME.SH&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;curl https://get.acme.sh | sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="三获取域名api"&gt;三、获取域名API&lt;/h2&gt;
+&lt;p&gt;1、如果是阿里云域名，获取阿里云域名Access Key ID和Access Key Secre&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://usercenter.console.aliyun.com/"&gt;Access Key ID、Access Key Secre申请地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-9.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-9.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;宝塔免费申请通配符SSL证书教程（泛域名SSL）&lt;/p&gt;
+&lt;p&gt;回到服务器执行以下命令，export Ali_Key为Access Key ID，export Ali_Secret为Access Key Secre。&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;&lt;/th&gt;
+ &lt;th&gt;export Ali_Key=&amp;ldquo;abcdef&amp;rdquo;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;export Ali_Secret=&amp;ldquo;abcdefh8Hs5BHs5BHs5B&amp;rdquo;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-10.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/04/unnamed-file-10.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>群晖利用 web station 搭建吾爱论坛开源的爱盘</title><link>/archives/1528.html</link><pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate><guid>/archives/1528.html</guid><description>&lt;p&gt;做为个人网盘使用，它是一个非常好的选择，比起_h5ai更加的优秀 吾爱破解论坛的网盘就是这个，就是他们开源的程序 开源仓库地址：&lt;a href="https://github.com/ganlvtech/down_52pojie_cn"&gt;&lt;/a&gt;&lt;a href="https://github.com/ganlvtech/down_52pojie_cn"&gt;https://github.com/ganlvtech/down_52pojie_cn&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="特点"&gt;特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;单页应用
+&lt;ul&gt;
+&lt;li&gt;一次性加载，响应迅速&lt;/li&gt;
+&lt;li&gt;支持通过导航栏定位&lt;/li&gt;
+&lt;li&gt;支持浏览器前进、后退&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;静态页面
+&lt;ul&gt;
+&lt;li&gt;一次性列举出服务器文件列表，之后不用每次都列举文件&lt;/li&gt;
+&lt;li&gt;服务器支持静态页面即可，可部署与 GitHub Pages&lt;/li&gt;
+&lt;li&gt;页面可以保存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;搜索文件
+&lt;ul&gt;
+&lt;li&gt;普通搜索&lt;/li&gt;
+&lt;li&gt;支持模糊搜索&lt;/li&gt;
+&lt;li&gt;支持正则表达式搜索&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;可以为文件或文件夹添加描述&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;**注意：**如果你的服务器文件过多，不适合一次性列举出全部文件，那么最好不要使用本应用。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a42175dda.webp"&gt;
+ &lt;img alt="www.zhoujie218.top.1.2.png" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a42175dda.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;www.zhoujie218.top.1.2.png&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;原创教程转载请注明：&lt;a href="https://www.zhoujie218.top"&gt;&lt;/a&gt;&lt;a href="https://www.zhoujie218.top"&gt;https://www.zhoujie218.top&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;对于大神可能很简单，对于我这种小白还是记录下安装过程中的坑比较好&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.扫描文件教程链接没有了&lt;/strong&gt; &lt;strong&gt;要修改phpconfigconfig.php 里面的路径,运行phpscan.php才会生成list&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.不生成列表文件&lt;/strong&gt; &lt;strong&gt;要给目录 http用户群可写权限&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.子目录刷新报错&lt;/strong&gt; &lt;strong&gt;这个要加默认首页 /index.html,但是在群晖里加比较坑&lt;/strong&gt; &lt;strong&gt;因为群晖nginx的配置文件是不确定的，但是我们也有办法，请看下面，共三步&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一，在终端里执行以下命令并找到配置文件内相应的路径（需要root用户） cat /etc/nginx/app.d/server.webstation-vhost.conf&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a42733d12.webp"&gt;
+ &lt;img alt="www.zhoujie218.top.1.png" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a42733d12.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;www.zhoujie218.top.1.png&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;二，因为可能有好几个站点设置，首先确认对应的端口号，然后找到对应的配置文件目录。如上图红框。 执行如下命令（替换下面绿色为你自己刚才找到的目录名）&lt;/p&gt;
+&lt;p&gt;echo -e &amp;ldquo;index index.html index.htm index.cgi index.php index.php5 /_h5ai/public/index.php;&amp;rdquo; &amp;gt; /usr/local/etc/nginx/conf.d/4433e100-6c59-4121-afcb-dc7a553552ce/user.conf.pan&lt;/p&gt;
+&lt;p&gt;三，重载web服务 sudo nginx -s reload&lt;/p&gt;
+&lt;p&gt;刷新你的网站目录，应该就成下面的样子了&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a42175dda.webp"&gt;
+ &lt;img alt="www.zhoujie218.top.1.2.png" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a42175dda.webp" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;www.zhoujie218.top.1.2.png&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;</description></item><item><title>手动获取有道云笔记的文件直链（转）</title><link>/archives/1422.html</link><pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate><guid>/archives/1422.html</guid><description>&lt;p&gt;有道云笔记这个软件用过的人肯定不再少数。大多数人使用它的目的是为了记录一些东西以及整理文档和传递一些信息。算的上是一种办公的好应用。当然这个软件现在已经不只是用来记录笔记了。里面已经新增加了文件的上传与分享。&lt;/p&gt;
+&lt;p&gt;当然软件提供给我们上传资源的空间，并且分享给好友后，得到的是一个非直链的url地址。只可用于分享，但是不太好用在资源播放等应用中。个人也是在偶然中发现的一个简单获取方法，今天我们就花些时间来整理一下这个方法。不过缺点就是非vip用户不能上传超过200M大小的资源&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-5.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-5.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-5.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;获取多媒体直链的具体方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.上传多媒体文件并分享&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装有道云笔记PC桌面版或直接登录有道云笔记网页版&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://note.youdao.com/web/"&gt;&lt;/a&gt;&lt;a href="https://note.youdao.com/web/"&gt;https://note.youdao.com/web/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选中文件存储的文件夹（在里面上传文件）&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-6.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-6.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-6.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上传完成后，分享你刚刚上传的那个文件，并点击复制地址&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-7.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-7.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-7.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; &lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-8.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-8.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/20200311-8.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.手动解析出直链地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;点击复制地址后，将会得到一个你分享出去的文件的下载页地址&lt;/p&gt;
+&lt;p&gt;如这里是：&lt;a href="http://note.youdao.com/noteshare?id=e4221c654baec387802974e754d798df"&gt;http://note.youdao.com/noteshare?id=e4221c654baec387802974e754d798df&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;取出这个url的id值，这里是e4221c654baec387802974e754d798df&lt;/p&gt;
+&lt;p&gt;然后我们根据这个id值拼接出一个url为：&lt;a href="http://note.youdao.com/yws/public/note/e4221c654baec387802974e754d798df?editorType=0&amp;amp;cstk=cGtjFpHb"&gt;http://note.youdao.com/yws/public/note/e4221c654baec387802974e754d798df?editorType=0&amp;amp;cstk=cGtjFpHb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;url拼接逻辑：&lt;a href="http://note.youdao.com/yws/public/note/%7Bid%E5%80%BC%7D?editorType=0&amp;amp;cstk=cGtjFpHb"&gt;http://note.youdao.com/yws/public/note/{id值}?editorType=0&amp;amp;cstk=cGtjFpHb&lt;/a&gt; 除了id值不一样，其他的都一样。&lt;/p&gt;
+&lt;p&gt;然后我们在浏览器中访问这个地址，得到一串json字符串，这里就是：&lt;/p&gt;
+&lt;p&gt;{&amp;ldquo;p&amp;rdquo;:&amp;quot;/WEBdf777e10e948e26a37e12e88e7572ec2&amp;quot;,&amp;ldquo;ct&amp;rdquo;:1583932337,&amp;ldquo;su&amp;rdquo;:null,&amp;ldquo;pr&amp;rdquo;:0,&amp;ldquo;au&amp;rdquo;:null,&amp;ldquo;pv&amp;rdquo;:6,&amp;ldquo;mt&amp;rdquo;:1583932337,&amp;ldquo;sz&amp;rdquo;:80144984,&amp;ldquo;domain&amp;rdquo;:1,&amp;ldquo;tl&amp;rdquo;:&amp;ldquo;语音介绍20200309.mp4&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;然后获取到第一个字段p的值去掉斜杠，这里的p值为：WEBdf777e10e948e26a37e12e88e7572ec2&lt;/p&gt;
+&lt;p&gt;然后我们根据这个逻辑拼接出新的url。&lt;/p&gt;
+&lt;p&gt;url拼接逻辑：&lt;a href="http://note.youdao.com/yws/api/personal/file/%7B%E4%B8%8A%E4%B8%80%E6%AD%A5%E5%BE%97%E5%88%B0%E7%9A%84p%E7%9A%84%E5%80%BC%7D?method=download&amp;amp;inline=true&amp;amp;shareKey=%7B%E6%9C%80%E5%88%9D%E5%88%86%E4%BA%AB%E5%87%BA%E6%9D%A5%E7%9A%84%E5%9C%B0%E5%9D%80%E7%9A%84id%E5%80%BC"&gt;http://note.youdao.com/yws/api/personal/file/{上一步得到的p的值}?method=download&amp;amp;inline=true&amp;amp;shareKey={最初分享出来的地址的id值&lt;/a&gt;}&lt;/p&gt;
+&lt;p&gt;所以这里我们获取的视频直链地址就是：&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://note.youdao.com/yws/api/personal/file/WEBdf777e10e948e26a37e12e88e7572ec2?method=download&amp;amp;inline=true&amp;amp;shareKey=e4221c654baec387802974e754d798df"&gt;http://note.youdao.com/yws/api/personal/file/WEBdf777e10e948e26a37e12e88e7572ec2?method=download&amp;amp;inline=true&amp;amp;shareKey=e4221c654baec387802974e754d798df&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.测试这个直链是否可以播放&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[wideo]&lt;a href="http://note.youdao.com/yws/api/personal/file/WEBdf777e10e948e26a37e12e88e7572ec2?method=download&amp;amp;inline=true&amp;amp;shareKey=e4221c654baec387802974e754d798df%5B/wideo"&gt;http://note.youdao.com/yws/api/personal/file/WEBdf777e10e948e26a37e12e88e7572ec2?method=download&amp;amp;inline=true&amp;amp;shareKey=e4221c654baec387802974e754d798df[/wideo&lt;/a&gt;]&lt;/p&gt;</description></item><item><title>BT(宝塔面板)-Panel service startup failed</title><link>/archives/1180.html</link><pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1180.html</guid><description>&lt;p&gt;今天bt reload面板的时候遇到了Panel service startup failed这个错误，&lt;strong&gt;init&lt;/strong&gt;.py这种错误提示有好几处。这完全就是升级不当造成的，应该是大鸟从5.9升级到6.X的时候没有升级好。遗留了这种错误。&lt;/p&gt;
+&lt;p&gt;大鸟升级的时候用的：BT(宝塔面板)5.9升级6.X-最牛叉的升级方案  这个升级方案，当时也是为了写这个教程，所以用了这个方法去升级，升级好了之后没什么大问题，但是遇到了两个错误，一个是宝塔终端不能用还有个就是 Panel service startup failed 这两个错误。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1183&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;1024&amp;rdquo;]
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/bt%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf-panel-service-startup-failed20200205-1024x465.jpg"&gt;
+ &lt;img class="mx-auto" alt="BT(宝塔面板)-Panel service startup failed" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/bt%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf-panel-service-startup-failed20200205-1024x465.jpg" /&gt;
+ &lt;/a&gt;
+ BT(宝塔面板)-Panel service startup failed[/caption]&lt;/p&gt;
+&lt;p&gt;今天大鸟准备解决宝塔终端不能用的问题，却发现了 Panel service startup failed 想来也是用计划任务那个方式升级的时候一些底层的代码没有更新，造成了这种兼容性的问题。这个问题如何解决：&lt;/p&gt;
+&lt;h4 id="第一修复重启面板"&gt;第一、修复重启面板&lt;/h4&gt;
+&lt;p&gt;点击面板右上角修复，或者重启面板，这样有可能解决问题，如图：&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_1184&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;1024&amp;rdquo;]
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/bt%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf-panel-service-startup-failed20200205-1-1024x128.jpg"&gt;
+ &lt;img class="mx-auto" alt="BT(宝塔面板)-Panel service startup failed" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/02/bt%e5%ae%9d%e5%a1%94%e9%9d%a2%e6%9d%bf-panel-service-startup-failed20200205-1-1024x128.jpg" /&gt;
+ &lt;/a&gt;
+ BT(宝塔面板)-Panel service startup failed[/caption]&lt;/p&gt;
+&lt;p&gt;看着大鸟的提示的错误，修复面板肯定不行，这是很严重的兼容性的问题，升级不恰当造成的。我们看下一种方法。&lt;/p&gt;
+&lt;h4 id="第二重装面板"&gt;第二、重装面板&lt;/h4&gt;
+&lt;p&gt;这个有点暴力了，但是大鸟只能用这个方法，我们可以ssh工具连接服务器，在命令行方式下面执行重装面板的命令。&lt;/p&gt;
+&lt;p&gt;这里是6.X的面板所以大鸟这里贴下命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;yum install -y wget &amp;amp;&amp;amp; wget -O install.sh &lt;a href="http://download.bt.cn/install/install"&gt;http://download.bt.cn/install/install&lt;/a&gt;_6.0.sh &amp;amp;&amp;amp; bash install.sh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因为大鸟的面板环境都已经配置好，所以这个安装命令只是重新安装了面板，不会影响网站数据，当然，我们最好已经备份好了网站数据，让后来执行这个操作。&lt;/p&gt;
+&lt;p&gt;安装好之后，所有的web环境都不会改变，不过面板登录密码会被重置，我们需要自己修改或者记下新的密码。&lt;/p&gt;
+&lt;p&gt;到这里大鸟的问题解决了，连带宝塔终端不能用的问题都解决了，看来是升级不当造成的。&lt;/p&gt;
+&lt;h4 id="第三python错误"&gt;第三、python错误&lt;/h4&gt;
+&lt;p&gt;遇到这种错误解决起来容易点，错误代码如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Starting Bt-Panel… failed&lt;/li&gt;
+&lt;li&gt;——————————————————&lt;/li&gt;
+&lt;li&gt;Traceback (most recent call last):&lt;/li&gt;
+&lt;li&gt;File “main.py”, line 101, in &lt;module&gt;&lt;/li&gt;
+&lt;li&gt;if not os.path.exists(templatesConf): public.writeFile(templatesConf,’default’);&lt;/li&gt;
+&lt;li&gt;AttributeError: ‘module’ object has no attribute ‘writeFile’&lt;/li&gt;
+&lt;li&gt;——————————————————&lt;/li&gt;
+&lt;li&gt;Error: BT-Panel service startup failed.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;错误原因：&lt;/p&gt;</description></item><item><title>CentOS使用Rclone挂载OneDrive google photos自动备份到onedrive</title><link>/archives/1070.html</link><pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1070.html</guid><description>&lt;p&gt;服务器上CentOS大部分未安装图形界面，但是Rclone必须要在有内置浏览器的电脑才能正常完成授权，因此这里使用的办法是先在本地Windows电脑安装Rclone并获取授权后的token，再将其复制到CentOS的服务器上。&lt;/p&gt;
+&lt;h3 id="windows-安装rclone"&gt;Windows 安装Rclone&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows客户端：&lt;a href="https://downloads.rclone.org/v1.41/rclone-v1.41-windows-amd64.zip" title="rclone-v1.41-windows-amd64.zip"&gt;rclone-v1.41-windows-amd64.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载后将其解压，并将&lt;code&gt;rclone.exe&lt;/code&gt;移动到&lt;code&gt;C:WindowsSystem32&lt;/code&gt;这个目录，这样就可以使用rclone命令了，如下截图。&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file.png&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;在cmd窗口继续输入命令**&lt;code&gt;rclone config&lt;/code&gt;**进行配置，输入&lt;code&gt;n&lt;/code&gt;新建一个远程，并取一个名字，比如&lt;code&gt;onedrive&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-1.png&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;继续下一步，选择需要挂载的云存储，Onedrvie是16，随着版本的变化可能会改变，自己灵活变通即可。&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-2.png&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;client_id&lt;/code&gt;/&lt;code&gt;client_secret&lt;/code&gt;直接留空并回车，然后选择OneDrive版本，教育版或商业版请选择&lt;code&gt;b&lt;/code&gt;，个人版选择&lt;code&gt;p&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-3.png&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;浏览器会自动打开&lt;code&gt;[http://localhost:53682/](http://localhost:53682/)&lt;/code&gt; 并进行授权，如果授权成功会返回&lt;code&gt;token&lt;/code&gt;，请务必将&lt;code&gt;token&lt;/code&gt;记录并保存后面还要使用。&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-4.png)[![](https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png&lt;/a&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png" /&gt;
+ &lt;/a&gt;
+ )&lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-5.png&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id="centos安装rclone"&gt;CentOS安装Rclone&lt;/h3&gt;
+&lt;p&gt;直接使用官方的一键安装命令即可，输入下面的命令：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;curl https://rclone.org/install.sh | sudo bash
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="centos挂载onedrive"&gt;CentOS挂载Onedrive&lt;/h3&gt;
+&lt;p&gt;接下来操作方法和windows完全一样，就不重复了，唯一的区别是“Use auto config?”这里选择&lt;code&gt;n&lt;/code&gt;，并输入之前获取的&lt;code&gt;token&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;](&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png"&gt;https://img-cloud.zhoujie218.top/wp-content/uploads/2020/05/unnamed-file-6.png&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id="总结"&gt;总结&lt;/h3&gt;
+&lt;p&gt;Rclone支持挂载20多种网盘，不过大多数网盘都是国外的，在国外VPS上使用效果更佳，用来备份数据这些还是挺不错的。&lt;/p&gt;
+&lt;p&gt;利用 rclone 挂载 OneDrive for Business 为 Linux 磁盘空间,&lt;br&gt;
+可以利用 OneDrive for Business 为 Linux增加 5TB 的空间.&lt;/p&gt;
+&lt;p&gt;个人版也可以挂载,按提示挂载即可.&lt;br&gt;
+本文详细的讲讲挂载OneDrive for Business.&lt;/p&gt;</description></item><item><title>centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘</title><link>/archives/1042.html</link><pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1042.html</guid><description>&lt;p&gt;经常听说有人撸到无限容量的谷歌网络硬盘，或者是 5T 容量的，都是利用学生认证实现的，现在淘宝上也有一大堆，但是感觉这种都不一定稳，随时可能翻车，我自己是用的 &lt;strong&gt;google&lt;/strong&gt; drive 个人版的免费 15G 空间，其实也够用了，可以&lt;strong&gt;挂载&lt;/strong&gt;到服务器上，当一个普通的本地磁盘样操作，多 15G 随便放点什么都好，还稳定，不怕翻车，&lt;strong&gt;挂载&lt;/strong&gt;主要通过 &lt;strong&gt;RCLONE&lt;/strong&gt; 这个软件实现，需要服务器或者至少 KVM 架构的 VPS，因为需要用到 FUSE，而一般 OPENVZ 架构是不开启这个功能的，教程如下：&lt;/p&gt;
+&lt;p&gt;本教程基于 CENTOS 系统&lt;/p&gt;
+&lt;p&gt;1、安装 EPEL 源（这一步国外 VPS 一般可不用操作）:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;yum -y install epel-release
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2、安装一些基本组件和依赖:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;yum -y install wget unzip screen fuse fuse-devel
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、下载 &lt;strong&gt;Rclone&lt;/strong&gt; 解压然后进入目录:（64 位系统就下载 &lt;strong&gt;rclone&lt;/strong&gt;-current-linux-amd64.zip，32 位系统就下载 &lt;strong&gt;rclone&lt;/strong&gt;-current-linux-386.zip 替换下面代码中的链接就行了）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget https://downloads.rclone.org/rclone-current-linux-amd64.zip 
+unzip rclone-current-linux-amd64.zip
+cd rclone-v*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意&lt;code&gt;cd **rclone**-v*&lt;/code&gt;这一步如果系统执行出错，你可以输入&lt;code&gt;ls&lt;/code&gt;命令查看一下具体目录名，因为这个是使用最新版本，版本号不一定一样,然后根据真实的目录cd 进去一下&lt;/p&gt;
+&lt;p&gt;4、接下来运行 &lt;strong&gt;Rclone&lt;/strong&gt; 开始配置:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;./rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5、第一步选择 n （n 为新建配置）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&amp;gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;6、然后回车输入一个 name,建议这个 name 设置的简单好记一点,比如我们这边叫 gp，这个下面&lt;strong&gt;挂载&lt;/strong&gt;磁盘时会用到如下所示:&lt;/p&gt;</description></item><item><title>frp nginx 共用80端</title><link>/archives/1030.html</link><pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1030.html</guid><description>&lt;p&gt;在nginx的配置文件里面加上这个&lt;/p&gt;
+&lt;p&gt;然后frp监听8080端口，重启nginx，搞定&lt;/p&gt;
+&lt;p&gt;server { listen 80; location / { proxy_pass http://127.0.0.1:8080; proxy_set_header Host $host:80; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_hide_header X-Powered-By; } }&lt;/p&gt;</description></item><item><title>Centos7下查看各进程的网络速率情况</title><link>/archives/1005.html</link><pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1005.html</guid><description>&lt;h1 id="操作环境"&gt;操作环境&lt;/h1&gt;
+&lt;p&gt;Centos7&lt;/p&gt;
+&lt;p&gt;iftop&lt;/p&gt;
+&lt;p&gt;lsof&lt;/p&gt;
+&lt;h1 id="操作方法"&gt;操作方法&lt;/h1&gt;
+&lt;p&gt;这里使用iftop来查看各进程的网络速率情况&lt;/p&gt;
+&lt;p&gt;1.系统默认是没有安装iftop的，需要先安装iftop，在安装iftop之前最好更新下epel repo&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;#yum -y install epel-release&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#yum makecache&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#yum -y install iftop&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.使用iftop -PB来监控各进程网络速率情况，可以查看各端口的网络速率情况，可以看见48774端口占用速率最大为150KB/s，来查看48774端口是哪个进程&lt;/p&gt;
+&lt;p&gt;iftop -i eth1&lt;/p&gt;
+&lt;p&gt;iftop -i eth1 -P -B&lt;/p&gt;
+&lt;p&gt;常用参数说明： -i设定监测的网卡，如：iftop -i eth1&lt;/p&gt;
+&lt;p&gt;通过监控， 可以将占用带宽最多的IP，用防火墙或者安全组屏蔽访问。 最好观察一段时间，如果是持续占用带宽，可以屏蔽。&lt;/p&gt;
+&lt;p&gt;为了更好的监控某个特定IP的带宽访问情况，可以执行命令： iftop -i eth1 -B -F 112.74.***.222&lt;/p&gt;
+&lt;p&gt;几个标识说明: &amp;ldquo;&amp;lt;=&amp;ldquo;与&amp;rdquo;=&amp;gt;&amp;quot;，表示的是流量的方向 &amp;ldquo;TX&amp;rdquo;：从网卡发出的流量 &amp;ldquo;RX&amp;rdquo;：网卡接收流量 &amp;ldquo;TOTAL&amp;rdquo;：网卡发送接收总流量 &amp;ldquo;cum&amp;rdquo;：iftop开始运行到当前时间点的总流量 &amp;ldquo;peak&amp;rdquo;：网卡流量峰值 &amp;ldquo;rates&amp;rdquo;：分别表示最近2s、10s、40s 的平均流量&lt;/p&gt;
+&lt;p&gt;-&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; 本文来自 IDO老徐 的CSDN 博客 ，全文地址请点击：&lt;a href="https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy"&gt;&lt;/a&gt;&lt;a href="https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy"&gt;https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.通过lsof来查看网络端口的进程，可以查看到48774端口是java的进程。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;[root@centos7-mysql-196 ~]# lsof -i :48774&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;java 25762 cloudera-scm 239u IPv4 224786 0t0 TCP centos7-mysql-196:48774-&amp;gt;151.101.0.167:https (ESTABLISHED)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(adsbygoogle = window.adsbygoogle || []).push({});&lt;/p&gt;</description></item><item><title>ServerStatus-Toyo中文云探针安装说明</title><link>/archives/1002.html</link><pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1002.html</guid><description>&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34-1024x286.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34-1024x286.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667"&gt;
+ &lt;a data-fancybox="gallery" href="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667"&gt;
+ &lt;img class="mx-auto" alt="的GitHub" src="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ServerStatus-Toyo版是一个酷炫高逼格的云探针，云监控，服务器云监控，多服务器探针〜，该云监控（云探针）是ServerStatus（&lt;a href="https://github.com/tenyue/ServerStatus"&gt;https://github.com/tenyue/ ServerStatus&lt;/a&gt;）项目的优化/修改版。&lt;/li&gt;
+&lt;li&gt;在线演示：&lt;a href="https://tz.toyoo.pw/"&gt;https&lt;/a&gt; : &lt;a href="https://tz.toyoo.pw/"&gt;//tz.toyoo.pw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;我的博客：&lt;a href="https://doub.io/shell-jc3/"&gt;https&lt;/a&gt; : &lt;a href="https://doub.io/shell-jc3/"&gt;//doub.io/shell-jc3/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="目录介绍"&gt;&lt;a href="https://github.com/vbskycn/ServerStatus-Toyo#%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"&gt;&lt;/a&gt;目录介绍：&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;客户客户端文件&lt;/li&gt;
+&lt;li&gt;服务器服务端文件&lt;/li&gt;
+&lt;li&gt;网站文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="更新说明"&gt;&lt;a href="https://github.com/vbskycn/ServerStatus-Toyo#%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E"&gt;&lt;/a&gt;更新说明：&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;2018.08.21，修改新样式，效果见&lt;a href="https://tz.toyoo.pw/"&gt;https://tz.toyoo.pw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2017.10.12，负载优化，并支持CentOS6系统&lt;/li&gt;
+&lt;li&gt;2017.10.10，修改负载的增量：当前服务器上链接SSR等软件的IP总和（只要软件监听IPv6那么就能统计，例如SSH）&lt;/li&gt;
+&lt;li&gt;2017.04.30，优化手机显示式样&lt;/li&gt;
+&lt;li&gt;2017.04.29，移除主机名设定&lt;/li&gt;
+&lt;li&gt;2017.04.27，增加一键部署脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="安装教程"&gt;&lt;a href="https://github.com/vbskycn/ServerStatus-Toyo#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"&gt;&lt;/a&gt;安装教程：&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://www.nbdog.com/8364.html"&gt;http://www.nbdog.com/8364.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;bash &amp;lt;(curl -s -L https://git.io/v2ray.sh)&lt;/p&gt;
+&lt;p&gt;如果提示 curl: command not found ，那是因为你的小鸡没装 Curl
+ubuntu/debian 系统安装 Curl 方法: &lt;code&gt;apt-get update -y &amp;amp;&amp;amp; apt-get install curl -y&lt;/code&gt; centos 系统安装 Curl 方法: &lt;code&gt;yum update -y &amp;amp;&amp;amp; yum install curl -y&lt;/code&gt; 安装好 curl 之后就能安装脚本了&lt;/p&gt;
+&lt;p&gt;执行下面的代码下载并运行脚本。&lt;/p&gt;
+&lt;p&gt;wget -N &amp;ndash;no-check-certificate &lt;a href="https://softs.loan/Bash/status.sh"&gt;https://softs.loan/Bash/status.sh&lt;/a&gt; &amp;amp;&amp;amp; chmod + x status.sh&lt;/p&gt;</description></item><item><title>Redis——Windows安装方法</title><link>/archives/971.html</link><pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate><guid>/archives/971.html</guid><description>&lt;p&gt;本篇只谈安装，后续会深入讲解Redis，比如它的内存管理，快照，订阅等待。针对不同的用户，Redis有Windows和Linux两种环境安装， 官网上下的是Statble版是Linux，大家一定要注意。由于本人做本地端，所以以下谈的是Windows安装。&lt;/p&gt;
+&lt;p&gt;本文Redis下载地址: &lt;a href="https://github.com/MSOpenTech/redis/releases"&gt;&lt;/a&gt;&lt;a href="https://github.com/MSOpenTech/redis/releases"&gt;https://github.com/MSOpenTech/redis/releases&lt;/a&gt;，今天介绍，Redis版本用的是Redis3.2.100，好像目前网上都是这个版本，不知道是不是停止对Win版更新了。&lt;/p&gt;
+&lt;p&gt;解压安装，没毛病，直接进入安装步骤。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.临时服务安装&lt;/strong&gt; cmd敲命令进入Redis安装文件下，启动临时服务：redis-server.exe  redis.windows.conf，如果出现一个方形图标，安装临时服务成功。&lt;/p&gt;
+&lt;p&gt;备注：通过以上面命令，会创建Redis临时服务，不会在window Service列表出现Redis服务名称和状态，此窗口关闭，服务会自动关闭。可以装一个Redis Management测试一下，当关闭这个临时服务是数据库连不上的。&lt;/p&gt;
+&lt;p&gt;现在进行客户端调用，因为只有临时服务，所以不要关闭上面窗口，我们打开文件夹下redis-cli.exe执行文件，进入客户端Dos窗口，敲入Set uid 1 返回OK ，表示写入内存中；我们再敲 Get uid，会返回一个Value值1，如下图：&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030.jpg"&gt;
+ &lt;img class="mx-auto" alt="2" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.默认服务安装&lt;/strong&gt; 我们不可能每次要用Redis都去开一下临时服务，可不可以跟其它服务一样能够开机自启？当然是可以得，但是有点区别，后续会讲。进入Redis安装包文件下，敲入命令注册服务：redis-server.exe &amp;ndash;service-install redis.windows.conf &amp;ndash;loglevel verbose（一定要把临时服务关闭，否则安装不上）。&lt;/p&gt;
+&lt;p&gt;根据英文提示显然服务已经安装了，在window Service列表中能看到，但是没启动，也无法手动启动，只有敲命令启动/暂停/卸载服务：redis-server.exe &amp;ndash;service-start；redis-server.exe &amp;ndash;service-stop；redis-server.exe &amp;ndash;service-uninstall。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="4" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.自定义服务安装&lt;/strong&gt; 所谓自定义服务安装，就是将服务重命名。进入Redis安装包文件下，注册服务：redis-server.exe &amp;ndash;service-install redis.windows.conf &amp;ndash;Service-name RedisServer1 &amp;ndash;loglevel verbose&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-2.jpg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-2.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;备注：通过以上面命令，会在window  Service列表出现&amp;quot;redisserver1&amp;quot;服务，但此服务不是启动状态，需要调下面命令启动服务。&lt;/p&gt;
+&lt;p&gt;与默认安装一样，唯一不同的就是在相应安装服务、启动、关闭、卸载服务时需要加上自定义Redis服务名：redis-server.exe &amp;ndash;service-start &amp;ndash;Service-name RedisServer1；redis-server.exe &amp;ndash;service-stop &amp;ndash;Service-name RedisServer1； redis-server.exe &amp;ndash;service-uninstall &amp;ndash;Service-name RedisServer1通过命令行卸载自定义服务后，电脑重启一下，卸载服务会全部完成。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.Redis主从服务安装&lt;/strong&gt; 主从服务可以实现负载均衡，其实就是把上面Redis安装文件包，拷贝到相应目录，修改主、从服务器配置文件中IP、Port，同时从服务器要指定主服务器 的IP、Port，按照Redis自定义服务安装中命令进行服务安装、服务启动、服务关闭、服务卸载即可使用。&lt;/p&gt;
+&lt;p&gt;我本地主从服务器安装包都还是在D:redis-win目录，文件夹Redis-x64-3.2.100为主服务，文件夹Redis-x64-3.2.100-2则是从服务，用的都是本地IP:127.0.0.1，生产环境大家可以根据自己实际情况进行设置。&lt;/p&gt;
+&lt;p&gt;主服务器（RedisServer1）redis.windows.conf修改如下：port  6379(默认)，不需要作修改；&lt;/p&gt;
+&lt;p&gt;从服务器（RedisServer2）redis.windows.conf修改如下：port  6380；slaveof  127.0.0.1  6379，修改地方看下图：&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-1.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-2.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-2.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-3.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-3.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-4.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/redis%e2%80%94%e2%80%94windows%e5%ae%89%e8%a3%85%e6%96%b9%e6%b3%9520191030-4.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>sharex短链接的问题</title><link>/archives/950.html</link><pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate><guid>/archives/950.html</guid><description>&lt;p&gt;我很喜欢使用的一个工具教shareX，估计大家对其有不少了解 有一次我需要用这个短链接服务 找了百度的短链接服务 于是我就自己写了个sharex小配置&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/f86ba17e055102ad20191028.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/f86ba17e055102ad20191028.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;今天看到有人需要短链接的需求 于是就把我的这个配置分享出来&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;{
+  &amp;#34;Version&amp;#34;: &amp;#34;12.4.1&amp;#34;,
+  &amp;#34;Name&amp;#34;: &amp;#34;baidushorturl&amp;#34;,
+  &amp;#34;DestinationType&amp;#34;: &amp;#34;URLShortener&amp;#34;,
+  &amp;#34;RequestMethod&amp;#34;: &amp;#34;POST&amp;#34;,
+  &amp;#34;RequestURL&amp;#34;: &amp;#34;https://dwz.cn/admin/v2/create&amp;#34;,
+  &amp;#34;Headers&amp;#34;: {
+    &amp;#34;Token&amp;#34;: &amp;#34;这里换成你的百度token&amp;#34;,
+    &amp;#34;Content-Type&amp;#34;: &amp;#34;application/json; charset=UTF-8&amp;#34;
+  },
+  &amp;#34;Body&amp;#34;: &amp;#34;JSON&amp;#34;,
+  &amp;#34;Data&amp;#34;: &amp;#34;{n  &amp;#34;Url&amp;#34;: &amp;#34;$input$&amp;#34;,n  &amp;#34;TermOfValidity&amp;#34;: &amp;#34;long-term&amp;#34;n}&amp;#34;,
+  &amp;#34;URL&amp;#34;: &amp;#34;$json:ShortUrl$&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如何获取百度token 打开下面的链接：&lt;a href="https://dwz.cn/console/userinfo"&gt;https://dwz.cn/console/userinfo&lt;/a&gt; 没有的就去生成，有的话，就复制，然后粘贴到上面的配置里面即可&lt;/p&gt;
+&lt;p&gt;接着导入到sharex中就好了&lt;/p&gt;</description></item><item><title>使用宝塔安装Auxpi图床程序 并设置ShareX自定义上传</title><link>/archives/849.html</link><pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate><guid>/archives/849.html</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;p&gt;Aupxi 是一个集合多家图床 API 的图床程序，可以将图片上传至京东图床、头条图床、搜狐图床、苏宁图床、小米图床、网易图床、掘金图床等等一系列图床，当然也支持上传到本地服务器。&lt;/p&gt;
+&lt;p&gt;更重要的是，作者提到此图床一个重要功能，就是能够进行图片分发，大概意思就是，当你上传一张图片时，程序会按照各个图床的权重大小，将这一张图片上传到各个图床，当某一个图床挂了之后，会自动跳转到其他正常的图床，保证图片显示正常。&lt;/p&gt;
+&lt;p&gt;更详细的介绍可以看这里：&lt;a href="https://www.v2ex.com/t/560833"&gt;&lt;/a&gt;&lt;a href="https://www.v2ex.com/t/560833"&gt;https://www.v2ex.com/t/560833&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不过，要实测需要在后台上传到有分发功能，而且实际上似乎并没有分发……可能有待作者以后完善&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a href="https://github.com/aimerforreimu/auxpi"&gt;&lt;/a&gt;&lt;a href="https://github.com/aimerforreimu/auxpi"&gt;https://github.com/aimerforreimu/auxpi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方演示站：&lt;a href="https://test.demo-1s.com/"&gt;&lt;/a&gt;&lt;a href="https://test.demo-1s.com/"&gt;https://test.demo-1s.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="安装"&gt;安装&lt;/h2&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi2-1024x451.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi2-1024x451.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="安装宝塔"&gt;安装宝塔&lt;/h4&gt;
+&lt;p&gt;首先安装宝塔面板，根据 VPS 系统选择相应命令进行安装：&lt;/p&gt;
+&lt;p&gt;Centos 系统安装命令：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; sudo bash install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ubuntu/Deepin 系统安装命令：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; sudo bash install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Debian安装命令：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; bash install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更详细的宝塔安装教程，可查看以下文章：&lt;/p&gt;
+&lt;p&gt;建站之路 | 宝塔面板安装使用新手教程&lt;/p&gt;
+&lt;p&gt;建站之路系列很久没更新，主要是没人看，懒得写。不过很久没写文章，也不知道写什么，所以就继续写。本文为新手详细介绍如&amp;hellip;&lt;/p&gt;
+&lt;p&gt;宝塔安装完成后，打开宝塔面板，安装环境。项目 WIKI 里建议的环境为 Nginx + Mysql(5.6) + PHP + phpMyAdmin&lt;/p&gt;
+&lt;h4 id="创建站点"&gt;创建站点&lt;/h4&gt;
+&lt;p&gt;如下图：&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/QLcCQhTAuaVDqWYD20191028-3.jpg"&gt;
+ &lt;img alt="uud.me-1559046365.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/QLcCQhTAuaVDqWYD20191028-3.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;uud.me-1559046365.jpg&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注意选择 &lt;strong&gt;伪静态&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="开启ssl可选"&gt;开启SSL（可选）&lt;/h4&gt;
+&lt;p&gt;建议开启，自行设置即可&lt;/p&gt;
+&lt;p&gt;如下图：&lt;/p&gt;</description></item><item><title>Wordpress网站中添加百度统计代码</title><link>/archives/837.html</link><pubDate>Tue, 22 Oct 2019 00:00:00 +0000</pubDate><guid>/archives/837.html</guid><description>&lt;p&gt;百度统计是流量分析平台，帮助收集网站访问数据，提供流量趋势、来源分析、转化跟踪、页面热力图、访问流等多种统计分析服务，同时与百度搜索、百度推广、云服务无缝结合，为网站的精细化运营决策提供数据支持，进而有效提高企业的投资回报率。&lt;/p&gt;
+&lt;p&gt;一、百度统计添加网站&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;登录百度统计： &lt;a href="https://tongji.baidu.com/"&gt;&lt;/a&gt;&lt;a href="https://tongji.baidu.com"&gt;https://tongji.baidu.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;管理-&amp;gt;新增网站&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121165727396-177376463120191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121165727396-177376463120191022.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121165801616-185022132620191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121165801616-185022132620191022.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;复制以上代码到个人站点中&lt;/p&gt;
+&lt;p&gt;二、Wordpress添加百度统计代码&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;登录到wordpress管理后台-&amp;gt;外观-&amp;gt;编辑&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170320219-212710812820191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170320219-212710812820191022.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;选择要编辑的主题-&amp;gt;主题文件-&amp;gt;主题页眉(header.php)&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170500663-117297433520191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170500663-117297433520191022.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;此时看到文档并不能保存&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170534396-59572044120191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121170534396-59572044120191022.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;需要设置可写权限：&lt;/p&gt;
+&lt;p&gt;登录到服务器后找到文件夹/wordpress/wp-content/themes&lt;/p&gt;
+&lt;p&gt;chmod -R 777 themes/&lt;/p&gt;
+&lt;p&gt;修改权限后，即可看到更新文件按钮，将百度统计代码插入到以下位置：&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121171633798-173606584020191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121171633798-173606584020191022.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;三、检验&lt;/p&gt;
+&lt;p&gt;登录到百度统计后台-&amp;gt;管理-&amp;gt;代码检查&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121172106350-184197065020191022.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/1530265-20190121172106350-184197065020191022.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提示：代码安装正确&lt;/li&gt;
+&lt;li&gt;百度统计有时间周期，过一段时间刷新报告即可看到今日流量&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>LNMP环境安装h5ai索引目录与基本配置</title><link>/archives/706.html</link><pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate><guid>/archives/706.html</guid><description>&lt;p&gt;h5ai是一款PHP开发的索引目录程序，与之前介绍过的&lt;a href="https://www.xiaoz.me/archives/7251"&gt;Fdscript&lt;/a&gt;、&lt;a href="https://www.xiaoz.me/archives/7912"&gt;PHP Directory Lister&lt;/a&gt;类似，从实际体验来看感觉h5ai功能更加丰富，于是小z将软件库更换到了h5ai，分享下配置过程。&lt;/p&gt;
+&lt;p&gt;在开始之前请先确保您已经安装了PHP环境，推荐使用&lt;a href="https://oneinstack.com/" title="OneinStack"&gt;OneinStack&lt;/a&gt;，如果是新手可以安装宝塔面板。&lt;/p&gt;
+&lt;h3 id="下载"&gt;下载&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官方下载地址：&lt;a href="https://release.larsjung.de/h5ai/h5ai-0.29.0.zip" title="h5ai-0.29.0.zip"&gt;h5ai-0.29.0.zip&lt;/a&gt; 软件库下载：&lt;a href="http://soft.xiaoz.org/website/h5ai-0.29.0.zip" title="h5ai-0.29.0.zip"&gt;h5ai-0.29.0.zip&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#在站点根目录执行
+wget http://soft.xiaoz.org/website/h5ai-0.29.0.zip
+unzip h5ai-0.29.0.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下载后解压至网站根目录，目录结构如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;DOC_ROOT
+ ├─ _h5ai
+ ├─ your files
+ └─ and folders
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="nginx配置"&gt;Nginx配置&lt;/h3&gt;
+&lt;p&gt;接着访问&lt;code&gt;[](http://your-domain.tld/_h5ai/public/index.php)[http://YOUR-DOMAIN.TLD/_h5ai/public/index.php](http://YOUR-DOMAIN.TLD/_h5ai/public/index.php)&lt;/code&gt;测试能否打开，如果正常应该会看到如下界面。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16042020190723.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16042020190723.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;如果您安装的Oneinstack配置文件一般在&lt;code&gt;/usr/local/nginx/conf/vhost/domain.com.conf&lt;/code&gt;，修改这个配置文件，将&lt;code&gt;/_h5ai/public/index.php&lt;/code&gt;设置为默认首页，配置如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;index index.html index.htm index.php /_h5ai/public/index.php;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改后别忘记重载nginx（&lt;code&gt;service nginx reload&lt;/code&gt;），如果不出意外，再次访问您的域名就可以看到效果了。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16163920190723.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/snipaste_20171102_16163920190723.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="修改默认语言"&gt;修改默认语言&lt;/h3&gt;
+&lt;p&gt;h5ai支持多语言，但默认显示的是英文，可修改配置文件&lt;code&gt;_h5ai/private/conf/options.json&lt;/code&gt;将&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;l10n&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;lang&amp;#34;: &amp;#34;en&amp;#34;,
+ &amp;#34;useBrowserLang&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;en&lt;/code&gt;修改为&lt;code&gt;zh-cn&lt;/code&gt;，这样默认就是中文界面啦。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;l10n&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;lang&amp;#34;: &amp;#34;zh-cn&amp;#34;,
+ &amp;#34;useBrowserLang&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="开启搜索功能"&gt;开启搜索功能&lt;/h3&gt;
+&lt;p&gt;依然是修改&lt;code&gt;options.json&lt;/code&gt;这个文件，将&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;search&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: false,
+ &amp;#34;advanced&amp;#34;: true,
+ &amp;#34;debounceTime&amp;#34;: 300,
+ &amp;#34;ignorecase&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;false&lt;/code&gt;修改为&lt;code&gt;true&lt;/code&gt;就OK了&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;#34;search&amp;#34;: {
+ &amp;#34;enabled&amp;#34;: true,
+ &amp;#34;advanced&amp;#34;: true,
+ &amp;#34;debounceTime&amp;#34;: 300,
+ &amp;#34;ignorecase&amp;#34;: true
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="显示二维码"&gt;显示二维码&lt;/h3&gt;
+&lt;p&gt;某些手机软件为了方便下载，可以开启二维码显示功能，直接用手机扫描下载，非常方便。修改&lt;code&gt;options.json&lt;/code&gt;配置文件，&lt;/p&gt;</description></item><item><title>群晖利用webstation搭建h5ai教程</title><link>/archives/710.html</link><pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate><guid>/archives/710.html</guid><description>&lt;p&gt;设置开启目录浏览 H5AI 的模版&lt;/p&gt;
+&lt;p&gt;在终端里执行以下命令并找到配置文件内相应的路径 cat /etc/nginx/app.d/server.webstation-vhost.conf&lt;/p&gt;
+&lt;p&gt;7.1的路径 cat /usr/local/etc/nginx/sites-enabled/server.webstation-vhost.conf&lt;/p&gt;
+&lt;p&gt;echo -e &amp;ldquo;index index.html index.htm index.cgi index.php index.php5 /_h5ai/public/index.php;&amp;rdquo; &amp;gt; /usr/local/etc/nginx/conf.d/4433e100-6c59-4121-afcb-dc7a553552ce/user.conf.h5ai&lt;/p&gt;
+&lt;p&gt;将以下两个目录开启777权限 ./software/_h5ai/private/cache ./software/_h5ai/public/cache&lt;/p&gt;
+&lt;p&gt;重载web服务 sudo nginx -s reload&lt;/p&gt;
+&lt;p&gt;修改模板&lt;/p&gt;
+&lt;p&gt;notepad ++搜索文件夹 关键字 power 接下来 修改就好 实际就是 ./private/php/pages/index.php info.php ./public/js/scripts.js&lt;/p&gt;
+&lt;p&gt;h5ai是啥？就是这个http://firmware.koolshare.cn/ &lt;a href="http://my.zhoujie218.top:8081"&gt;&lt;/a&gt;&lt;a href="http://my.zhoujie218.top:8081"&gt;http://my.zhoujie218.top:8081&lt;/a&gt; 平台, 一般叫做文件目录列表程序。这个是我觉得最赞的一个了。 群晖nginx默认的index文件直接修改重启后会恢复默认（不信你修改后synoservicecfg &amp;ndash;restart nginx 试试），自己折腾了一下找到了一个永久修改的方法。这个帖子重点是修改webstation建立的站点默认index文件为h5ai指定格式，其他有此需求的可以也这样操作。 首先选择开放下载的目录并启动站点&lt;/p&gt;
+&lt;h2 id="72的路径"&gt;7.2的路径&lt;/h2&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/108e381418dd8d12cd56907a5000bdd8.png"&gt;
+ &lt;img class="mx-auto" alt="image-20230831184432822" src="https://img-cloud.zhoujie218.top/2023/08/108e381418dd8d12cd56907a5000bdd8.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;也可以直接修改这个文件，把/_h5ai/public/index.php加入虚拟主机的默认启动页面就可以 了&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 获取 root 权限
+sudo -i
+
+# 查看虚拟主机的配置文件夹名称
+ls /usr/local/etc/nginx/conf.d/
+
+# 修改配置文件，此处将 754eb58b******62237df73 替换为自己的文件夹名称
+echo -e &amp;#34;index index.html index.htm index.php /_h5ai/public/index.php;&amp;#34; &amp;gt; /usr/local/etc/nginx/conf.d/754eb58b******62237df73/user.conf.h5ai
+
+# 重启 nginx 服务
+sudo nginx -s reload
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/201647ab2nk5piaxc51ap120190723-1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/07/201647ab2nk5piaxc51ap120190723-1.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>群晖新手进阶指南：root+transmission安装+增强汉化web+远程控制(转）</title><link>/archives/611.html</link><pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate><guid>/archives/611.html</guid><description>&lt;h2 id="1-添加套件源"&gt;1 添加套件源&lt;/h2&gt;
+&lt;p&gt;1.1 用管理员 ad­min 账号登录 DSM 桌面，打开 “套件中心”，点击 “设置” &amp;mdash;&amp;gt; “常规”，选择 “任何发行者”；&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/ec9d47220bd841f5de548b32984ba3be.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/ec9d47220bd841f5de548b32984ba3be.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;1.2 “套件中心”，“设置” &amp;mdash;&amp;gt; “套件来源”，点击 “新增”，位置填入第三方源的网址，完成即可完成第三方源的添加&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/70bcf7226b338ce3af4674eb1797ae53.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/70bcf7226b338ce3af4674eb1797ae53.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;第三方源网址：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://link.zhihu.com/?target=https%3A//packages.synocommunity.com"&gt;https://packages.synocommunity.com&lt;/a&gt; //（建议选择这个，支持HTTPS）&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//packages.pcloadletter.co.uk"&gt;http://packages.pcloadletter.co.uk&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//www.cphub.net"&gt;http://www.cphub.net&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//synology.sysco.ch"&gt;http://synology.sysco.ch&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//packages.quadrat4.de"&gt;http://packages.quadrat4.de&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//synology.acmenet.ru"&gt;http://synology.acmenet.ru&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//cytec.us/spk"&gt;http://cytec.us/spk&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//spk.naefmarco.ch/spkrepo/packages/"&gt;http://spk.naefmarco.ch/spkrepo/packages/&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//spk.nas-mirror.de/spkrepo/packages"&gt;http://spk.nas-mirror.de/spkrepo/packages&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//spk.unzureichende.info/"&gt;http://spk.unzureichende.info/&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://link.zhihu.com/?target=http%3A//packages.synocommunity.com/%3Fbeta%3D1"&gt;http://packages.synocommunity.com/?beta=1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1.3 刷新 “套件中心”，找到 “社群”。这个就是第三方源&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/636aa7851ce672ddce17d7ded81627b0.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/636aa7851ce672ddce17d7ded81627b0.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="2-安装transmission"&gt;2 安装Transmission&lt;/h2&gt;
+&lt;p&gt;2.1 在 “套件中心” 的 “社群” 找到 “Trans­mis­sion”，点击 “安装套件”，会自动下载安装&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/9b0f25deed3ac4b1db7c7b2e072d8af7.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/9b0f25deed3ac4b1db7c7b2e072d8af7.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.2 Trans­mis­sion 下载设置&lt;/p&gt;
+&lt;p&gt;Down­load di­irec­tory：下载文件存储目录（设置前需要事先建立好文件夹）&lt;/p&gt;
+&lt;p&gt;Watch di­rec­tory：保存种子存储目录，留空表示禁用（可以填写下载文件存储目录）&lt;/p&gt;
+&lt;p&gt;In­com­plete di­rec­tory：未完成下载目录，留空表示禁用（建议不填写，留空）&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/4f9ec1f204d82b69db906478a93f7135.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/4f9ec1f204d82b69db906478a93f7135.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.3 设置用户账号和密码（每次进入 TR 需要输入的用户名和密码）&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/77c381dfdd1d4fe359f661503c0452fd.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/77c381dfdd1d4fe359f661503c0452fd.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.4 权限提示，直接 “下一步”&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/f88107e341508a6bd9bb4c7ae918c8a9.jpeg"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/08/f88107e341508a6bd9bb4c7ae918c8a9.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;2.5 安装完成后后，打开 “套件中心” &amp;mdash;&amp;gt; “Trans­mis­sion”，找到 URL，可以直接打开 Web UI（如果你用内网地址安装，则显示内网地址）&lt;/p&gt;</description></item><item><title>如何设置WordPress文章特色图像(Featured Image)</title><link>/archives/213.html</link><pubDate>Fri, 17 Jun 2016 00:00:00 +0000</pubDate><guid>/archives/213.html</guid><description>&lt;p&gt;在主题的functions.php中添加如下代码&lt;/p&gt;
+&lt;table border="0" cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;p class="line number1 index0 alt2"&gt;1&lt;/p&gt;&lt;p class="line number2 index1 alt1"&gt;2&lt;/p&gt;&lt;p class="line number3 index2 alt2"&gt;3&lt;/p&gt;&lt;p class="line number4 index3 alt1"&gt;4&lt;/p&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;p class="line number1 index0 alt2"&gt;&lt;code class="php comments"&gt;//使WordPress支持post thumbnail&lt;/code&gt;&lt;/p&gt;&lt;p class="line number2 index1 alt1"&gt;&lt;code class="php keyword"&gt;if&lt;/code&gt; &lt;code class="php plain"&gt;( function_exists( &lt;/code&gt;&lt;code class="php string"&gt;'add_theme_support'&lt;/code&gt; &lt;code class="php plain"&gt;) ) {&lt;/code&gt;&lt;/p&gt;&lt;p class="line number3 index2 alt2"&gt;&lt;code class="php spaces"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/code&gt;&lt;code class="php plain"&gt;add_theme_support( &lt;/code&gt;&lt;code class="php string"&gt;'post-thumbnails'&lt;/code&gt; &lt;code class="php plain"&gt;);&lt;/code&gt;&lt;/p&gt;&lt;p class="line number4 index3 alt1"&gt;&lt;code class="php plain"&gt;}&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;**注意：**这段代码应当加载functions.php的body中，不要写进函数里。&lt;/p&gt;
+&lt;table border="0" cellspacing="0" cellpadding="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter"&gt;&lt;p class="line number1 index0 alt2"&gt;1&lt;/p&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;p class="line number1 index0 alt2"&gt;&lt;code class="php plain"&gt;add_image_size( &lt;/code&gt;&lt;code class="php variable"&gt;$name&lt;/code&gt;&lt;code class="php plain"&gt;, &lt;/code&gt;&lt;code class="php variable"&gt;$width&lt;/code&gt;&lt;code class="php plain"&gt;, &lt;/code&gt;&lt;code class="php variable"&gt;$height&lt;/code&gt;&lt;code class="php plain"&gt;, &lt;/code&gt;&lt;code class="php variable"&gt;$crop&lt;/code&gt; &lt;code class="php plain"&gt;);&lt;/code&gt;&lt;/p&gt;</description></item></channel></rss>

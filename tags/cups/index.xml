@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cups on 周杰个人博客</title><link>/tags/cups/</link><description>Recent content in Cups on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/cups/index.xml" rel="self" type="application/rss+xml"/><item><title>DOCKER安装CUPS容器实现无线打印（支持大部分ARM设备）</title><link>/archives/2540.html</link><pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2540.html</guid><description>&lt;h1 id="一锐角云等x86机器"&gt;一.锐角云等X86机器&lt;/h1&gt;
+&lt;p&gt;执行代码拉取镜像并运行容器，这里仍然选择&lt;code&gt;tigerj/cups-airprint&lt;/code&gt;的，因为其他的我都试过识别不了我的&lt;code&gt;M1005&lt;/code&gt;，不知道是不是个案。而且这个镜像带&lt;code&gt;avahi&lt;/code&gt;，能实现&lt;code&gt;airprint&lt;/code&gt;，支持安卓及苹果设备直接使用系统自带打印服务搜索到打印机，非常方便。只是有点瑕疵，让我花了点时间解决了。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run \
+ --name=cups \
+ --restart=always \
+ --net=host \
+ -v /var/run/dbus:/var/run/dbus \
+ -v ~/airprint_data/config:/config \
+ -v ~/airprint_data/services:/services \
+ --device /dev/bus \
+ --device /dev/usb \
+ -e CUPSADMIN=&amp;#34;admin&amp;#34; \
+ -e CUPSPASSWORD=&amp;#34;password&amp;#34; \
+ tigerj/cups-airprint
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;后面步骤都一样，参考老版步骤，选择驱动，共享打印机，直到&lt;code&gt;cups&lt;/code&gt;里能打印出测试页面。这时如果去电脑或者手机的打印服务里搜索打印机是搜索不到的。接下来执行命令&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker exec cups service dbus start
+
+docker exec cups service avahi-daemon start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行之后去电脑或者手机系统自带的打印服务里搜索打印机，怎么样，是不是搜索到了？&lt;/p&gt;
+&lt;p&gt;这时候打印机能正常工作了，但是不能关，一关，再打开，打印作业就会被挂起，无法继续打印，只有手动重启&lt;code&gt;cups&lt;/code&gt;，要想实现打印机上电自动重启&lt;code&gt;cups&lt;/code&gt;，解决方法如下：&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;/etc/udev/rules.d&lt;/code&gt;目录下新建一条规则，如&lt;code&gt;m1005.rules&lt;/code&gt; 内容如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ACTION==&amp;#34;add&amp;#34;, SUBSYSTEM==&amp;#34;usb&amp;#34;, ENV{DEVTYPE}==&amp;#34;usb_device&amp;#34;, ENV{ID_VENDOR_ID}==&amp;#34;03f0&amp;#34;, ENV{ID_MODEL_ID}==&amp;#34;3b17&amp;#34;, RUN+=&amp;#34;/root/cupsstart.sh&amp;#34;
+
+ACTION==&amp;#34;remove&amp;#34;, SUBSYSTEM==&amp;#34;usb&amp;#34;, ENV{DEVTYPE}==&amp;#34;usb_device&amp;#34;, ENV{PRODUCT}==&amp;#34;3f0/3b17/100&amp;#34;, RUN+=&amp;#34;/root/cupsstop.sh&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这步操作是让系统在发现打印机接入及断开时执行脚本，这段代码也是百度来的，原本&lt;code&gt;add&lt;/code&gt;和&lt;code&gt;remove&lt;/code&gt;两段代码是一样的，唯一区别是最后执行的脚本不一样，但是实际执行的时候我发现只有打印机接入能执行&lt;code&gt;add&lt;/code&gt;这段代码，而打印机断电，不能执行&lt;code&gt;remove&lt;/code&gt;这段代码，继续百度，从&lt;a href="https://www.musz.cn/?golink=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMDYxMDQzMS9hcnRpY2xlL2RldGFpbHMvMTE0NTYyMzM1"&gt;https://blog.csdn.net/weixin_30610431/article/details/114562335&lt;/a&gt;找到了答案，执行 &lt;code&gt;udevadm monitor --kernel --property --subsystem-match=usb&lt;/code&gt;之后分别给打印机通电和断电，对比输出发现，断电时没有 &lt;code&gt;MODEL_ID&lt;/code&gt;参数，所以代码不执行了，根据实际输出，将断电代码如上修改之后，就顺利执行了。其中add段代码中的&lt;code&gt;03f0&lt;/code&gt; &lt;code&gt;3b17&lt;/code&gt; 两个数据要跟你你的实际修改，这两个参数可以通过执行&lt;code&gt;lsusb&lt;/code&gt;查看到 然后在&lt;code&gt;/root&lt;/code&gt;目录里建立两个脚本:&lt;code&gt;cupsstart.sh&lt;/code&gt;和&lt;code&gt;cupsstop.sh&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#!/bin/sh
+
+docker restart cups
+
+docker exec cups cupsaccept M1005
+
+docker exec cups service dbus start
+
+docker exec cups service avahi-daemon start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个脚本实现系统一发现打印机接入，就重启&lt;code&gt;cups&lt;/code&gt;容器，并设置打印机接受打印任务，另外将&lt;code&gt;avahi&lt;/code&gt;服务启动起来。&lt;/p&gt;</description></item><item><title>实战玩客云刷armbian及共享打印机教程</title><link>/archives/2538.html</link><pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2538.html</guid><description>&lt;h1 id="实战玩客云刷armbian及共享打印机教程"&gt;实战玩客云刷armbian及共享打印机教程&lt;/h1&gt;
+&lt;p&gt;**背景：**家里打印机HP P1108 不支持无线打印，每次打印都要开笔记本连接打印机太繁琐，尤其是手机里的资料还要先发到笔记本再进行打印，如何将打印机变为无线或共享出去，翻看网上资料，发现可以将打印机插入路由器的usb口再进行一系列的设置，但自家路由器没有usb口，这个方案不可行，后来看到可以将玩客云刷机后连接打印机，将打印机共享出去，拼多多玩客云大概价格50包邮，在承受范围内，开搞。&lt;/p&gt;
+&lt;p&gt;**准备工作：**玩客云1台，电脑1台（最好是台式机），十字螺丝刀，镊子一把，双公头USB线1根（如果电脑带type-c口，也可以使用USB转type-c的线，比如手机数据线）。&lt;/p&gt;
+&lt;h1 id="一刷入armbian系统"&gt;一、刷入armbian系统：&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="下载usb-burning-tool"&gt;下载USB Burning Tool&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;建议版本2.1.6.8，自行百度下载或去恩山论坛下载。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="下载armbian镜像"&gt;下载armbian镜像&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="https://github.com/hzyitc/armbian-onecloud/releases%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%B8%A6burn.img%E7%9A%84%EF%BC%8C%E6%88%91%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%98%AFArmbian_23.02.0-trunk_Onecloud_bullseye_edge_6.1.0.burn.img"&gt;https://github.com/hzyitc/armbian-onecloud/releases，下载带burn.img的，我下载的是Armbian_23.02.0-trunk_Onecloud_bullseye_edge_6.1.0.burn.img&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://cloud.189.cn/web/share?code=Bri2AfNRZfAr"&gt;https://cloud.189.cn/web/share?code=Bri2AfNRZfAr&lt;/a&gt; （访问码：tl43）推荐用这个，docker，qb,tr全剖搞定&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308131459369.png"&gt;
+ &lt;img class="mx-auto" alt="玩客云的最终归宿还是安安静静的做一台打印服务器吧" src="https://img-cloud.zhoujie218.top/piggo/202308131459369.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;安装好的界面&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308131500739.png"&gt;
+ &lt;img class="mx-auto" alt="image-20230813150039597" src="https://img-cloud.zhoujie218.top/piggo/202308131500739.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="安装usb-burning-tool加载img镜像"&gt;安装USB Burning Tool加载img镜像&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;中间会弹出libusb-win32安装窗，点击完成，安装成功后重启，打开usb_burn_tool，点击文件——&amp;gt;导入烧录包，选择上一步的.img文件，右侧擦除flash、擦除bootloader默认是勾选状态不用动他，点击开始。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308041002753.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202308041002753.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="玩客云拆机"&gt;玩客云拆机&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果玩客云不是原版系统，那就不需要拆机了，在刷机时长按reset键就可以，如果是原版没有刷过的，必须拆机短接。拆机时用翘板（我只有一字螺丝刀）插入SD孔位往上翘，如果撬不动那就插入后左右滑动将双面胶破坏掉，最终将上面薄薄的板子取下来，然后拧掉6颗螺丝就可以将主板拿出来了。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308041002823.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202308041002823.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="短接针脚"&gt;短接针脚&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;分两个版本，不用担心短接错，新版没有老板的2个短接点，我的是V1.3按照新版短接正面的左4右5针脚，老板短接中间的2个，见下图，短接可以使用金属镊子或回形针、金属线缆等各种工具。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308041002842.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202308041002842.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308041002799.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202308041002799.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="刷机"&gt;刷机&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将双公头usb线连接电脑与玩客云靠近HDMI的usb口，然后在保持短接的状态下给玩客云通电，等看到USB Burning Tool有进度后松开短接工具，进度到100% 烧录成功后，先点击停止再拔USB线。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提示：1)建议使用台式机，我最开始是使用的我的机械革命笔记本，短接状态玩客云加电后笔记本立马断电，连续试了2次都这样，使用台式机就没问题。2)对于不好操作的人，可以使用智能插座比如小米智能插座，先倒计时1分钟或定时到1分钟后，快到1分钟时短接，到时间后插座自动加电。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308041002831.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202308041002831.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202308041002806.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202308041002806.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h1 id="二玩客云设置iproot密码apt源"&gt;&lt;strong&gt;二、玩客云设置IP、root密码、apt源&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;大多数参考https://zhuanlan.zhihu.com/p/551470592及http://www.8fe.com/jiaocheng/5810.html&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="玩客云ip密码时区"&gt;玩客云IP、密码、时区&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;玩客云加电，连接网线、显示器、键盘，开机过程中就会提示你键盘布局、时区、设置IP地址（要与路由器同一网段，建议使用路由器不分配的IP，比如路由器分配192.168.1.100-200，那么设置1.20）、输入root密码、创建新用户。看其他帖子有默认是192.168.1.110，root，1234的，也有自动获取后IP后，用户名root，密码1234的，我直接接显示器按照开机流程一步步设置，没测试过其他方法。&lt;/p&gt;
+&lt;p&gt;附：设置IP方法，可以使用armbian-config图形化设置，也可以下面方法设置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nano /etc/network/interfaces
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后添加下面字段，然后Ctrl+O回车，然后Ctrl+X，然后systemctl restart network重启网络，ping 192.168.1.1，ping &lt;a href="http://www.qq.com/"&gt;www.qq.com&lt;/a&gt;都能通那就没问题了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;# Wired adapter #1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;allow-hotplug eth0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;no-auto-down eth0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;#iface eth0 inet dhcp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hwaddress 12:34:56:78:9A:BC
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;iface eth0 inet static
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;address 192.168.1.196
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netmask 255.255.255.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gateway 192.168.1.253
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dns-nameservers 223.5.5.5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id="设置apt源"&gt;设置apt源&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;nano /etc/apt/sources.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删光后复制下面这些，Ctrl+O回车，Ctrl+X，再执行apt update。&lt;/p&gt;</description></item><item><title>老式打印机套娃打印服务器p910nd和cups,实现一些特殊的功能</title><link>/archives/2537.html</link><pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2537.html</guid><description>&lt;h2 id="引子"&gt;引子&lt;/h2&gt;
+&lt;p&gt;HP的老旧激光打印机用来在家里给孩子打打作业什么的而是一个不错的选择。然而老旧有老旧的问题：如我的P1108只有USB口，默认情况下只能开PC打印，实在是麻烦。家里正好有常年工作的DS920+，而群晖内置的cups又基本是个废的，只好折腾一下来实现网络共享和无线打印。注意本文基本都是ssh下的终端操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Openwrt, 由于路由器的 RAM 一般都比较小，但是直接使用 cups 做打印服务器需要使用较大的资源，因此 Openwrt 系统源里面 现在已经不包含 cups 组件了。因为家里有个wdr3800老路由，安装cups带不动，所以才有了下面的折腾。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;任意一台 24 小时开机的 Linux 设备一台, 用于安装 CUPS 搭建 Airprint Server 使用, 如果不使用 IOS 设备，就不需要 CUPS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果家中只有 windows 和安卓设备，只需要配置 p910nd&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果家中有可以 24 小时开机并且 ram 大于 1G 并且带有 USB 口的设备，只需要配置 cups&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673add685d3c.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/20/6673add685d3c.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="提前说结果最后经过实践"&gt;提前说结果：最后经过实践&lt;/h2&gt;
+&lt;p&gt;ubuntu22.04 默认安装的cups 2.41 自带的 惠普老款驱动 3.21.12 就能驱动我的P1108打印机了，简直是折腾了个腾：）&lt;/p&gt;
+&lt;p&gt;不过还是建议你参考本文&lt;/p&gt;
+&lt;h2 id="准备工作"&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;设备：1台P1108，一台DS920+（DSM7.1），一台工作笔记本&lt;/p&gt;
+&lt;p&gt;软件：工作笔记本上备好putty、winscp等工具，DS920+开启SSH，下载好最新的hplip和hplip-plugin。&lt;/p&gt;
+&lt;p&gt;驱动地址：&lt;a href="https://go.smzdm.com/2f13d177a2f706bc/ca_aa_yc_163_a905p290_17721_1673_173_0"&gt;HP Developers Portal | Version: 3.22.10&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;插件地址：&lt;a href="https://go.smzdm.com/5cc5b1a7dc9ec909/ca_aa_yc_163_a905p290_17721_1673_173_0"&gt;HP Developers Portal | Plugins&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="步骤"&gt;步骤&lt;/h2&gt;
+&lt;p&gt;因为相关类似的文章挺多的，我这里不全面展开了，很多内容都有成熟的文章可以参考。主要按照操作步骤梳理下， 帮助大家避坑。&lt;/p&gt;</description></item></channel></rss>

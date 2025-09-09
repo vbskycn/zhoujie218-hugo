@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>24-04 on 周杰个人博客</title><link>/tags/24-04/</link><description>Recent content in 24-04 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 19 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/24-04/index.xml" rel="self" type="application/rss+xml"/><item><title>如何从 Ubuntu 22.04 升级到 Ubuntu 24.04</title><link>/archives/2634.html</link><pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate><guid>/archives/2634.html</guid><description>&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec972ca.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec972ca.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;经过开源社区多年的辛勤工作和奉献，Ubuntu 24.04 LTS 终于发布了。它包含了新功能、升级的软件版本和性能改进，大大增强了整体用户体验。&lt;/p&gt;
+&lt;p&gt;在本指南中，我们将逐步探索如何从 Ubuntu 22.04 升级到 Ubuntu 24.04。&lt;/p&gt;
+&lt;h3 id="1备份-ubuntu-2204"&gt;（1）备份 Ubuntu 22.04&lt;/h3&gt;
+&lt;p&gt;在升级之前，确保你备份了所有重要文件和目录。如升级失败，你仍然可以访问文件。比如你可以使用Timeshift 实用程序完成备份。&lt;/p&gt;
+&lt;h3 id="2升级系统"&gt;（2）升级系统&lt;/h3&gt;
+&lt;p&gt;备份就绪后，将系统升级到最新的 22.04 版本。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt update
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将已安装的软件包升级到最新版本&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt upgrade -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重新启动系统以完成系统升级&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;检查系统是否运行最新的 22.04 版本&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;lsb_release -a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec473ec.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec473ec.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="3安装-update-manager-core"&gt;（3）安装 Update Manager Core&lt;/h3&gt;
+&lt;p&gt;系统更新后，就可以开始迁移到 Ubuntu 24.04 了。请确保您已经准备好了 update-manager-core ，这是一个管理发行版升级并简化升级过程的包。&lt;/p&gt;
+&lt;p&gt;安装 update-manager-core&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt install update-manager-core
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec475a4.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec475a4.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="4从-2204-升级到-2404"&gt;（4）从 22.04 升级到 24.04&lt;/h3&gt;
+&lt;p&gt;执行 do-release-upgrade 命令，升级到 Ubuntu 24.04 LTS 版本&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo do-release-upgrade -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec77e42.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec77e42.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

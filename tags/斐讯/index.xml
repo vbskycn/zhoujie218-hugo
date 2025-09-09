@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>斐讯 on 周杰个人博客</title><link>/tags/%E6%96%90%E8%AE%AF/</link><description>Recent content in 斐讯 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 11 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%96%90%E8%AE%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>斐讯P1电视盒子设备未获得Play认证的问题</title><link>/archives/662.html</link><pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate><guid>/archives/662.html</guid><description>&lt;p&gt;通过命令行 adb connect 192.168.123.27 adb root 31183118 adb shell sqlite3 /data/data/com.google.android.gsf/databases/gservices.db &amp;ldquo;select * from main where name = &amp;ldquo;android_id&amp;rdquo;;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;打开 &lt;a href="https://www.google.com/android/uncertified/"&gt;&lt;/a&gt;&lt;a href="https://www.google.com/android/uncertified/"&gt;https://www.google.com/android/uncertified/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;输入ID ，我的是  3813339150332243403&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/1-300x168.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/1-300x168.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

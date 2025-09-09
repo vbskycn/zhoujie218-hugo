@@ -1,0 +1,214 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>免费使用的密钥管理系统 (License Management System)（暂未开源） | 周杰个人博客</title><meta property="og:title" content="免费使用的密钥管理系统 (License Management System)（暂未开源） - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2025-08-08T00:00:00+08:00'><meta property="article:modified_time" content='2025-08-08T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="免费使用的密钥管理系统 (License Management System)（暂未开源）"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/2677.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#系统特性>系统特性</a></li><li><a href=#-文档导航>📚 文档导航</a><ul><li><a href=#-用户指南>📖 用户指南</a></li><li><a href=#-开发者指南>🔧 开发者指南</a></li><li><a href=#-管理员指南>⚙️ 管理员指南</a></li></ul></li><li><a href=#根据您的需求快速选择相应的文档>根据您的需求，快速选择相应的文档：</a><ul><li><a href=#-我是最终用户>👤 我是最终用户</a></li><li><a href=#-我是开发者>👨‍💻 我是开发者</a></li><li><a href=#-我是系统管理员>👨‍💼 我是系统管理员</a></li></ul></li><li><a href=#-快速开始>🚀 快速开始</a><ul><li><a href=#-docker部署>🐳 Docker部署</a></li><li><a href=#访问系统>访问系统</a></li><li><a href=#默认账户>默认账户</a></li><li><a href=#-域名配置重要>🌐 域名配置（重要）</a></li></ul></li><li><a href=#-技术架构>🏗️ 技术架构</a><ul><li><a href=#核心特性>核心特性</a></li></ul></li><li><a href=#-支持与反馈>📞 支持与反馈</a><ul><li><a href=#相关链接>相关链接</a></li></ul></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>免费使用的密钥管理系统 (License Management System)（暂未开源）</h1></header><time datetime=2025-08-08T00:00:00Z class="post-meta meta-date dt-published">2025年8月8日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a>
+<a href=/categories/wangyesheji>wangyesheji</a></div><div class=post-content><h1 id=密钥管理系统-license-management-system>密钥管理系统 (License Management System)</h1><blockquote><p>现代化License管理系统，支持密钥生成、验证、设备管理等功能</p></blockquote><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2025/08/08/6895620ddd447.png><img class=mx-auto alt=系统截图1 src=https://img-cloud.zhoujie218.top/2025/08/08/6895620ddd447.png></a></p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2025/08/08/6895621d7c746.png><img class=mx-auto alt=系统截图2 src=https://img-cloud.zhoujie218.top/2025/08/08/6895621d7c746.png></a></p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2025/08/08/689562205aa4f.png><img class=mx-auto alt=系统截图3 src=https://img-cloud.zhoujie218.top/2025/08/08/689562205aa4f.png></a></p><h2 id=系统特性>系统特性</h2><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2025/08/08/68956233c2cdf.png><img class=mx-auto alt=系统截图4 src=https://img-cloud.zhoujie218.top/2025/08/08/68956233c2cdf.png></a></p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2025/08/08/6895622d2aa60.png><img class=mx-auto alt=系统截图5 src=https://img-cloud.zhoujie218.top/2025/08/08/6895622d2aa60.png></a></p><h2 id=-文档导航>📚 文档导航</h2><p>本系统提供完整的技术文档，按照不同用户角色进行分类：</p><h3 id=-用户指南>📖 用户指南</h3><p>面向最终用户的使用文档：</p><ul><li><a href=https://license.zhoujie8.cn/user-guide>用户指南</a> - 完整的安装、部署、使用指南</li></ul><h3 id=-开发者指南>🔧 开发者指南</h3><p>面向开发者的技术文档：</p><ul><li><a href=https://license.zhoujie8.cn/developer-guide>开发者指南</a> - 技术架构、API接口、集成指南</li></ul><h3 id=-管理员指南>⚙️ 管理员指南</h3><p>面向系统管理员的运维文档：</p><ul><li><a href=https://license.zhoujie8.cn/admin-guide>管理员指南</a> - 系统配置、备份恢复、故障排除</li></ul><h2 id=根据您的需求快速选择相应的文档>根据您的需求，快速选择相应的文档：</h2><h3 id=-我是最终用户>👤 我是最终用户</h3><p><strong>想要安装和使用系统</strong></p><ul><li><a href=https://license.zhoujie8.cn/user-guide/>📖 用户指南</a> - 完整的安装、部署、使用指南<ul><li><a href=https://license.zhoujie8.cn/user-guide/#_1>🚀 快速开始</a> - 环境要求和基本安装</li><li><a href=https://license.zhoujie8.cn/user-guide/#_6>📦 安装指南</a> - 详细的安装步骤</li><li><a href=https://license.zhoujie8.cn/user-guide/#docker>🐳 Docker部署</a> - 容器化部署方案</li><li><a href=https://license.zhoujie8.cn/user-guide/#_12>📖 使用指南</a> - 系统操作说明</li><li><a href=https://license.zhoujie8.cn/user-guide/#_21>⚙️ 配置说明</a> - 环境变量配置</li><li><a href=https://license.zhoujie8.cn/user-guide/#_27>🔧 故障排除</a> - 常见问题解决</li></ul></li></ul><h3 id=-我是开发者>👨‍💻 我是开发者</h3><p><strong>想要集成API或了解技术细节</strong></p><ul><li><a href=https://license.zhoujie8.cn/developer-guide/>🔧 开发者指南</a> - 技术架构、API接口、集成指南<ul><li><a href=https://license.zhoujie8.cn/developer-guide/#_1>🏗️ 技术架构</a> - 系统架构设计</li><li><a href=https://license.zhoujie8.cn/developer-guide/#_6>🔐 密钥验证逻辑</a> - 验证机制详解</li><li><a href=https://license.zhoujie8.cn/developer-guide/#api>📡 API接口</a> - 完整的API文档</li><li><a href=https://license.zhoujie8.cn/developer-guide/#_34>🔗 客户端集成</a> - 集成示例和SDK</li><li><a href=https://license.zhoujie8.cn/developer-guide/#_40>🛡️ 安全机制</a> - 安全设计和防护</li><li><a href=https://license.zhoujie8.cn/developer-guide/#_42>🧪 测试指南</a> - 测试方法和工具</li></ul></li></ul><h3 id=-我是系统管理员>👨‍💼 我是系统管理员</h3><p><strong>想要配置和维护系统</strong></p><ul><li><a href=https://license.zhoujie8.cn/admin-guide/>⚙️ 管理员指南</a> - 系统配置、备份恢复、故障排除<ul><li><a href=https://license.zhoujie8.cn/admin-guide/#_1>⚙️ 系统配置</a> - 环境变量和高级配置</li><li><a href=https://license.zhoujie8.cn/admin-guide/#_15>💾 备份恢复</a> - 数据备份和恢复策略</li><li><a href=https://license.zhoujie8.cn/admin-guide/#_28>🔧 故障排除</a> - 系统问题诊断和解决</li><li><a href=https://license.zhoujie8.cn/admin-guide/#_36>📊 监控维护</a> - 系统监控和维护</li><li><a href=https://license.zhoujie8.cn/admin-guide/#_46>🛡️ 安全加固</a> - 安全配置和加固措施</li></ul></li></ul><h2 id=-快速开始>🚀 快速开始</h2><h3 id=-docker部署>🐳 Docker部署</h3><h4 id=最新版本部署>最新版本部署</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 创建数据目录（持久化）</span>
+</span></span><span style=display:flex><span>mkdir -p <span style=color:#e6db74>${</span>PWD<span style=color:#e6db74>}</span>/license-data
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置目录权限（Linux/macOS）</span>
+</span></span><span style=display:flex><span>sudo chown -R 1000:1000 <span style=color:#e6db74>${</span>PWD<span style=color:#e6db74>}</span>/license-data
+</span></span><span style=display:flex><span>sudo chmod -R <span style=color:#ae81ff>755</span> <span style=color:#e6db74>${</span>PWD<span style=color:#e6db74>}</span>/license-data
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 停止并删除旧容器</span>
+</span></span><span style=display:flex><span>docker stop license-management-system
+</span></span><span style=display:flex><span>docker rm license-management-system
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启动容器</span>
+</span></span><span style=display:flex><span>docker run -d <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --name license-management-system <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --restart unless-stopped <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p 3005:3005 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -v <span style=color:#e6db74>${</span>PWD<span style=color:#e6db74>}</span>/license-data:/app/data <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -e JWT_SECRET<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;your-super-secret-jwt-key-change-this-in-production&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -e LICENSE_SECRET_KEY<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;your-super-secret-license-key-change-this-in-production&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -e PORT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;3005&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -e NODE_ENV<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;production&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -e DEBUG_MODE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;false&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -e LOG_LEVEL<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;warn&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  zhoujie218/license-management-system:latest
+</span></span></code></pre></div><h4 id=可选环境变量>可选环境变量</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 全局请求速率限制：每分钟最多允许 2000 个请求</span>
+</span></span><span style=display:flex><span>-e RATE_LIMIT_MAX_REQUESTS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;2000&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># API 接口的请求限制：每分钟最多允许 5000 个 API 请求</span>
+</span></span><span style=display:flex><span>-e API_RATE_LIMIT_MAX_REQUESTS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;5000&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 登录尝试限制：最多允许 20 次失败的登录尝试</span>
+</span></span><span style=display:flex><span>-e LOGIN_RATE_LIMIT_MAX_ATTEMPTS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;20&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 允许的访问来源域名（多个使用英文逗号分隔，无空格）</span>
+</span></span><span style=display:flex><span>-e ALLOWED_DOMAINS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://yourdomain.com,https://www.yourdomain.com&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 允许加载的 CDN 链接（多个使用英文逗号分隔）</span>
+</span></span><span style=display:flex><span>-e ALLOWED_CDNS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdn.bootcdn.net,https://static.cloudflareinsights.com,https://*.cloudflare.com&#34;</span> <span style=color:#ae81ff>\
+</span></span></span></code></pre></div><h4 id=验证部署>验证部署</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 使用Docker Compose</span>
+</span></span><span style=display:flex><span>docker-compose up -d
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 或使用Docker Hub镜像</span>
+</span></span><span style=display:flex><span>docker run -d -p 3005:3005 zhoujie218/license-management-system:latest
+</span></span></code></pre></div><h3 id=访问系统>访问系统</h3><p>打开浏览器访问：<code>http://localhost:3005</code></p><h3 id=默认账户>默认账户</h3><ul><li><strong>用户名</strong>: admin</li><li><strong>密码</strong>: admin123</li></ul><h3 id=-域名配置重要>🌐 域名配置（重要）</h3><p>如果您需要部署到自己的域名，请配置以下环境变量：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 在 .env 文件中添加</span>
+</span></span><span style=display:flex><span>ALLOWED_DOMAINS<span style=color:#f92672>=</span>https://yourdomain.com
+</span></span><span style=display:flex><span>ALLOWED_CDNS<span style=color:#f92672>=</span>https://cdn.bootcdn.net,https://cdn.jsdelivr.net
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 默认cos允许所有域名和cdn</span>
+</span></span></code></pre></div><p><strong>详细配置说明</strong>: 请参考<a href=user-guide.md>用户指南</a>中的部署配置章节。</p><blockquote><p><strong>注意</strong>: 如果看到CSP错误（如Cloudflare Insights被阻止），这是正常的。如果系统功能正常，可以忽略这些错误。</p></blockquote><h2 id=-技术架构>🏗️ 技术架构</h2><p>本系统采用<strong>应用-密钥类型</strong>架构，已废弃旧的产品-套餐模型：</p><ul><li><strong>应用 (Application)</strong>: 每个密钥必须属于一个应用</li><li><strong>密钥类型 (License Type)</strong>: 每个应用下有多个密钥类型</li><li><strong>密钥 (License)</strong>: 基于应用和密钥类型生成</li></ul><h3 id=核心特性>核心特性</h3><ul><li>✅ 应用-密钥类型架构</li><li>✅ 设备管理策略（宽松期/严格期）</li><li>✅ 密钥激活逻辑（首次验证激活）</li><li>✅ 批量管理功能（导出、删除、复制）</li><li>✅ 用户管理功能</li><li>✅ IP地址记录</li><li>✅ 速率限制</li><li>✅ 暂停/恢复功能</li><li>✅ 搜索和过滤功能</li><li>✅ 在线备份还原功能</li><li>✅ 备份文件管理</li></ul><h2 id=-支持与反馈>📞 支持与反馈</h2><p>如有问题或建议，请：</p><ol><li>查看对应分类的文档</li><li>提交Issue描述问题</li><li>联系技术支持</li></ol><h3 id=相关链接>相关链接</h3><ul><li>🌐 <a href=https://github.com/vbskycn/License>项目主页</a></li><li>📚 <a href=https://license.zhoujie8.cn/>在线文档</a></li><li>🐛 <a href=https://github.com/vbskycn/License/issues>问题反馈</a></li><li>🐳 <a href=https://hub.docker.com/r/zhoujie218/license-management-system>Docker镜像</a></li></ul><hr><p><strong>密钥管理系统</strong> - 让License管理更简单、更高效！</p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/2677.html>/archives/2677.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/license>license</a></li><li><a href=/tags/%E5%AF%86%E9%92%A5>密钥</a></li><li><a href=/tags/%E5%BC%80%E6%BA%90>开源</a></li><li><a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81>许可证</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>磁盘 on 周杰个人博客</title><link>/tags/%E7%A3%81%E7%9B%98/</link><description>Recent content in 磁盘 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E7%A3%81%E7%9B%98/index.xml" rel="self" type="application/rss+xml"/><item><title>最简单的openwrt磁盘扩容</title><link>/archives/2589.html</link><pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate><guid>/archives/2589.html</guid><description>&lt;h2 id="最简单的openwrt磁盘扩容"&gt;最简单的openwrt磁盘扩容&lt;/h2&gt;
+&lt;p&gt;pve里面新加一个磁盘，扩大分区操作也差不多&lt;/p&gt;
+&lt;p&gt;加盘有个好处，升级固件后只要在挂载一次分区，设置数据什么都不丢&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;格式化这个磁盘&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;mkfs.ext4 /dev/sdb
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建挂载点：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;mkdir /mnt/sdb
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;挂载/dev/sdb到新的挂载点：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;mount /dev/sdb /mnt/sdb
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;复制数据到新盘(/dev/sdb)：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cp -a /overlay/. /mnt/sdb/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;卸载旧overlay：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;umount /overlay
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将新盘(/dev/sdb)挂载到overlay：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;mount --bind /mnt/sdb /overlay
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;也可以在网页端挂载到overlay&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/12/65efe9a181990.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240107165402051" src="https://img-cloud.zhoujie218.top/2024/03/12/65efe9a181990.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;抄作业&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/12/65efe9a1a35b7.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240107165437066" src="https://img-cloud.zhoujie218.top/2024/03/12/65efe9a1a35b7.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;保存重启&lt;/p&gt;
+&lt;p&gt;查看效果： &lt;code&gt;df -h&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/01/07/659a67121bf50.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240107165540385" src="https://img-cloud.zhoujie218.top/2024/01/07/659a67121bf50.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/12/65efe9a0a374d.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240107165709098" src="https://img-cloud.zhoujie218.top/2024/03/12/65efe9a0a374d.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;再也不用焦虑了&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="升级系统"&gt;升级系统：&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#先新建挂载点
+mkdir /mnt/sdb
+# 再挂载
+mount /dev/sdb /mnt/sdb
+# 拷贝文件
+cp -r /overlay/* /mnt/sdb
+# 卸载挂点
+umount /mnt/sdb
+
+#拷贝完成后手动挂载到/overlay下
+mount /dev/sdb /overlay
+/etc/init.d/fstab reload
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="开机自动挂载"&gt;开机自动挂载&lt;/h3&gt;
+&lt;p&gt;这时候应该就挂载成功了，下一步制作开机脚本，开机后自动挂载：&lt;/p&gt;
+&lt;p&gt;编辑文件：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vim /etc/rc.local
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在exit0上面加上如下代码：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;mount /dev/sdb /overlay
+/etc/init.d/fstab reload
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;保存退出，重启即可。&lt;/p&gt;</description></item><item><title>Ubuntu使用gparted工具扩容，显示Unable to resize read-only file system</title><link>/archives/2567.html</link><pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate><guid>/archives/2567.html</guid><description>&lt;h3 id="一问题"&gt;一、问题&lt;/h3&gt;
+&lt;h4 id="出现提示无法调整只读文件系统的大小只能在挂载时调整文件系统的大小"&gt;出现提示：无法调整只读文件系统的大小，只能在挂载时调整文件系统的大小&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469d07f2ba.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469d07f2ba.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="二解决步骤"&gt;二、解决步骤&lt;/h3&gt;
+&lt;h4 id="第一步查看只读文件系统的详细信息点击information"&gt;第一步：查看只读文件系统的详细信息，点击Information&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469d8880a7.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469d8880a7.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="第二步查看该磁盘挂载的文件夹目录注意挂载的位置用--隔开容易忽略--"&gt;第二步：查看该磁盘挂载的文件夹目录（注意：挂载的位置用 ， 隔开，容易忽略 / ）&lt;/h4&gt;
+&lt;p&gt;我的挂在位置为：/ 和 /var/&lt;a href="https://so.csdn.net/so/search?q=snap&amp;amp;spm=1001.2101.3001.7020"&gt;snap&lt;/a&gt;/firefox/common/host-hunspell&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469db5a99b.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469db5a99b.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="第三步以root权限打开终端重新挂载文件夹目录的读写权限"&gt;第三步：以root权限打开终端，重新挂载文件夹目录的读写权限&lt;/h4&gt;
+&lt;p&gt;以我的为例：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo -i&lt;br&gt;
+mount -o remount -rw /&lt;br&gt;
+mount -o remount -rw /var/snap/firefox/common/host-hunspell&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469de55622.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469de55622.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="第四步刷新gparted中的设备后就可以调整文件系统大小了"&gt;第四步：刷新gparted中的设备后，就可以调整文件系统大小了&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469e18c674.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469e18c674.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="安装gparted"&gt;安装gparted&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt-get install gparted
+gparted
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>

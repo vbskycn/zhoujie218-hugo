@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google on 周杰个人博客</title><link>/tags/google/</link><description>Recent content in Google on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/google/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案）</title><link>/archives/1033.html</link><pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1033.html</guid><description>&lt;p&gt;2019年7月 Google 更新政策，Google Photos 与 Google Drive 不会双向同步，之前通过 Google Drive，使用 &lt;a href="https://cyhour.com/825/"&gt;rclone 备份 Google Photos&lt;/a&gt; 这个方法就失效了。在&lt;a href="https://cyhour.com/go/aHR0cHM6Ly93d3cuZGF4aWJsb2cuY29tL-S9v-eUqGdwaG90b3Mtc3luY-Wkh-S7vWdvb2dsZS3nm7jlhowv" title="https://www.daxiblog.com/使用gphotos-sync备份google-相册/"&gt;博友&lt;/a&gt;那里看到了新工具：&lt;a href="https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8" title="https://pypi.org/project/gphotos-sync/"&gt;gphotos-sync&lt;/a&gt; · &lt;a href="https://cyhour.com/go/aHR0cHM6Ly9naXRodWIuY29tL2dpbGVza25hcC9ncGhvdG9zLXN5bmM" title="https://github.com/gilesknap/gphotos-sync"&gt;GitHub&lt;/a&gt; 折腾一圈，发现 gphotos-sync 无法直接保存照片到使用 rclone 挂载的 OneDrive 上（2019.10.14，后记，博友 @NSFW 缓解了这个问题，加&amp;ndash;db-path参数，把数据库文件保存在本地即可运行2分钟左右）。放弃……&lt;/p&gt;
+&lt;p&gt;接着找&lt;a href="https://cyhour.com/1110/"&gt;大硬盘 VPS&lt;/a&gt;，不得不说，&lt;a href="https://cyhour.com/go/aHR0cHM6Ly9teS5mcmFudGVjaC5jYS9hZmYucGhwP2FmZj0zMTE2JnBpZD0xNDM5" title="https://my.frantech.ca/aff.php?aff=3116&amp;amp;pid=1439"&gt;BuyVM&lt;/a&gt; 这货真心便宜。&lt;/p&gt;
+&lt;h2 id="安装-python-3"&gt;安装 Python 3&lt;/h2&gt;
+&lt;p&gt;gphotos-sync 需要 Python 3，CentOS 自带 Python 2，得安装，方法参考：&lt;a href="https://cyhour.com/1115"&gt;CentOS 7 编译安装 Python 3.7.4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;嫌麻烦的话还是一键脚本安装吧，比如：&lt;a href="https://cyhour.com/go/aHR0cHM6Ly93d3cubW9lcmF0cy5jb20vYXJjaGl2ZXMvNTA3Lw" title="https://www.moerats.com/archives/507/"&gt;Python 3.6一键安装脚本 for CentOS/Debian&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;amp;&amp;amp; sh CentOS_Python3.6.sh
+
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;amp;&amp;amp; sh Debian_Python3.6.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="安装-gphotos-sync"&gt;安装 gphotos-sync&lt;/h2&gt;
+&lt;p&gt;官网：&lt;a href="https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8" title="https://pypi.org/project/gphotos-sync/"&gt;Google Photos Sync&lt;/a&gt;，目前版本 2.9.2。执行下面命令安装即可：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;pip3 install gphotos-sync
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完成，执行 gphotos-sync &amp;ndash;help 就能看到帮助信息▼展开&lt;/p&gt;
+&lt;h2 id="申请-google-photos-访问-api-client-id"&gt;申请 Google Photos 访问 API client id&lt;/h2&gt;
+&lt;h3 id="创建项目"&gt;创建项目&lt;/h3&gt;
+&lt;p&gt;打开 &lt;a href="https://developers.google.com/console/" title="https://developers.google.com/console/"&gt;Google Developer Console&lt;/a&gt; 控制台，创建一个新项目，如：google-photos-sync&lt;/p&gt;</description></item><item><title>斐讯P1电视盒子设备未获得Play认证的问题</title><link>/archives/662.html</link><pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate><guid>/archives/662.html</guid><description>&lt;p&gt;通过命令行 adb connect 192.168.123.27 adb root 31183118 adb shell sqlite3 /data/data/com.google.android.gsf/databases/gservices.db &amp;ldquo;select * from main where name = &amp;ldquo;android_id&amp;rdquo;;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;打开 &lt;a href="https://www.google.com/android/uncertified/"&gt;&lt;/a&gt;&lt;a href="https://www.google.com/android/uncertified/"&gt;https://www.google.com/android/uncertified/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;输入ID ，我的是  3813339150332243403&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/1-300x168.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/1-300x168.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

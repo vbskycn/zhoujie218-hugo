@@ -1,0 +1,179 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>群晖安装套件的盘坏了,如何把群晖套件搬到其它硬盘 | 周杰个人博客</title><meta property="og:title" content="群晖安装套件的盘坏了,如何把群晖套件搬到其它硬盘 - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2020-03-23T00:00:00+08:00'><meta property="article:modified_time" content='2020-03-23T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="群晖安装套件的盘坏了,如何把群晖套件搬到其它硬盘"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/1550.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>群晖安装套件的盘坏了,如何把群晖套件搬到其它硬盘</h1></header><time datetime=2020-03-23T00:00:00Z class="post-meta meta-date dt-published">2020年3月23日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a></div><div class=post-content><p>群晖NAS原来1T硬盘上开始出现坏扇区告警提示，从几十个到上百个。由于上面的套件最初都是装在这个硬盘上的，于是开始折腾把套件转到另外个硬盘上。</p><p>遗憾的是，搜索了一大圈，发现这么多年来群晖始终没有提供官方的套件搬移工具，在官网论坛上有个多年前的帖子，上面无数人呼吁要求这个功能，但是始终没有官方响应。现在如果你要搬迁某个套件从A盘到B盘，只有一个办法，删除，重新安装。对于不少功能来说，这是灾难性的，比如Cloud Sync，假设你在某个云端硬盘上同步了一大堆文件，比如100G，一旦删除并重新安装Cloud Sync并且重新建立同步任务，所有的100G文件，会全部重新上传一次，我曾经拿Cloud Sync备份过700G的文件到百度网盘，这个同步任务真是不想再来了。</p><p>受到影响的还有Cloud Station Server，你所有的文件修改历史版本都会被清除，还有Hyper Backup、也需要重新建立任务。</p><p>其实这里关键的，就是这些套件的数据库没法搬迁。</p><p>后来在上面提到的那个帖子后面，有个人提供了自己写的工具，Mods Package Manager，可以在不同硬盘之间移动套件。在套件中心设置里，套件来源设置为http://olympe.letroye.be/sspks即可安装这个套件，安装完后界面如下。（PS：有网友提出这个已经更新到下面这个链接了，<a href=https://www.beatificabytes.be/sspks%EF%BC%8C%E8%AF%B7%E5%90%84%E4%BD%8D%E8%AF%95%E8%AF%95%EF%BC%8C%E4%BA%8E></a><a href=https://www.beatificabytes.be/sspks%EF%BC%8C%E8%AF%B7%E5%90%84%E4%BD%8D%E8%AF%95%E8%AF%95%EF%BC%8C%E4%BA%8E>https://www.beatificabytes.be/sspks，请各位试试，于</a> 2020/3/6）</p><p>[caption id=&ldquo;attachment_1552&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1024&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-1024x825.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-1024x825.jpg>
+</a></a>[/caption]</p><p>上面两栏分别是当前不同硬盘上套件的名称，你可以在选择后并同时选择Target Volume，设置搬迁目的地。</p><p>大部分搬迁过程是顺利的，但是碰到有些套件无法成功搬迁，比如这个：</p><p>[caption id=&ldquo;attachment_1553&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;1024&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323-1.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-1-1024x337.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-1-1024x337.jpg>
+</a></a>[/caption]</p><p>只能删除重新安装。</p><p>又过了个把星期，这个硬盘终于彻底歇菜了。</p><p>[caption id=&ldquo;attachment_1554&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;751&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323-2.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-2.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-2.jpg>
+</a></a>[/caption]</p><p>然后发现，涉及到数据库的应用，都无法启动。。。</p><p>想去折腾一下的，看看这个有些复杂了，正好我当时有个系统的版本升级没做，死马当活马医，系统更新了一下，结果奇迹发生了，数据库正常启动了。</p><p>但是Cloud Station Server无法启动，一运行就是这样：</p><p>[caption id=&ldquo;attachment_1555&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;968&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323-3.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-3.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-3.jpg>
+</a></a>[/caption]</p><p>只能重新删除，而且试了几次发现，普通重装都不行，必须把过去的数据库全部删除才行，也就是勾选下面的选项。。。</p><p>[caption id=&ldquo;attachment_1556&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;702&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323-4.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-4.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-4.jpg>
+</a></a>[/caption]</p><p>重装后客户端的应用也需要重新删除原有链接，重新做一次，然后所有的数据重新会再备份一次。</p><p>不过好在其它应用看起来还正常。</p><p>后来发现上面的Mods Package Manager做了一次更新，不知道是否有些改善。</p><p>当时还看了一个办法，就是通过按机箱背后的Reset键重置系统来重新安装系统软件，不过没敢试。</p><p>[caption id=&ldquo;attachment_1557&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;768&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323-5.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-5.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-5.jpg>
+</a></a>[/caption]</p><p>咨询了一下群晖官方，说是不会删除数据库，好吧，先mark吧。</p><p>坏的那块希捷1T硬盘一直就没管它，结果系统老是提示有硬盘故障，于是关机把它拆了下来，然后发现这个硬盘的保修期是2011年11月，所以推测大概是2009年买的了，差不多工作了10年，也算是可以了。</p><p>[caption id=&ldquo;attachment_1558&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;581&rdquo;]<a href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%E5%A6%82%E4%BD%95%E6%8A%8A%E7%BE%A4%E6%99%96nas%E4%B8%8A%E7%9A%84%E5%A5%97%E4%BB%B6%E6%90%AC%E5%88%B0%E5%8F%A6%E5%A4%96%E4%B8%AA%E7%A1%AC%E7%9B%98%E4%B8%8A20200323-6.jpg>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-6.jpg><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2020/03/%e5%a6%82%e4%bd%95%e6%8a%8a%e7%be%a4%e6%99%96nas%e4%b8%8a%e7%9a%84%e5%a5%97%e4%bb%b6%e6%90%ac%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%aa%e7%a1%ac%e7%9b%98%e4%b8%8a20200323-6.jpg>
+</a></a>[/caption]</p><p><strong>这事得到几个经验：</strong></p><ul><li>平时NAS上的数据最好还是用Hyper Backup备份到外置的移动硬盘上，特别那些有数据库的应用；</li><li>网上经常有人问：两盘位的群晖NAS是否有必要做RAID，很多人给出建议是不用，方法是用同步的方法同步一块硬盘数据到另外一块上去。 这个方法我之前也是赞成的，因为看起来这样可以使用的空间大了（比如有些电影文件可以不用同步到第二块硬盘）并且灵活性也大了，但是群晖的NAS正常工作是需要系统和数据库的，碰到其中一块损毁并且涉及数据库的应用正好安装在那块硬盘上，需要做的工作量就相当大了。所以我的建议是能够做RAID，就尽量做吧。</li><li>如果就是不想做RAID，那就最好尽量减少使用群晖一些涉及数据库的套件，比如Cloud Sync之类的，否则你如果过度依赖这个功能，碰到硬盘损毁，同步工作是相当耗时的。</li></ul></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/1550.html>/archives/1550.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/%E5%A5%97%E4%BB%B6>套件</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

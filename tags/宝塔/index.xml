@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>宝塔 on 周杰个人博客</title><link>/tags/%E5%AE%9D%E5%A1%94/</link><description>Recent content in 宝塔 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E5%AE%9D%E5%A1%94/index.xml" rel="self" type="application/rss+xml"/><item><title>甲骨文ARM机器宝塔面板安装网站监控报表和nginx防火墙</title><link>/archives/2599.html</link><pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate><guid>/archives/2599.html</guid><description>&lt;p&gt;用甲骨文ARM机器建站大半年了，每日一备份还是很不错的，宝塔对arm的支持不是很好，有个小问题&lt;/p&gt;
+&lt;p&gt;宝塔面板的nginx 编译脚本直接忽略 ARM 对 LuaJIT 的支持，这导致了许多依赖 lua 语言的插件失效，例如 Nginx 防火墙、网站监控报表。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/01/65e1497709732.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240301112014964" src="https://img-cloud.zhoujie218.top/2024/03/01/65e1497709732.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="先决条件"&gt;先决条件&lt;/h2&gt;
+&lt;p&gt;需要debian11系统。debian10无法解决。甲骨文自带的ubuntu没测试过不清楚，甲骨文自带的系统太难用了，我每次都是dd系统&lt;/p&gt;
+&lt;p&gt;如果系统是debian11，那可以直接解决，网站不受影响。暂时卸载nginx和防火墙插件，其他软件不动。然后再运行下面命令&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cat&amp;gt;/www/server/panel/install/nginx_prepare.sh&amp;lt;&amp;lt;EOL
+#!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+wget -c -O LuaJIT-2.1.zip https://github.com/LuaJIT/LuaJIT/archive/refs/heads/v2.1.zip -T 10
+unzip LuaJIT-2.1.zip
+if [ -e LuaJIT-2.1 ]; then
+ cd LuaJIT-2.1
+ make linux
+ make install
+ export LUAJIT_LIB=/usr/local/lib
+ export LUAJIT_INC=/usr/local/include/luajit-2.1/
+ ln -sf /usr/local/lib/libluajit-5.1.so.2 /usr/local/lib64/libluajit-5.1.so.2
+ if [ `grep -c /usr/local/lib /etc/ld.so.conf` -eq 0 ]; then
+ echo &amp;#34;/usr/local/lib&amp;#34; &amp;gt;&amp;gt; /etc/ld.so.conf
+ fi
+ ldconfig
+ cd ..
+fi
+rm -rf LuaJIT-2.1*
+Install_cjson
+EOL
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;sed -i &amp;#39;s/\r//g&amp;#39; /www/server/panel/install/nginx_prepare.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;cat&amp;gt;/www/server/panel/install/nginx_configure.pl&amp;lt;&amp;lt;EOL
+--add-module=/www/server/nginx/src/ngx_devel_kit --add-module=/www/server/nginx/src/lua_nginx_module
+EOL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装lua5。&lt;/p&gt;</description></item><item><title>套娃：自用宝塔docker镜像</title><link>/archives/2596.html</link><pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate><guid>/archives/2596.html</guid><description>&lt;p&gt;&lt;strong&gt;套娃：自用宝塔docker镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目的：1分钟快速搭建 nginx php mysql 环境用于测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240216215522103" src="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;生产环境请用官方版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是我自用的宝塔docker镜像，用于测试&lt;/p&gt;
+&lt;h2 id="宝塔76"&gt;&lt;strong&gt;宝塔7.6&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;底层系统：官方centos7.9&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:one&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刚安装好宝塔，什么都没有&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:npm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装好了 nginx 1.21 php 7.4 mysql 5.7&lt;/p&gt;
+&lt;p&gt;phpmyadmin 5.0 redis 6.2&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -idt \
+ -p 3081:80 \
+ -p 3443:443 \
+ -p 38888:8888 \
+ -p 3888:888 \
+ --privileged \
+ -v /www1/wwwroot:/www/wwwroot \
+ -v /www1/server/data:/www/server/data \
+ -v /www1/server/panel/vhost:/www/server/panel/vhost \
+ -v /www1/backup:/www/backup \
+ --network=bridge \
+ --name baota \
+ --restart always \
+ zhoujie218/baota:npm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;端口可以自己定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;38888: 宝塔web管理端口&lt;/p&gt;
+&lt;p&gt;3888: phpmyadmin管理端口&lt;/p&gt;</description></item><item><title>宝塔中用nginx编译安装webdav</title><link>/archives/2568.html</link><pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate><guid>/archives/2568.html</guid><description>&lt;p&gt;**方法一：**借助宝塔使用nginx搭建webdav&lt;/p&gt;
+&lt;p&gt;选择安装nginx的时候选择编译安装并且添加自定义模块，目的是补全nginx的webdav功能&lt;/p&gt;
+&lt;p&gt;模块名称：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http_dav_module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;模块描述：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;webdev
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;模块参数：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;--with-http_dav_module --add-module=/root/nginx-dav-ext-module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;前置脚本：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone https://github.com/arut/nginx-dav-ext-module.git /root/nginx-dav-ext-module
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建网页，自己命名，php版本选择纯静态并且在配置文件中添加&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;location / {
+ root /www/wwwroot/webdav;#这里写你webdav的路径
+ #client_max_body_size 102400M;#大文件支持
+ autoindex on;
+ dav_methods PUT DELETE MKCOL COPY MOVE;
+ # 需要 nginx-dav-ext-module 才有下面的选项
+ dav_ext_methods PROPFIND OPTIONS LOCK UNLOCK;
+ create_full_put_path on;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后再&lt;strong&gt;网站目录&lt;/strong&gt;添加账号密码即可，如果需要用到webdav的话，账号就是你添加的账号，密码就是你添加的密码，地址就是你的webdav的网页。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;但第一种方法貌似有问题，一直编译失败，故采取第二种方案：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个有效果&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我个人测试了另一种方法，就是先按第一种方法安装，然而安装失败后，在不勾选添加自定义模块后再次编译安装即可成功。或者到方法二第4步后就成功了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/6544882f22c46.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20231103134206075" src="https://img-cloud.zhoujie218.top/2023/11/03/6544882f22c46.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;**方法二：**宝塔面板nginx编译webdav模块&lt;/p&gt;
+&lt;p&gt;1，nighx必须是编译安装（安装过的卸载重新安装）&lt;/p&gt;
+&lt;p&gt;2，通过ps命令查看nginx文件的路径&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ps -elf | grep nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;得到宝塔面板nginx的具体路径：&lt;code&gt;/www/server/nginx/sbin/nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3，执行：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/server/nginx/sbin/ #进入到路径
+cp nginx nginx.bak #备份nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4，下载nginx-dav-ext-module&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone https://github.com/arut/nginx-dav-ext-module.git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;5，拷贝至src目录&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cp -R ./nginx-dav-ext-module /www/server/nginx/src
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;6，nignx-V（V大写）&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cd /www/server/nginx/src
+nginx -V
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看nignx安装了哪些模块&lt;/p&gt;</description></item><item><title>解决宝塔php8 不能安装fileinfo模块的问题</title><link>/archives/2551.html</link><pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2551.html</guid><description>&lt;h2 id="解决宝塔php8-不能安装fileinfo模块的问题"&gt;解决宝塔php8 不能安装fileinfo模块的问题&lt;/h2&gt;
+&lt;p&gt;阿里云服务器系统 Alibaba Cloud (Aliyun ) 2.1903 LTS (Hunting Beagle) x86_64(Py3.7.9) 或者类似系统&lt;/p&gt;
+&lt;p&gt;因照顾小机器的安装宝塔默认使用了禁用fileinfo参数，可能是检测到了禁用参数所以提示的不支持 可以使用以下命令重装默认开启 fileinfo的php&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/3545df842e35f4917583d946c78ab2b2.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230827192340694" src="https://img-cloud.zhoujie218.top/2023/08/3545df842e35f4917583d946c78ab2b2.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;命令行执行&lt;/p&gt;
+&lt;h1 id="下载php编译安装脚本"&gt;下载php编译安装脚本&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget http://download.bt.cn/install/0/php.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#替换禁用fileinfo参数改为开启&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sed -i &amp;#34;s/--disable-fileinfo/--enable--fileinfo/g&amp;#34; php.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#安装php-8.2&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;bash php.sh install 8.2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/7efe971de6987b7b67352d82fd7e09ec.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230827192416306" src="https://img-cloud.zhoujie218.top/2023/08/7efe971de6987b7b67352d82fd7e09ec.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;官方论坛提几次都说不支持阿里云系统，还是自己动手&lt;/p&gt;</description></item><item><title>centos7.6安装使用宝塔技巧</title><link>/archives/702.html</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>/archives/702.html</guid><description>&lt;p&gt;下载：&lt;a href="http://mirrors.163.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1810.iso"&gt;&lt;/a&gt;&lt;a href="http://mirrors.163.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1810.iso"&gt;http://mirrors.163.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1810.iso&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我家下载40MB/s&lt;/p&gt;
+&lt;p&gt;安装虚拟机，最小安装，安装桌面，选择软件&lt;/p&gt;
+&lt;p&gt;su root 切换用户到root&lt;/p&gt;
+&lt;p&gt;sudo passwd 修改root密码，难点的&lt;/p&gt;
+&lt;p&gt;service sshd start 开启ssh服务 chkconfig sshd on 设置ssh开机启动&lt;/p&gt;
+&lt;p&gt;update-rc.d ssh enable&lt;/p&gt;
+&lt;p&gt;安装宝塔&lt;/p&gt;
+&lt;p&gt;yum install -y wget &amp;amp;&amp;amp; wget -O install.sh &lt;a href="http://download.bt.cn/install/install_6.0.sh"&gt;&lt;/a&gt;&lt;a href="http://download.bt.cn/install/install_6.0.sh"&gt;http://download.bt.cn/install/install_6.0.sh&lt;/a&gt; &amp;amp;&amp;amp; sh install.sh&lt;/p&gt;
+&lt;p&gt;/etc/init.d/bt start 启动宝塔命令&lt;/p&gt;
+&lt;p&gt;启宝塔服务，进入宝塔web管理，将php，mysql，apache等服务重新启动，不然可能出现一些未知错误&lt;/p&gt;
+&lt;p&gt;bt default linux宝塔获取默认账号密码 ，用于忘记登录密码的zz，比如我 history 查看linux历史命令 /etc/init.d/bt start 启动宝塔命令&lt;/p&gt;</description></item><item><title>群晖NAS中通过Docker安装CentOS并搭建宝塔控制面板</title><link>/archives/700.html</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><guid>/archives/700.html</guid><description>&lt;p&gt;群晖NAS中可以在套件中心安装Docker，让原来只是NAS的机器装上Linux Centos系统和Web控制面板&lt;/p&gt;
+&lt;p&gt;首先用浏览器打开群晖DSM的WEB页面，地址为：ip地址:5000,登陆进去后打开“套件中心”，搜索“Docker”并安装&lt;/p&gt;
+&lt;p&gt;打开“Docker”，左侧找到“注册表”，搜索“CentOS”，双击第一个的带官方标准和星数量5K的，然后选择标准为“latest”，就是最新版的CentOS 7.6 1809版本，点击选择后，会在左侧“映像”中下载&lt;/p&gt;
+&lt;p&gt;下载完成群晖右上角的消息有提醒下载已完成，此版本容量大小为202MB&lt;/p&gt;
+&lt;p&gt;在“映像”页面，选择&amp;quot;centos:latest&amp;quot;,然后点击左上角的“启动”，容器名称自定义，不可以有空格，如果有空格请使用这个横杠“-”代替&lt;/p&gt;
+&lt;p&gt;点击“高级设置”，点击“卷”，点击“添加文件夹”，为了更方便的管理查看备份存储宝塔面板的数据，我这边将宝塔的目录存储在本地的docker文件夹下面的BT-Panel文件夹下面的www文件夹内，无文件夹可以自由添加文件夹，同时桌面的File Station也可以创建和查看文件夹，选择完成后，“转载路径”输入“/www”，意思就是将宝塔控制面板的www文件夹映射搭配本地的docker/BT-Panel/www文件夹内，不操作此步骤则数据都在Docker程序自身目录下&lt;/p&gt;
+&lt;p&gt;宝塔面板默认有三个端口，控制面板端口8888，http端口80和https端口443，我们这边点击“网络”选项，勾选“使用与Docker Host相同网络”，这里我们就不进行端口映射了，如果有需求，那么左侧为自定义本地地址，右侧分别为宝塔的8888，80，443端口。&lt;/p&gt;
+&lt;p&gt;配置完成后点击应用&lt;/p&gt;
+&lt;p&gt;然后点击容器，双击CentOS7或点击后选择左上角的详情，启动容器中的CentOS7终端机&lt;/p&gt;
+&lt;p&gt;接下来进去宝塔官网，地址为 &lt;a href="https://www.bt.cn/"&gt;&lt;/a&gt;&lt;a href="https://www.bt.cn/"&gt;https://www.bt.cn/&lt;/a&gt; ，网页中选择Linux版然后点立即安装&lt;/p&gt;
+&lt;p&gt;找到Linux 面板 安装命令&lt;/p&gt;
+&lt;p&gt;yum install -y wget &amp;amp;&amp;amp; wget -O install.sh &lt;a href="http://download.bt.cn/install/install_6.0.sh"&gt;&lt;/a&gt;&lt;a href="http://download.bt.cn/install/install_6.0.sh"&gt;http://download.bt.cn/install/install_6.0.sh&lt;/a&gt; &amp;amp;&amp;amp; sh install.sh&lt;/p&gt;
+&lt;p&gt;复制安装命令，然后进去终端机，先按键盘的Ctrl+A，然后再按Ctrl+V才能粘贴，不然无法粘贴，粘贴完成回车&lt;/p&gt;
+&lt;p&gt;提示是否安装，输入Y&lt;/p&gt;
+&lt;p&gt;安装完成后出现地址，输入账号和密码即可正常登陆宝塔面板，默认情况完成后是你的外网ip，改成你的内网ip即可&lt;/p&gt;
+&lt;p&gt;启宝塔服务，进入宝塔web管理，将php，mysql，apache等服务重新启动，不然可能出现一些未知错误&lt;/p&gt;
+&lt;p&gt;bt default linux宝塔获取默认账号密码 ，用于忘记登录密码的zz，比如我 history 查看linux历史命令 /etc/init.d/bt start 启动宝塔命令&lt;/p&gt;</description></item></channel></rss>

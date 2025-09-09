@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iperf on 周杰个人博客</title><link>/tags/iperf/</link><description>Recent content in Iperf on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/iperf/index.xml" rel="self" type="application/rss+xml"/><item><title>如何使用iperf3测试线路传输速度</title><link>/archives/997.html</link><pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate><guid>/archives/997.html</guid><description>&lt;p&gt;测试网络线路传输速度，大家平时的做法，基本都是采用最土的方式，就是复制共享文件！ 但发现专业点的人士 都是采用iperf2或iperf3工具软件。为附庸风雅赶时髦，我也百度了一下，现学现卖，与君共享。谬误之处请指正，疏漏之处欢迎补充，共同学习共同进步。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;学习目标&lt;/strong&gt;：用iperf3工具软件测试网速&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;知识点&lt;/strong&gt;： 1、windows系统中，iperf3.exe通过cmd命令行的方式运行，即没有UI ; 2、iperf3可以多个实例同时运行。即同时运行多个； 3、iperf3的测试原理，是通过服务端和客户端之间传输数据来实现的；&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认测试数据传输方向为 客户端&amp;ndash;&amp;gt;服务端 ；要想测试反向带宽，可以用参数 -R 来实现方向翻转；&lt;/li&gt;
+&lt;li&gt;缺点： iperf3已经不支持全双工模式测试，据说iperf2是支持全双工模式的；&lt;/li&gt;
+&lt;li&gt;缺点： 似乎是不支持多个客户端同时进行测试； 4、iperf3软件本身，无服务器版和客户端版之分，但是可以通过指定参数 来设定工作模式。 -s 即server，表服务器模式；    -c  即client，表客户端模式； 5、ip地址 127.0.0.1 ，指的就是本地/本机，即设备自身体。 6、iperf3支持 lan&amp;lt;&amp;ndash;&amp;gt;lan 及 wan&amp;lt;&amp;ndash;&amp;gt;lan 路径测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;实验方法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设备： pc、路由器、手机&lt;/li&gt;
+&lt;li&gt;连接： pc &amp;mdash; 路由器 &amp;mdash; 手机     (pc和手机，处于同一局域网里) pc &amp;mdash; 路由器1 &amp;mdash; 路由器2 &amp;mdash; 手机   (上、下级网络中； pc 和 路由2的wan口，都接在路由1的lan口上)&lt;/li&gt;
+&lt;li&gt;工具软件： iperf3.exe 、magic iperf.apk ，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;附件下载：&lt;/strong&gt; 链接： &lt;a href="https://pan.baidu.com/s/149zMdPt8liDe-EFX7o84qg"&gt;&lt;/a&gt;&lt;a href="https://pan.baidu.com/s/149zMdPt8liDe-EFX7o84qg"&gt;https://pan.baidu.com/s/149zMdPt8liDe-EFX7o84qg&lt;/a&gt;    提取码：xl3c&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/%e8%87%aa%e5%8a%a8%e8%8d%89%e7%a8%bf20191130.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/%e8%87%aa%e5%8a%a8%e8%8d%89%e7%a8%bf20191130.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装软件&lt;/strong&gt; 下载附件并解压，根据系统选择对应版本。 windows系统的，为方便使用，建议将解压后的全部程序文件，直接复制到 C:WindowsSystem32 文件夹下，这样cmd中可直接运行了。 若放在其他目录的，需先用cd命令跳转过去才行； 安卓手机版的，附件的程序，安装运行环境最低系统要求为 Android5.0&lt;/p&gt;</description></item></channel></rss>

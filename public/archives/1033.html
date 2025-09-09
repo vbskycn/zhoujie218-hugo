@@ -1,0 +1,192 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案） | 周杰个人博客</title><meta property="og:title" content="使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案） - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2019-12-10T00:00:00+08:00'><meta property="article:modified_time" content='2019-12-10T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案）"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/1033.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#安装-python-3>安装 Python 3</a></li><li><a href=#安装-gphotos-sync>安装 gphotos-sync</a></li><li><a href=#申请-google-photos-访问-api-client-id>申请 Google Photos 访问 API client id</a><ul><li><a href=#创建项目>创建项目</a></li><li><a href=#在-google-photos-sync-项目中激活-photos-library-api>在 google-photos-sync 项目中激活 Photos Library API</a></li><li><a href=#创建-oauth-同意屏幕>创建 OAuth 同意屏幕</a></li><li><a href=#创建-oauth-客户端-id>创建 OAuth 客户端 ID</a></li><li><a href=#client_secretjson-上传到指定路径>client_secret.json 上传到指定路径</a></li></ul></li><li><a href=#rclone-挂载-onedrive-到-vps>rclone 挂载 OneDrive 到 VPS</a><ul><li><a href=#rclone-mount-挂载-onedrive>rclone mount 挂载 OneDrive</a></li></ul></li><li><a href=#启动-gphotos-sync-备份-googlephotos-相册>启动 gphotos-sync 备份 GooglePhotos 相册</a><ul><li><a href=#gphotos-sync-直接备份到挂载到-vps-上的-onedrive-目录>gphotos-sync 直接备份到挂载到 VPS 上的 OneDrive 目录</a></li><li><a href=#gphotos-sync-把-googlephotos-相册下载到-vps-本地然后-rclone-sync-同步到-onedrive>gphotos-sync 把 GooglePhotos 相册下载到 VPS 本地，然后 rclone sync 同步到 OneDrive</a></li></ul></li><li><a href=#参考资料>参考资料</a></li><li><a href=#后记更新>后记、更新</a></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案）</h1></header><time datetime=2019-12-10T00:00:00Z class="post-meta meta-date dt-published">2019年12月10日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a></div><div class=post-content><p>2019年7月 Google 更新政策，Google Photos 与 Google Drive 不会双向同步，之前通过 Google Drive，使用 <a href=https://cyhour.com/825/>rclone 备份 Google Photos</a> 这个方法就失效了。在<a href=https://cyhour.com/go/aHR0cHM6Ly93d3cuZGF4aWJsb2cuY29tL-S9v-eUqGdwaG90b3Mtc3luY-Wkh-S7vWdvb2dsZS3nm7jlhowv title=https://www.daxiblog.com/使用gphotos-sync备份google-相册/>博友</a>那里看到了新工具：<a href=https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8 title=https://pypi.org/project/gphotos-sync/>gphotos-sync</a> · <a href=https://cyhour.com/go/aHR0cHM6Ly9naXRodWIuY29tL2dpbGVza25hcC9ncGhvdG9zLXN5bmM title=https://github.com/gilesknap/gphotos-sync>GitHub</a> 折腾一圈，发现 gphotos-sync 无法直接保存照片到使用 rclone 挂载的 OneDrive 上（2019.10.14，后记，博友 @NSFW 缓解了这个问题，加&ndash;db-path参数，把数据库文件保存在本地即可运行2分钟左右）。放弃……</p><p>接着找<a href=https://cyhour.com/1110/>大硬盘 VPS</a>，不得不说，<a href=https://cyhour.com/go/aHR0cHM6Ly9teS5mcmFudGVjaC5jYS9hZmYucGhwP2FmZj0zMTE2JnBpZD0xNDM5 title="https://my.frantech.ca/aff.php?aff=3116&amp;pid=1439">BuyVM</a> 这货真心便宜。</p><h2 id=安装-python-3>安装 Python 3</h2><p>gphotos-sync 需要 Python 3，CentOS 自带 Python 2，得安装，方法参考：<a href=https://cyhour.com/1115>CentOS 7 编译安装 Python 3.7.4</a></p><p>嫌麻烦的话还是一键脚本安装吧，比如：<a href=https://cyhour.com/go/aHR0cHM6Ly93d3cubW9lcmF0cy5jb20vYXJjaGl2ZXMvNTA3Lw title=https://www.moerats.com/archives/507/>Python 3.6一键安装脚本 for CentOS/Debian</a></p><pre tabindex=0><code>#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh
+</code></pre><h2 id=安装-gphotos-sync>安装 gphotos-sync</h2><p>官网：<a href=https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8 title=https://pypi.org/project/gphotos-sync/>Google Photos Sync</a>，目前版本 2.9.2。执行下面命令安装即可：</p><pre tabindex=0><code>pip3 install gphotos-sync
+</code></pre><p>安装完成，执行 gphotos-sync &ndash;help 就能看到帮助信息▼展开</p><h2 id=申请-google-photos-访问-api-client-id>申请 Google Photos 访问 API client id</h2><h3 id=创建项目>创建项目</h3><p>打开 <a href=https://developers.google.com/console/ title=https://developers.google.com/console/>Google Developer Console</a> 控制台，创建一个新项目，如：google-photos-sync</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210.png><img class=mx-auto alt=" 1095-google-new-project " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210.png></a></p><h3 id=在-google-photos-sync-项目中激活-photos-library-api>在 google-photos-sync 项目中激活 Photos Library API</h3><p>进入 API 库，搜索 Google Photos，激活 Photos Library API。</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-1.png><img class=mx-auto alt=" 1095-google-photos-api " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-1.png></a></p><h3 id=创建-oauth-同意屏幕>创建 OAuth 同意屏幕</h3><p>填写应用名称，然后保存即可。（其余信息不用理会）</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-2.png><img class=mx-auto alt=" 1095-google-screen-auth " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-2.png></a></p><h3 id=创建-oauth-客户端-id>创建 OAuth 客户端 ID</h3><p>凭据（Credentials）菜单，创建「OAuth 客户端 ID」（OAuth client ID）凭证。</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-3.png><img class=mx-auto alt=" 1095-google-new-credentials " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-3.png></a></p><p>「应用类型」一定要选择「其他（Other）」，点击创建。</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-4.png><img class=mx-auto alt=" 1095-google-client-id-others " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-4.png></a></p><p>创建完成，点击凭证右侧下载按钮把 json 格式凭证信息下载并重命名为：client_secret.json</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-5.png><img class=mx-auto alt=" 1095-google-download-json " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-5.png></a></p><h3 id=client_secretjson-上传到指定路径>client_secret.json 上传到指定路径</h3><p>这个文件，不同操作系统类型，放置到不同目录：</p><ul><li>Mac OS X：~/Library/Application Support/gphotos-sync/</li><li>Linux：~/.config/gphotos-sync/</li><li>Windows：C:Users\AppDataLocalgphotos-syncgphotos-sync</li></ul><h2 id=rclone-挂载-onedrive-到-vps>rclone 挂载 OneDrive 到 VPS</h2><p>如果先备份到大硬盘 VPS，则不需要将 OneDrive 挂载到 VPS，rclone sync 同步到 OneDrive 更稳定。<a href=https://cyhour.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2NvbW1hbmRzL3JjbG9uZV9tb3VudC8 title=https://rclone.org/commands/rclone_mount/>rclone</a> 安装、配置挺简单，可参看旧文：</p><p><a href=https://cyhour.com/1114/>使用 rclone 将 Google Photos 同步备份至 OneDrive</a></p><p>去年，是使用 rclone 将 Google Drive 文件同步至 OneDrive 实现备份 Google Photos，今年7月份，Google 更新政策，Google Drive 与 Goog&mldr;</p><p><a href=https://cyhour.com/author/y/ title="查看作者 老杨 发布的所有文章"><a data-fancybox=gallery href="https://cn.gravatar.com/avatar/0a5737fa7d7cf6abde7754cf7ef187aa?s=16&amp;d=monsterid&amp;r=g"><img class=mx-auto alt src="https://cn.gravatar.com/avatar/0a5737fa7d7cf6abde7754cf7ef187aa?s=16&amp;d=monsterid&amp;r=g">
+</a>老杨</a></p><p><a href=https://cyhour.com/1114/#comments>评论 14</a></p><p><a href=https://cyhour.com/825/>使用 rclone 将 Google Drive 文件同步至 OneDrive</a></p><p>前几天上了博友「灵尘居」的 Office 365 车，1T OneDrive 到手，手机照片一直喂 Google AI，挺方便的，以前还会同步一份到家里的垃圾西数 NAS，不过并不太自动，后来就懒得弄&mldr;</p><p><a href=https://cyhour.com/author/y/ title="查看作者 老杨 发布的所有文章"><a data-fancybox=gallery href="https://cn.gravatar.com/avatar/0a5737fa7d7cf6abde7754cf7ef187aa?s=16&amp;d=monsterid&amp;r=g"><img class=mx-auto alt src="https://cn.gravatar.com/avatar/0a5737fa7d7cf6abde7754cf7ef187aa?s=16&amp;d=monsterid&amp;r=g">
+</a>老杨</a></p><p><a href=https://cyhour.com/825/#comments>评论 8</a></p><h3 id=rclone-mount-挂载-onedrive>rclone mount 挂载 OneDrive</h3><p>可能会报错：</p><blockquote><p>Fatal error: failed to mount FUSE fs: fusermount: exec: &ldquo;fusermount&rdquo;: executable file not found in $PATH</p></blockquote><p>解决办法：</p><pre tabindex=0><code>yum -y install fuse    ##Centos
+apt-get -y install fuse    ##Debian/Ubuntu
+</code></pre><h4 id=挂载命令>挂载命令</h4><pre tabindex=0><code>/usr/bin/rclone mount OneDrive:GooglePhotos /root/GooglePhotos --allow-other --allow-non-empty --buffer-size 256M --vfs-cache-mode writes --write-back-cache -v &amp;
+</code></pre><p>参考文章：<a href=https://cyhour.com/go/aHR0cHM6Ly93d3cubW9lcmF0cy5jb20vYXJjaGl2ZXMvODc3Lw title=https://www.moerats.com/archives/877/>解决Rclone挂载Google Drive时上传失败和内存占用高等问题</a></p><h4 id=卸载磁盘>卸载磁盘</h4><pre tabindex=0><code>fusermount -qzu /root/GooglePhotos
+</code></pre><h4 id=开机自动挂载>开机自动挂载</h4><p>参考文章：<a href=https://cyhour.com/go/aHR0cHM6Ly93d3cubW9lcmF0cy5jb20vYXJjaGl2ZXMvNDgxLw title=https://www.moerats.com/archives/481/>在Debian/Ubuntu上使用rclone挂载Google Drive网盘</a></p><p>代码：▼展开</p><p>请根据实际修改下面三个参数：</p><blockquote><p>NAME="" #配置 rclone 时输入的 Name REMOTE="" #远程网盘里的文件夹 LOCAL="" #VPS 本地挂载目录</p></blockquote><p>然后保存为 startrclone 文件，上传到 VPS，/root 目录下。</p><p>执行下面命令添加开机自启：</p><pre tabindex=0><code>mv startrclone /etc/init.d/startrclone
+chmod +x /etc/init.d/startrclone
+chkconfig --add startrclone
+chkconfig startrclone on
+update-rc.d -f startrclone defaults #Debian/Ubuntu
+bash /etc/init.d/startrclone start
+</code></pre><p>重启一下 VPS，然后 df -h 即可检查有没有自动加载。</p><h2 id=启动-gphotos-sync-备份-googlephotos-相册>启动 gphotos-sync 备份 GooglePhotos 相册</h2><p>两个方法：一是 gphotos-sync 直接备份到前面挂载到 VPS 上的 OneDrive 目录，优点是几乎不占用 VPS 空间（不需要大硬盘 VPS）；二是 gphotos-sync 把 GooglePhotos 相册下载到 VPS 本地，然后 rclone sync 同步到 OneDrive，优点是更稳定，缺点需要大硬盘 VPS。</p><h3 id=gphotos-sync-直接备份到挂载到-vps-上的-onedrive-目录>gphotos-sync 直接备份到挂载到 VPS 上的 OneDrive 目录</h3><pre tabindex=0><code>/usr/local/bin/gphotos-sync /root/GooglePhotos/ --db-path /root/gpsync --flush-index --use-hardlinks
+</code></pre><p>其中 /root/GooglePhotos/ 是 OneDrive 挂载到 VPS 的目录（保存 Google 照片），/root/gpsync 为数据库保存目录，自己指定一个就行。</p><p>首次启动，会提示 Google 账号授权，根据提示信息的网址，复制到浏览器打开后进行授权，把生成的 token 填写到命令窗口即可。</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-6.png><img class=mx-auto alt=" 1095-google-first-auth " src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/%e4%bd%bf%e7%94%a8-gphotos-sync-%e5%a4%87%e4%bb%bd-google-%e7%9b%b8%e5%86%8c%e5%88%b0-%ef%bc%882019-7-10%e5%90%8e%e4%b8%8d%e8%83%bd%e5%90%8c%e6%ad%a5%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%ef%bc%8920191210-6.png></a></p><p>如无意外，gphotos-sync 就开始进行索引、下载、备份照片，以年月的形式来保存照片。第一次同步时间会比较长，数据大，容易出错，最好配合 &ndash;skip-index 参数以及 crontab 定时自动运行，否则 Google API 很容易超额（<a href="https://console.developers.google.com/iam-admin/quotas?service=photoslibrary.googleapis.com" title="https://console.developers.google.com/iam-admin/quotas?service=photoslibrary.googleapis.com">Google API 额度查询</a>）。</p><p>比如运行一次：</p><pre tabindex=0><code>/usr/local/bin/gphotos-sync /root/GooglePhotosAPI/ --db-path /root/gpsync --flush-index --use-hardlinks --max-retries 12 --max-threads 16
+</code></pre><p>索引完，自动挂掉，然后 crontab 定时根据第一次索引自动重试下载</p><pre tabindex=0><code>*/30 * * * * /usr/local/bin/gphotos-sync /root/GooglePhotosAPI/ --db-path /root/gpsync --skip-index --use-hardlinks  --max-retries 12 --max-threads 16 &gt;/dev/null 2&gt;&amp;1 &amp;
+</code></pre><p>初次同步完成，可以修改定时任务，自动备份，比如，每天凌晨4点执行备份：</p><pre tabindex=0><code>crontab -e
+0 4 * * * /usr/local/bin/gphotos-sync /root/GooglePhotos/ --db-path /root/gpsync --flush-index --use-hardlinks --max-retries 12 --max-threads 16 &gt; /dev/null 2&gt;&amp;1 &amp;
+</code></pre><p>亲测，次方法不稳定，一般跑两分钟左右，脚本就会出错（[Errno 5] Input/output error、ETag does not match current item’s value 等）挂掉，需要不断重启进程。</p><h3 id=gphotos-sync-把-googlephotos-相册下载到-vps-本地然后-rclone-sync-同步到-onedrive>gphotos-sync 把 GooglePhotos 相册下载到 VPS 本地，然后 rclone sync 同步到 OneDrive</h3><p>这方法除了需要大硬盘 VPS，暂时没有其它问题。亲测，<a href=https://cyhour.com/1110/>BuyVM 大硬盘 VPS</a>，跑了4个多小时，Downloaded 83253 Items, Failed 8……一次跑完 133G……</p><p>gphotos-sync 把 GooglePhotos 相册下载到 VPS 本地：</p><pre tabindex=0><code>screen -S gphotos-sync
+/usr/local/bin/gphotos-sync /mnt/256/  --use-hardlinks  --flush-index --max-retries 10 --max-threads 16
+</code></pre><p>/mnt/256/ 为 VPS 本地存放 GooglePhotos 数据目录，容量需要够大。</p><p>rclone sync 定时把数据同步到 OneDrive：</p><pre tabindex=0><code>crontab -e
+11 */1 * * * /usr/bin/rclone sync /mnt/256/ OneDrive:GooglePhotos &gt;/dev/null 2&gt;&amp;1 &amp;
+</code></pre><h2 id=参考资料>参考资料</h2><p>Google Photos Sync 项目：<a href=https://cyhour.com/go/aHR0cHM6Ly9weXBpLm9yZy9wcm9qZWN0L2dwaG90b3Mtc3luYy8 title=https://pypi.org/project/gphotos-sync/>gphotos-sync</a></p><p>Logix - <a href=https://cyhour.com/go/aHR0cHM6Ly93d3cubGludXh1cHJpc2luZy5jb20vMjAxOS8wNi9ob3ctdG8tYmFja3VwLWdvb2dsZS1waG90b3MtdG8teW91ci5odG1s title=https://www.linuxuprising.com/2019/06/how-to-backup-google-photos-to-your.html>How To Backup Google Photos To Your Computer With gphotos-sync</a>（英文）</p><h2 id=后记更新>后记、更新</h2><p>2019.8.27：Windows 下同步效果不理想，相册一个都没有同步下来，照片也只下载了很少一部分。（估计是 gbk 编码原因）</p><p>2019.10.14：博友 @NSFW 解决了 gphotos-sync 无法直接保存照片到使用 rclone 挂载的 OneDrive 这个问题，加 &ndash;db-path 参数，把数据库文件保存在本地即可。（效果不大好，没有大盘鸡的话还是直接 <a href=https://cyhour.com/1114/>rclone</a> 方法稳定点）</p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/1033.html>/archives/1033.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class=post-archive><h2>相关文章</h2><ul class=listing><li><a href=/archives/1042.html>centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘</a></li><li><a href=/archives/662.html>斐讯P1电视盒子设备未获得Play认证的问题</a></li></ul></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/google>google</a></li><li><a href=/tags/gphotos>gphotos</a></li><li><a href=/tags/photos>photos</a></li><li><a href=/tags/rclone>rclone</a></li><li><a href=/tags/sync>sync</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

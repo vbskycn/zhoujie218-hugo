@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pve on 周杰个人博客</title><link>/tags/pve/</link><description>Recent content in Pve on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 10 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/pve/index.xml" rel="self" type="application/rss+xml"/><item><title>ProxmoxVE(PVE) 开启Intel CPU集成显卡虚拟化(GVT-g)直通</title><link>/archives/2532.html</link><pubDate>Wed, 10 May 2023 00:00:00 +0000</pubDate><guid>/archives/2532.html</guid><description>&lt;p&gt;Intel CPU集成显卡虚拟化(GVT-g)直通技术与PCIe显卡直通有一定区别，PCIe显卡直通是直接由VM独占显卡。集成显卡虚拟化(GVT-g)和Nvidia vGPU效果类似，就是一个显卡可以同时分配给多台VM并且同时使用，互不干扰。这个方案也是性价比最高的方案。&lt;/p&gt;
+&lt;p&gt;intel GVT-g 技术有最大并发限制大约在&lt;strong&gt;1-4数量&lt;/strong&gt;之间具体视CPU规格 通过&lt;a href="https://ark.intel.com/content/www/cn/zh/ark.html"&gt;intel ARK&lt;/a&gt;来查询。&lt;/p&gt;
+&lt;p&gt;所谓并发的意思就是，并发多少个就可以在多少个VM同时使用。&lt;/p&gt;
+&lt;p&gt;PCI/GPU 直通仍然是 Proxmox VE 中的一项实验性功能！无法迁移(热迁移/故障转移)含有直通设备的 VM/VPS AMD CPU的核心显卡没有类似intel GVT-g一样的虚拟化技术，所以只能直接以独占直通的方式给某一VM/VPS&lt;/p&gt;
+&lt;p&gt;因AMD CPU的核心显卡直通步骤比较复杂，本文内不做记录。将会有单独的一篇文章来记录AMD CPU的核心显卡直通&lt;/p&gt;
+&lt;h3 id="基本要求"&gt;基本要求&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;硬件:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;准备好支持的硬件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;受支持的核心显卡&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CPU支持核心集成显卡需要 intel 10代或以前(根据内核版本指导)，如版本太新 不代表不支持，也不代表能一定稳定。可能会有一些奇奇怪怪的问题，还需自己踩坑。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;系统：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ProxmoxVE(PVE) 中确保已启用 IOMMU&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ProxmoxVE(PVE) 中已为VM安装好系统&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VM中的系统如为Windows BOIS引导方式需为UEFI&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="必要设置"&gt;必要设置&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 机型设置&lt;/strong&gt; 在VM的硬件设置中，为VM的&lt;code&gt;机型&lt;/code&gt; 设置为&lt;code&gt;q35&lt;/code&gt; 如VM系统为Windows，BIOS引导方式应为UEFI(需在安装系统前定义) 如VM系统为&lt;a href="https://www.insilen.com/tags/linux"&gt;Linux&lt;/a&gt;，BIOS引导方式则无要求均支持&lt;/p&gt;
+&lt;p&gt;[ ]025453.png)
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202305101630403.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202305101630403.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 编辑引导文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GRUB引导非常常见&lt;/strong&gt;，一般也是ProxmoxVE(PVE)系统的&lt;strong&gt;默认引导&lt;/strong&gt;方式&lt;/p&gt;
+&lt;p&gt;该行可能值内容可能会有所有差异，但如果是新系统且已启用 IOMMU，值内容一般如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet intel_iommu=on iommu=pt&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还没有启用 IOMMU ？&lt;a href="https://www.yuque.com/zhoujie218/net/1926a450-8807-41a6-8542-9f6ada8fdc4d#requirements"&gt;查看方法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在后面加入&lt;code&gt;i915.enable_gvt=1&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-plain" data-lang="plain"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet intel_iommu=on iommu=pt i915.enable_gvt=1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;检查无误后，按 &lt;code&gt;ctrl&lt;/code&gt;+&lt;code&gt;x&lt;/code&gt; 并按&lt;code&gt;y&lt;/code&gt;确认保存更改，并更新 grub 配置：&lt;/p&gt;
+&lt;p&gt;紧接编辑模块&lt;code&gt;/etc/modules&lt;/code&gt;：&lt;/p&gt;</description></item><item><title>proxmox ve (PVE) 调整虚拟机(VM)的磁盘大小</title><link>/archives/2410.html</link><pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate><guid>/archives/2410.html</guid><description>&lt;p&gt;每个虚拟机都是需要一块硬盘的，实际是从宿主机划分出来的给虚拟机使用的。&lt;/p&gt;
+&lt;p&gt;PVE虚拟机是基于linux的，它使用LVM管理宿主机磁盘，所以每个虚拟机仅仅是从LVM的VG（volume group卷组）中新建一个固定大小的LV（logical volume），提供给特定的一个虚拟机实例作为虚拟化的硬盘使用。&lt;/p&gt;
+&lt;p&gt;想实现虚拟机硬盘动态扩容，我们必须明白linux的LVM硬盘管理，因为只有LVM可以实现对一个已有的硬盘分区扩容。&lt;/p&gt;
+&lt;p&gt;为了说LVM，我们先得搞明白传统的硬盘管理，传统的硬盘管理包含4步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块设备：插在机器上的一块硬盘。&lt;/li&gt;
+&lt;li&gt;硬盘分区：把块设备分成多个分区，每个分区固定大小。&lt;/li&gt;
+&lt;li&gt;文件系统：如果想要使用硬盘某分区，需要在这个分区上制作文件系统，比如：ext4格式。&lt;/li&gt;
+&lt;li&gt;挂载目录：最终把做好的文件系统通过mount命令挂载到某个目录下，就可以读写分区内的数据了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;传统硬盘分区方案的问题是，一旦我们把操作系统安装到某个分区内，那么这个分区大小就无法改变了，随着数据变多硬盘就塞满了。想要扩容的话，我们只能选定某个目录挂载一块新的硬盘，然后把一些较大的数据手动迁移进去，总之我们会因为容量问题严重影响到使用体验。&lt;/p&gt;
+&lt;p&gt;LVM则可以对一个已有的文件系统（当然对应一个硬盘分区）进行扩容，这就是它厉害的地方。&lt;/p&gt;
+&lt;p&gt;LVM的使用过程是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块设备：给机器插上新的硬盘。&lt;/li&gt;
+&lt;li&gt;硬盘分区：把块设备分成多个分区（1个分区用尽整块磁盘也可以，无所谓），每个分区的大小也是固定的。&lt;/li&gt;
+&lt;li&gt;创建物理卷（PV）：按照LVM的规则，把每个硬盘分区创建为一个物理卷（physical volume）。&lt;/li&gt;
+&lt;li&gt;创建卷池（VG）：新建的物理卷就像一桶矿泉水，把它们加入到一个VG大池子里面，这样池子里的水（硬件空间）就会变多。&lt;/li&gt;
+&lt;li&gt;创建逻辑卷（LV）：想要划分一块硬盘空间拿来使用，只需要从VG里面取一瓢水出来即可，这个划分出来的硬盘空间叫做一个LV（logical volume）。&lt;/li&gt;
+&lt;li&gt;文件系统：现在可以对LV制作文件系统，比如：ext4格式。&lt;/li&gt;
+&lt;li&gt;挂载目录：现在可以把在做好文件系统的LV挂载到某个目录，就可以访问了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们在安装操作系统的时候可以选择基于LVM管理硬盘，安装程序默认会把整个硬盘作为1个分区，创建分区对应的PV，创建1个VG并把该PV加入到VG中，然后从VG中划出1个LV格式化ext文件系统，然后把整个操作系统安装到这个LV里。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;大家可以看一下&lt;a href="https://linux.cn/article-3218-1.html"&gt;LVM的一个简明教程&lt;/a&gt;，了解从一块裸硬盘到一个LV的全过程命令。&lt;/p&gt;
+&lt;h2 id="lvm与虚拟机的关系"&gt;LVM与虚拟机的关系&lt;/h2&gt;
+&lt;p&gt;首先，PVE本身是把宿主机硬盘做成了LVM，新建虚拟机则划分一个LV给它作为虚拟化的硬盘使用。&lt;/p&gt;
+&lt;p&gt;所以，我们很容易给虚拟机新增更多虚拟化硬盘，只需要在宿主机上划分更多LV挂给KVM即可。&lt;/p&gt;
+&lt;p&gt;通过宿主机划分更多的LV，可以全部虚拟化成硬盘提供给某个虚拟机，这样可以让虚拟机中识别的硬盘越来越多。&lt;/p&gt;
+&lt;p&gt;虚拟机内其实并不知道宿主机上的LVM，它看到的只是若干硬盘对应的块设备，所以它自身也需要使用LVM，才能将更多的块设备加入到VG中，并且对已有的LV进行扩容。&lt;/p&gt;
+&lt;h4 id="proxmox-ve-pve-调整虚拟机vm的磁盘大小"&gt;proxmox ve (PVE) 调整虚拟机(VM)的磁盘大小&lt;/h4&gt;
+&lt;p&gt;proxmox ve resize guest disk&lt;/p&gt;
+&lt;h3 id="第一步"&gt;第一步&lt;/h3&gt;
+&lt;p&gt;通过web ui中调整磁盘大小功能，先设置分配给虚拟机的磁盘空间，如下图&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg"&gt;
+ &lt;img class="mx-auto" alt="QQ20200101-235116@2x" src="https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;我这里是从105G，调整到205个G&lt;/p&gt;
+&lt;h3 id="第二步"&gt;第二步&lt;/h3&gt;
+&lt;p&gt;进入虚拟机系统，我这里的系统是CentOS，其他Linux系统应该类似。&lt;/p&gt;
+&lt;p&gt;查看磁盘信息，可以看到磁盘的总大小已经变化了，但是下边两个分区没有变&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-tap" data-lang="tap"&gt;[root@localhost ~]# fdisk -l
+磁盘 /dev/sda：220.1 GB, 220117073920 字节，429916160 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x000c264f
+ 设备 Boot Start End Blocks Id System
+/dev/sda1 * 2048 2099199 1048576 83 Linux
+/dev/sda2 2099200 220200959 109050880 8e Linux LVM
+磁盘 /dev/mapper/centos-root：109.5 GB, 109517471744 字节，213901312 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘 /dev/mapper/centos-swap：2147 MB, 2147483648 字节，4194304 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+第三步
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;给 /dev/sda2分区增加空间，注意里边的命令 resizepart 2 100% ，是把剩余的空间全部给到/dev/sda2&lt;/p&gt;</description></item><item><title>修改 Proxmox 虚拟机 ID</title><link>/archives/1886.html</link><pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate><guid>/archives/1886.html</guid><description>&lt;p&gt;在安装虚拟机时，我们往往会对虚拟机 ID 做一些规划，比如 100~199 为服务器，200-299 为客户端。当你安装好系统，部署完服务后却发现忘记设置虚拟机 ID 时，作为一名强迫症患者，此时会选择删除重装？还是就此妥协？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;关闭需要更改 ID 的虚拟机&lt;/li&gt;
+&lt;li&gt;进入 &lt;code&gt;/etc/pve/nodes/&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;进入该目录下的节点目录，名称即为你的 Proxmox 服务器名称&lt;/li&gt;
+&lt;li&gt;KVM 虚拟机进入 &lt;code&gt;qemu-server&lt;/code&gt; 目录，LXC 容器进入 &lt;code&gt;lxc&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;重命名原 ID 配置文件为目标 ID&lt;/li&gt;
+&lt;li&gt;编辑该配置文件，修改硬盘存放目录 (共 2 处)&lt;/li&gt;
+&lt;li&gt;进入 &lt;code&gt;/var/lib/vz/images&lt;/code&gt; 目录&lt;/li&gt;
+&lt;li&gt;重命名原 ID 目录后进入该目录&lt;/li&gt;
+&lt;li&gt;重命名磁盘文件(/dev/pve/)&lt;/li&gt;
+&lt;li&gt;刷新 Web 控制台，并启动虚拟机&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>

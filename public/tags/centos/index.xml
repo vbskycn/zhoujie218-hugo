@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Centos on 周杰个人博客</title><link>/tags/centos/</link><description>Recent content in Centos on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 31 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/centos/index.xml" rel="self" type="application/rss+xml"/><item><title>proxmox ve (PVE) 调整虚拟机(VM)的磁盘大小</title><link>/archives/2410.html</link><pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate><guid>/archives/2410.html</guid><description>&lt;p&gt;每个虚拟机都是需要一块硬盘的，实际是从宿主机划分出来的给虚拟机使用的。&lt;/p&gt;
+&lt;p&gt;PVE虚拟机是基于linux的，它使用LVM管理宿主机磁盘，所以每个虚拟机仅仅是从LVM的VG（volume group卷组）中新建一个固定大小的LV（logical volume），提供给特定的一个虚拟机实例作为虚拟化的硬盘使用。&lt;/p&gt;
+&lt;p&gt;想实现虚拟机硬盘动态扩容，我们必须明白linux的LVM硬盘管理，因为只有LVM可以实现对一个已有的硬盘分区扩容。&lt;/p&gt;
+&lt;p&gt;为了说LVM，我们先得搞明白传统的硬盘管理，传统的硬盘管理包含4步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块设备：插在机器上的一块硬盘。&lt;/li&gt;
+&lt;li&gt;硬盘分区：把块设备分成多个分区，每个分区固定大小。&lt;/li&gt;
+&lt;li&gt;文件系统：如果想要使用硬盘某分区，需要在这个分区上制作文件系统，比如：ext4格式。&lt;/li&gt;
+&lt;li&gt;挂载目录：最终把做好的文件系统通过mount命令挂载到某个目录下，就可以读写分区内的数据了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;传统硬盘分区方案的问题是，一旦我们把操作系统安装到某个分区内，那么这个分区大小就无法改变了，随着数据变多硬盘就塞满了。想要扩容的话，我们只能选定某个目录挂载一块新的硬盘，然后把一些较大的数据手动迁移进去，总之我们会因为容量问题严重影响到使用体验。&lt;/p&gt;
+&lt;p&gt;LVM则可以对一个已有的文件系统（当然对应一个硬盘分区）进行扩容，这就是它厉害的地方。&lt;/p&gt;
+&lt;p&gt;LVM的使用过程是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块设备：给机器插上新的硬盘。&lt;/li&gt;
+&lt;li&gt;硬盘分区：把块设备分成多个分区（1个分区用尽整块磁盘也可以，无所谓），每个分区的大小也是固定的。&lt;/li&gt;
+&lt;li&gt;创建物理卷（PV）：按照LVM的规则，把每个硬盘分区创建为一个物理卷（physical volume）。&lt;/li&gt;
+&lt;li&gt;创建卷池（VG）：新建的物理卷就像一桶矿泉水，把它们加入到一个VG大池子里面，这样池子里的水（硬件空间）就会变多。&lt;/li&gt;
+&lt;li&gt;创建逻辑卷（LV）：想要划分一块硬盘空间拿来使用，只需要从VG里面取一瓢水出来即可，这个划分出来的硬盘空间叫做一个LV（logical volume）。&lt;/li&gt;
+&lt;li&gt;文件系统：现在可以对LV制作文件系统，比如：ext4格式。&lt;/li&gt;
+&lt;li&gt;挂载目录：现在可以把在做好文件系统的LV挂载到某个目录，就可以访问了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们在安装操作系统的时候可以选择基于LVM管理硬盘，安装程序默认会把整个硬盘作为1个分区，创建分区对应的PV，创建1个VG并把该PV加入到VG中，然后从VG中划出1个LV格式化ext文件系统，然后把整个操作系统安装到这个LV里。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;大家可以看一下&lt;a href="https://linux.cn/article-3218-1.html"&gt;LVM的一个简明教程&lt;/a&gt;，了解从一块裸硬盘到一个LV的全过程命令。&lt;/p&gt;
+&lt;h2 id="lvm与虚拟机的关系"&gt;LVM与虚拟机的关系&lt;/h2&gt;
+&lt;p&gt;首先，PVE本身是把宿主机硬盘做成了LVM，新建虚拟机则划分一个LV给它作为虚拟化的硬盘使用。&lt;/p&gt;
+&lt;p&gt;所以，我们很容易给虚拟机新增更多虚拟化硬盘，只需要在宿主机上划分更多LV挂给KVM即可。&lt;/p&gt;
+&lt;p&gt;通过宿主机划分更多的LV，可以全部虚拟化成硬盘提供给某个虚拟机，这样可以让虚拟机中识别的硬盘越来越多。&lt;/p&gt;
+&lt;p&gt;虚拟机内其实并不知道宿主机上的LVM，它看到的只是若干硬盘对应的块设备，所以它自身也需要使用LVM，才能将更多的块设备加入到VG中，并且对已有的LV进行扩容。&lt;/p&gt;
+&lt;h4 id="proxmox-ve-pve-调整虚拟机vm的磁盘大小"&gt;proxmox ve (PVE) 调整虚拟机(VM)的磁盘大小&lt;/h4&gt;
+&lt;p&gt;proxmox ve resize guest disk&lt;/p&gt;
+&lt;h3 id="第一步"&gt;第一步&lt;/h3&gt;
+&lt;p&gt;通过web ui中调整磁盘大小功能，先设置分配给虚拟机的磁盘空间，如下图&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg"&gt;
+ &lt;img class="mx-auto" alt="QQ20200101-235116@2x" src="https://img-cloud.zhoujie218.top/piggo/202209131734443.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;我这里是从105G，调整到205个G&lt;/p&gt;
+&lt;h3 id="第二步"&gt;第二步&lt;/h3&gt;
+&lt;p&gt;进入虚拟机系统，我这里的系统是CentOS，其他Linux系统应该类似。&lt;/p&gt;
+&lt;p&gt;查看磁盘信息，可以看到磁盘的总大小已经变化了，但是下边两个分区没有变&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-tap" data-lang="tap"&gt;[root@localhost ~]# fdisk -l
+磁盘 /dev/sda：220.1 GB, 220117073920 字节，429916160 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x000c264f
+ 设备 Boot Start End Blocks Id System
+/dev/sda1 * 2048 2099199 1048576 83 Linux
+/dev/sda2 2099200 220200959 109050880 8e Linux LVM
+磁盘 /dev/mapper/centos-root：109.5 GB, 109517471744 字节，213901312 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘 /dev/mapper/centos-swap：2147 MB, 2147483648 字节，4194304 个扇区
+Units = 扇区 of 1 * 512 = 512 bytes
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+第三步
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;给 /dev/sda2分区增加空间，注意里边的命令 resizepart 2 100% ，是把剩余的空间全部给到/dev/sda2&lt;/p&gt;</description></item><item><title>centos虚拟机扩展磁盘空间（经历无数坑，血一样总结，史上最全）</title><link>/archives/1565.html</link><pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate><guid>/archives/1565.html</guid><description>&lt;p&gt;1 第一步 在vmware中将虚拟机关机后，鼠标右键设置，直接点击扩展加自己想要扩展的数量就可以了，这个比较简单不多说。&lt;/p&gt;
+&lt;p&gt;2 第二步 设置后进系统查看空间大小变化，实际并没有什么变化，我用的命令是df -h,我就蒙B了，上网一顿找，总算找到一个靠谱点的文章，但文章后半部分不对，我又结合另一个文章实现了这个针对centos版本的扩容，来吧，上操作。&lt;/p&gt;
+&lt;p&gt;开始真正的操作1，执行命令：lsblk 进行查看 ，发现我在虚拟机中扩展的空间在sda中，综合各种说法，说白了就是这个sda并没有进行分区，所以现在这块的空间属于新大陆，我们得想办法把它空间开垦出来，压榨出来。&lt;/p&gt;
+&lt;p&gt;开始真正操作2 压榨的开始（注意：在这时候我看很多教程让执行pvcreate /dev/sda3等操作都是不对的，因为这样会报错，根本没啥鸟用，而且都会报错Device /dev/sda3 not found (or ignored by filtering)）&lt;/p&gt;
+&lt;p&gt;执行命令：fdisk /dev/sda  对sda进行开垦，将sda空间开垦成sda3，我们自己的sda3,随便玩&lt;/p&gt;
+&lt;p&gt;开始真正操作3  把sda3磁盘空间建设成我们自己的家，现在还是荒地&lt;/p&gt;
+&lt;p&gt;执行命令：fdisk -l 发现sda3 的Id 是83 我们要将它改成8e跟sda2是一样的 将system 类型改成Linux LVM&lt;/p&gt;
+&lt;p&gt;执行命令：fdisk /dev/sda 如图所示：t -&amp;gt;3&amp;ndash;&amp;gt;L-&amp;gt;8e-&amp;gt;w 这样我们用命令：fdisk -l 再查看一下是否改成8e 和Linux LVM&lt;/p&gt;
+&lt;p&gt;开始真正操作4 将文件格式改成ext4的&lt;/p&gt;
+&lt;p&gt;执行命令：mkfs.ext4 /dev/sda3&lt;/p&gt;
+&lt;p&gt;然后执行命令：pvcreate /dev/sda3 创建sda3 用命令：pvdisplay 进行查看是否创建成功&lt;/p&gt;
+&lt;p&gt;开始真正操作5 注意这里操作要根据上图中VG Name来定义用vgextends谁，我这里是centos那么我就用centos执行下面命令&lt;/p&gt;
+&lt;p&gt;执行命令：vgextend centos /dev/sda3 执行后我们可以在用命令：pvdisplay 进行查看修改成功没有，也可以不用看&lt;/p&gt;
+&lt;p&gt;开始真正操作5  最后一步&lt;/p&gt;
+&lt;p&gt;执行命令：lvextend -L +90G /dev/mapper/centos-root 进行扩容，绿色数字，自己根据情况定义&lt;/p&gt;
+&lt;p&gt;执行命令：lvs进行查看是否成功，很显然，我的空间扩展成功了，&lt;/p&gt;
+&lt;p&gt;执行命令：xfs_growfs /dev/mapper/centos-root&lt;/p&gt;</description></item><item><title>centost Vultr 一键安装BBR工具教程</title><link>/archives/1172.html</link><pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1172.html</guid><description>&lt;p&gt;最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。 根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。 于是我根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 脚本。&lt;/p&gt;
+&lt;h2 id="本脚本适用环境"&gt;本脚本适用环境&lt;/h2&gt;
+&lt;p&gt;系统支持：CentOS 6+，Debian 7+，Ubuntu 12+ 虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等 内存要求：≥128M 日期　　：2018 年 12 月 14 日&lt;/p&gt;
+&lt;h3 id="关于本脚本"&gt;关于本脚本&lt;/h3&gt;
+&lt;p&gt;1、本脚本已在 &lt;a href="https://qiu.sh/vultr"&gt;&lt;strong&gt;Vultr&lt;/strong&gt;&lt;/a&gt; 上的 VPS 全部测试通过。 2、当脚本检测到 VPS 的虚拟方式为 OpenVZ 时，会提示错误，并自动退出安装。 3、脚本运行完重启发现开不了机的，打开 VPS 后台控制面板的 VNC, 开机卡在 grub 引导, 手动选择内核即可。 4、由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。&lt;/p&gt;
+&lt;h3 id="使用方法"&gt;使用方法&lt;/h3&gt;
+&lt;p&gt;使用root用户登录，运行以下命令：&lt;/p&gt;
+&lt;p&gt;wget --no-check-certificate &lt;a href="https://github.com/teddysun/across/raw/master/bbr.sh"&gt;https://github.com/teddysun/across/raw/master/bbr.sh&lt;/a&gt; &amp;amp;&amp;amp; chmod +x bbr.sh &amp;amp;&amp;amp; ./bbr.sh&lt;/p&gt;
+&lt;p&gt;安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。 重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：&lt;/p&gt;</description></item><item><title>Centos7下查看各进程的网络速率情况</title><link>/archives/1005.html</link><pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1005.html</guid><description>&lt;h1 id="操作环境"&gt;操作环境&lt;/h1&gt;
+&lt;p&gt;Centos7&lt;/p&gt;
+&lt;p&gt;iftop&lt;/p&gt;
+&lt;p&gt;lsof&lt;/p&gt;
+&lt;h1 id="操作方法"&gt;操作方法&lt;/h1&gt;
+&lt;p&gt;这里使用iftop来查看各进程的网络速率情况&lt;/p&gt;
+&lt;p&gt;1.系统默认是没有安装iftop的，需要先安装iftop，在安装iftop之前最好更新下epel repo&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;#yum -y install epel-release&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#yum makecache&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#yum -y install iftop&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.使用iftop -PB来监控各进程网络速率情况，可以查看各端口的网络速率情况，可以看见48774端口占用速率最大为150KB/s，来查看48774端口是哪个进程&lt;/p&gt;
+&lt;p&gt;iftop -i eth1&lt;/p&gt;
+&lt;p&gt;iftop -i eth1 -P -B&lt;/p&gt;
+&lt;p&gt;常用参数说明： -i设定监测的网卡，如：iftop -i eth1&lt;/p&gt;
+&lt;p&gt;通过监控， 可以将占用带宽最多的IP，用防火墙或者安全组屏蔽访问。 最好观察一段时间，如果是持续占用带宽，可以屏蔽。&lt;/p&gt;
+&lt;p&gt;为了更好的监控某个特定IP的带宽访问情况，可以执行命令： iftop -i eth1 -B -F 112.74.***.222&lt;/p&gt;
+&lt;p&gt;几个标识说明: &amp;ldquo;&amp;lt;=&amp;ldquo;与&amp;rdquo;=&amp;gt;&amp;quot;，表示的是流量的方向 &amp;ldquo;TX&amp;rdquo;：从网卡发出的流量 &amp;ldquo;RX&amp;rdquo;：网卡接收流量 &amp;ldquo;TOTAL&amp;rdquo;：网卡发送接收总流量 &amp;ldquo;cum&amp;rdquo;：iftop开始运行到当前时间点的总流量 &amp;ldquo;peak&amp;rdquo;：网卡流量峰值 &amp;ldquo;rates&amp;rdquo;：分别表示最近2s、10s、40s 的平均流量&lt;/p&gt;
+&lt;p&gt;-&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; 本文来自 IDO老徐 的CSDN 博客 ，全文地址请点击：&lt;a href="https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy"&gt;&lt;/a&gt;&lt;a href="https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy"&gt;https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.通过lsof来查看网络端口的进程，可以查看到48774端口是java的进程。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;[root@centos7-mysql-196 ~]# lsof -i :48774&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;java 25762 cloudera-scm 239u IPv4 224786 0t0 TCP centos7-mysql-196:48774-&amp;gt;151.101.0.167:https (ESTABLISHED)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(adsbygoogle = window.adsbygoogle || []).push({});&lt;/p&gt;</description></item><item><title>CentOS 7防火墙快速开放端口配置方法</title><link>/archives/995.html</link><pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate><guid>/archives/995.html</guid><description>&lt;p&gt;这篇文章主要为大家详细介绍了CentOS 7防火墙开放端口的快速方法，感兴趣的小伙伴们可以参考一下!&lt;/p&gt;
+&lt;p&gt;一、CentOS 7快速开放端口：&lt;/p&gt;
+&lt;p&gt;CentOS升级到7之后，发现无法使用iptables控制Linuxs的端口，baidu之后发现Centos 7使用firewalld代替了原来的iptables。下面记录如何使用firewalld开放Linux端口：&lt;/p&gt;
+&lt;p&gt;开启端口&lt;/p&gt;
+&lt;p&gt;[root@centos7 ~]# firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=80/tcp &amp;ndash;permanent&lt;/p&gt;
+&lt;p&gt;查询端口号80 是否开启：&lt;/p&gt;
+&lt;p&gt;[root@centos7 ~]# firewall-cmd &amp;ndash;query-port=80/tcp&lt;/p&gt;
+&lt;p&gt;重启防火墙：&lt;/p&gt;
+&lt;p&gt;[root@centos7 ~]# firewall-cmd &amp;ndash;reload&lt;/p&gt;
+&lt;p&gt;查询有哪些端口是开启的:&lt;/p&gt;
+&lt;p&gt;[root@centos7 ~]# firewall-cmd &amp;ndash;list-port&lt;/p&gt;
+&lt;p&gt;命令含义：&lt;/p&gt;
+&lt;p&gt;--zone #作用域 &amp;ndash;add-port=80/tcp #添加端口，格式为：端口/通讯协议 &amp;ndash;permanent #永久生效，没有此参数重启后失效&lt;/p&gt;
+&lt;p&gt;关闭firewall：&lt;/p&gt;
+&lt;p&gt;systemctl stop firewalld.service #停止firewall&lt;/p&gt;
+&lt;p&gt;systemctl disable firewalld.service #禁止firewall开机启动&lt;/p&gt;
+&lt;p&gt;二、CentOS6防火墙开放端口：&lt;/p&gt;
+&lt;p&gt;在我们使用CentOS系统的时候，CentOS防火墙有时是需要改变设置的。CentOS防火墙默认是打开的，设置CentOS防火墙开放端口方法如下：&lt;/p&gt;
+&lt;p&gt;打开iptables的配置文件：vi /etc/sysconfig/iptables&lt;/p&gt;
+&lt;p&gt;修改CentOS防火墙时注意：一定要给自己留好后路,留VNC一个管理端口和SSh的管理端口&lt;/p&gt;
+&lt;p&gt;下面是一个iptables的示例：&lt;/p&gt;
+&lt;h1 id="firewall-configuration-written-by-system-config-securitylevel"&gt;Firewall configuration written by system-config-securitylevel&lt;/h1&gt;
+&lt;h1 id="manual-customization-of-this-file-is-not-recommended"&gt;Manual customization of this file is not recommended.&lt;/h1&gt;
+&lt;p&gt;*filter :INPUT ACCEPT [0:0] :FORWARD ACCEPT [0:0] :OUTPUT ACCEPT [0:0] :RH-Firewall-1-INPUT - [0:0] -A INPUT -j RH-Firewall-1-INPUT -A FORWARD -j RH-Firewall-1-INPUT -A RH-Firewall-1-INPUT -i lo -j ACCEPT -A RH-Firewall-1-INPUT -p icmp –icmp-type any -j ACCEPT -A RH-Firewall-1-INPUT -p 50 -j ACCEPT -A RH-Firewall-1-INPUT -p 51 -j ACCEPT -A RH-Firewall-1-INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT -A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 53 -j ACCEPT -A RH-Firewall-1-INPUT -m state –state NEW -m udp -p udp –dport 53 -j ACCEPT -A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT -A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 25 -j ACCEPT -A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT -A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 443 -j ACCEPT -A RH-Firewall-1-INPUT -j REJECT –reject-with icmp-host-prohibited COMMIT&lt;/p&gt;</description></item></channel></rss>

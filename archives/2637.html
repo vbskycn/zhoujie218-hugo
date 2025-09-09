@@ -1,0 +1,200 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>保证这是你见过的最详细的 OpenClash 图文教程 | 周杰个人博客</title><meta property="og:title" content="保证这是你见过的最详细的 OpenClash 图文教程 - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2024-08-03T00:00:00+08:00'><meta property="article:modified_time" content='2024-08-03T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="保证这是你见过的最详细的 OpenClash 图文教程"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/2637.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#本教程所实现的效果>本教程所实现的效果</a><ul><li><a href=#关于-ipv6>关于 IPv6</a></li><li><a href=#关于-dns>关于 DNS</a></li><li><a href=#关于广告过滤>关于广告过滤</a></li></ul></li></ul><ul><li><a href=#准备工作>准备工作</a><ul><li><a href=#查看运行商通告的-dns>查看运行商通告的 DNS</a></li><li><a href=#确保-openwrt-可以正常访问-github>确保 OpenWrt 可以正常访问 Github</a></li></ul></li><li><a href=#设置-openclash-常规设置>设置 OpenClash 常规设置</a><ul><li><a href=#模式设置>模式设置</a></li><li><a href=#流量控制>流量控制</a></li><li><a href=#dns-设置>DNS 设置</a></li><li><a href=#流媒体增强可选>流媒体增强（可选）</a></li><li><a href=#ipv6-设置>IPv6 设置</a></li><li><a href=#geo-数据库订阅>GEO 数据库订阅</a></li><li><a href=#大陆白名单订阅>大陆白名单订阅</a></li><li><a href=#版本更新>版本更新</a></li></ul></li><li><a href=#设置-openclash-覆写设置>设置 OpenClash 覆写设置</a><ul><li><a href=#dns-设置-1>DNS 设置</a></li><li><a href=#meta-设置>Meta 设置</a></li><li><a href=#开发者选项>开发者选项</a></li><li><a href=#配置订阅>配置订阅</a></li><li><a href=#这里强烈建议自己搭建一个转换服务不会有节点泄漏的风险教程在这里><strong>这里强烈建议，自己搭建一个转换服务，不会有节点泄漏的风险，教程在这里</strong></a></li></ul></li><li><a href=#更新配置并启动>更新配置并启动</a><ul><li><a href=#运行日志>运行日志</a></li><li><a href=#dashboard-控制面板>Dashboard 控制面板</a></li></ul></li><li><a href=#检验结果>检验结果</a><ul><li><a href=#检查-dns-是否存在泄漏>检查 DNS 是否存在泄漏</a></li><li><a href=#检查-ipv6-分流情况>检查 IPv6 分流情况</a></li></ul></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>保证这是你见过的最详细的 OpenClash 图文教程</h1></header><time datetime=2024-08-03T00:00:00Z class="post-meta meta-date dt-published">2024年8月3日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a></div><div class=post-content><h1 id=介绍>介绍</h1><p>保证这是你见过的最详细的 OpenClash 图文教程（本教程参靠网友Aethersailor配置教程）</p><h2 id=本教程所实现的效果>本教程所实现的效果</h2><p>严格按照本教程的内容去设置你的 OpenClash 插件，加一个 Mosdns 即可实现以下功能：</p><ol><li><strong>完美的 DNS 解析分流</strong>,大陆域名使用运行商 DNS 或者你设置的 DNS 进行解析，国外域名使用节点服务器的 DNS 进行解析，取得理论上的最佳最快解析结果；</li><li><strong>DNS 无污染，无泄漏</strong>；</li><li><strong>丰富的分流规则</strong>，具备大陆和国外分流功能，流媒体/ChatGPT 等服务均可以选择特定地区节点分流或者特定节点分流，可以搭配 OpenClash 的流媒体解锁探测功能使用；</li><li><strong>节点自动测速优选</strong>；</li><li><strong>大陆域名和 IP 均会绕过 OpenClash 内核</strong>，加快访问速度提升下载性能；</li><li>在宽带拥有 IPv6 以及机场支持 IPv6 出站的情况下，<strong>实现 OpenClash 和 IPv6 的完美兼容</strong>；</li><li>每日自动更新上游规则碎片，一次设置，长期无人值守，不用折腾。即使 OpenClash 出现问题未能启动，也不影响正常上网。</li></ol><p>分流非常精确</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcebb29c7e.png><img class=mx-auto alt=image-20240803143122558 src=https://img-cloud.zhoujie218.top/2024/08/03/66adcebb29c7e.png></a></p><ul><li><h3 id=关于-ipv6>关于 IPv6</h3></li></ul><p>如果是爱快+OP会泄漏dns，我目前没有搞定，openwrt做主路由可以按下面的教程</p><p>在确保你的节点支持 IPv6 出站的情况下，搭配下面的教程实现 OpenClash 和 IPv6 的完美兼容 <a href=https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/OpenWrt-IPv6-%E8%AE%BE%E7%BD%AE%E6%95%99%E7%A8%8B>https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/OpenWrt-IPv6-设置教程</a></p><p>不清楚自己的节点是否支持 IPv6 的话，可以向机场客服发工单来确定，或者按照教程内容进行设置后测试节点如果不具备 IPv6 出站能力再关闭 OpenClash 的 IPv6 功能</p><ul><li><h3 id=关于-dns>关于 DNS</h3></li></ul><p>强烈建议使用运营商通告的 DNS，不论是解析速度还是结果的科学性，都不是第三方 DNS 可以比拟的</p><p>三大运营商的 DNS 都不存在对国内域名的污染，而且绝对是你的线路的最优解析结果，根本不需要用第三方 DNS 替代，更不需要用 SmartDNS 或 Mosdns 之类的工具选优，本方案中的Mosdns 的上游只埴一个运营商通告的 DNS就可以了</p><p>我这里使用Mosdns 是为了去广告，缓存dns，和一些更灵活的策略，你也可以不用，只用openclash本身的即可。</p><p>以本人所在的城市为例，电信和联通线路的 DNS 延迟都非常低，及时是高峰时段，延迟也只有1-2毫秒，白天的话可以稳定只有 1 毫秒的延迟，这时候还去用 DNS 插件很有可能是负优化
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc1122f80.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc1122f80.png>
+</a>而且根据本人长期测试，运营商 DNS 提供的国内域名解析服务永远是最优最近的 CDN，和 DNS 插件优选的解析结果一致 按照本人的教程设置后，运行商 DNS 只用于解析中国大陆域名，不存在污染问题，也不用担心运营商 DNS 没有 DoT/DoH 加密。海外域名全部远端解析取得离机场最近的 CDN，更没有污染 除非你是使用的长城宽带之类的存在流量穿透的宽带，DNS 延迟很高或无法正确解析到离你地理位置最近的 CDN，否则根本就没有必要用 DNS 优化插件 <strong>如果你非要认为 1ms 的解析时间差距会明显影响上网体验，那我无话可说，一定要使用第三方 DNS 或者 DNS 优化插件的话，教程中对应步骤会提及如何进行设置</strong></p><ul><li><h3 id=关于广告过滤>关于广告过滤</h3><p>我使用的是mosdns中的过滤，可以使用自带的，也可以使用自己设置的。</p></li></ul><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcdf27c8a5.png><img class=mx-auto alt=image-20240803142801903 src=https://img-cloud.zhoujie218.top/2024/08/03/66adcdf27c8a5.png></a></p><h1 id=openclash-图文设置教程>OpenClash 图文设置教程</h1><p>严格按照文字和图片中的内容进行设置，其他选项不清楚如何设置的，照抄即可。 一定要认真阅读，一定要认真阅读，一定要认真阅读，不要跳着看，否则可能会错过关键设置！ OpenWrt 做主路由和旁路由时的设置差异，相关的步骤中会提及，按照你的情况选择就行 不懂的情况下不要自己乱改设置！必须使用本仓库的订阅模板！否则不保证效果正常 个别需要你自己根据实际情况进行选择的步骤，会讲明原理，只要智商正常都能看懂，仔细阅读即可。</p><h2 id=准备工作>准备工作</h2><h3 id=查看运行商通告的-dns>查看运行商通告的 DNS</h3><p>旁路由跳过此步骤 首选确保你的 WAN 口设置中勾选了“自动获取 DNS 服务器”，这样才能获取到运营商下发的 DNS
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc2c21ef7.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc2c21ef7.png>
+</a>然后在 OpenWrt 的首页查看并记录运营商下发给你的 DNS，如果你打算使用其他的国内第三方 DNS，可以跳过此步骤。
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc37a47bd.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc37a47bd.png>
+</a>如果你使用的是旁路由，自行到主路由中查看运营商 DNS。</p><h3 id=确保-openwrt-可以正常访问-github>确保 OpenWrt 可以正常访问 Github</h3><p><strong>如果你的 OpenWrt 一直可以正常访问 Github 可以跳过此步骤</strong> 确保你的路由器可以正常访问 Github，你可以提前使用上面的 hosts 一键脚本来合并 <a href=https://github.com/521xueweihan/GitHub520>GitHub520</a> 加速规则至本机，或者提前在 OpenClash 中启用 Github 地址修改功能 进入<strong>OpenClash > 覆写设置 > 常规设置</strong>，在 Github 地址修改功能的下拉菜单中选择一个 CDN 节点，推荐选择 testingcf，建议根据自己的实际网络情况多做尝试，点击页面下方的“应用配置”即可生效。
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc3b3d1ef.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc3b3d1ef.png>
+</a>准备工作完成，开始设置 OpenClash</p><h2 id=设置-openclash-常规设置>设置 OpenClash 常规设置</h2><p>以下列出了 OpenClash 的设置内容，每个需要设置的页面均有图文说明，按照教程逐页进行设置即可 所有未提及的页面，均不需要设置</p><h3 id=模式设置>模式设置</h3><p>首先设置运行模式，在页面下方点击切换到 Fake-IP 模式，然后上方的运行模式选择 <strong>Fake-IP（增强）</strong> ，勾选使用 Meta 内核，然后点击页面下方的“保存配置” Fake-IP（增强）模式可以提供最佳的性能，如果出现了 NAT 问题，可以尝试切换为 Fake-IP（混合）模式。记得要勾选 UDP 转发，如果你的固件包含了 Docker 功能，直接选择 Fake-IP（混合）模式即可 为什么使用 Meta 内核？因为 Premium 内核和 TUN 早已不更新，且 Meta 内核有嗅探功能，几乎是唯一选择
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcba397590.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcba397590.png></a></p><h3 id=流量控制>流量控制</h3><p>按照图中设置进行勾选设置，并填写大陆域名 DNS 为你的运营商通告的 DNS 如果你不想使用运营商的 DNS，此处可以填写你想使用的国内第三方 DNS，比如 223.5.5.5 如果你使用了 mosdns 之类的 DNS 优化插件，那么这里填写 127.0.0.1:[mosdns 端口号]，比如 127.0.0.1:5335 再次建议使用你的运营商通告的 DNS 来取的最快最准确的国内解析结果！
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcba4e420c.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcba4e420c.png></a></p><h3 id=dns-设置>DNS 设置</h3><p>设置使用 Dnsmasq 进行转发，顺手点一下“Fake-IP 持久化缓存清理”按钮，不用管是否提示出错，然后点击页面下方的“保存配置” 注意下方的 Dnsmasq 缓存选项，一定要禁用</p><h3 id=流媒体增强可选>流媒体增强（可选）</h3><p>此处设置主要用于使 OpenClash 可在流媒体分流时在众多节点中自动选择解锁对应区域的流媒体服务的节点，此功能主要用于在一些流媒体解锁不稳定且混乱的杂牌机场中自动寻找对应的节点。 <strong>如果你所使用的机场的流媒体解锁服务相对比较稳定，或者已经知晓你所使用的机场哪些节点可以解锁你所需要的区域的流媒体服务，则可以跳过此页面的设置，设置完成后在 Clash 的控制面板中自行选择即可。</strong> 如果你要使用自动选择节点的功能，首先勾选你要使用的流媒体服务，比如 Netflix，然后按照本教程的策略组名称在“策略组筛选”中进行填写，本教程中流媒体相关的策略组包括 Netflix、YouTube、Disney+等等 解锁区域填写你要解锁的流媒体服务区域，比如你要解锁新加坡区就填写SG。解锁节点筛选填写需要测试的节点名称的关键词，比如填写“香港|新加坡”就会在包含以上关键词的节点中进行筛选 例如设置了 Netflix 和 SG，如此设置后，OpenClash 启动后就会在你订阅的节点的清单中自动寻找解锁新加坡（SG）区域的 Netflix 服务的节点作为分流策略组“Netflix”的指定节点 设置后记得点击页面下方的“保存配置”，再次提醒此页是可选功能，非必要不使用
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcba72d18d.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcba72d18d.png></a></p><h3 id=ipv6-设置>IPv6 设置</h3><p>如果你打算启用 IPv6 功能，并且你的节点支持 IPv6 出站，则按照下面教程中的 IPv6 设置教程完成 OpenWrt 的 IPv6 设置后，再设置此页面即可。 <a href=https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/OpenWrt-IPv6-%E8%AE%BE%E7%BD%AE%E6%95%99%E7%A8%8B>https://github.com/Aethersailor/Custom_OpenClash_Rules/wiki/OpenWrt-IPv6-设置教程</a> 如果你的节点不支持 IPv6 出站，或者你的 OpenWrt 没有开启 IPv6 功能，则禁用“IPv6 流量代理”和“允许 IPv6 类型 DNS 解析”
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbac74300.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbac74300.png></a></p><h3 id=geo-数据库订阅>GEO 数据库订阅</h3><p>OpenClash 一些兜底的分流数据库，保持最新没有坏处。按照图中设置即可，具体用途不多做解释，可以自行查找相关资料。 注意，每次数据库更新成功后 OpenClash 会自动重启，建议设置更新时间为不用网的时候，比如凌晨。 设置完后点击页面下方的“保存设置”，然后顺手把三个“检查并更新”按钮都点一遍。在 OpenClash 的“运行日志”页面可以查看更新结果，此操作可以顺带验证你的 OpenWrt 是否能顺利访问Github 或者你在之前设置的 CDN 比如 testingcf
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbac73885.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbac73885.png></a></p><h3 id=大陆白名单订阅>大陆白名单订阅</h3><p>OpenClash 一些兜底的分流名单，保持最新没坏处。按照图中设置即可，具体用途不多做解释，可以自行查找相关资料。 注意，每次白名单更新成功后 OpenClash 会自动重启，建议设置更新时间为不用网的时候，比如凌晨。 设置完后点击页面下方的“保存设置”，然后顺手把“检查并更新”按钮点一下。在 OpenClash 的“运行日志”页面可以查看更新结果，此操作可以顺带验证你的 OpenWrt 是否能顺利访问Github 或者你在之前设置的 CDN 比如 testingcf
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc4aaa49e.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc4aaa49e.png></a></p><h3 id=版本更新>版本更新</h3><p>此页面用于更新 OpenClash 的内核以及 OpenClash 自身 建议选择 dev 版本，然后点击下方的一键更新。在 OpenClash 的“运行日志”页面可以查看更新结果，此操作可以顺带验证你的 OpenWrt 是否能顺利访问Github 或者你在之前设置的 CDN 比如 testingcf 如果使用过程中遇到错误，可以选择 master 版本，再点击一键更新即可切换回稳定版
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc4dd8de7.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc4dd8de7.png></a></p><p>至此，OpenClash 中的常规设置设置完成</p><h2 id=设置-openclash-覆写设置>设置 OpenClash 覆写设置</h2><h3 id=dns-设置-1>DNS 设置</h3><p>OpenWrt 是主路由的情况下，此处勾选按照图中进行勾选。使用运营商通告的 DNS，勾选“追加上游 DNS”。 旁路由不要勾选“追加上游 DNS” 如果你不打算使用运营商通告的 DNS 服务器，则不要勾选“追加上游 DNS”。如果你有 DDNS 服务的域名，填写进下方的 Filter 中。
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbacdccb2.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbacdccb2.png>
+</a><strong>页面下方有 NameServer、Fallback 和 Default-NameServer 三个服务器分组，在本教程中应当取消全部的服务器勾选。</strong> <strong>如果你坚持不愿意使用运营商提供的 DNS</strong>，则在 NameServer 中保留第一个勾选，并填入你要使用的国内第三方 DNS 的地址，例如 223.5.5.5，并且不要勾选“追加上游 DNS”。 <strong>如果你使用 DNS 优化插件（如 mosdns等）</strong>，则在 NameServer 中保留第一个勾选，并填入 127.0.0.1:[mosdns 端口号]，并且不要勾选“追加上游 DNS”。 <strong>如果你的 OpenWrt 是旁路由</strong>， 则在 NameServer 中保留第一个勾选，并填入运营商 DNS 或者你要使用的其他国内第三方 DNS，并且不要勾选“追加上游 DNS”。 注意 NameServer 只用做 OpenClash 的规则判断的，而且本教程中 OpenClash 配置了绕过大陆功能，所以此处填入多个服务器并没有任何意义，更不要自作聪明的填写国外 DNS 服务器 <strong>再一次强烈建议此处全部取消勾选，配合上面一页设置的“追加上游 DNS”来使用运营商 DNS 从而提高解析速度！（仅限 OpenWrt 是主路由的情况下）</strong> 为什么要取消 Fallback 服务器？在取消 Fallback 服务器勾选的情况下，OpenClash 会把域名发送到远端的机场服务器上进行解析，只有这样才会根据不同区域的节点取得理论上的最佳解析结果 设置完成后，点击页面下方的“保存配置”按钮
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbae886b2.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbae886b2.png>
+</a><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbafba963.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbafba963.png>
+</a><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbafc5908.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbafc5908.png></a></p><h3 id=meta-设置>Meta 设置</h3><p>所有设置按照图中进行即可
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb454667.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb454667.png></a></p><h3 id=开发者选项>开发者选项</h3><p>按照图中内容，找到 Hash Demo 下的对应代码，取消注释并修改 true 为 false <code>ruby_edit "$CONFIG_FILE" "['experimental']" "{'sniff-tls-sni'=>false}"</code>
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb4ca448.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb4ca448.png></a></p><h3 id=配置订阅>配置订阅</h3><p>在页面中设置一个更新时间，因为本教程中使用的订阅模板使用了大量的第三方规则，而这些规则中的大部分是每天更新的，因此建议同样设置订阅更新时间为每天更新。 OpenClash 在更新订阅的过程中会短暂中断，所以建议设置在不用网的时间段内更新，比如凌晨</p><p>设置好后点击“保存配置”，然后点击“添加”按钮，添加一个订阅
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb55f3f4.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb55f3f4.png>
+</a>按照图中内容填入订阅信息即可</p><p>注意，填入的订阅链接，必须是普通的节点订阅链接，或者 V2RayN 使用的订阅链接，不能填入机场提供的 Clash 订阅链接，否则无法转换 配置文件名随意填写。注意订阅转换模板选择“自定义模板”然后在下方填入本仓库的自定义模板地址：</p><p><a href=https://raw.githubusercontent.com/vbskycn/myrules/master/Custom/cfg/Custom_Clash_full.ini>https://raw.githubusercontent.com/vbskycn/myrules/master/Custom/cfg/Custom_Clash_full.ini</a></p><p>注意！必须使用本项目的订阅转换模板才能实现免套娃无 DNS 泄露！ 当然了你也可以自写模板或者用其他的无泄漏模板 <strong>注意，某些机场的订阅链接会出现订阅转换后的所有节点均无法使用的情况，请启用此处的“跳过证书验证”功能再重新更新订阅</strong></p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb61559e.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb61559e.png></a></p><p>最后点击下方的“保存配置”返回到配置订阅页面，此时整个设置工作已完成</p><h3 id=这里强烈建议自己搭建一个转换服务不会有节点泄漏的风险教程在这里><strong>这里强烈建议，自己搭建一个转换服务，不会有节点泄漏的风险，教程在这里</strong></h3><p>CF大善人免费提供，几分钟就搭建好了</p><p><a href="https://www.youtube.com/watch?v=X7CC5jrgazo&amp;feature=youtu.be">https://www.youtube.com/watch?v=X7CC5jrgazo&amp;feature=youtu.be</a></p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66add3d93765d.png><img class=mx-auto alt=image-20240803145309980 src=https://img-cloud.zhoujie218.top/2024/08/03/66add3d93765d.png></a></p><p>得到了订阅地址，就不用写模板什么的，直接填写入自己的订阅地址设置定时更新就可以了</p><h2 id=更新配置并启动>更新配置并启动</h2><p>点击配置订阅页面中的“更新配置”按钮，OpenClash 即可开始更新配置并启动
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb75bd00.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbb75bd00.png></a></p><h3 id=运行日志>运行日志</h3><p>在上一步操作中点击“更新配置”后，切换到运行日志页面观察 OpenClash 的启动情况 出现“OpenClash 启动成功，请等待服务器上线！”后，即表示 OpenClash 已经启动成功，但大陆域名绕过内核功能尚在生效中 稍等片刻，出现“提示：检测到 Dnsmasq 正常工作，还原防火墙 DNS 劫持规则&mldr;”，则为大陆域名绕过内核功能已经生效
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcc69af5d9.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcc69af5d9.png></a></p><h3 id=dashboard-控制面板>Dashboard 控制面板</h3><p>在 OpenClash 的运行状态页面中，点击 Dashboard 控制面板按钮启动控制面板
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbc79ea4.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbc79ea4.png>
+</a>在控制面版中可以按照个人喜好以及机场节点的情况更改对应分流策略的节点 本仓库的订阅转换模板中包括的策略已经足以应对大部分的分流需求
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbdf0b7a.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbdf0b7a.png></a></p><p>至此，OpenClash 已经完美设置完毕！日常使用中几乎不需要打理，相关规则会根据你的设置每日自动更新上游规则，理论上只要不遇到bug，永远不用去人为操作。</p><h2 id=检验结果>检验结果</h2><p>下面检查以下你按照本教程实现的效果吧！ 注意，Clash 面板中，“漏网之鱼”策略组不要选择直连！</p><h3 id=检查-dns-是否存在泄漏>检查 DNS 是否存在泄漏</h3><p>访问 IPLEAK.NET 检查 DNS 是否存在泄漏 <a href=https://ipleak.net/>https://ipleak.net/</a> 正常情况下，页面上方应当出现你的机场节点的 IPv4 和 IPv6 地址，页面下方无中国大陆 DNS 出现即为 DNS 无泄漏情况
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbdcc22a.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbdcc22a.png></a></p><h3 id=检查-ipv6-分流情况>检查 IPv6 分流情况</h3><p>访问 IPv6 test：<a href=https://ipv6-test.com/>https://ipv6-test.com/</a> 网页中的“Address”项目应当显示当前节点的 IPv4 和 IPv6 地址，证明节点的 IPv4 和 IPv6 出站均正常工作
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbe590ed.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbe590ed.png>
+</a>分别访问 IPv6 测试网站 test-ipv6 的国内镜像站点和国外镜像站点 国内站点：<a href=https://testipv6.cn/>https://testipv6.cn/</a> 访问国内镜像站点时，检测页面上应当出现你的宽带的 IPv4 和 IPv6 地址以及国内运营商名称（比如 CHINA UNICOM 即为中国联通），并且以10/10的评分通过测试
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbf96da3.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbbf96da3.png>
+</a>国外站点：<a href=http://test-ipv6.com/>http://test-ipv6.com/</a> 访问国外镜像站点时，检测页面上应当出现你的机场节点的 IPv4 和 IPv6 地址以及节点服务器的网络运营商名称（比如 Akari Networks 之类的境外网络运营商），并且以10/10的评分通过测试 注意，由于上游分流规则的变化，国外镜像站点有可能检测到的仍然是国内的 IPv6 地址，忽略这种情况即可，以“IPv6 test”网站的检测结果为准
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/08/03/66adcbc0acef1.png><img class=mx-auto alt=img src=https://img-cloud.zhoujie218.top/2024/08/03/66adcbc0acef1.png></a></p><p>如果以上两个网站测试均通过，即为 IPv6 已经完美分流</p><p><strong>至此，你的 OpenWrt 上已经拥有了绝对完美、秒杀全网大部分教程贴的 OpenClash 完美设置，且所有的细节设置都已经尽力为性能、安全和效率而优化，尽情享受吧！</strong></p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/2637.html>/archives/2637.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class=post-archive><h2>相关文章</h2><ul class=listing><li><a href=/archives/2589.html>最简单的openwrt磁盘扩容</a></li><li><a href=/archives/2508.html>老旧设备利用打印机服务实现网络打印,并实现打印机热插拔</a></li><li><a href=/archives/2436.html>Frp内网穿透实现 以服务器CentOS+客户端OpenWrt为例</a></li><li><a href=/archives/2432.html>网件wndr3800带usb打印服务器固件</a></li><li><a href=/archives/1776.html>openwrt用dd命令写盘,用命令修改IP</a></li></ul></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/dns>dns</a></li><li><a href=/tags/ipv6>ipv6</a></li><li><a href=/tags/mosdns>mosdns</a></li><li><a href=/tags/openclash>openclash</a></li><li><a href=/tags/openwrt>openwrt</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

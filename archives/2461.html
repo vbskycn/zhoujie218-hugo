@@ -1,0 +1,186 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>完美迁移博客从wordpress到hugo | 周杰个人博客</title><meta property="og:title" content="完美迁移博客从wordpress到hugo - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2022-08-02T00:00:00+08:00'><meta property="article:modified_time" content='2022-08-02T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="完美迁移博客从wordpress到hugo"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/2461.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#前言>前言</a></li><li><a href=#网站情况简介>网站情况简介</a></li><li><a href=#建一个网站的流程>建一个网站的流程</a></li><li><a href=#方案对比>方案对比</a></li><li><a href=#最终方案使用说明>最终方案使用说明</a><ul><li><a href=#转换-wordpress-xml-以及保持文章链接不变>转换 Wordpress xml 以及保持文章链接不变</a></li><li><a href=#图床迁移>图床迁移</a></li><li><a href=#来个更简单的图片转移方法>来个更简单的图片转移方法</a></li></ul></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>完美迁移博客从wordpress到hugo</h1></header><time datetime=2022-08-02T00:00:00Z class="post-meta meta-date dt-published">2022年8月2日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a>
+<a href=/categories/wangyesheji>wangyesheji</a></div><div class=post-content><h2 id=前言>前言</h2><p>博客写了很多年，都没有写出什么有技术含量的文章。网络互联，你抄我也抄：） 这篇文章也是借鉴网友的 下面有他的链接完美从wordpress转到hugo</p><h2 id=网站情况简介>网站情况简介</h2><p>开始介绍迁移过程之前，我先简单说一下我网站的基本情况供大家参考。如果大家网站情况和我一样，那完全可以采用跟我相同的迁移方案。 笔者从 06 年开始学做网站，那个时候还是im286 的时代。以前一直转战于各种免费空间，各种程序，体验的是那种安装折腾的过程，现在年纪大了，折腾不动了，就想越简单越好。本人没有什么技术，只是出于业余爱好，喜欢捣鼓一些网页程序之类的东东。3年前入手阿里云ESC，域名也备案了，也就绑在阿里了，也不想天天给网站搬家，真的是一件累人的事！</p><p>前几天看到一个博客特别漂亮，折腾之火熊熊燃烧。一路baidu过来，发现是静态博客hexo 。现在还可以结合cloudfare pages,netlifi,vercel ，github，这些国外大厂提供网站托管，cdn,免费，速度也不错。 最终我选的是cloudfare pages + github +hugo 因为cf不支持hexo集成,后面又研究hugo，有集成的更简单，鼠标键盘点点点，几分钟就建好了一个网站，更新也方便，写好文章，用github推上去，网站就自动更新了。</p><h2 id=建一个网站的流程>建一个网站的流程</h2><ul><li>fork好喜欢的主题仓库</li><li>设置好网站信息，设置好cloudfare pages</li><li>github推送，OK</li></ul><p>原来我用的程序是wordpress,虽然没有写出什么技术文章，但是也有100多篇，也算是回忆吧。丢是不能丢的，转格式吧 baiduing&mldr;.. 找了很多方法，下面这个是最完美的。 我们要迁移文章，还有图片。图床迁移实际上并不是一件容易的事情，因为目前所有的迁移工具都是只能<strong>识别 markdown 语法</strong>的图片链接而不是<strong>html 标签</strong>里面的链接。这就导致我们必须将 Wordpress 中的所有文章全部转成<strong>markdown 语法</strong>。 最后一个问题就是保证文章的链接迁移前后没有变化，这样就可以保证拥有旧链接的人们可以正常访问。 综上，我们需要解决三个问题：</p><ol><li>解析 Wordpress 备份的 &ldquo;XML&rdquo; 为拥有 markdown 语法的 &ldquo;.md&rdquo; 文件；</li><li>图床迁移；</li><li>固定链接。</li></ol><h2 id=方案对比>方案对比</h2><p>当然，我们可以直接选择官网给出的方案<a href=https://gohugo.io/tools/migrations/>Migrate to Hugo</a>。对于 wordpress，主要有以下几种。
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/piggo/202208011522171.png><img class=mx-auto alt=image.png src=https://img-cloud.zhoujie218.top/piggo/202208011522171.png></a></p><p>这几种方案我都尝试过，各有优势却都不完美。以下是详细说明</p><ol><li><a href=https://github.com/SchumacherFM/wordpress-to-hugo-exporter>wordpress-to-hugo-exporter</a>： 可以导出，且文件名称就是带有日期和中文的标题名称。但是不是原生 markdown 格式。而是如下图所示的结构。不满足需求 1，2，所以<strong>排除</strong>。</li><li>exitwp-for-hugo: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/04/22/6626037f5b5f3.png><img class=mx-auto alt=image.png src=https://img-cloud.zhoujie218.top/2024/04/22/6626037f5b5f3.png></a></li><li><a href=https://github.com/wooni005/exitwp-for-hugo>exitwp-for-hugo</a>: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/04/22/6626037fa9c14.png><img class=mx-auto alt=image.png src=https://img-cloud.zhoujie218.top/2024/04/22/6626037fa9c14.png></a></li><li><a href=https://github.com/palaniraja/blog2md>blog2md</a>: 与<a href=https://github.com/wooni005/exitwp-for-hugo>exitwp-for-hugo</a>类似，文件名太乱且不包含日期。
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/04/22/6626037fa20bd.png><img class=mx-auto alt=image.png src=https://img-cloud.zhoujie218.top/2024/04/22/6626037fa20bd.png></a></li><li><a href=https://github.com/nantipov/wordhugopress>wordhugopress</a>: java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。
+<a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/04/22/6626037f54bc2.png><img class=mx-auto alt=image.png src=https://img-cloud.zhoujie218.top/2024/04/22/6626037f54bc2.png></a></li></ol><p>然后突然发现一个仓库<a href=https://github.com/AvantaR/wordpress-export-to-markdown>wordpress-export-to-markdow_L 版</a>，这个只需要自己在电脑上安装 node.js 环境，然后就可以直接运行了。它可以解决除<strong>固定链接</strong>以外的所有问题，是一个近乎完美的方案。基于 L 版，<a href=https://github.com/AvantaR>AvantaR</a>，在 markdown 的 yaml 头文件中添加了<strong>slug</strong>参数，详细实现见该仓库<a href=https://github.com/AvantaR/wordpress-export-to-markdown>wordpress-export-to-markdow_A 版</a>。 实际上<strong>slug</strong>和<strong>url</strong>还是有区别的。以下面这个 yaml 头和网站https://img-cloud.zhoujie218.top/archives/1018.html为例：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>title</span>: <span style=color:#e6db74>&#34;Drcom下如何优雅地使用路由器上网&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>date</span>: <span style=color:#e6db74>&#34;2016-12-23&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>categories</span>: 
+</span></span><span style=display:flex><span>- <span style=color:#e6db74>&#34;other&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>tags</span>: 
+</span></span><span style=display:flex><span>- <span style=color:#e6db74>&#34;路由器&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>url</span>: <span style=color:#e6db74>&#34;/archives/1018&#34;</span>
+</span></span></code></pre></div><p>上面的配置文件中使用了<strong>url</strong>，所以该文章最后的链接是<a href=https://www.zhoujie218.top/archives/1018.html>https://www.zhoujie218.top/archives/1018</a>/如果将<strong>url</strong>改为<strong>slug</strong>，如下所示。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>title</span>: <span style=color:#e6db74>&#34;Drcom下如何优雅地使用路由器上网&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>date</span>: <span style=color:#e6db74>&#34;2016-12-23&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>categories</span>: 
+</span></span><span style=display:flex><span>  - <span style=color:#e6db74>&#34;other&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>tags</span>: 
+</span></span><span style=display:flex><span>  - <span style=color:#e6db74>&#34;路由器&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>slug</span>: <span style=color:#e6db74>&#34;/archives/1018&#34;</span>
+</span></span></code></pre></div><p>两者的区别就是<strong>slug</strong>指的是文章的缩写名，在最后生成的文章链接中，会在前面加上文章所在的目录名（根域名 + 目录名 + slug 参数对应的值）（上面的例子中，目录名是 post），而<strong>url</strong>后面的参数就是直接添加到根域名下的参数。因为我网站的固定连接下没有 post 路径，所以我在 L 版的基础上进行了修改得到了 M 版<a href=https://github.com/MLZC/wordpress-export-to-markdown>wordpress-export-to-markdown_M</a>以达到我自己的需求。</p><h2 id=最终方案使用说明>最终方案使用说明</h2><h3 id=转换-wordpress-xml-以及保持文章链接不变>转换 Wordpress xml 以及保持文章链接不变</h3><p>使用方法就是直接 clone 该仓库，然后将 Wordpress 的 xml 文件放到该程序的根目录下并改名为_export.xml_, 然后执行下面的命令。因为我修改了一些默认参数，所以可以设置&ndash;wizard=false， 当然，如果你们像自己更改默认值，可以去掉&ndash;wizard=false。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-basic data-lang=basic><span style=display:flex><span>npm install <span style=color:#f92672>&amp;&amp;</span> node index<span style=color:#f92672>.</span>js <span style=color:#f92672>--</span>wizard<span style=color:#f92672>=</span>false
+</span></span></code></pre></div><h3 id=图床迁移>图床迁移</h3><p>这部分实际上没有什么好说的，主要使用这两个软件，都是图形化界面，配置一下图床信息，选择一下 markdown 文件或者文件夹地址就可以自动迁移了。后者是免费的，前者虽然收费但是有免费体验期，对于只使用一次的用户来说就是免费。</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2024/04/22/6626037f4e87e.png><img class=mx-auto alt=image.png src=https://img-cloud.zhoujie218.top/2024/04/22/6626037f4e87e.png></a></p><p>~ 实际上还有<a href=https://github.com/Molunerfinn/PicGo>PicGo</a>和<a href=https://github.com/PicGo/picgo-plugin-pic-migrater>picgo-plugin-pic-migrater</a>，可以使用。~ 之前可能有用，但是程序很久都没有更新过了，一堆 bug，根本不能正常迁移。还是推荐大家使用 iPic 和 iPic Mover。</p><h3 id=来个更简单的图片转移方法>来个更简单的图片转移方法</h3><p>我写了一个python程序，自动下载所有md文件中的图片到images文件夹，并且会修改md文章中的相对链接。把图片全部静态托管到hugo所在的服务就OK了,下面是下载链接。如果有解压密码的话就是本站域名。</p><p>py程序下载地址：</p><p>[login_email] <a href=https://img-cloud.zhoujie218.top/wp-content/uploads/file/wp-img>https://img-cloud.zhoujie218.top/wp-content/uploads/file/wp-img</a>_to_hugo.rar [/login_email]</p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/2461.html>/archives/2461.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class=post-archive><h2>相关文章</h2><ul class=listing><li><a href=/archives/2355.html>WordPress SEO指南</a></li><li><a href=/archives/213.html>如何设置WordPress文章特色图像(Featured Image)</a></li></ul></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/hugo>hugo</a></li><li><a href=/tags/wordpress>wordpress</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Solo on 周杰个人博客</title><link>/tags/solo/</link><description>Recent content in Solo on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 11 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/solo/index.xml" rel="self" type="application/rss+xml"/><item><title>宝塔部署最新版 Solo 博客</title><link>/archives/2048.html</link><pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate><guid>/archives/2048.html</guid><description>&lt;p&gt;[toc]&lt;/p&gt;
+&lt;p&gt;宝塔部署最新版 Solo 博客,并每天自动更新升级。&lt;/p&gt;
+&lt;h2 id="基础环境"&gt;基础环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;宝塔&lt;/li&gt;
+&lt;li&gt;Mysql&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上为基础环境，怎么搭建基础环境就不再赘述了&lt;/p&gt;
+&lt;h3 id="新建站点数据库"&gt;新建站点、数据库&lt;/h3&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2054&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;642&amp;rdquo;][caption id=&amp;ldquo;attachment_2129&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;642&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044653423.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044653423.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044653423.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; image.png[/caption] image.png[/caption]&lt;/p&gt;
+&lt;p&gt;642 x 637&lt;/p&gt;
+&lt;p&gt;在网站中新建站点，填入域名，选择创建数据库。&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2055&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;683&amp;rdquo;][caption id=&amp;ldquo;attachment_2130&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;683&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654336.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654336.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654336.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; image.png[/caption] image.png[/caption]&lt;/p&gt;
+&lt;p&gt;683 x 278&lt;/p&gt;
+&lt;p&gt;记录数据库相关配置&lt;/p&gt;
+&lt;h3 id="配置计划任务"&gt;配置计划任务&lt;/h3&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_2056&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;998&amp;rdquo;][caption id=&amp;ldquo;attachment_2131&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;998&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654688.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654688.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2021/11/20211101044654688.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; image.png[/caption] image.png[/caption]&lt;/p&gt;
+&lt;p&gt;728 x 458998 x 628&lt;/p&gt;
+&lt;p&gt;在计划任务中，添加新的计划任务，选择 Shell 脚本，执行周期按照自己的需求更改，我这里是每天&lt;/p&gt;
+&lt;p&gt;然后在脚本内容中填入&lt;strong&gt;如下配置&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Solo docker 更新重启脚本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 1. 请注意修改参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 2. 可将该脚本加入 crontab，每日凌晨运行来实现自动更新&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;restart_solo&lt;span style="color:#f92672"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker stop solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker rm solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker run --detach --name solo --network&lt;span style="color:#f92672"&gt;=&lt;/span&gt;host 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env RUNTIME_DB&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;MYSQL&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_USERNAME&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;you mysql user&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_PASSWORD&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;you mysql user password&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_DRIVER&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;com.mysql.cj.jdbc.Driver&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --env JDBC_URL&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;jdbc:mysql://127.0.0.1:3306/solo?useUnicode=yes&amp;amp;characterEncoding=UTF-8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; b3log/solo --listen_port&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;8080&lt;/span&gt; --server_scheme&lt;span style="color:#f92672"&gt;=&lt;/span&gt;https --server_host&lt;span style="color:#f92672"&gt;=&lt;/span&gt;you domain
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;update_solo&lt;span style="color:#f92672"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Pulling Solo&amp;#39;s image&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; isUpdate&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;docker pull b3log/solo | grep &lt;span style="color:#e6db74"&gt;&amp;#34;Downloaded&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z $isUpdate &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Solo is up to date&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; restart_solo &amp;gt;&amp;gt; /dev/null 2&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Restarted Solo&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 检查当前容器状态，如果状态正常进行升级操作，否则重新进行部署&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;update_and_test_service&lt;span style="color:#f92672"&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; isCrash&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;docker ps | grep &lt;span style="color:#e6db74"&gt;&amp;#34;b3log/solo&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z $isCrash &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Solo&amp;#39;s status is unexpected, trying to restart it&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; docker pull b3log/solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; restart_solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sleep &lt;span style="color:#ae81ff"&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; isSecondCrash&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;docker ps | grep &lt;span style="color:#e6db74"&gt;&amp;#34;b3log/solo&amp;#34;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;[[&lt;/span&gt; -z $isSecondCrash &lt;span style="color:#f92672"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#e6db74"&gt;&amp;#34;Failed to restart Solo, please check logs via &amp;#39;docker logs solo&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; update_solo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;update_and_test_service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意修改以上配置中的数据库相关配置为自己的配置，端口 8080 如果占用，请修改成其他的，server_host 中填入自己的域名&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

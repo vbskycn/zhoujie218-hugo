@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>解锁 on 周杰个人博客</title><link>/tags/%E8%A7%A3%E9%94%81/</link><description>Recent content in 解锁 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 04 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E8%A7%A3%E9%94%81/index.xml" rel="self" type="application/rss+xml"/><item><title>白嫖一下 Emby</title><link>/archives/2470.html</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>/archives/2470.html</guid><description>&lt;p&gt;&lt;strong&gt;最新最简单方法：支持emby最新4.8.3.0正式版&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;全端解锁&lt;/strong&gt;，最新embyTV版,手机版下载:&lt;a href="https://www.123pan.com/s/R25A-iWKJH.html"&gt;https://www.123pan.com/s/R25A-iWKJH.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/19/65f9323564837.png"&gt;
+ &lt;img class="mx-auto" alt="image-2024.3.19" src="https://img-cloud.zhoujie218.top/2024/03/19/65f9323564837.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;按你想要的方式安装官方版版本，目前最高4.8.3.0（linux,群晖,windows,docker都可以）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解锁文件下载：&lt;/strong&gt;&lt;a href="https://www.123pan.com/s/R25A-tWKJH.html"&gt;https://www.123pan.com/s/R25A-tWKJH.html&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;下载解压文件到embyserver目录中的system里，重启emby服务，进入emby服务端设置，在Premiere Key中随便输入字符确定即可完成本地验证。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​ 注意：如果以前用过伪站等破解方式破解，请备份数据重新安装，还原HOSTS，然后再破解。浏览器缓存可能造成金牌不显示等问题，清缓存或用浏览器隐私模式试试。&lt;/p&gt;
+&lt;p&gt;Unix/Linux类系统请注意文件权限，可能替换文件后需要设置文件为root用户&lt;/p&gt;
+&lt;p&gt;linux目录一般在&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/opt/emby-server/system/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;以下教程已过时，用上面简单的方法即可&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;前不久，我搭建了一个 Emby 服务器使用，使用体验是真 D 好，但是其客户端除 Web 版都受到了不同程度的限制，最为影响的便是只能播放一分钟了吧… 虽然 Web 界面的体验可以说是非常完整，不必客户端差到哪里去，但是一旦涉及到播放之类的体验，Web 客户端显得很弱鸡。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我使用搭载 iOS13.3 的 iPhoneXR，在 Safari 与 AppStore 下载到的 Emby 客户端同时播放一份 4K H264 的视频，根据播放统计信息，Web 客户端居然因为分辨率不匹配导致转码了 (这里的转码可都是在服务器上的) 并且 ASS 字幕也很卡。而客户端就丝滑如 defu。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;那为什么不用客户端呢？客户端全家桶要钱的啊！！而且还不便宜，我为什么不去开大会员呢？？？由此想对客户端下手。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1 月 19 日更新：已经修正了多处问题，并且已经测试 iOS 客户端可正常使用&lt;br&gt;
+2 月 13 日更新：由于顺带给朋友整了一下，稍微弄了一个适合小白的引导页，当然了，没有自己服务器 / 不会 / 懒的，也可以让我喝杯奶茶然后我帮你直接用我服务器上的。&lt;br&gt;
+你也可以另外让我帮你搭建，这样你可以直接在局域网内享受。&lt;br&gt;
+但同时暂时没条件测试长久不连接服务器多久会掉激活的问题，目前一直稳定。&lt;br&gt;
+4 月 4 日更新：补上了几处 api 端口，现在我敢说完美激活！包括转码，电视直播，转换，下载功能在内均可使用。&lt;br&gt;
+这篇文章也由&lt;code&gt;白嫖一下Emby的客户端们&lt;/code&gt;可以改为&lt;code&gt;白嫖一下Emby了&lt;/code&gt;，测试版本 &lt;code&gt;4.4.1.0&lt;/code&gt;&lt;br&gt;
+4 月 21 日更新：经过一段时间的调试，我已经将其做成公开服务向公众提供服务 &lt;a href="https://mba.mvnas.com/"&gt;https://mba.mvnas.com&lt;/a&gt; 该教程仍然接受维护。&lt;/p&gt;</description></item></channel></rss>

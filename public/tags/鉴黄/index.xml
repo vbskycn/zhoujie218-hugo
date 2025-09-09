@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>鉴黄 on 周杰个人博客</title><link>/tags/%E9%89%B4%E9%BB%84/</link><description>Recent content in 鉴黄 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E9%89%B4%E9%BB%84/index.xml" rel="self" type="application/rss+xml"/><item><title>通过 Docker 自建 Lsky Pro 图片审核接口</title><link>/archives/2557.html</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>/archives/2557.html</guid><description>&lt;h2 id="nsfw-是什么"&gt;NSFW 是什么&lt;/h2&gt;
+&lt;p&gt;NSFW 是一个英文网络用语，是 Not Safe For Work 或者 Not Suitable For Work 的缩写，意思是某个网络内容不适合上班时间浏览。&lt;/p&gt;
+&lt;p&gt;它通常被用于标记那些带有淫秽色情、暴力血腥、极端另类等内容的邮件、视频、博客、论坛帖子里等，以免读者不恰当的点击浏览。常见的用法是，在链接的后面，加上一对括号，括号中标记 NSFW。&lt;/p&gt;
+&lt;h2 id="部署方法"&gt;部署方法&lt;/h2&gt;
+&lt;p&gt;使用如下命令部署，其中&lt;code&gt;-p 3000:3000&lt;/code&gt; 是端口映射，&lt;code&gt;--restart=always&lt;/code&gt; 是自动重启：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYdocker run -p 3000:3000 --restart=always penndu/nsfw-api:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如 Docker Hub 下载较慢，也可使用下面阿里云镜像源：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYdocker run -p 3000:3000 --restart=always registry.cn-beijing.aliyuncs.com/dusays/nsfw-api:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="食用方法"&gt;食用方法&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;POST /classify&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYPOST /classify HTTP/1.1
+Content-Type: multipart/form-data
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 &lt;code&gt;image&lt;/code&gt; 字段中提供图像。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;响应示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;COPYHTTP/1.1 200 OK
+Content-Type: application/json
+COPY{
+ &amp;#34;porn&amp;#34;: 0.59248286485672,
+ &amp;#34;sexy&amp;#34;: 0.39802199602127075,
+ &amp;#34;hentai&amp;#34;: 0.006243097595870495,
+ &amp;#34;neutral&amp;#34;: 0.0031403270550072193,
+ &amp;#34;drawing&amp;#34;: 0.00011181648733327165
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="图床演示"&gt;图床演示&lt;/h2&gt;
+&lt;p&gt;管理员进入后台角色组设置，选择指定的角色组点击编辑，进入图片审核标签，开启图片审核，设置审核动作，驱动调整为 NsfwJs，接口地址设置为 &lt;code&gt;http://127.0.0.1:3000/classify&lt;/code&gt;，属性为 &lt;code&gt;image&lt;/code&gt;，阈值为 &lt;code&gt;60&lt;/code&gt;「以上参数根据实际情况调整」&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/09/01/64f18a83430ec.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230901145352560" src="https://img-cloud.zhoujie218.top/2023/09/01/64f18a83430ec.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Picgo on 周杰个人博客</title><link>/tags/picgo/</link><description>Recent content in Picgo on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 31 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/picgo/index.xml" rel="self" type="application/rss+xml"/><item><title>typora + PicGo + lsky 自动上传到图床(更新最快自动获取兰空图床token的方法，点一下就可以了)</title><link>/archives/2556.html</link><pubDate>Thu, 31 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2556.html</guid><description>&lt;h1 id="typora--picgo--lsky-建立主动上传图片"&gt;typora + PicGo + lsky 建立主动上传图片&lt;/h1&gt;
+&lt;p&gt;更新最快自动获取兰空图床token的方法，点一下就可以了&lt;/p&gt;
+&lt;h1 id="简介"&gt;&lt;strong&gt;简介：&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;世界上最让人安心的事情是什么，可能每个人心中都有自己的答案。&lt;/p&gt;
+&lt;p&gt;但我作为一个&lt;code&gt;developer&lt;/code&gt;，在大量数据泄露的时代，觉得最重要的还是把数据掌握在自己的手上，最让我安心！&lt;/p&gt;
+&lt;p&gt;近期写&lt;code&gt;markdown&lt;/code&gt;，上传图片到&lt;code&gt;博客&lt;/code&gt;时、本地的图片，无法快速的粘贴到博客等各大平台。&lt;/p&gt;
+&lt;p&gt;大概便是各个博客的图片是受维护的，不能够复制粘贴。&lt;/p&gt;
+&lt;p&gt;这就想着自己建立&lt;code&gt;图床&lt;/code&gt;吧。&lt;/p&gt;
+&lt;p&gt;本次教程分为两大部分，假如不想自己布置和建立图床，能够直接看第三步。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一、在&lt;a href="https://www.6hu.cc/archives/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8"&gt;服务器&lt;/a&gt;或NAS中布置浮屠&lt;/li&gt;
+&lt;li&gt;二、建立图床（能够不建立，自己直接我现已建立好的）&lt;/li&gt;
+&lt;li&gt;三、Typora + PicGo 装备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="一建立运转环境"&gt;一、建立运转环境&lt;/h1&gt;
+&lt;p&gt;本次建立的图床环境是NAS + docker + 浮屠 + Lsky&lt;/p&gt;
+&lt;p&gt;因为要比较安稳的条件，自己的黑群晖环境不是很安稳。&lt;/p&gt;
+&lt;p&gt;我的软路由ikuai openwrt都是安稳122天，而黑群晖只99天安稳运转&lt;/p&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3aaa0cd.webp"&gt;
+ &lt;img class="mx-auto" alt="NAS &amp;#43; 宝塔 &amp;#43; typora &amp;#43; PicGo &amp;#43; lsky 搭建自动上传图片" src="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3aaa0cd.webp" /&gt;
+ &lt;/a&gt;
+ ]92830130-db4e159ca2f31e8.webp)&lt;/p&gt;
+&lt;p&gt;为了确保图床的&lt;code&gt;7*24&lt;/code&gt;小时能拜访，本次就把图床放在&lt;code&gt;NAS&lt;/code&gt;上了。&lt;/p&gt;
+&lt;h2 id="11-nas-docker装置布置浮屠"&gt;1.1 NAS-docker装置布置浮屠&lt;/h2&gt;
+&lt;p&gt;在继续阅览前，主张先了解一下再NAS中怎么布置&lt;code&gt;浮屠&lt;/code&gt;(&lt;a href="https://www.bt.cn/new/index.h"&gt;www.bt.cn/new/index.h&lt;/a&gt;…&lt;/p&gt;
+&lt;p&gt;我在极空间运用的是kangkang223大佬制造的&lt;a href="https://www.6hu.cc/archives/tag/%E9%95%9C%E5%83%8F"&gt;镜像&lt;/a&gt;（解决了权限问题）。&lt;/p&gt;
+&lt;p&gt;hub.docker.com/r/kangkang2…&lt;/p&gt;
+&lt;p&gt;官网浮屠官网（为什么用浮屠，因为装置各种环境太方便了）&lt;/p&gt;
+&lt;p&gt;hub.docker.com/r/btpanel/b…&lt;/p&gt;
+&lt;p&gt;好了正式开端：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;拉取镜像&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;docker pull baotaoserver/bt-nginx:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于镜像创立&lt;a href="https://www.6hu.cc/archives/tag/%E5%AE%B9%E5%99%A8"&gt;容器&lt;/a&gt;-基本设置&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a86e56.webp"&gt;
+ &lt;img class="mx-auto" alt="NAS &amp;#43; 宝塔 &amp;#43; typora &amp;#43; PicGo &amp;#43; lsky 搭建自动上传图片" src="https://img-cloud.zhoujie218.top/2023/08/31/64f0ae3a86e56.webp" /&gt;
+ &lt;/a&gt;
+ ]92830136-e20421f1ed677ed.webp)&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>910nd on 周杰个人博客</title><link>/tags/910nd/</link><description>Recent content in 910nd on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 14 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/910nd/index.xml" rel="self" type="application/rss+xml"/><item><title>老旧设备利用打印机服务实现网络打印,并实现打印机热插拔</title><link>/archives/2508.html</link><pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate><guid>/archives/2508.html</guid><description>&lt;p&gt;&lt;strong&gt;先决条件：能安装openwrt&lt;/strong&gt; 利用 OpenWrt 在局域网下共享打印机，主要需要以下两个插件&lt;/p&gt;
+&lt;h2 id="p910nd打印机服务器"&gt;p910nd打印机服务器&lt;/h2&gt;
+&lt;p&gt;sane扫描仪服务及配套的xinetd控制接口 接下来分别介绍两个插件的安装及配置流程&lt;/p&gt;
+&lt;p&gt;安装插件 p910nd&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;opkg update opkg install kmod-usb-printer p910nd luci-app-p910nd luci-i18n-p910nd-zh-cn&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;连接打印机 将打印机连接到路由器 USB 接口，输入指令&lt;/p&gt;
+&lt;p&gt;ssh登入进去 &lt;code&gt;**ls /dev/usb**&lt;/code&gt; 看到lp0设备，就说明 openwrt检测到了打印&lt;/p&gt;
+&lt;h2 id="开始使用"&gt;开始使用&lt;/h2&gt;
+&lt;p&gt;在 LUCI 界面配置打印机 找到 服务-打印服务器，勾选启动。&lt;/p&gt;
+&lt;p&gt;设备填上刚才看到的/dev/usb/lp0(需要选择下来出来的MX390 series FAX)，接口选择未指定即可，端口通常为9100。&lt;/p&gt;
+&lt;p&gt;打开putty，登录路由器，输入命令netstat –an，查看当前路由器连接，查询9100的端口是否已经有在监听和使用中，和对应的IP地址是否正确。&lt;/p&gt;
+&lt;p&gt;注意如果 OpenWrt 9100端口并没有如下图打开。&lt;/p&gt;
+&lt;p&gt;SSH，键入/etc/init.d/p910nd enable，然后重启（必须重启才会生效）。再进入ssh，键入netstat –an，SSH，键入/etc/init.d/p910nd enable，然后重启。再进入ssh，键入netstat –an，&lt;/p&gt;
+&lt;p&gt;windows,手机，mac等设备添加打印机就和添加正常网络打印机相同，不再重复&lt;/p&gt;
+&lt;h2 id="实现打印机的热插拔"&gt;&lt;a href="https://oldwiki.archive.openwrt.org/doc/howto/p910nd.server"&gt;实现打印机的热插拔&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在openwrt &amp;ldquo;/etc/hotplug.d/usbmisc/20-p910nd&amp;rdquo; 这个路经下面添加如下代码就可以了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-basic" data-lang="basic"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;`date`: HP LaserJet P1108 added&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&lt;/span&gt;tmp&lt;span style="color:#f92672"&gt;/&lt;/span&gt;hp&lt;span style="color:#ae81ff"&gt;-1108&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;/&lt;/span&gt;etc&lt;span style="color:#f92672"&gt;/&lt;/span&gt;rc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;d&lt;span style="color:#f92672"&gt;/&lt;/span&gt;S99p910nd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;网件wndr4300路由器，HP p1108 打印机示例&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2022/10/20221014061423216.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2022/10/20221014061423216.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这样即可在打开打印机时自动启动openwrt上面的打印服务&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="每天早上重启一次打印服务"&gt;每天早上重启一次打印服务&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-basic" data-lang="basic"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;30 &lt;span style="color:#ae81ff"&gt;6&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#f92672"&gt;/&lt;/span&gt;etc&lt;span style="color:#f92672"&gt;/&lt;/span&gt;rc&lt;span style="color:#f92672"&gt;.&lt;/span&gt;d&lt;span style="color:#f92672"&gt;/&lt;/span&gt;S99p910nd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

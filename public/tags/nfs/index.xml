@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nfs on 周杰个人博客</title><link>/tags/nfs/</link><description>Recent content in Nfs on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/nfs/index.xml" rel="self" type="application/rss+xml"/><item><title>centos 挂载 群晖nfs共享木录</title><link>/archives/1560.html</link><pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate><guid>/archives/1560.html</guid><description>&lt;p&gt;群辉开启NFS共享&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/pc/202111011325002.jpeg"&gt;
+ &lt;img class="mx-auto" alt="Centos挂载群辉的NFS共享文件夹" src="https://img-cloud.zhoujie218.top/pc/202111011325002.jpeg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;在客户端linux系统中安装NFS客户端工具&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg"&gt;
+ &lt;img class="mx-auto" alt="点击复制代码" src="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg" /&gt;
+ &lt;/a&gt;
+ Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yum install nfs-utils -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在linux中检测开启NFS服务的群辉主机IP&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg"&gt;
+ &lt;img class="mx-auto" alt="点击复制代码" src="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg" /&gt;
+ &lt;/a&gt;
+ Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;showmount -e 192.168.137.136
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# showmount -e 192.168.137.136&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Export list &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; 192.168.137.136:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/volume1/NFSfile *
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建目录并挂载&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg"&gt;
+ &lt;img class="mx-auto" alt="点击复制代码" src="https://www.imhu.cn/zb_users/plugin/Jz52_code/copy.svg" /&gt;
+ &lt;/a&gt;
+ Bash&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# mkdir /NFSfile&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# mount -t nfs 192.168.137.136:/volume1/NFSfile /NFSfile -o proto=tcp -o nolock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;# df -h&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Filesystem Size Used Avail Use% Mounted on
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/dev/mapper/centos-root 50G 5.6G 45G 12% /
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;devtmpfs 897M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 897M 0% /dev
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 912M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 912M 0% /dev/shm
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 912M 9.0M 903M 1% /run
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 912M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 912M 0% /sys/fs/cgroup
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/dev/sda1 1014M 179M 836M 18% /boot
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/dev/mapper/centos-home 147G 33M 147G 1% /home
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 183M 8.0K 183M 1% /run/user/42
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmpfs 183M &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt; 183M 0% /run/user/0
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;192.168.137.136:/volume1/NFSfile 6.7G 278M 6.4G 5% /NFSfile
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;[&lt;/span&gt;root@node30 ~&lt;span style="color:#f92672"&gt;]&lt;/span&gt;&lt;span style="color:#75715e"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>

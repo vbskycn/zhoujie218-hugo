@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on 周杰个人博客</title><link>/tags/ubuntu/</link><description>Recent content in Ubuntu on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 19 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>如何从 Ubuntu 22.04 升级到 Ubuntu 24.04</title><link>/archives/2634.html</link><pubDate>Wed, 19 Jun 2024 00:00:00 +0000</pubDate><guid>/archives/2634.html</guid><description>&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec972ca.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec972ca.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;经过开源社区多年的辛勤工作和奉献，Ubuntu 24.04 LTS 终于发布了。它包含了新功能、升级的软件版本和性能改进，大大增强了整体用户体验。&lt;/p&gt;
+&lt;p&gt;在本指南中，我们将逐步探索如何从 Ubuntu 22.04 升级到 Ubuntu 24.04。&lt;/p&gt;
+&lt;h3 id="1备份-ubuntu-2204"&gt;（1）备份 Ubuntu 22.04&lt;/h3&gt;
+&lt;p&gt;在升级之前，确保你备份了所有重要文件和目录。如升级失败，你仍然可以访问文件。比如你可以使用Timeshift 实用程序完成备份。&lt;/p&gt;
+&lt;h3 id="2升级系统"&gt;（2）升级系统&lt;/h3&gt;
+&lt;p&gt;备份就绪后，将系统升级到最新的 22.04 版本。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt update
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将已安装的软件包升级到最新版本&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt upgrade -y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重新启动系统以完成系统升级&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;检查系统是否运行最新的 22.04 版本&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;lsb_release -a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec473ec.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec473ec.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="3安装-update-manager-core"&gt;（3）安装 Update Manager Core&lt;/h3&gt;
+&lt;p&gt;系统更新后，就可以开始迁移到 Ubuntu 24.04 了。请确保您已经准备好了 update-manager-core ，这是一个管理发行版升级并简化升级过程的包。&lt;/p&gt;
+&lt;p&gt;安装 update-manager-core&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt install update-manager-core
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec475a4.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec475a4.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="4从-2204-升级到-2404"&gt;（4）从 22.04 升级到 24.04&lt;/h3&gt;
+&lt;p&gt;执行 do-release-upgrade 命令，升级到 Ubuntu 24.04 LTS 版本&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo do-release-upgrade -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/19/667279ec77e42.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/19/667279ec77e42.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;</description></item><item><title>Ubuntu使用gparted工具扩容，显示Unable to resize read-only file system</title><link>/archives/2567.html</link><pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate><guid>/archives/2567.html</guid><description>&lt;h3 id="一问题"&gt;一、问题&lt;/h3&gt;
+&lt;h4 id="出现提示无法调整只读文件系统的大小只能在挂载时调整文件系统的大小"&gt;出现提示：无法调整只读文件系统的大小，只能在挂载时调整文件系统的大小&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469d07f2ba.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469d07f2ba.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="二解决步骤"&gt;二、解决步骤&lt;/h3&gt;
+&lt;h4 id="第一步查看只读文件系统的详细信息点击information"&gt;第一步：查看只读文件系统的详细信息，点击Information&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469d8880a7.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469d8880a7.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="第二步查看该磁盘挂载的文件夹目录注意挂载的位置用--隔开容易忽略--"&gt;第二步：查看该磁盘挂载的文件夹目录（注意：挂载的位置用 ， 隔开，容易忽略 / ）&lt;/h4&gt;
+&lt;p&gt;我的挂在位置为：/ 和 /var/&lt;a href="https://so.csdn.net/so/search?q=snap&amp;amp;spm=1001.2101.3001.7020"&gt;snap&lt;/a&gt;/firefox/common/host-hunspell&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469db5a99b.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469db5a99b.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="第三步以root权限打开终端重新挂载文件夹目录的读写权限"&gt;第三步：以root权限打开终端，重新挂载文件夹目录的读写权限&lt;/h4&gt;
+&lt;p&gt;以我的为例：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo -i&lt;br&gt;
+mount -o remount -rw /&lt;br&gt;
+mount -o remount -rw /var/snap/firefox/common/host-hunspell&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469de55622.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469de55622.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="第四步刷新gparted中的设备后就可以调整文件系统大小了"&gt;第四步：刷新gparted中的设备后，就可以调整文件系统大小了&lt;/h4&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/11/03/654469e18c674.webp"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2023/11/03/654469e18c674.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h4 id="安装gparted"&gt;安装gparted&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;apt-get install gparted
+gparted
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>老式打印机套娃打印服务器p910nd和cups,实现一些特殊的功能</title><link>/archives/2537.html</link><pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2537.html</guid><description>&lt;h2 id="引子"&gt;引子&lt;/h2&gt;
+&lt;p&gt;HP的老旧激光打印机用来在家里给孩子打打作业什么的而是一个不错的选择。然而老旧有老旧的问题：如我的P1108只有USB口，默认情况下只能开PC打印，实在是麻烦。家里正好有常年工作的DS920+，而群晖内置的cups又基本是个废的，只好折腾一下来实现网络共享和无线打印。注意本文基本都是ssh下的终端操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Openwrt, 由于路由器的 RAM 一般都比较小，但是直接使用 cups 做打印服务器需要使用较大的资源，因此 Openwrt 系统源里面 现在已经不包含 cups 组件了。因为家里有个wdr3800老路由，安装cups带不动，所以才有了下面的折腾。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;任意一台 24 小时开机的 Linux 设备一台, 用于安装 CUPS 搭建 Airprint Server 使用, 如果不使用 IOS 设备，就不需要 CUPS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果家中只有 windows 和安卓设备，只需要配置 p910nd&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果家中有可以 24 小时开机并且 ram 大于 1G 并且带有 USB 口的设备，只需要配置 cups&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673add685d3c.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/2024/06/20/6673add685d3c.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="提前说结果最后经过实践"&gt;提前说结果：最后经过实践&lt;/h2&gt;
+&lt;p&gt;ubuntu22.04 默认安装的cups 2.41 自带的 惠普老款驱动 3.21.12 就能驱动我的P1108打印机了，简直是折腾了个腾：）&lt;/p&gt;
+&lt;p&gt;不过还是建议你参考本文&lt;/p&gt;
+&lt;h2 id="准备工作"&gt;准备工作&lt;/h2&gt;
+&lt;p&gt;设备：1台P1108，一台DS920+（DSM7.1），一台工作笔记本&lt;/p&gt;
+&lt;p&gt;软件：工作笔记本上备好putty、winscp等工具，DS920+开启SSH，下载好最新的hplip和hplip-plugin。&lt;/p&gt;
+&lt;p&gt;驱动地址：&lt;a href="https://go.smzdm.com/2f13d177a2f706bc/ca_aa_yc_163_a905p290_17721_1673_173_0"&gt;HP Developers Portal | Version: 3.22.10&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;插件地址：&lt;a href="https://go.smzdm.com/5cc5b1a7dc9ec909/ca_aa_yc_163_a905p290_17721_1673_173_0"&gt;HP Developers Portal | Plugins&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="步骤"&gt;步骤&lt;/h2&gt;
+&lt;p&gt;因为相关类似的文章挺多的，我这里不全面展开了，很多内容都有成熟的文章可以参考。主要按照操作步骤梳理下， 帮助大家避坑。&lt;/p&gt;</description></item><item><title>Ubuntu开箱使用指南（新手篇）</title><link>/archives/2523.html</link><pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate><guid>/archives/2523.html</guid><description>&lt;h3 id="ubuntu2004开启ssh服务"&gt;Ubuntu20.04开启ssh服务&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;1 安装ssh服务
+
+apt-get install openssh-server
+
+// 开启防火墙ssh的服务端口
+
+ufw allow ssh
+
+// 查看ssh服务状态
+
+systemctl status ssh
+
+// 关闭ssh服务
+
+systemctl stop ssh
+
+// 开启ssh服务
+
+systemctl start ssh
+
+// 重启ssh服务
+
+systemctl restart ssh
+
+// 设置开启自启
+
+sudo systemctl enable ssh
+
+// 关闭开机自启
+
+sudo systemctl disable ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202303061339729.png"&gt;
+ &lt;img class="mx-auto" alt="image-20230306133954252" src="https://img-cloud.zhoujie218.top/piggo/202303061339729.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="修改root用户ssh登录配置"&gt;修改root用户ssh登录配置&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;nano /etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;将port 22前面的#去掉
+将PermitRootLogin prohibit-password那一行修改为PermitRootLogin yes，去掉前面的#号
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ctrl+X 保存并退出&lt;/p&gt;
+&lt;p&gt;修改root用户登录桌面权限&lt;/p&gt;
+&lt;p&gt;一、设置root用户密码&lt;/p&gt;
+&lt;p&gt;使用如下命令设置root用户密码，执行命令后，依次输入当前登录用户密码，要设置的root密码，确认root密码&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo passwd root
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;二、注释如下两个文件的对应行&lt;/p&gt;
+&lt;p&gt;文件为/etc/pam.d/gdm-password和/etc/pam.d/gdm-autologin，找到如下代码后在文件前面加入#注释，代码为&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;auth required pam_succeed_if.so user != root quiet_success
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;编辑文件代码如下&lt;/p&gt;</description></item><item><title>Ubuntu20 普通设置</title><link>/archives/1797.html</link><pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate><guid>/archives/1797.html</guid><description>&lt;h2 id="ubuntu20-使用root-登录"&gt;&lt;strong&gt;ubuntu20 使用root 登录&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/06/20/6673a76a17b0e.png"&gt;
+ &lt;img class="mx-auto" alt="image-20240620115206320" src="https://img-cloud.zhoujie218.top/2024/06/20/6673a76a17b0e.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;第一步：&lt;/p&gt;
+&lt;p&gt;以普通用户登录系统，创建root用户的密码&lt;/p&gt;
+&lt;p&gt;在终端输入命令：&lt;/p&gt;
+&lt;p&gt;sudo passwd root&lt;/p&gt;
+&lt;p&gt;然后输入设置的密码，输入两次，这样就完成了设置root用户密码了&lt;/p&gt;
+&lt;p&gt;第二步：&lt;/p&gt;
+&lt;p&gt;修改文件sudo gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf&lt;/p&gt;
+&lt;p&gt;在文件末尾增加如下两行：&lt;/p&gt;
+&lt;p&gt;greeter-show-manual-login=true&lt;/p&gt;
+&lt;p&gt;all-guest=false&lt;/p&gt;
+&lt;p&gt;第三步：&lt;/p&gt;
+&lt;p&gt;修改 /etc/pam.d/gdm-autologin&lt;/p&gt;
+&lt;p&gt;/etc/pam.d/gdm-password&lt;/p&gt;
+&lt;p&gt;两个文件&lt;/p&gt;
+&lt;p&gt;sudo gedit /etc/pam.d/gdm-autologin&lt;/p&gt;
+&lt;p&gt;注释掉auth required pam_succeed_if.so user != root quiet_success这一行(第三行左右)&lt;/p&gt;
+&lt;p&gt;sudo gedit /etc/pam.d/gdm-password&lt;/p&gt;
+&lt;p&gt;注释掉 auth required pam_succeed_if.so user != root quiet_success这一行(第三行左右)&lt;/p&gt;
+&lt;p&gt;第四步：&lt;/p&gt;
+&lt;p&gt;修改/root/.profile文件&lt;/p&gt;
+&lt;p&gt;sudo gedit /root/.profile&lt;/p&gt;
+&lt;p&gt;将文件末尾的mesg n 2&amp;gt; /dev/null || true这一行修改成&lt;/p&gt;
+&lt;p&gt;tty -s&amp;amp;&amp;amp;mesg n || true&lt;/p&gt;
+&lt;p&gt;部分没有，可以不用修改本文来自&lt;/p&gt;
+&lt;h2 id="启用ssh"&gt;&lt;strong&gt;启用SSH&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Secure Shell（SSH）是用于客户端和服务器之间安全连接的网络协议。服务器与客户端之间的每次交互均被加密。&lt;/p&gt;
+&lt;p&gt;本教程说明了如何在Ubuntu计算机上启用SSH。&lt;/p&gt;
+&lt;p&gt;启用SSH将允许您远程连接到系统并执行管理任务。您还可以通过&lt;code&gt;scp&lt;/code&gt;和&lt;code&gt;sftp&lt;/code&gt;安全地传输文件。&lt;/p&gt;
+&lt;h2 id="在ubuntu上启用ssh"&gt;在Ubuntu上启用SSH&lt;/h2&gt;
+&lt;p&gt;默认情况下，首次安装Ubuntu时，不允许通过SSH进行远程访问。在Ubuntu上启用SSH非常简单。&lt;/p&gt;
+&lt;p&gt;以root 用户或具有sudo特权的用户执行以下步骤，以在Ubuntu系统上安装并启用SSH：&lt;/p&gt;</description></item><item><title>winscp连接vmware ubuntu</title><link>/archives/563.html</link><pubDate>Sun, 21 Oct 2018 00:00:00 +0000</pubDate><guid>/archives/563.html</guid><description>&lt;p&gt;winscp连接vmware ubuntu&lt;/p&gt;
+&lt;p&gt;windows下通过winscp,putty(ssh) 等连接ubuntu 需安装ssh服务&lt;/p&gt;
+&lt;p&gt;1、ubuntu桌面版本 默认并没有安装ssh服务，如果通过ssh链接ubuntu，需要自己手动安装ssh-server。判断是否安装ssh服务，可以通过如下命令进行：&lt;/p&gt;
+&lt;p&gt;$ ssh localhost ssh $ ssh localhost ssh: connect to host localhost port 22: Connection refused 1 2 如上所示，表示没有还没有安装，可以通过apt安装，命令如下：&lt;/p&gt;
+&lt;p&gt;$ sudo apt-get install openssh-server 1 系统将自动进行安装，安装完成以后，先启动服务：&lt;/p&gt;
+&lt;p&gt;$ sudo /etc/init.d/ssh start 1 启动后，可以通过如下命令查看服务是否正确启动：&lt;/p&gt;
+&lt;p&gt;$ ps -e|grep ssh&lt;/p&gt;
+&lt;p&gt;结果显示为：&lt;/p&gt;
+&lt;p&gt;1589 ?00:00:00 ssh-agent 2749 ?00:00:00 sshd 2843 pts/000:00:00 ssh 2844 ?00:00:00 sshd 2911 ?00:00:00 sshd 2949 pts/100:00:00 ssh 2950 ?00:00:00 sshd 3015 ?00:00:00 sshd 3272 pts/200:00:00 ssh 3273 ?00:00:00 sshd 3340 ?00:00:00 sshd 3838 ?00:00:00 sshd 3905 ?00:00:00 sshd 1 2 3 4 5 6 7 8 9 10 11 12 13 表明ssh服务已启动了.&lt;/p&gt;</description></item></channel></rss>

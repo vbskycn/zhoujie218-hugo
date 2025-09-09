@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sql on 周杰个人博客</title><link>/tags/sql/</link><description>Recent content in Sql on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 28 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sql/index.xml" rel="self" type="application/rss+xml"/><item><title>哪吒监控面板数据库损坏修复教程,原创</title><link>/archives/2667.html</link><pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate><guid>/archives/2667.html</guid><description>&lt;h1 id="哪吒监控面板数据库损坏修复教程"&gt;哪吒监控面板数据库损坏修复教程&lt;/h1&gt;
+&lt;h2 id="问题描述"&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;在使用哪吒监控面板时，可能会遇到以下错误：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除服务时提示 &amp;ldquo;database disk image is malformed&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;数据库操作失败&lt;/li&gt;
+&lt;li&gt;面板功能异常&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="原因分析"&gt;原因分析&lt;/h2&gt;
+&lt;p&gt;数据库损坏可能由以下原因导致：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;服务器突然断电或强制关机&lt;/li&gt;
+&lt;li&gt;磁盘空间不足&lt;/li&gt;
+&lt;li&gt;数据库文件权限问题&lt;/li&gt;
+&lt;li&gt;系统异常导致数据库写入中断&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="解决方案"&gt;解决方案&lt;/h2&gt;
+&lt;h3 id="步骤一停止服务"&gt;步骤一：停止服务&lt;/h3&gt;
+&lt;p&gt;首先需要停止哪吒面板服务，以防止在修复过程中产生新的数据写入：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl stop nezha-dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="步骤二备份数据库"&gt;步骤二：备份数据库&lt;/h3&gt;
+&lt;p&gt;在进行任何操作之前，务必先备份当前数据库文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cp /opt/nezha/dashboard/data/sqlite.db /opt/nezha/dashboard/data/sqlite.db.bak
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="步骤三修复数据库"&gt;步骤三：修复数据库&lt;/h3&gt;
+&lt;p&gt;使用 SQLite 的恢复命令修复数据库：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sqlite3 /opt/nezha/dashboard/data/sqlite.db &lt;span style="color:#e6db74"&gt;&amp;#34;.recover&amp;#34;&lt;/span&gt; | sqlite3 /opt/nezha/dashboard/data/sqlite.db.new
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/04/28/680f43ae62718.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250428170017456" src="https://img-cloud.zhoujie218.top/2025/04/28/680f43ae62718.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h3 id="步骤四替换数据库文件"&gt;步骤四：替换数据库文件&lt;/h3&gt;
+&lt;p&gt;将修复后的数据库文件替换原文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mv /opt/nezha/dashboard/data/sqlite.db.new /opt/nezha/dashboard/data/sqlite.db
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="步骤五重启服务"&gt;步骤五：重启服务&lt;/h3&gt;
+&lt;p&gt;修复完成后，重启哪吒面板服务：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl start nezha-dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="预防措施"&gt;预防措施&lt;/h2&gt;
+&lt;p&gt;为了避免数据库损坏，建议采取以下预防措施：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定期备份&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设置定时任务，定期备份数据库文件&lt;/li&gt;
+&lt;li&gt;建议每周至少备份一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;系统维护&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;确保服务器有足够的磁盘空间&lt;/li&gt;
+&lt;li&gt;定期检查系统日志&lt;/li&gt;
+&lt;li&gt;使用正常关机流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;权限管理&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;确保数据库文件权限正确&lt;/li&gt;
+&lt;li&gt;定期检查文件所有权&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="注意事项"&gt;注意事项&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在执行修复操作前，一定要先备份数据库文件&lt;/li&gt;
+&lt;li&gt;修复过程中不要中断操作&lt;/li&gt;
+&lt;li&gt;如果修复后仍然无法解决问题，可能需要重新安装面板&lt;/li&gt;
+&lt;li&gt;建议在服务器负载较低时进行修复操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="常见问题"&gt;常见问题&lt;/h2&gt;
+&lt;h3 id="q-修复后数据会丢失吗"&gt;Q: 修复后数据会丢失吗？&lt;/h3&gt;
+&lt;p&gt;A: 如果数据库损坏不严重，修复后数据通常可以保留。但建议 always 先备份。&lt;/p&gt;</description></item></channel></rss>

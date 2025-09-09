@@ -1,0 +1,194 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>使用宝塔安装Auxpi图床程序 并设置ShareX自定义上传 | 周杰个人博客</title><meta property="og:title" content="使用宝塔安装Auxpi图床程序 并设置ShareX自定义上传 - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2019-10-28T00:00:00+08:00'><meta property="article:modified_time" content='2019-10-28T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="使用宝塔安装Auxpi图床程序 并设置ShareX自定义上传"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/849.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#简介>简介</a></li><li><a href=#安装>安装</a><ul><li></li></ul></li><li><a href=#设置站点>设置站点</a></li><li><a href=#配置sharex>配置ShareX</a><ul><li></li></ul></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>使用宝塔安装Auxpi图床程序 并设置ShareX自定义上传</h1></header><time datetime=2019-10-28T00:00:00Z class="post-meta meta-date dt-published">2019年10月28日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a>
+<a href=/categories/wangyesheji>wangyesheji</a></div><div class=post-content><h2 id=简介>简介</h2><p>Aupxi 是一个集合多家图床 API 的图床程序，可以将图片上传至京东图床、头条图床、搜狐图床、苏宁图床、小米图床、网易图床、掘金图床等等一系列图床，当然也支持上传到本地服务器。</p><p>更重要的是，作者提到此图床一个重要功能，就是能够进行图片分发，大概意思就是，当你上传一张图片时，程序会按照各个图床的权重大小，将这一张图片上传到各个图床，当某一个图床挂了之后，会自动跳转到其他正常的图床，保证图片显示正常。</p><p>更详细的介绍可以看这里：<a href=https://www.v2ex.com/t/560833></a><a href=https://www.v2ex.com/t/560833>https://www.v2ex.com/t/560833</a></p><p>不过，要实测需要在后台上传到有分发功能，而且实际上似乎并没有分发……可能有待作者以后完善</p><p>项目地址：<a href=https://github.com/aimerforreimu/auxpi></a><a href=https://github.com/aimerforreimu/auxpi>https://github.com/aimerforreimu/auxpi</a></p><p>官方演示站：<a href=https://test.demo-1s.com/></a><a href=https://test.demo-1s.com/>https://test.demo-1s.com/</a></p><h2 id=安装>安装</h2><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi2-1024x451.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi2-1024x451.png></a></p><h4 id=安装宝塔>安装宝塔</h4><p>首先安装宝塔面板，根据 VPS 系统选择相应命令进行安装：</p><p>Centos 系统安装命令：</p><pre tabindex=0><code>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+</code></pre><p>Ubuntu/Deepin 系统安装命令：</p><pre tabindex=0><code>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+</code></pre><p>Debian安装命令：</p><pre tabindex=0><code>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh
+</code></pre><p>更详细的宝塔安装教程，可查看以下文章：</p><p>建站之路 | 宝塔面板安装使用新手教程</p><p>建站之路系列很久没更新，主要是没人看，懒得写。不过很久没写文章，也不知道写什么，所以就继续写。本文为新手详细介绍如&mldr;</p><p>宝塔安装完成后，打开宝塔面板，安装环境。项目 WIKI 里建议的环境为 Nginx + Mysql(5.6) + PHP + phpMyAdmin</p><h4 id=创建站点>创建站点</h4><p>如下图：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/QLcCQhTAuaVDqWYD20191028-3.jpg><img alt=uud.me-1559046365.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/QLcCQhTAuaVDqWYD20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559046365.jpg</figcaption></figure></p><p>注意选择 <strong>伪静态</strong></p><h4 id=开启ssl可选>开启SSL（可选）</h4><p>建议开启，自行设置即可</p><p>如下图：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/WP2rcvBXU4qASoZQ20191028-3.jpg><img alt=uud.me-1559046832.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/WP2rcvBXU4qASoZQ20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559046832.jpg</figcaption></figure><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/tzIQ0RLUXwujc05120191028-3.jpg><img alt=uud.me-1559046973.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/tzIQ0RLUXwujc05120191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559046973.jpg</figcaption></figure></p><h4 id=设置反向代理>设置反向代理</h4><p>如下图：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/uZeMHWLRoJyldayM20191028-3.jpg><img alt=uud.me-1559047090.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/uZeMHWLRoJyldayM20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559047090.jpg</figcaption></figure></p><p>注意需要<strong>关闭缓存</strong></p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6xY4yDrRhuTDu4gt20191028-3.jpg><img alt=uud.me-1559047141.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6xY4yDrRhuTDu4gt20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559047141.jpg</figcaption></figure></p><p>目标URL填写为 <a href=http://127.0.0.1/></a><a href=http://127.0.0.1>http://127.0.0.1</a>:2333</p><p>填写完毕后点击提交</p><p>提交后，点击<strong>配置文件</strong> 进行修改：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/CJYN3AFwmUpiV99520191028-3.jpg><img alt=uud.me-1559047243.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/CJYN3AFwmUpiV99520191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559047243.jpg</figcaption></figure></p><p>删除红框中的内容：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/DoORJLpuY7NjXLhD20191028-3.jpg><img alt=uud.me-1559047336.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/DoORJLpuY7NjXLhD20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559047336.jpg</figcaption></figure></p><h4 id=下载图床程序>下载图床程序</h4><p>回到 VPS 的远程连接窗口，输入如下命令下载程序：</p><pre tabindex=0><code>wget -N --no-check-certificate https://raw.githubusercontent.com/aimerforreimu/AUXPI/dev/install.sh &amp;&amp; chmod +x install.sh &amp;&amp; bash install.sh install
+</code></pre><p>见到如下显示，即下载完成，并且已经自动初始化</p><ul><li><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/lJ2NwXNs6eVfYWXL20191028-3.jpg><img alt=uud.me-1559048538.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/lJ2NwXNs6eVfYWXL20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559048538.jpg</figcaption></figure></li></ul><h4 id=创建数据库>创建数据库</h4><p>回到宝塔面板，创建数据库：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/TGNKPGsPIBVTzfzi20191028-3.jpg><img alt=uud.me-1559048716.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/TGNKPGsPIBVTzfzi20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559048716.jpg</figcaption></figure></p><p>填写好数据库名、数据库用户名、密码，待会要用</p><h4 id=修改配置文件>修改配置文件</h4><p>修改 <code>/root/auxpi/conf</code>目录下的 <code>siteConfig.json</code>文件，填写刚刚创建的数据库信息</p><pre tabindex=0><code>&#34;db_option&#34;: {
+    &#34;use_db&#34;: true,     
+    &#34;db_type&#34;: &#34;mysql&#34;,       
+    &#34;db_host&#34;: &#34;127.0.0.1:3306&#34;,    #数据库地址，正常不需要修改
+    &#34;db_name&#34;: &#34;auxpi&#34;,             #数据库名称
+    &#34;db_user&#34;: &#34;root&#34;,              #数据库用户名
+    &#34;db_pass&#34;: &#34;root&#34;,              #数据库密码
+    &#34;table_prefix&#34;: &#34;auxpi_&#34;        #数据表前缀，可不修改
+  },
+</code></pre><p>然后，再次修改 <code>/root/auxpi/conf</code>目录下的 <code>app.conf</code></p><p>这里是项目WIKI里没有提到的关键步骤，如果只是修改 <code>siteConfig.json</code>文件里的数据库信息之后就进行数据库迁移，会提示错误：<strong>[ERROR]:ql: database is closed ===>[main.go:60]</strong></p><p>打开<code>app.conf</code>，找到以下部分，同样填写创建的数据库信息：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/A137fYMaIhIKmfWg20191028-3.jpg><img alt=uud.me-1559049494.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/A137fYMaIhIKmfWg20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559049494.jpg</figcaption></figure></p><h4 id=迁移数据库>迁移数据库</h4><p>回到 VPS 会话窗口，输入如下命令：</p><pre tabindex=0><code>cd /root/auxpi
+./auxpi migrate
+</code></pre><p>看到 <strong>[INFO]: Migrate done</strong> 即代表迁移完成</p><h4 id=创建管理员账号>创建管理员账号</h4><p>在程序的根目录，输入以下命令创建管理员账号：</p><p>此命令含义为创建 密码为 <a href=mailto:code%3E123123123%3C/code%3E%C2%A0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BA:%3Ccode%3Ehello%3C/code%3E%C2%A0%E9%82%AE%E7%AE%B1%E4%B8%BA:%C2%A0%3Ccode%3Eauxpi@0w0.tn%3C/code>code>123123123 用户名为:<code>hello</code> 邮箱为: <code>auxpi@0w0.tn</code></a></p><p>[`</p><p>自行修改</p><pre tabindex=0><code>./auxpi -mod=admin -name=hello -email=auxpi@0w0.tn -pass=123123123 
+</code></pre><h4 id=运行程序>运行程序</h4><p>安装至此已经基本完成，为了保证程序在关闭远程连接后继续运行，需要安装 Screen 命令</p><p>运行一下命令安装 Screen</p><p>Centos 系统安装命令：</p><pre tabindex=0><code>yum install screen
+</code></pre><p>Ubuntu/Debian系统安装命令：</p><pre tabindex=0><code>apt install screen
+</code></pre><p>安装完成后，输入以下命令：</p><pre tabindex=0><code>screen -S auxpi
+
+#后台运行
+screen -dmS auxpi ./auxpi run
+</code></pre><p>然后进入 Auxpi 程序根目录，在程序根目录下输入如下命令运行程序：</p><pre tabindex=0><code>cd /root/auxpi
+./auxpi run
+</code></pre><p>如无意外就能看到程序正常运行了，之后按下键盘快捷键 <strong>Ctrl + A + D</strong> 挂起 Screen 会话</p><h2 id=设置站点>设置站点</h2><p>运行成功后，就可以打开站点绑定的域名，进入站点，用之前创建的管理员账号登录后台，界面如下：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/JL0Kw8H1KcEvNycX20191028-3.jpg><img alt=uud.me-1559128673.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/JL0Kw8H1KcEvNycX20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559128673.jpg</figcaption></figure></p><p>点击右上角用户名，进入个人用户后台，然后再次点击左侧菜单栏的 <strong>后台管理</strong> 进入后台：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/qrwHxqOHnMhJRr0f20191028-3.jpg><img alt=uud.me-1559128737.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/qrwHxqOHnMhJRr0f20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559128737.jpg</figcaption></figure></p><p>之后根据需求进行设置：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/xyeo1BK3bHT5gowR20191028-3.jpg><img alt=uud.me-1559128757.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/xyeo1BK3bHT5gowR20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559128757.jpg</figcaption></figure></p><p>如果你想使用 API 配合 ShareX 上传的话，似乎需要关闭 <strong>站点设置</strong> 里的 <strong>API认证</strong>：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/x9ef2BdRburEyyFw20191028-3.jpg><img alt=uud.me-1559128854.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/x9ef2BdRburEyyFw20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559128854.jpg</figcaption></figure></p><p>关闭后，记得点击右上角的 <strong>保存</strong></p><h2 id=配置sharex>配置ShareX</h2><h4 id=设置自定义目的地>设置自定义目的地</h4><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/BqyFgUZVBZqXskj520191028-3.jpg><img alt=uud.me-1559128977.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/BqyFgUZVBZqXskj520191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559128977.jpg</figcaption></figure></p><h4 id=设置request>设置Request</h4><p>需要填写的内容如下：</p><p><figure class="max-w-2xl mx-auto overflow-hidden"><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6GA3A0h1yDVF5jQy20191028-3.jpg><img alt=uud.me-1559129098.jpg src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/6GA3A0h1yDVF5jQy20191028-3.jpg></a><figcaption class="p-2 text-center">uud.me-1559129098.jpg</figcaption></figure><code>](mailto:code>123123123&lt;/code> 用户名为:&lt;code>hello&lt;/code> 邮箱为: &lt;code>auxpi@0w0.tn&lt;/code)</code><a href=mailto:code%3E123123123%3C/code%3E%C2%A0%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BA:%3Ccode%3Ehello%3C/code%3E%C2%A0%E9%82%AE%E7%AE%B1%E4%B8%BA:%C2%A0%3Ccode%3Eauxpi@0w0.tn%3C/code>要注意一下第2点的URL，需要换成你自己的域名：</a><a href=http://yourname/api/v1/upload></a><a href=http://yourname/api/v1/upload>http://yourname/api/v1/upload</a></p><p>另外需要注意的是，<strong>apiSelect</strong> <strong>的值</strong>需要<strong>注意区分大小写</strong></p><h4 id=设置response>设置Response</h4><p>如下图：</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/%e4%bd%bf%e7%94%a8%e5%ae%9d%e5%a1%94%e5%ae%89%e8%a3%85auxpi%e5%9b%be%e5%ba%8a%e7%a8%8b%e5%ba%8f-%e5%b9%b6%e8%ae%be%e7%bd%aesharex%e8%87%aa%e5%ae%9a%e4%b9%89%e4%b8%8a%e4%bc%a020191119.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/%e4%bd%bf%e7%94%a8%e5%ae%9d%e5%a1%94%e5%ae%89%e8%a3%85auxpi%e5%9b%be%e5%ba%8a%e7%a8%8b%e5%ba%8f-%e5%b9%b6%e8%ae%be%e7%bd%aesharex%e8%87%aa%e5%ae%9a%e4%b9%89%e4%b8%8a%e4%bc%a020191119.png>
+</a><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/%e4%bd%bf%e7%94%a8%e5%ae%9d%e5%a1%94%e5%ae%89%e8%a3%85auxpi%e5%9b%be%e5%ba%8a%e7%a8%8b%e5%ba%8f-%e5%b9%b6%e8%ae%be%e7%bd%aesharex%e8%87%aa%e5%ae%9a%e4%b9%89%e4%b8%8a%e4%bc%a020191119-1.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/11/%e4%bd%bf%e7%94%a8%e5%ae%9d%e5%a1%94%e5%ae%89%e8%a3%85auxpi%e5%9b%be%e5%ba%8a%e7%a8%8b%e5%ba%8f-%e5%b9%b6%e8%ae%be%e7%bd%aesharex%e8%87%aa%e5%ae%9a%e4%b9%89%e4%b8%8a%e4%bc%a020191119-1.png></a></p><p>这里共享一份我的图床服务器</p><p>{ &ldquo;Version&rdquo;: &ldquo;13.0.1&rdquo;, &ldquo;Name&rdquo;: &ldquo;免费聚合图床&rdquo;, &ldquo;DestinationType&rdquo;: &ldquo;ImageUploader&rdquo;, &ldquo;RequestMethod&rdquo;: &ldquo;POST&rdquo;, &ldquo;RequestURL&rdquo;: &ldquo;<a href=https://tu.zhoujie218.top/api/v1/upload>https://tu.zhoujie218.top/api/v1/upload</a>&rdquo;, &ldquo;Parameters&rdquo;: { &ldquo;Text&rdquo;: &ldquo;$json:data.url$&rdquo; }, &ldquo;Headers&rdquo;: { &ldquo;Authorization&rdquo;: &ldquo;这里写你自己的id&rdquo; }, &ldquo;Body&rdquo;: &ldquo;MultipartFormData&rdquo;, &ldquo;Arguments&rdquo;: { &ldquo;apiSelect&rdquo;: &ldquo;ali&rdquo; }, &ldquo;FileFormName&rdquo;: &ldquo;image&rdquo;, &ldquo;URL&rdquo;: &ldquo;$json:data.url$&rdquo; }</p><p>其中 <strong>URL</strong> 部分，如果需要返回 markdown 格式的链接，则填写 ：</p><pre tabindex=0><code>![$filename]($json:data.url$)
+</code></pre><p>如果只需要链接，则填写：</p><pre tabindex=0><code>$json:data.url$
+</code></pre><p>至此设置完成，更多关于 ShareX 的使用教程，可查看教程：<a href=https://www.uud.me/site-notes/sharex-picgo-weibo.html#ShareX+PicGo%E8%BF%91%E4%B9%8E%E5%AE%8C%E7%BE%8E%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88>传送门</a></p><p>如果你需要改更默认首页，只需要在反向代理里面加一句</p><h1 id=proxy-start>PROXY-START/</h1><p>location / { rewrite ^/$ /Ali last; #加在反向代理里面 proxy_pass <a href=http://127.0.0.1:2333>http://127.0.0.1:2333</a>; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header REMOTE-HOST $remote_addr; }</p><h1 id=proxy-end>PROXY-END/</h1><p>这样就可以了</p><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi.png><img class=mx-auto alt src=https://img-cloud.zhoujie218.top/wp-content/uploads/2019/10/auxpi.png>
+</a>`</p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/849.html>/archives/849.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class="post-meta meta-tags">没有标签</div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

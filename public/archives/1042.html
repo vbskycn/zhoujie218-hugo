@@ -1,0 +1,336 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘 | 周杰个人博客</title><meta property="og:title" content="centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘 - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2019-12-10T00:00:00+08:00'><meta property="article:modified_time" content='2019-12-10T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/1042.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>centos服务器安装rclone自动挂载无限容量谷歌相册Google photo为磁盘</h1></header><time datetime=2019-12-10T00:00:00Z class="post-meta meta-date dt-published">2019年12月10日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/diannaowangruo>diannaowangruo</a>
+<a href=/categories/wangyesheji>wangyesheji</a></div><div class=post-content><p>经常听说有人撸到无限容量的谷歌网络硬盘，或者是 5T 容量的，都是利用学生认证实现的，现在淘宝上也有一大堆，但是感觉这种都不一定稳，随时可能翻车，我自己是用的 <strong>google</strong> drive 个人版的免费 15G 空间，其实也够用了，可以<strong>挂载</strong>到服务器上，当一个普通的本地磁盘样操作，多 15G 随便放点什么都好，还稳定，不怕翻车，<strong>挂载</strong>主要通过 <strong>RCLONE</strong> 这个软件实现，需要服务器或者至少 KVM 架构的 VPS，因为需要用到 FUSE，而一般 OPENVZ 架构是不开启这个功能的，教程如下：</p><p>本教程基于 CENTOS 系统</p><p>1、安装 EPEL 源（这一步国外 VPS 一般可不用操作）:</p><pre tabindex=0><code>yum -y install epel-release
+</code></pre><p>2、安装一些基本组件和依赖:</p><pre tabindex=0><code>yum -y install wget unzip screen fuse fuse-devel
+</code></pre><p>3、下载 <strong>Rclone</strong> 解压然后进入目录:（64 位系统就下载 <strong>rclone</strong>-current-linux-amd64.zip，32 位系统就下载 <strong>rclone</strong>-current-linux-386.zip 替换下面代码中的链接就行了）</p><pre tabindex=0><code>wget https://downloads.rclone.org/rclone-current-linux-amd64.zip 
+unzip rclone-current-linux-amd64.zip
+cd rclone-v*
+</code></pre><p>注意<code>cd **rclone**-v*</code>这一步如果系统执行出错，你可以输入<code>ls</code>命令查看一下具体目录名，因为这个是使用最新版本，版本号不一定一样,然后根据真实的目录cd 进去一下</p><p>4、接下来运行 <strong>Rclone</strong> 开始配置:</p><pre tabindex=0><code>./rclone config
+</code></pre><p>5、第一步选择 n （n 为新建配置）</p><pre tabindex=0><code>e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&gt; n
+</code></pre><p>6、然后回车输入一个 name,建议这个 name 设置的简单好记一点,比如我们这边叫 gp，这个下面<strong>挂载</strong>磁盘时会用到如下所示:</p><pre tabindex=0><code>name&gt; gp
+</code></pre><p>7、下面选择<strong>挂载</strong>类型-谷歌相册，数字顺序可能会变，记得选 <strong>Google</strong> Photos 的项目</p><pre tabindex=0><code>Type of storage to configure.
+Enter a string value. Press Enter for the default (&#34;&#34;).
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+    &#34;fichier&#34;
+ 2 / Alias for an existing remote
+    &#34;alias&#34;
+ 3 / Amazon Drive
+    &#34;amazon cloud drive&#34;
+ 4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)
+    &#34;s3&#34;
+ 5 / Backblaze B2
+    &#34;b2&#34;
+ 6 / Box
+    &#34;box&#34;
+ 7 / Cache a remote
+    &#34;cache&#34;
+ 8 / Dropbox
+    &#34;dropbox&#34;
+ 9 / Encrypt/Decrypt a remote
+    &#34;crypt&#34;
+10 / FTP Connection
+    &#34;ftp&#34;
+11 / Google Cloud Storage (this is not Google Drive)
+    &#34;google cloud storage&#34;
+12 / Google Drive
+    &#34;drive&#34;
+13 / Google Photos
+    &#34;google photos&#34;
+14 / Hubic
+    &#34;hubic&#34;
+15 / JottaCloud
+    &#34;jottacloud&#34;
+16 / Koofr
+    &#34;koofr&#34;
+17 / Local Disk
+    &#34;local&#34;
+18 / Mega
+    &#34;mega&#34;
+19 / Microsoft Azure Blob Storage
+    &#34;azureblob&#34;
+20 / Microsoft OneDrive
+    &#34;onedrive&#34;
+21 / OpenDrive
+    &#34;opendrive&#34;
+22 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+    &#34;swift&#34;
+23 / Pcloud
+    &#34;pcloud&#34;
+24 / Put.io
+    &#34;putio&#34;
+25 / QingCloud Object Storage
+    &#34;qingstor&#34;
+26 / SSH/SFTP Connection
+    &#34;sftp&#34;
+27 / Union merges the contents of several remotes
+    &#34;union&#34;
+28 / Webdav
+    &#34;webdav&#34;
+29 / Yandex Disk
+    &#34;yandex&#34;
+30 / http Connection
+    &#34;http&#34;
+31 / premiumize.me
+    &#34;premiumizeme&#34;
+Storage&gt; 13
+</code></pre><p>8、下面三个选项留空，使用默认，直接回车</p><pre tabindex=0><code>** See help for google photos backend at: https://rclone.org/googlephotos/ **
+
+Google Application Client Id
+Leave blank normally.
+Enter a string value. Press Enter for the default (&#34;&#34;).
+
+client_id&gt;
+
+Google Application Client Secret
+Leave blank normally.
+Enter a string value. Press Enter for the default (&#34;&#34;).
+
+client_secret&gt;
+
+Set to make the Google Photos backend read only.
+
+If you choose read only then rclone will only request read only access
+to your photos, otherwise rclone will request full access.
+Enter a boolean value (true or false). Press Enter for the default (&#34;false&#34;).
+
+read_only&gt;
+</code></pre><p>9、下面两项选 n</p><pre tabindex=0><code>Edit advanced config? (y/n)
+y) Yes
+n) No
+
+y/n&gt; n
+
+Remote config
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes
+n) No
+
+y/n&gt; n
+</code></pre><p>10、这里会给出一个让你访问授权的网址，把它复制出来贴浏览器访问，然后一路下一步，最后会给你返回一串验证码</p><pre tabindex=0><code>If your browser doesn&#39;t open automatically go to the following link: https://accounts.google.com/o/oauth2/auth?access_type=offline&amp;client_id=****evjaotbpbab1*.apps.googleusercontent.com&amp;redirect_uri=u***Aoob&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fphotoslibrary+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fphotoslibrary&amp;state=****
+Log in and authorize rclone for access
+</code></pre><p>把给你的验证码贴这里</p><pre tabindex=0><code>Enter verification code&gt; *******dsadfddsdfdsfdf
+</code></pre><pre tabindex=0><code>*** IMPORTANT: All media items uploaded to Google Photos with rclone
+*** are stored in full resolution at original quality.  These uploads
+*** will count towards storage in your Google Account.
+</code></pre><p>这一步选y</p><pre tabindex=0><code>--------------------
+[gp]
+type = google photos
+token = {&#34;access_token&#34;:&#34;*******&#34;}
+--------------------
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+
+y/e/d&gt; y
+
+Current remotes:
+
+Name                 Type
+====                 ====
+gp                   google photos
+onedrive             onedrive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+</code></pre><p>这一步选q退出</p><pre tabindex=0><code>e/n/d/r/c/s/q&gt; q
+</code></pre><p>11、然后<strong>挂载</strong>，还是先创建一个本地磁盘，用于映射</p><pre tabindex=0><code>mkdir -p /gp
+</code></pre><p>12、手工<strong>挂载</strong>的话，输入下面命令 注意：此处<code>./**rclone** mount gp</code>中的 gp 就是上边设置的 name</p><pre tabindex=0><code>./rclone mount gp: /gp --allow-other --allow-non-empty --vfs-cache-mode writes
+</code></pre><p>手动<strong>挂载</strong>到此就结束了</p><p>13、需要开机自动<strong>挂载</strong>的话，继续往下看</p><p>13.1、先把 <strong>rclone</strong> 的可执行文件复制到 /usr/bin：</p><pre tabindex=0><code>cp /root/rclone-v*/rclone /usr/bin/rclone
+</code></pre><p>13.2、新建一个 rclonegp.service 文件：</p><pre tabindex=0><code>vi /usr/lib/systemd/system/rclonegp.service
+</code></pre><p>13.3、写入：</p><pre tabindex=0><code>[Unit]
+Description=rclonegp
+
+[Service]
+User=root
+ExecStart=/usr/bin/rclone mount gp: /gp --allow-other --allow-non-empty --vfs-cache-mode writes
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>13.4、重载 daemon，让新的服务文件生效：</p><pre tabindex=0><code>systemctl daemon-reload
+</code></pre><p>13.5、现在就可以用systemctl来启动<strong>rclone</strong>了：</p><pre tabindex=0><code>systemctl start rclonegp
+</code></pre><p>13.6、设置开机启动：</p><pre tabindex=0><code>systemctl enable rclonegp
+</code></pre><p>14、停止、查看状态可以用：</p><pre tabindex=0><code>systemctl stop rclonegp
+systemctl status rclonegp
+</code></pre><p>15、重启你的 VPS，然后查看一下 <strong>rclone</strong> 的服务起来没，接着查看一下盘子挂上去没：</p><pre tabindex=0><code>reboot
+systemctl status rclonegp
+df -h
+</code></pre><p>16、到这里就完成了</p><p><a href=https://lab.bnxb.com/zhishi/27736.html>https://lab.bnxb.com/zhishi/27736.html</a></p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/1042.html>/archives/1042.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class=post-archive><h2>相关文章</h2><ul class=listing><li><a href=/archives/1033.html>使用 gphotos-sync 备份 Google 相册到 （2019.7.10后不能同步解决方案）</a></li></ul></div><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/rclone>rclone</a></li></ul></div></article></div><footer id=footer><div>&copy; 2025 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (125)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/dns/>Dns</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mosdns/>Mosdns</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openclash/>Openclash</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>
