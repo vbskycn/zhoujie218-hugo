@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 周杰个人博客</title><link>/tags/hugo/</link><description>Recent content in Hugo on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>完美迁移博客从wordpress到hugo</title><link>/archives/2461.html</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>/archives/2461.html</guid><description>&lt;h2 id="前言"&gt;前言&lt;/h2&gt;
+&lt;p&gt;博客写了很多年，都没有写出什么有技术含量的文章。网络互联，你抄我也抄：） 这篇文章也是借鉴网友的 下面有他的链接完美从wordpress转到hugo&lt;/p&gt;
+&lt;h2 id="网站情况简介"&gt;网站情况简介&lt;/h2&gt;
+&lt;p&gt;开始介绍迁移过程之前，我先简单说一下我网站的基本情况供大家参考。如果大家网站情况和我一样，那完全可以采用跟我相同的迁移方案。 笔者从 06 年开始学做网站，那个时候还是im286 的时代。以前一直转战于各种免费空间，各种程序，体验的是那种安装折腾的过程，现在年纪大了，折腾不动了，就想越简单越好。本人没有什么技术，只是出于业余爱好，喜欢捣鼓一些网页程序之类的东东。3年前入手阿里云ESC，域名也备案了，也就绑在阿里了，也不想天天给网站搬家，真的是一件累人的事！&lt;/p&gt;
+&lt;p&gt;前几天看到一个博客特别漂亮，折腾之火熊熊燃烧。一路baidu过来，发现是静态博客hexo 。现在还可以结合cloudfare pages,netlifi,vercel ，github，这些国外大厂提供网站托管，cdn,免费，速度也不错。 最终我选的是cloudfare pages + github +hugo 因为cf不支持hexo集成,后面又研究hugo，有集成的更简单，鼠标键盘点点点，几分钟就建好了一个网站，更新也方便，写好文章，用github推上去，网站就自动更新了。&lt;/p&gt;
+&lt;h2 id="建一个网站的流程"&gt;建一个网站的流程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fork好喜欢的主题仓库&lt;/li&gt;
+&lt;li&gt;设置好网站信息，设置好cloudfare pages&lt;/li&gt;
+&lt;li&gt;github推送，OK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;原来我用的程序是wordpress,虽然没有写出什么技术文章，但是也有100多篇，也算是回忆吧。丢是不能丢的，转格式吧 baiduing&amp;hellip;.. 找了很多方法，下面这个是最完美的。 我们要迁移文章，还有图片。图床迁移实际上并不是一件容易的事情，因为目前所有的迁移工具都是只能&lt;strong&gt;识别 markdown 语法&lt;/strong&gt;的图片链接而不是&lt;strong&gt;html 标签&lt;/strong&gt;里面的链接。这就导致我们必须将 Wordpress 中的所有文章全部转成&lt;strong&gt;markdown 语法&lt;/strong&gt;。 最后一个问题就是保证文章的链接迁移前后没有变化，这样就可以保证拥有旧链接的人们可以正常访问。 综上，我们需要解决三个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;解析 Wordpress 备份的 &amp;ldquo;XML&amp;rdquo; 为拥有 markdown 语法的 &amp;ldquo;.md&amp;rdquo; 文件；&lt;/li&gt;
+&lt;li&gt;图床迁移；&lt;/li&gt;
+&lt;li&gt;固定链接。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="方案对比"&gt;方案对比&lt;/h2&gt;
+&lt;p&gt;当然，我们可以直接选择官网给出的方案&lt;a href="https://gohugo.io/tools/migrations/"&gt;Migrate to Hugo&lt;/a&gt;。对于 wordpress，主要有以下几种。 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202208011522171.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/piggo/202208011522171.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;这几种方案我都尝试过，各有优势却都不完美。以下是详细说明&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/SchumacherFM/wordpress-to-hugo-exporter"&gt;wordpress-to-hugo-exporter&lt;/a&gt;： 可以导出，且文件名称就是带有日期和中文的标题名称。但是不是原生 markdown 格式。而是如下图所示的结构。不满足需求 1，2，所以&lt;strong&gt;排除&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;exitwp-for-hugo: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037f5b5f3.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037f5b5f3.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/wooni005/exitwp-for-hugo"&gt;exitwp-for-hugo&lt;/a&gt;: 原始仓库是用 python2.x 写的，但是有人完善了 python3.x 的版本。这个程序可以将 Wordpress 的 xml 文件转成 markdown 语法的 md 文件，但是文件名太乱。（因为标题中包含了中文，所以这个程序会自动将中文转成 unicode 编码然后用它作为文件名储存在电脑中）
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa9c14.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa9c14.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/palaniraja/blog2md"&gt;blog2md&lt;/a&gt;: 与&lt;a href="https://github.com/wooni005/exitwp-for-hugo"&gt;exitwp-for-hugo&lt;/a&gt;类似，文件名太乱且不包含日期。
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa20bd.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037fa20bd.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/nantipov/wordhugopress"&gt;wordhugopress&lt;/a&gt;: java 写的程序，对于新手不太友好，但是也可以基于 Wordpress 博客中的文章生成 markdown 语法的 md 文件。需要配置数据库用户名和密码，而且最后生成的目录结构很乱。
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/04/22/6626037f54bc2.png"&gt;
+ &lt;img class="mx-auto" alt="image.png" src="https://img-cloud.zhoujie218.top/2024/04/22/6626037f54bc2.png" /&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后突然发现一个仓库&lt;a href="https://github.com/AvantaR/wordpress-export-to-markdown"&gt;wordpress-export-to-markdow_L 版&lt;/a&gt;，这个只需要自己在电脑上安装 node.js 环境，然后就可以直接运行了。它可以解决除&lt;strong&gt;固定链接&lt;/strong&gt;以外的所有问题，是一个近乎完美的方案。基于 L 版，&lt;a href="https://github.com/AvantaR"&gt;AvantaR&lt;/a&gt;，在 markdown 的 yaml 头文件中添加了&lt;strong&gt;slug&lt;/strong&gt;参数，详细实现见该仓库&lt;a href="https://github.com/AvantaR/wordpress-export-to-markdown"&gt;wordpress-export-to-markdow_A 版&lt;/a&gt;。 实际上&lt;strong&gt;slug&lt;/strong&gt;和&lt;strong&gt;url&lt;/strong&gt;还是有区别的。以下面这个 yaml 头和网站https://img-cloud.zhoujie218.top/archives/1018.html为例：&lt;/p&gt;</description></item></channel></rss>

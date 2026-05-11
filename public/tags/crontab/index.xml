@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Crontab on 周杰个人博客</title><link>/tags/crontab/</link><description>Recent content in Crontab on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/crontab/index.xml" rel="self" type="application/rss+xml"/><item><title>超级详细带例说明 Linux Crontab 定时任务的使用方法</title><link>/archives/1124.html</link><pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1124.html</guid><description>&lt;p&gt;linux内置的cron进程能帮我们实现这些需求，cron搭配shell脚本，非常复杂的指令也没有问题。&lt;/p&gt;
+&lt;h3 id="cron介绍"&gt;cron介绍&lt;/h3&gt;
+&lt;p&gt;我们经常使用的是crontab命令是cron table的简写，它是cron的配置文件，也可以叫它作业列表，我们可以在以下文件夹内找到相关配置文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/var/spool/cron/ 目录下存放的是每个用户包括root的crontab任务，每个任务以创建者的名字命名&lt;/li&gt;
+&lt;li&gt;/etc/crontab 这个文件负责调度各种管理和维护任务。&lt;/li&gt;
+&lt;li&gt;/etc/cron.d/ 这个目录用来存放任何要执行的crontab文件或脚本。&lt;/li&gt;
+&lt;li&gt;我们还可以把脚本放在/etc/cron.hourly、/etc/cron.daily、/etc/cron.weekly、/etc/cron.monthly目录中，让它每小时/天/星期、月执行一次。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="crontab的使用"&gt;crontab的使用&lt;/h3&gt;
+&lt;p&gt;我们常用的命令如下：&lt;/p&gt;
+&lt;p&gt;crontab [-u username] //省略用户表表示操作当前用户的crontab
+-e (编辑工作表)
+-l (列出工作表里的命令)
+-r (删除工作作)&lt;/p&gt;
+&lt;p&gt;我们用&lt;strong&gt;crontab -e&lt;/strong&gt;进入当前用户的工作表编辑，是常见的vim界面。每行是一条命令。&lt;/p&gt;
+&lt;p&gt;crontab的命令构成为 时间+动作，其时间有&lt;strong&gt;分、时、日、月、周&lt;/strong&gt;五种，操作符有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;*&lt;/strong&gt; 取值范围内的所有数字&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;/&lt;/strong&gt; 每过多少个数字&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-&lt;/strong&gt; 从X到Z&lt;/li&gt;
+&lt;li&gt;**，**散列数字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="实例"&gt;实例&lt;/h2&gt;
+&lt;p&gt;crontab -e&lt;/p&gt;
+&lt;h3 id="实例1每1分钟执行一次mycommand"&gt;实例1：每1分钟执行一次myCommand&lt;/h3&gt;
+&lt;p&gt;* * * * * myCommand&lt;/p&gt;
+&lt;h3 id="实例2每小时的第3和第15分钟执行"&gt;实例2：每小时的第3和第15分钟执行&lt;/h3&gt;
+&lt;p&gt;3,15 * * * * myCommand&lt;/p&gt;
+&lt;h3 id="实例3在上午8点到11点的第3和第15分钟执行"&gt;实例3：在上午8点到11点的第3和第15分钟执行&lt;/h3&gt;
+&lt;p&gt;3,15 8-11 * * * myCommand&lt;/p&gt;
+&lt;h3 id="实例4每隔两天的上午8点到11点的第3和第15分钟执行"&gt;实例4：每隔两天的上午8点到11点的第3和第15分钟执行&lt;/h3&gt;
+&lt;p&gt;3,15 8-11 */2 * * myCommand&lt;/p&gt;
+&lt;h3 id="实例5每周一上午8点到11点的第3和第15分钟执行"&gt;实例5：每周一上午8点到11点的第3和第15分钟执行&lt;/h3&gt;
+&lt;p&gt;3,15 8-11 * * 1 myCommand&lt;/p&gt;</description></item></channel></rss>

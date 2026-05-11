@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热插拔 on 周杰个人博客</title><link>/tags/%E7%83%AD%E6%8F%92%E6%8B%94/</link><description>Recent content in 热插拔 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E7%83%AD%E6%8F%92%E6%8B%94/index.xml" rel="self" type="application/rss+xml"/><item><title>DOCKER安装CUPS容器实现无线打印（支持大部分ARM设备）</title><link>/archives/2540.html</link><pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2540.html</guid><description>&lt;h1 id="一锐角云等x86机器"&gt;一.锐角云等X86机器&lt;/h1&gt;
+&lt;p&gt;执行代码拉取镜像并运行容器，这里仍然选择&lt;code&gt;tigerj/cups-airprint&lt;/code&gt;的，因为其他的我都试过识别不了我的&lt;code&gt;M1005&lt;/code&gt;，不知道是不是个案。而且这个镜像带&lt;code&gt;avahi&lt;/code&gt;，能实现&lt;code&gt;airprint&lt;/code&gt;，支持安卓及苹果设备直接使用系统自带打印服务搜索到打印机，非常方便。只是有点瑕疵，让我花了点时间解决了。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run \
+ --name=cups \
+ --restart=always \
+ --net=host \
+ -v /var/run/dbus:/var/run/dbus \
+ -v ~/airprint_data/config:/config \
+ -v ~/airprint_data/services:/services \
+ --device /dev/bus \
+ --device /dev/usb \
+ -e CUPSADMIN=&amp;#34;admin&amp;#34; \
+ -e CUPSPASSWORD=&amp;#34;password&amp;#34; \
+ tigerj/cups-airprint
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;后面步骤都一样，参考老版步骤，选择驱动，共享打印机，直到&lt;code&gt;cups&lt;/code&gt;里能打印出测试页面。这时如果去电脑或者手机的打印服务里搜索打印机是搜索不到的。接下来执行命令&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker exec cups service dbus start
+
+docker exec cups service avahi-daemon start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行之后去电脑或者手机系统自带的打印服务里搜索打印机，怎么样，是不是搜索到了？&lt;/p&gt;
+&lt;p&gt;这时候打印机能正常工作了，但是不能关，一关，再打开，打印作业就会被挂起，无法继续打印，只有手动重启&lt;code&gt;cups&lt;/code&gt;，要想实现打印机上电自动重启&lt;code&gt;cups&lt;/code&gt;，解决方法如下：&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;/etc/udev/rules.d&lt;/code&gt;目录下新建一条规则，如&lt;code&gt;m1005.rules&lt;/code&gt; 内容如下：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ACTION==&amp;#34;add&amp;#34;, SUBSYSTEM==&amp;#34;usb&amp;#34;, ENV{DEVTYPE}==&amp;#34;usb_device&amp;#34;, ENV{ID_VENDOR_ID}==&amp;#34;03f0&amp;#34;, ENV{ID_MODEL_ID}==&amp;#34;3b17&amp;#34;, RUN+=&amp;#34;/root/cupsstart.sh&amp;#34;
+
+ACTION==&amp;#34;remove&amp;#34;, SUBSYSTEM==&amp;#34;usb&amp;#34;, ENV{DEVTYPE}==&amp;#34;usb_device&amp;#34;, ENV{PRODUCT}==&amp;#34;3f0/3b17/100&amp;#34;, RUN+=&amp;#34;/root/cupsstop.sh&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这步操作是让系统在发现打印机接入及断开时执行脚本，这段代码也是百度来的，原本&lt;code&gt;add&lt;/code&gt;和&lt;code&gt;remove&lt;/code&gt;两段代码是一样的，唯一区别是最后执行的脚本不一样，但是实际执行的时候我发现只有打印机接入能执行&lt;code&gt;add&lt;/code&gt;这段代码，而打印机断电，不能执行&lt;code&gt;remove&lt;/code&gt;这段代码，继续百度，从&lt;a href="https://www.musz.cn/?golink=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMDYxMDQzMS9hcnRpY2xlL2RldGFpbHMvMTE0NTYyMzM1"&gt;https://blog.csdn.net/weixin_30610431/article/details/114562335&lt;/a&gt;找到了答案，执行 &lt;code&gt;udevadm monitor --kernel --property --subsystem-match=usb&lt;/code&gt;之后分别给打印机通电和断电，对比输出发现，断电时没有 &lt;code&gt;MODEL_ID&lt;/code&gt;参数，所以代码不执行了，根据实际输出，将断电代码如上修改之后，就顺利执行了。其中add段代码中的&lt;code&gt;03f0&lt;/code&gt; &lt;code&gt;3b17&lt;/code&gt; 两个数据要跟你你的实际修改，这两个参数可以通过执行&lt;code&gt;lsusb&lt;/code&gt;查看到 然后在&lt;code&gt;/root&lt;/code&gt;目录里建立两个脚本:&lt;code&gt;cupsstart.sh&lt;/code&gt;和&lt;code&gt;cupsstop.sh&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#!/bin/sh
+
+docker restart cups
+
+docker exec cups cupsaccept M1005
+
+docker exec cups service dbus start
+
+docker exec cups service avahi-daemon start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个脚本实现系统一发现打印机接入，就重启&lt;code&gt;cups&lt;/code&gt;容器，并设置打印机接受打印任务，另外将&lt;code&gt;avahi&lt;/code&gt;服务启动起来。&lt;/p&gt;</description></item></channel></rss>

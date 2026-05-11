@@ -1,0 +1,408 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>重构开源FlowMaster - 专业的网络流量实时监控系统 | 周杰个人博客</title><meta property="og:title" content="重构开源FlowMaster - 专业的网络流量实时监控系统 - 周杰个人博客"><meta property="og:type" content="article"><meta property="article:published_time" content='2025-07-17T00:00:00+08:00'><meta property="article:modified_time" content='2025-07-17T00:00:00+08:00'><meta name=Keywords content="zhoujie218,zhoujie218.top,zhou,blog.zhoujie218.top,周杰,记录点滴生活"><meta name=description content="重构开源FlowMaster - 专业的网络流量实时监控系统"><meta name=author content="zhoujie"><meta property="og:url" content="/archives/2674.html"><link rel="shortcut icon" href=/favicon.ico type=image/x-icon><link rel=stylesheet href=/css/normalize.css><link rel=stylesheet href=/css/style.css><script type=text/javascript src=/js/libs/jquery.min.js></script><meta name=google-adsense-account content="ca-pub-6941806026814791"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6941806026814791" crossorigin=anonymous></script><link href=/css/libs/jquery.fancybox.min.css rel=stylesheet><script>!function(e){"use strict";!function(){var s,n=window,o=document,i=e,r="https://sdk.51.la/js-sdk-pro.min.js",t=o.createElement("script"),a=o.getElementsByTagName("script")[0];t.type="text/javascript",t.setAttribute("charset","UTF-8"),t.async=!0,t.src=r,t.id="LA_COLLECT",i.d=t,s=function(){n.LA.ids.push(i)},n.LA?n.LA.ids&&s():(n.LA=e,n.LA.ids=[],s()),a.parentNode.insertBefore(t,a)}()}({id:"25cdlaVdMR4RaXPn",ck:"25cdlaVdMR4RaXPn"})</script></head><body><header id=header class=clearfix><div class=container><div class=col-group><div class=site-name><a id=logo href=/>周杰个人博客</a><p class=description>记录生活点滴</p></div><div><nav id=nav-menu class=clearfix><a class=current href=/>首页</a>
+<a href=/categories/diannaowangruo/ title=电脑网络>电脑网络</a>
+<a href=/categories/wangyesheji/ title=网站设计>网站设计</a>
+<a href=/categories/shenhuarizhi/ title=生活日志>生活日志</a>
+<a href=/archives/ title=归档>归档</a>
+<a href=/about/ title=关于>关于</a></nav></div></div></div></header><div id=body><div class=container><div class=col-group><div class=col-8 id=main><div class=res-cons><style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:normal;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-width:260px;max-height:70%;overflow-y:auto;overflow-x:hidden;top:20px}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px;word-break:break-word;overflow-wrap:anywhere;white-space:normal}.post-toc .post-toc-content a{display:inline-block;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;line-height:1.6}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style><div class=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#-目录>📋 目录</a></li><li><a href=#-项目介绍>📝 项目介绍</a><ul><li><a href=#-设计理念>🎯 设计理念</a></li></ul></li><li><a href=#-核心特性>✨ 核心特性</a><ul><li><a href=#-实时监控>🚀 实时监控</a></li><li><a href=#-多维度统计>📊 多维度统计</a></li><li><a href=#-智能网卡管理>🌐 智能网卡管理</a></li><li><a href=#-智能缓存系统>💾 智能缓存系统</a></li><li><a href=#-系统监控>🔍 系统监控</a></li><li><a href=#-用户界面>🎨 用户界面</a></li><li><a href=#-高级查询>📅 高级查询</a></li></ul></li><li><a href=#-技术架构>🛠️ 技术架构</a><ul><li><a href=#后端技术栈>后端技术栈</a></li><li><a href=#前端技术栈>前端技术栈</a></li><li><a href=#系统架构>系统架构</a></li></ul></li><li><a href=#-快速开始>📦 快速开始</a><ul><li><a href=#环境要求>环境要求</a></li><li><a href=#-一键部署>🚀 一键部署</a></li><li><a href=#-服务管理命令>📋 服务管理命令</a></li><li><a href=#-访问系统>🌐 访问系统</a></li></ul></li><li><a href=#-配置说明>🔧 配置说明</a><ul><li><a href=#环境变量配置>环境变量配置</a></li><li><a href=#pm2-配置>PM2 配置</a></li><li><a href=#手动安装步骤>手动安装步骤</a></li><li><a href=#-配置说明-1>🔧 配置说明</a></li></ul></li><li><a href=#-使用说明>📖 使用说明</a></li><li><a href=#-api-文档>📚 API 文档</a><ul><li><a href=#基础信息>基础信息</a></li><li><a href=#接口列表>接口列表</a></li><li><a href=#错误处理>错误处理</a></li></ul></li><li><a href=#-高级功能>🚀 高级功能</a><ul><li><a href=#智能缓存系统>智能缓存系统</a></li><li><a href=#性能监控>性能监控</a></li><li><a href=#诊断系统>诊断系统</a></li><li><a href=#图表优化>图表优化</a></li></ul></li><li><a href=#-故障排除>🔍 故障排除</a><ul><li><a href=#常见问题>常见问题</a></li><li><a href=#日志分析>日志分析</a></li><li><a href=#性能诊断>性能诊断</a></li></ul></li><li><a href=#-性能优化>⚡ 性能优化</a><ul><li><a href=#系统优化建议>系统优化建议</a></li><li><a href=#监控指标>监控指标</a></li></ul></li><li><a href=#-开发指南>👨‍💻 开发指南</a><ul><li><a href=#本地开发环境>本地开发环境</a></li><li><a href=#项目结构>项目结构</a></li><li><a href=#代码规范>代码规范</a></li><li><a href=#测试>测试</a></li></ul></li><li><a href=#-贡献指南>🤝 贡献指南</a><ul><li><a href=#贡献方式>贡献方式</a></li><li><a href=#开发流程>开发流程</a></li><li><a href=#提交规范>提交规范</a></li><li><a href=#代码审查>代码审查</a></li></ul></li><li><a href=#-开源协议>📄 开源协议</a><ul><li><a href=#协议要点>协议要点</a></li></ul></li><li><a href=#-联系方式>📞 联系方式</a><ul><li><a href=#项目维护者>项目维护者</a></li><li><a href=#获取帮助>获取帮助</a></li><li><a href=#支持项目>支持项目</a></li></ul></li><li><a href=#-致谢>🙏 致谢</a></li></ul></nav></div></div><script type=text/javascript>$(function(){var e=$(".post-toc");if(!e.length)return;function t(){var n,s,t=$("#main");if(!t.length||!t.offset())return;n=t.offset().left,n>220?(s=Math.min(n-20,200),e.css({width:s,"margin-left":0-s-10})):e.css({width:200,"margin-left":-210})}t(),$(window).on("resize",t),$("#TableOfContents").children().length<1&&e.remove()})</script><article class=post><header><h1 class=post-title>重构开源FlowMaster - 专业的网络流量实时监控系统</h1></header><time datetime=2025-07-17T00:00:00Z class="post-meta meta-date dt-published">2025年7月17日</time><div class="post-meta meta-category"><span>&nbsp;|</span>
+<a href=/categories/it-related>it-related</a>
+<a href=/categories/diannaowangruo>diannaowangruo</a>
+<a href=/categories/wangyesheji>wangyesheji</a></div><div class=post-content><p>觉得还不错的佬友给个star 免流 开源地址：<a href=https://github.com/vbskycn/FlowMaster>https://github.com/vbskycn/FlowMaster</a> 演示地址：<a href=https://flowmaster.zhoujie218.top/>https://flowmaster.zhoujie218.top/</a></p><h1 id=flowmaster---专业的网络流量实时监控系统>FlowMaster - 专业的网络流量实时监控系统</h1><p><a data-fancybox=gallery href=https://img-cloud.zhoujie218.top/2025/08/08/6895652145add.png><img class=mx-auto alt=1754621216830.png src=https://img-cloud.zhoujie218.top/2025/08/08/6895652145add.png></a></p><h2 id=-目录>📋 目录</h2><ul><li><a href=#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D>项目介绍</a></li><li><a href=#-%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7>✨ 核心特性</a></li><li><a href=#%EF%B8%8F-%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84>🛠️ 技术架构</a></li><li><a href=#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B>📦 快速开始</a></li><li><a href=#-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E>🔧 配置说明</a></li><li><a href=#-api-%E6%96%87%E6%A1%A3>📚 API 文档</a></li><li><a href=#-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD>🚀 高级功能</a></li><li><a href=#-%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4>🔍 故障排除</a></li><li><a href=#-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96>⚡ 性能优化</a></li><li><a href=#-%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97>👨‍💻 开发指南</a></li><li><a href=#-%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97>🤝 贡献指南</a></li><li><a href=#-%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE>📄 开源协议</a></li></ul><h2 id=-项目介绍>📝 项目介绍</h2><p>FlowMaster 是一个基于 <strong>vnstat</strong> 的专业网络流量监控系统，采用现代化的 Web 技术栈构建。系统提供实时流量监控、多维度数据分析、智能缓存管理、性能监控等高级功能，让网络流量监控变得简单而强大。</p><h3 id=-设计理念>🎯 设计理念</h3><ul><li><strong>高性能</strong>: 智能缓存系统，LRU算法优化，内存使用监控</li><li><strong>高可用</strong>: 完善的错误处理，自动诊断，降级机制</li><li><strong>易扩展</strong>: 模块化设计，RESTful API，支持多网卡</li><li><strong>用户友好</strong>: 响应式界面，深色主题，实时更新</li></ul><h2 id=-核心特性>✨ 核心特性</h2><h3 id=-实时监控>🚀 实时监控</h3><ul><li><strong>实时流量图表</strong>: 基于Chart.js的动态图表，支持实时数据更新</li><li><strong>速度监控</strong>: 接收/发送速度实时显示（kb/秒）</li><li><strong>数据包统计</strong>: 实时数据包传输统计</li><li><strong>自动刷新</strong>: 可配置的自动刷新间隔（1秒-60秒）</li></ul><h3 id=-多维度统计>📊 多维度统计</h3><ul><li><strong>分钟统计</strong>: 最近5分钟流量数据，30秒缓存</li><li><strong>小时统计</strong>: 最近12小时数据，1分钟缓存</li><li><strong>日统计</strong>: 最近12天数据，2分钟缓存</li><li><strong>月统计</strong>: 最近30天数据，5分钟缓存</li><li><strong>年统计</strong>: 年度数据，10分钟缓存</li></ul><h3 id=-智能网卡管理>🌐 智能网卡管理</h3><ul><li><strong>自动检测</strong>: 自动发现和验证可用网络接口</li><li><strong>优先级排序</strong>: 物理网卡优先，虚拟接口靠后</li><li><strong>多接口支持</strong>: 支持eth、ens、enp、wlan、bond、docker等接口</li><li><strong>接口验证</strong>: 自动验证接口有效性</li></ul><h3 id=-智能缓存系统>💾 智能缓存系统</h3><ul><li><strong>LRU缓存</strong>: 最近最少使用算法</li><li><strong>内存监控</strong>: 实时监控缓存内存使用</li><li><strong>缓存统计</strong>: 命中率、缓存条目、内存使用统计</li><li><strong>自动清理</strong>: 定期清理过期缓存</li><li><strong>可配置</strong>: 支持自定义缓存大小和内存限制</li></ul><h3 id=-系统监控>🔍 系统监控</h3><ul><li><strong>性能监控</strong>: 响应时间、请求计数、平均响应时间</li><li><strong>内存监控</strong>: RSS、堆内存、外部内存使用</li><li><strong>服务器状态</strong>: 运行时间、平台信息、vnstat状态</li><li><strong>诊断功能</strong>: 自动诊断连接问题和vnstat配置</li></ul><h3 id=-用户界面>🎨 用户界面</h3><ul><li><strong>响应式设计</strong>: 完美适配桌面和移动设备</li><li><strong>深色主题</strong>: 支持深色/浅色主题切换</li><li><strong>实时图表</strong>: 基于Chart.js的交互式图表</li><li><strong>数据表格</strong>: 格式化的数据展示</li><li><strong>加载状态</strong>: 优雅的加载动画</li></ul><h3 id=-高级查询>📅 高级查询</h3><ul><li><strong>日期范围查询</strong>: 自定义时间段数据查询</li><li><strong>单位统一</strong>: 自动单位转换和归一化</li><li><strong>数据过滤</strong>: 智能过滤无效数据</li><li><strong>图表渲染</strong>: 查询结果图表展示</li></ul><h2 id=-技术架构>🛠️ 技术架构</h2><h3 id=后端技术栈>后端技术栈</h3><table><thead><tr><th>组件</th><th>技术</th><th>版本</th><th>说明</th></tr></thead><tbody><tr><td><strong>运行时</strong></td><td>Node.js</td><td>14.0.0+</td><td>JavaScript运行时环境</td></tr><tr><td><strong>Web框架</strong></td><td>Express.js</td><td>4.18.2+</td><td>轻量级Web应用框架</td></tr><tr><td><strong>跨域处理</strong></td><td>CORS</td><td>2.8.5+</td><td>跨域资源共享</td></tr><tr><td><strong>进程管理</strong></td><td>PM2</td><td>最新</td><td>生产环境进程管理器</td></tr><tr><td><strong>监控工具</strong></td><td>vnstat</td><td>2.0.0+</td><td>网络流量监控工具</td></tr></tbody></table><h3 id=前端技术栈>前端技术栈</h3><table><thead><tr><th>组件</th><th>技术</th><th>版本</th><th>说明</th></tr></thead><tbody><tr><td><strong>框架</strong></td><td>Vue.js</td><td>3.2.31+</td><td>渐进式JavaScript框架</td></tr><tr><td><strong>UI框架</strong></td><td>Bootstrap</td><td>5.1.3+</td><td>响应式CSS框架</td></tr><tr><td><strong>图表库</strong></td><td>Chart.js</td><td>4.4.1+</td><td>交互式图表库</td></tr><tr><td><strong>HTTP客户端</strong></td><td>Axios</td><td>0.26.0+</td><td>Promise-based HTTP客户端</td></tr><tr><td><strong>图标库</strong></td><td>Bootstrap Icons</td><td>1.8.0+</td><td>图标字体库</td></tr></tbody></table><h3 id=系统架构>系统架构</h3><pre tabindex=0><code>┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   前端界面      │    │   API网关       │    │   vnstat工具    │
+│   (Vue.js)      │◄──►│   (Express)     │◄──►│   (系统命令)    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                              │
+                              ▼
+                       ┌─────────────────┐
+                       │   缓存系统      │
+                       │   (LRU Cache)   │
+                       └─────────────────┘
+</code></pre><h2 id=-快速开始>📦 快速开始</h2><h3 id=环境要求>环境要求</h3><table><thead><tr><th>组件</th><th>最低版本</th><th>推荐版本</th><th>说明</th></tr></thead><tbody><tr><td><strong>Node.js</strong></td><td>14.0.0</td><td>18.0.0+</td><td>JavaScript运行时</td></tr><tr><td><strong>vnstat</strong></td><td>2.0.0</td><td>2.10+</td><td>网络监控工具</td></tr><tr><td><strong>npm</strong></td><td>6.0.0</td><td>8.0.0+</td><td>包管理器</td></tr><tr><td><strong>操作系统</strong></td><td>Linux</td><td>Ubuntu 20.04+</td><td>支持vnstat的系统</td></tr></tbody></table><h3 id=-一键部署>🚀 一键部署</h3><p><strong>国际网络：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>curl -o install.sh https://raw.githubusercontent.com/vbskycn/FlowMaster/main/install.sh <span style=color:#f92672>&amp;&amp;</span> chmod +x install.sh <span style=color:#f92672>&amp;&amp;</span> sudo ./install.sh
+</span></span></code></pre></div><p><strong>国内网络：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>curl -o install.sh https://gh-proxy.com/https://raw.githubusercontent.com/vbskycn/FlowMaster/main/install.sh <span style=color:#f92672>&amp;&amp;</span> chmod +x install.sh <span style=color:#f92672>&amp;&amp;</span> sudo ./install.sh
+</span></span></code></pre></div><h3 id=-服务管理命令>📋 服务管理命令</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 启动服务</span>
+</span></span><span style=display:flex><span>flowmaster start
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 停止服务</span>
+</span></span><span style=display:flex><span>flowmaster stop
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启服务</span>
+</span></span><span style=display:flex><span>flowmaster restart
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看状态</span>
+</span></span><span style=display:flex><span>flowmaster status
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看日志</span>
+</span></span><span style=display:flex><span>flowmaster logs
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 卸载服务</span>
+</span></span><span style=display:flex><span>flowmaster uninstall
+</span></span></code></pre></div><h3 id=-访问系统>🌐 访问系统</h3><p>安装完成后，通过浏览器访问：<code>http://服务器IP:10089</code></p><blockquote><p>⚠️ <strong>注意</strong>: 请确保防火墙已放行 10089 端口</p></blockquote><h2 id=-配置说明>🔧 配置说明</h2><h3 id=环境变量配置>环境变量配置</h3><p>创建 <code>.env</code> 文件或设置环境变量：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 服务器配置</span>
+</span></span><span style=display:flex><span>PORT<span style=color:#f92672>=</span><span style=color:#ae81ff>10089</span>                          <span style=color:#75715e># 服务端口</span>
+</span></span><span style=display:flex><span>NODE_ENV<span style=color:#f92672>=</span>production                 <span style=color:#75715e># 运行环境</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 缓存配置</span>
+</span></span><span style=display:flex><span>CACHE_MAX_SIZE<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>                  <span style=color:#75715e># 最大缓存条目数</span>
+</span></span><span style=display:flex><span>CACHE_MAX_MEMORY_MB<span style=color:#f92672>=</span><span style=color:#ae81ff>50</span>              <span style=color:#75715e># 最大缓存内存(MB)</span>
+</span></span><span style=display:flex><span>CACHE_CLEANUP_INTERVAL<span style=color:#f92672>=</span><span style=color:#ae81ff>60000</span>        <span style=color:#75715e># 缓存清理间隔(ms)</span>
+</span></span><span style=display:flex><span>MEMORY_MONITOR_INTERVAL<span style=color:#f92672>=</span><span style=color:#ae81ff>300000</span>      <span style=color:#75715e># 内存监控间隔(ms)</span>
+</span></span></code></pre></div><h3 id=pm2-配置>PM2 配置</h3><p>创建 <code>ecosystem.config.js</code> 文件：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>exports</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>apps</span><span style=color:#f92672>:</span> [{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;flowmaster&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>script</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;server.js&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>instances</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>autorestart</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>watch</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>max_memory_restart</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;1G&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>env</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>NODE_ENV</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;production&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>PORT</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>10089</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>CACHE_MAX_SIZE</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>100</span>,
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>CACHE_MAX_MEMORY_MB</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>env_production</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>NODE_ENV</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;production&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }]
+</span></span><span style=display:flex><span>};
+</span></span></code></pre></div><h3 id=手动安装步骤>手动安装步骤</h3><h4 id=1-安装依赖>1. 安装依赖</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Ubuntu/Debian</span>
+</span></span><span style=display:flex><span>sudo apt-get update
+</span></span><span style=display:flex><span>sudo apt-get install vnstat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CentOS/RHEL</span>
+</span></span><span style=display:flex><span>sudo yum install vnstat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启动vnstat服务</span>
+</span></span><span style=display:flex><span>sudo systemctl enable vnstat
+</span></span><span style=display:flex><span>sudo systemctl start vnstat
+</span></span></code></pre></div><h4 id=2-安装nodejs和pm2>2. 安装Node.js和PM2</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 安装Node.js (推荐使用nvm)</span>
+</span></span><span style=display:flex><span>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+</span></span><span style=display:flex><span>source ~/.bashrc
+</span></span><span style=display:flex><span>nvm install <span style=color:#ae81ff>18</span>
+</span></span><span style=display:flex><span>nvm use <span style=color:#ae81ff>18</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 安装PM2</span>
+</span></span><span style=display:flex><span>npm install -g pm2
+</span></span><span style=display:flex><span>pm2 startup
+</span></span></code></pre></div><h4 id=3-部署应用>3. 部署应用</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 克隆项目</span>
+</span></span><span style=display:flex><span>git clone https://github.com/vbskycn/FlowMaster.git
+</span></span><span style=display:flex><span>cd FlowMaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 安装依赖</span>
+</span></span><span style=display:flex><span>npm install
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启动服务</span>
+</span></span><span style=display:flex><span>pm2 start ecosystem.config.js
+</span></span><span style=display:flex><span>pm2 save
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 调试启动</span>
+</span></span><span style=display:flex><span>npm install
+</span></span><span style=display:flex><span>node server.js
+</span></span></code></pre></div><h4 id=6-pm2-管理命令>6. PM2 管理命令</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 查看服务状态</span>
+</span></span><span style=display:flex><span>pm2 status flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看服务日志</span>
+</span></span><span style=display:flex><span>pm2 logs flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启服务</span>
+</span></span><span style=display:flex><span>pm2 restart flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 停止服务</span>
+</span></span><span style=display:flex><span>pm2 stop flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 删除服务</span>
+</span></span><span style=display:flex><span>pm2 delete flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看详细信息</span>
+</span></span><span style=display:flex><span>pm2 show flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 监控服务</span>
+</span></span><span style=display:flex><span>pm2 monit
+</span></span></code></pre></div><p>默认访问地址：<code>http://localhost:10089</code></p><h4 id=7-更新脚本>7. 更新脚本</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>cd FlowMaster <span style=color:#75715e>#进入脚本目录</span>
+</span></span><span style=display:flex><span>git pull <span style=color:#75715e>#更新仓库</span>
+</span></span><span style=display:flex><span>pm2 restart flowmaster进程 <span style=color:#75715e>#重启flowmaster进程</span>
+</span></span></code></pre></div><h3 id=-配置说明-1>🔧 配置说明</h3><p>使用 PM2 设置环境变量：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 设置端口</span>
+</span></span><span style=display:flex><span>pm2 start server.js --name flowmaster --env PORT<span style=color:#f92672>=</span><span style=color:#ae81ff>10089</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 或在 ecosystem.config.js 中配置</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#39;module.exports = {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  apps: [{
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    name: &#34;flowmaster&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    script: &#34;server.js&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    env: {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      PORT: 10089
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}&#39;</span> &gt; ecosystem.config.js
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 使用配置文件启动</span>
+</span></span><span style=display:flex><span>pm2 start ecosystem.config.js
+</span></span></code></pre></div><h2 id=-使用说明>📖 使用说明</h2><ol><li>系统启动后，自动检测可用网卡</li><li>在界面上选择要监控的网卡</li><li>查看实时流量和历史统计数据</li><li>可开启自动刷新功能，实时更新数据</li></ol><h2 id=-api-文档>📚 API 文档</h2><h3 id=基础信息>基础信息</h3><ul><li><strong>基础URL</strong>: <code>http://localhost:10089</code></li><li><strong>内容类型</strong>: <code>application/json</code></li><li><strong>字符编码</strong>: <code>UTF-8</code></li></ul><h3 id=接口列表>接口列表</h3><h4 id=1-获取网络接口列表>1. 获取网络接口列表</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-http data-lang=http><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/interfaces
+</span></span></span></code></pre></div><p><strong>响应示例：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;interfaces&#34;</span>: [<span style=color:#e6db74>&#34;eth0&#34;</span>, <span style=color:#e6db74>&#34;wlan0&#34;</span>, <span style=color:#e6db74>&#34;docker0&#34;</span>]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=2-获取统计数据>2. 获取统计数据</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-http data-lang=http><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/stats/{interface}/{period}
+</span></span></span></code></pre></div><p><strong>参数说明：</strong></p><ul><li><code>interface</code>: 网络接口名称 (如: eth0)</li><li><code>period</code>: 统计周期<ul><li><code>l</code>: 实时数据</li><li><code>5</code>: 5分钟统计</li><li><code>h</code>: 小时统计</li><li><code>d</code>: 日统计</li><li><code>m</code>: 月统计</li><li><code>y</code>: 年统计</li></ul></li></ul><p><strong>响应示例：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;data&#34;</span>: [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;eth0 / 5 minute&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;时间 | 接收(MiB) | 发送(MiB) | 总计(MiB) | 平均速率&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;---&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;14:55 | 12.34 | 5.67 | 18.01 | 2.40 kb/s&#34;</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=3-日期范围查询>3. 日期范围查询</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-http data-lang=http><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/stats/{interface}/range/{startDate}/{endDate}
+</span></span></span></code></pre></div><p><strong>参数说明：</strong></p><ul><li><code>interface</code>: 网络接口名称</li><li><code>startDate</code>: 开始日期 (YYYY-MM-DD)</li><li><code>endDate</code>: 结束日期 (YYYY-MM-DD)</li></ul><h4 id=4-获取版本信息>4. 获取版本信息</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-http data-lang=http><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/version
+</span></span></span></code></pre></div><p><strong>响应示例：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;version&#34;</span>: <span style=color:#e6db74>&#34;1.1.7&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h4 id=5-缓存管理>5. 缓存管理</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-http data-lang=http><span style=display:flex><span><span style=color:#960050;background-color:#1e0010># 获取缓存统计
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/cache/stats
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010># 清空缓存
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>POST /api/cache/clear
+</span></span></span></code></pre></div><h4 id=6-系统监控>6. 系统监控</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-http data-lang=http><span style=display:flex><span><span style=color:#960050;background-color:#1e0010># 获取内存使用
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/system/memory
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010># 获取服务器状态
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/system/status
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010># 测试vnstat
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>GET /api/test/vnstat
+</span></span></span></code></pre></div><h3 id=错误处理>错误处理</h3><p>所有API都遵循统一的错误响应格式：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;error&#34;</span>: <span style=color:#e6db74>&#34;错误描述&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;timestamp&#34;</span>: <span style=color:#e6db74>&#34;2024-01-01T00:00:00.000Z&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;requestId&#34;</span>: <span style=color:#e6db74>&#34;abc123def&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><strong>常见HTTP状态码：</strong></p><ul><li><code>200</code>: 请求成功</li><li><code>400</code>: 请求参数错误</li><li><code>500</code>: 服务器内部错误</li><li><code>503</code>: 服务暂时不可用</li><li><code>504</code>: 请求超时</li></ul><h2 id=-高级功能>🚀 高级功能</h2><h3 id=智能缓存系统>智能缓存系统</h3><p>FlowMaster 实现了高效的缓存管理系统：</p><ul><li><strong>LRU算法</strong>: 最近最少使用策略</li><li><strong>内存监控</strong>: 实时监控缓存内存使用</li><li><strong>自动清理</strong>: 定期清理过期缓存</li><li><strong>统计信息</strong>: 缓存命中率、条目数量等</li></ul><h3 id=性能监控>性能监控</h3><p>系统内置性能监控功能：</p><ul><li><strong>响应时间</strong>: 实时监控API响应时间</li><li><strong>请求统计</strong>: 请求次数、平均响应时间</li><li><strong>内存使用</strong>: 详细的内存使用情况</li><li><strong>缓存性能</strong>: 缓存命中率和效率</li></ul><h3 id=诊断系统>诊断系统</h3><p>自动诊断功能帮助快速定位问题：</p><ul><li><strong>连接诊断</strong>: 检查服务器连接状态</li><li><strong>vnstat测试</strong>: 验证vnstat命令可用性</li><li><strong>配置检查</strong>: 检查系统配置是否正确</li><li><strong>建议生成</strong>: 根据诊断结果提供解决建议</li></ul><h3 id=图表优化>图表优化</h3><p>前端图表系统经过深度优化：</p><ul><li><strong>实例池管理</strong>: Chart.js实例复用</li><li><strong>防抖节流</strong>: 避免频繁更新</li><li><strong>批量更新</strong>: 批量处理图表更新</li><li><strong>内存清理</strong>: 自动清理无用实例</li></ul><h2 id=-故障排除>🔍 故障排除</h2><h3 id=常见问题>常见问题</h3><h4 id=1-vnstat命令不可用>1. vnstat命令不可用</h4><p><strong>症状</strong>: 页面显示"vnstat命令不可用"错误</p><p><strong>解决方案</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 检查vnstat是否安装</span>
+</span></span><span style=display:flex><span>which vnstat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 安装vnstat</span>
+</span></span><span style=display:flex><span>sudo apt-get install vnstat  <span style=color:#75715e># Ubuntu/Debian</span>
+</span></span><span style=display:flex><span>sudo yum install vnstat      <span style=color:#75715e># CentOS/RHEL</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启动vnstat服务</span>
+</span></span><span style=display:flex><span>sudo systemctl enable vnstat
+</span></span><span style=display:flex><span>sudo systemctl start vnstat
+</span></span></code></pre></div><h4 id=2-端口被占用>2. 端口被占用</h4><p><strong>症状</strong>: 启动时显示"端口已被占用"</p><p><strong>解决方案</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 查看端口占用</span>
+</span></span><span style=display:flex><span>netstat -tlnp | grep <span style=color:#ae81ff>10089</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改端口</span>
+</span></span><span style=display:flex><span>export PORT<span style=color:#f92672>=</span><span style=color:#ae81ff>8080</span>
+</span></span><span style=display:flex><span>pm2 restart flowmaster
+</span></span></code></pre></div><h4 id=3-缓存问题>3. 缓存问题</h4><p><strong>症状</strong>: 数据更新缓慢或显示异常</p><p><strong>解决方案</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 清空缓存</span>
+</span></span><span style=display:flex><span>curl -X POST http://localhost:10089/api/cache/clear
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启服务</span>
+</span></span><span style=display:flex><span>pm2 restart flowmaster
+</span></span></code></pre></div><h4 id=4-内存使用过高>4. 内存使用过高</h4><p><strong>症状</strong>: 系统内存使用持续增长</p><p><strong>解决方案</strong>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 调整缓存配置</span>
+</span></span><span style=display:flex><span>export CACHE_MAX_MEMORY_MB<span style=color:#f92672>=</span><span style=color:#ae81ff>25</span>
+</span></span><span style=display:flex><span>export CACHE_MAX_SIZE<span style=color:#f92672>=</span><span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>pm2 restart flowmaster
+</span></span></code></pre></div><h3 id=日志分析>日志分析</h3><p>查看详细日志信息：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 查看PM2日志</span>
+</span></span><span style=display:flex><span>pm2 logs flowmaster
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看实时日志</span>
+</span></span><span style=display:flex><span>pm2 logs flowmaster --lines <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看错误日志</span>
+</span></span><span style=display:flex><span>pm2 logs flowmaster --err
+</span></span></code></pre></div><h3 id=性能诊断>性能诊断</h3><p>使用内置诊断功能：</p><ol><li>访问系统页面</li><li>点击"诊断问题"按钮</li><li>查看诊断结果和建议</li></ol><h2 id=-性能优化>⚡ 性能优化</h2><h3 id=系统优化建议>系统优化建议</h3><h4 id=1-缓存配置优化>1. 缓存配置优化</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 生产环境推荐配置</span>
+</span></span><span style=display:flex><span>CACHE_MAX_SIZE<span style=color:#f92672>=</span><span style=color:#ae81ff>200</span>              <span style=color:#75715e># 增加缓存条目</span>
+</span></span><span style=display:flex><span>CACHE_MAX_MEMORY_MB<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>         <span style=color:#75715e># 增加缓存内存</span>
+</span></span><span style=display:flex><span>CACHE_CLEANUP_INTERVAL<span style=color:#f92672>=</span><span style=color:#ae81ff>300000</span>   <span style=color:#75715e># 5分钟清理一次</span>
+</span></span></code></pre></div><h4 id=2-网络接口优化>2. 网络接口优化</h4><ul><li>优先监控主要网络接口</li><li>避免监控虚拟接口（如docker、veth）</li><li>定期检查接口状态</li></ul><h4 id=3-系统资源优化>3. 系统资源优化</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 增加文件描述符限制</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;* soft nofile 65536&#34;</span> &gt;&gt; /etc/security/limits.conf
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;* hard nofile 65536&#34;</span> &gt;&gt; /etc/security/limits.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 优化内核参数</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;net.core.somaxconn = 65535&#34;</span> &gt;&gt; /etc/sysctl.conf
+</span></span><span style=display:flex><span>sysctl -p
+</span></span></code></pre></div><h3 id=监控指标>监控指标</h3><p>关键性能指标：</p><ul><li><strong>响应时间</strong>: &lt; 100ms (正常), &lt; 500ms (警告)</li><li><strong>缓存命中率</strong>: > 80% (优秀), > 60% (良好)</li><li><strong>内存使用</strong>: &lt; 100MB (正常), &lt; 200MB (警告)</li><li><strong>CPU使用率</strong>: &lt; 10% (正常), &lt; 30% (警告)</li></ul><h2 id=-开发指南>👨‍💻 开发指南</h2><h3 id=本地开发环境>本地开发环境</h3><h4 id=1-克隆项目>1. 克隆项目</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>git clone https://github.com/vbskycn/FlowMaster.git
+</span></span><span style=display:flex><span>cd FlowMaster
+</span></span></code></pre></div><h4 id=2-安装依赖>2. 安装依赖</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>npm install
+</span></span></code></pre></div><h4 id=3-启动开发服务器>3. 启动开发服务器</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 开发模式启动</span>
+</span></span><span style=display:flex><span>npm run dev
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 或直接启动</span>
+</span></span><span style=display:flex><span>node server.js
+</span></span></code></pre></div><h4 id=4-访问开发环境>4. 访问开发环境</h4><p>打开浏览器访问：<code>http://localhost:10089</code></p><h3 id=项目结构>项目结构</h3><pre tabindex=0><code>FlowMaster/
+├── server.js              # 主服务器文件
+├── package.json           # 项目配置
+├── README.md             # 项目文档
+├── .env.example          # 环境变量示例
+├── install.sh            # 安装脚本
+├── public/               # 静态资源
+│   ├── index.html        # 主页面
+│   ├── css/              # 样式文件
+│   │   ├── main.css      # 主样式
+│   │   └── dark-theme.css # 深色主题
+│   └── favicon.png       # 网站图标
+└── assets/               # 资源文件
+    └── FlowMaster1.1.3.jpg # 项目截图
+</code></pre><h3 id=代码规范>代码规范</h3><ul><li>使用ES6+语法</li><li>遵循JavaScript标准规范</li><li>添加适当的注释</li><li>使用有意义的变量名</li></ul><h3 id=测试>测试</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 运行API测试</span>
+</span></span><span style=display:flex><span>curl http://localhost:10089/api/version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 测试vnstat</span>
+</span></span><span style=display:flex><span>curl http://localhost:10089/api/test/vnstat
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 检查系统状态</span>
+</span></span><span style=display:flex><span>curl http://localhost:10089/api/system/status
+</span></span></code></pre></div><h2 id=-贡献指南>🤝 贡献指南</h2><p>我们欢迎所有形式的贡献！</p><h3 id=贡献方式>贡献方式</h3><ol><li><strong>报告问题</strong>: 提交Issue报告bug或建议新功能</li><li><strong>代码贡献</strong>: 提交Pull Request改进代码</li><li><strong>文档改进</strong>: 完善文档和翻译</li><li><strong>测试反馈</strong>: 测试新功能并提供反馈</li></ol><h3 id=开发流程>开发流程</h3><ol><li>Fork 本项目</li><li>创建功能分支：<code>git checkout -b feature/AmazingFeature</code></li><li>提交更改：<code>git commit -m 'Add some AmazingFeature'</code></li><li>推送分支：<code>git push origin feature/AmazingFeature</code></li><li>提交 Pull Request</li></ol><h3 id=提交规范>提交规范</h3><p>提交信息格式：</p><pre tabindex=0><code>type(scope): description
+
+[optional body]
+
+[optional footer]
+</code></pre><p><strong>类型说明</strong>:</p><ul><li><code>feat</code>: 新功能</li><li><code>fix</code>: 修复bug</li><li><code>docs</code>: 文档更新</li><li><code>style</code>: 代码格式调整</li><li><code>refactor</code>: 代码重构</li><li><code>test</code>: 测试相关</li><li><code>chore</code>: 构建过程或辅助工具的变动</li></ul><h3 id=代码审查>代码审查</h3><p>所有Pull Request都需要通过代码审查：</p><ul><li>代码质量检查</li><li>功能测试验证</li><li>文档更新确认</li><li>性能影响评估</li></ul><h2 id=-开源协议>📄 开源协议</h2><p>本项目采用 <a href=LICENSE>MIT 协议</a> 开源。</p><h3 id=协议要点>协议要点</h3><ul><li>✅ 允许商业使用</li><li>✅ 允许修改源码</li><li>✅ 允许分发</li><li>✅ 允许私人使用</li><li>❌ 不提供担保</li></ul><h2 id=-联系方式>📞 联系方式</h2><h3 id=项目维护者>项目维护者</h3><p><strong>vbskycn</strong></p><ul><li>GitHub: <a href=https://github.com/vbskycn>@vbskycn</a></li><li>项目主页: <a href=https://github.com/vbskycn/FlowMaster>FlowMaster</a></li></ul><h3 id=获取帮助>获取帮助</h3><ul><li>📧 <strong>提交Issue</strong>: <a href=https://github.com/vbskycn/FlowMaster/issues>GitHub Issues</a></li><li>📖 <strong>查看文档</strong>: <a href=https://github.com/vbskycn/FlowMaster/wiki>项目Wiki</a></li><li>💬 <strong>讨论交流</strong>: <a href=https://github.com/vbskycn/FlowMaster/discussions>GitHub Discussions</a></li></ul><h3 id=支持项目>支持项目</h3><p>如果这个项目对你有帮助，欢迎：</p><ul><li><p>⭐ <strong>Star</strong>: 给项目点个星</p></li><li><p>🍴 <strong>Fork</strong>: 复制项目到你的仓库</p></li><li><p>💡 <strong>贡献</strong>: 提交代码或建议</p></li><li><p>📢 <strong>分享</strong>: 推荐给其他开发者</p></li><li><p>🍴直接请作者喝咖啡</p><p><a data-fancybox=gallery href=assets/dsm.jpg><img class=mx-auto alt=dsm src=assets/dsm.jpg></a></p></li></ul><hr><h2 id=-致谢>🙏 致谢</h2><ul><li><a href=https://github.com/vergoh/vnstat>vnstat</a> - 强大的网络流量监控工具</li><li><a href=https://vuejs.org/>Vue.js</a> - 渐进式 JavaScript 框架</li><li><a href=https://getbootstrap.com/>Bootstrap</a> - 流行的前端组件库</li><li><a href=https://www.chartjs.org/>Chart.js</a> - 交互式图表库</li><li><a href=https://expressjs.com/>Express.js</a> - 快速、开放、极简的 Node.js Web 应用框架</li><li><a href=https://pm2.keymetrics.io/>PM2</a> - 生产环境进程管理器</li></ul><p><strong>感谢使用 FlowMaster！</strong></p><p><em>让网络流量监控变得简单而强大</em></p></div><div class=post-archive><ul class=post-copyright><li><strong>原文作者：</strong><a rel=author href=/>zhoujie</a></li><li style=word-break:break-all><strong>原文链接：</strong><a href=/archives/2674.html>/archives/2674.html</a></li><li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li></ul></div><br><div class="post-meta meta-tags"><ul class=clearfix><li><a href=/tags/flowmaster>flowmaster</a></li><li><a href=/tags/vnstat>vnstat</a></li><li><a href=/tags/%E7%BB%9F%E8%AE%A1>统计</a></li></ul></div></article></div><footer id=footer><div>&copy; 2026 <a href=/>周杰个人博客 By zhoujie</a>
+| <a rel=nofollow href=http://beian.miit.gov.cn/>赣ICP备15001246号-2</a></div><br><div><div class=github-badge><a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a></div><div class=github-badge><a href=https://www.zhoujie218.top/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">zhoujie</span></a></div><div class=github-badge><a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a></div></div></footer><script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[["$","$"]],processEscapes:!0}}</script><script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src=//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script><a id=rocket href=#top></a><script type=text/javascript src='/js/totop.js?v=0.0.0' async></script><style type=text/css>div.highlight{position:relative;margin:1em 0}.copy-code{display:none;position:absolute;top:4px;right:4px;color:rgba(255,255,255,.8);background:rgba(78,78,78,.8);border-radius:var(--radius);padding:0 5px;font:inherit;user-select:none;cursor:pointer;border:0;--radius:8px}div.highlight:hover .copy-code,pre:hover .copy-code{display:block}</style><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><div id=secondary><section class=widget><form id=search action=/search/ method=get accept-charset=utf-8><input type=text name=q maxlength=50 placeholder=Search>
+<button type=submit class="submit icon-search"></button></form></section><section class=widget><h3 class=widget-title>最近文章</h3><ul class=widget-list><li><a href=/archives/2677.html title="免费使用的密钥管理系统 (License Management System)（暂未开源）">免费使用的密钥管理系统 (License Management System)（暂未开源）</a></li><li><a href=/archives/2674.html title="重构开源FlowMaster - 专业的网络流量实时监控系统">重构开源FlowMaster - 专业的网络流量实时监控系统</a></li><li><a href=/archives/2673.html title="新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！">新款Worker路由反代全球Cloudflare IP优选！让Cloudflare在国内再也不是减速器！</a></li><li><a href=/archives/2668.html title=(原创)哪吒监控流量告警规则公告配置规则配置工具>(原创)哪吒监控流量告警规则公告配置规则配置工具</a></li><li><a href=/archives/2667.html title=哪吒监控面板数据库损坏修复教程,原创>哪吒监控面板数据库损坏修复教程,原创</a></li><li><a href=/archives/2666.html title=OpenWrt哪吒监控Agent一键安装脚本>OpenWrt哪吒监控Agent一键安装脚本</a></li><li><a href=/archives/2651.html title="开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）">开源工具：Cloudflare Pages 部署记录清理，给我们的大善人节约一点资源吧（原创）</a></li><li><a href=/archives/2649.html title=被收了公网V4后，用另类V4方法高速打洞，完善后再开源>被收了公网V4后，用另类V4方法高速打洞，完善后再开源</a></li><li><a href=/archives/2645.html title=openwrt二级路由开启IPV6>openwrt二级路由开启IPV6</a></li><li><a href=/archives/2639.html title="基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器">基于 OpenWrt 全网最简双线 IPTV 接入方案 - 自建iptv服务器</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/categories/>分类</a></h3><ul class=widget-list><li><a href=/categories/diannaowangruo/>Diannaowangruo (124)</a></li><li><a href=/categories/game/>Game (2)</a></li><li><a href=/categories/it-related/>It-Related (14)</a></li><li><a href=/categories/luanqibazhao/>Luanqibazhao (16)</a></li><li><a href=/categories/qingganriji/>Qingganriji (8)</a></li><li><a href=/categories/shenhuarizhi/>Shenhuarizhi (13)</a></li><li><a href=/categories/wangyesheji/>Wangyesheji (35)</a></li></ul></section><section class=widget><h3 class=widget-title><a href=/tags/>标签</a></h3><div class=tagcloud><a href=/tags/24-04/>24-04</a>
+<a href=/tags/3000/>3000</a>
+<a href=/tags/3800/>3800</a>
+<a href=/tags/910nd/>910nd</a>
+<a href=/tags/actions/>Actions</a>
+<a href=/tags/adguard/>Adguard</a>
+<a href=/tags/agent/>Agent</a>
+<a href=/tags/alist/>Alist</a>
+<a href=/tags/arm/>Arm</a>
+<a href=/tags/armbian/>Armbian</a>
+<a href=/tags/baota/>Baota</a>
+<a href=/tags/bbr/>Bbr</a>
+<a href=/tags/bt/>Bt</a>
+<a href=/tags/cctv/>Cctv</a>
+<a href=/tags/centos/>Centos</a>
+<a href=/tags/cf/>Cf</a>
+<a href=/tags/chatgpt/>Chatgpt</a>
+<a href=/tags/chrome/>Chrome</a>
+<a href=/tags/cloudflare/>Cloudflare</a>
+<a href=/tags/cloudflarest/>Cloudflarest</a>
+<a href=/tags/crontab/>Crontab</a>
+<a href=/tags/cups/>Cups</a>
+<a href=/tags/docker/>Docker</a>
+<a href=/tags/emby/>Emby</a>
+<a href=/tags/esc/>Esc</a>
+<a href=/tags/fileinfo/>Fileinfo</a>
+<a href=/tags/flowmaster/>Flowmaster</a>
+<a href=/tags/frp/>Frp</a>
+<a href=/tags/fuse/>Fuse</a>
+<a href=/tags/game/>Game</a>
+<a href=/tags/github/>Github</a>
+<a href=/tags/google/>Google</a>
+<a href=/tags/google-cloud/>Google-Cloud</a>
+<a href=/tags/gphotos/>Gphotos</a>
+<a href=/tags/h5ai/>H5ai</a>
+<a href=/tags/host/>Host</a>
+<a href=/tags/https/>Https</a>
+<a href=/tags/hub/>Hub</a>
+<a href=/tags/hugo/>Hugo</a>
+<a href=/tags/iftop/>Iftop</a>
+<a href=/tags/ip/>Ip</a>
+<a href=/tags/iperf/>Iperf</a>
+<a href=/tags/iphone/>Iphone</a>
+<a href=/tags/iptv/>Iptv</a>
+<a href=/tags/ipv4/>Ipv4</a>
+<a href=/tags/ipv6/>Ipv6</a>
+<a href=/tags/kodi/>Kodi</a>
+<a href=/tags/lede/>Lede</a>
+<a href=/tags/license/>License</a>
+<a href=/tags/linux/>Linux</a>
+<a href=/tags/live/>Live</a>
+<a href=/tags/lnmp/>Lnmp</a>
+<a href=/tags/lsky/>Lsky</a>
+<a href=/tags/moments/>Moments</a>
+<a href=/tags/mysql/>Mysql</a>
+<a href=/tags/n1/>N1</a>
+<a href=/tags/nezha/>Nezha</a>
+<a href=/tags/nfs/>Nfs</a>
+<a href=/tags/nginx/>Nginx</a>
+<a href=/tags/nsfwjs/>Nsfwjs</a>
+<a href=/tags/office/>Office</a>
+<a href=/tags/office365/>Office365</a>
+<a href=/tags/onedrive/>Onedrive</a>
+<a href=/tags/openwrt/>Openwrt</a>
+<a href=/tags/oss/>Oss</a>
+<a href=/tags/p910nd/>P910nd</a>
+<a href=/tags/pages/>Pages</a>
+<a href=/tags/pdf/>Pdf</a>
+<a href=/tags/photos/>Photos</a>
+<a href=/tags/php8/>Php8</a>
+<a href=/tags/picgo/>Picgo</a>
+<a href=/tags/pve/>Pve</a>
+<a href=/tags/rclone/>Rclone</a>
+<a href=/tags/rfp/>Rfp</a>
+<a href=/tags/ros/>Ros</a>
+<a href=/tags/rustdesk/>Rustdesk</a>
+<a href=/tags/solo/>Solo</a>
+<a href=/tags/sql/>Sql</a>
+<a href=/tags/ssh/>Ssh</a>
+<a href=/tags/status/>Status</a>
+<a href=/tags/stun/>Stun</a>
+<a href=/tags/sync/>Sync</a>
+<a href=/tags/ubuntu/>Ubuntu</a>
+<a href=/tags/usb/>Usb</a>
+<a href=/tags/user-agent/>User-Agent</a>
+<a href=/tags/v2ray/>V2ray</a>
+<a href=/tags/vnstat/>Vnstat</a>
+<a href=/tags/webdav/>Webdav</a>
+<a href=/tags/webhook/>Webhook</a>
+<a href=/tags/winkawaks/>Winkawaks</a>
+<a href=/tags/wordpress/>Wordpress</a>
+<a href=/tags/worker/>Worker</a>
+<a href=/tags/you-get/>You-Get</a>
+<a href=/tags/youku/>Youku</a>
+<a href=/tags/zbds/>Zbds</a>
+<a href=/tags/%E4%BA%8C%E5%90%88%E4%B8%80/>二合一</a>
+<a href=/tags/%E4%BA%8C%E7%BA%A7%E8%B7%AF%E7%94%B1/>二级路由</a>
+<a href=/tags/%E4%BA%BA%E7%94%9F/>人生</a>
+<a href=/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/>免费图床</a>
+<a href=/tags/%E5%85%AC%E5%91%8A/>公告</a>
+<a href=/tags/%E5%85%AC%E7%BD%91/>公网</a>
+<a href=/tags/%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/>兰空图床</a>
+<a href=/tags/%E5%88%B7%E6%9C%BA/>刷机</a>
+<a href=/tags/%E5%8A%A0%E9%80%9F/>加速</a>
+<a href=/tags/%E5%8F%8B%E7%AA%9D/>友窝</a>
+<a href=/tags/%E5%93%AA%E5%90%92/>哪吒</a>
+<a href=/tags/%E5%9B%BE%E5%BA%8A/>图床</a>
+<a href=/tags/%E5%A4%AE%E8%A7%86/>央视</a>
+<a href=/tags/%E5%A5%97%E4%BB%B6/>套件</a>
+<a href=/tags/%E5%AE%9D%E5%A1%94/>宝塔</a>
+<a href=/tags/%E5%AE%9D%E5%AE%9D/>宝宝</a>
+<a href=/tags/%E5%AF%86%E9%92%A5/>密钥</a>
+<a href=/tags/%E5%B0%8F%E8%AF%B4/>小说</a>
+<a href=/tags/%E5%BC%80%E6%BA%90/>开源</a>
+<a href=/tags/%E6%89%93%E5%8D%B0/>打印</a>
+<a href=/tags/%E6%89%A9%E5%AE%B9/>扩容</a>
+<a href=/tags/%E6%8A%93%E5%8C%85/>抓包</a>
+<a href=/tags/%E6%96%90%E8%AE%AF/>斐讯</a>
+<a href=/tags/%E6%9C%89%E9%81%93%E4%BA%91/>有道云</a>
+<a href=/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/>机顶盒</a>
+<a href=/tags/%E6%B1%9F%E8%A5%BF/>江西</a>
+<a href=/tags/%E6%B5%81%E9%87%8F/>流量</a>
+<a href=/tags/%E6%BA%90/>源</a>
+<a href=/tags/%E7%83%AD%E6%8F%92%E6%8B%94/>热插拔</a>
+<a href=/tags/%E7%88%B1%E9%98%85%E4%B9%A6%E9%A6%99/>爱阅书香</a>
+<a href=/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/>玩客云</a>
+<a href=/tags/%E7%94%9F%E6%B4%BB/>生活</a>
+<a href=/tags/%E7%94%B2%E9%AA%A8%E6%96%87/>甲骨文</a>
+<a href=/tags/%E7%94%B5%E4%BF%A1/>电信</a>
+<a href=/tags/%E7%94%B5%E8%A7%86/>电视</a>
+<a href=/tags/%E7%9B%91%E6%8E%A7/>监控</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD/>直播</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E6%BA%90/>直播源</a>
+<a href=/tags/%E7%9B%B4%E6%92%AD%E7%94%B5%E8%A7%86/>直播电视</a>
+<a href=/tags/%E7%A1%AC%E7%9B%98/>硬盘</a>
+<a href=/tags/%E7%A3%81%E7%9B%98/>磁盘</a>
+<a href=/tags/%E7%BB%84%E6%92%AD/>组播</a>
+<a href=/tags/%E7%BB%9F%E8%AE%A1/>统计</a>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB/>网络共享</a>
+<a href=/tags/%E7%BE%A4%E6%99%96/>群晖</a>
+<a href=/tags/%E8%A7%84%E5%88%99/>规则</a>
+<a href=/tags/%E8%A7%A3%E9%94%81/>解锁</a>
+<a href=/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/>许可证</a>
+<a href=/tags/%E8%AF%81%E4%B9%A6/>证书</a>
+<a href=/tags/%E8%B6%8A%E7%8B%B1/>越狱</a>
+<a href=/tags/%E8%B7%A8%E5%9F%9F/>跨域</a>
+<a href=/tags/%E8%B7%AF%E7%94%B1/>路由</a>
+<a href=/tags/%E8%BF%9C%E7%A8%8B/>远程</a>
+<a href=/tags/%E9%89%B4%E9%BB%84/>鉴黄</a>
+<a href=/tags/%E9%95%9C%E5%83%8F/>镜像</a>
+<a href=/tags/%E9%95%BF%E8%99%B9/>长虹</a>
+<a href=/tags/%E9%98%85%E8%AF%BB/>阅读</a>
+<a href=/tags/%E9%9D%A2%E6%9D%BF/>面板</a>
+<a href=/tags/%E9%BB%91%E7%BE%A4%E6%99%96/>黑群晖</a></div></section><section class=widget><h3 class=widget-title>友情链接</h3><ul class=widget-list><li><a target=_blank href=https://www.zhoujie218.top/ title=周杰的博客>周杰的博客</a></li></ul></section><section class=widget><h3 class=widget-title>其它</h3><ul class=widget-list><li><a href=/index.xml>文章 RSS</a></li></ul></section></div></div></div></div></body></html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lede on 周杰个人博客</title><link>/tags/lede/</link><description>Recent content in Lede on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/lede/index.xml" rel="self" type="application/rss+xml"/><item><title>openwrt用dd命令写盘,用命令修改IP</title><link>/archives/1776.html</link><pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate><guid>/archives/1776.html</guid><description>&lt;p&gt;此教程适合openwrt不同固件之间的刷机&lt;/p&gt;
+&lt;p&gt;首先把下载openwrt固件改名称为op.img（提前把固件改个名字）&lt;/p&gt;
+&lt;p&gt;一、登陆OPENWRT网页后台进到系统里面点文件传输再点选择文件找到你改过名的固件再点上传【其实就是将img文件上传到’&lt;em&gt;/tmp/upload/&lt;/em&gt;‘文件夹，你也可以用其他方式上传】 二、这里等他上传完了就好了 [caption id=&amp;ldquo;attachment_1780&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;554&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-34.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-34.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-34.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption] 三、SSH登陆路由，我用的是putty软件 [caption id=&amp;ldquo;attachment_1781&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;467&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-35.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-35.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-35.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption] 四．输入你登陆路由器用户名和密码 Openwrt用户名root密码就是你登陆路由器密码【注意密码这里输入是看不到的】然后回车 输入命令 &lt;em&gt;ls /tmp/upload&lt;/em&gt; 回车查看你刚刚上传的固件我这里看到的就是op.img就表示上传成功了 五、开始写盘 输入命令 dd if=/tmp/upload/op.img of=/dev/sda 回车（op.img为固件的名称） 然后是等待刷写，然后出现下面这两排字母表示刷机成功了 1087522+0 records in 1087522+0 records out 然后输入reboot重启路由器就是你全新的固件了和全新写盘一样效果 [caption id=&amp;ldquo;attachment_1782&amp;rdquo; align=&amp;ldquo;alignnone&amp;rdquo; width=&amp;ldquo;554&amp;rdquo;]&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-36.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-36.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/07/unnamed-file-36.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt; [/caption]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;vi /etc/config/network/  直接修改IP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ifconfig  接口  IP  临时修改IP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;homelede固件默认IP 192.168.1.1如需要修改 首先，固件启动后，按回车进入命令窗口： 默认用户名root，密码password 在命令行输入： uci set network.lan.ipaddr=&amp;lsquo;192.168.5.1&amp;rsquo; uci commit network uci delete dhcp.lan.dhcp_option uci add_list dhcp.lan.dhcp_option=&amp;lsquo;6,192.168.5.1&amp;rsquo; uci commit network 以上192.168.5.1替换成你想改的IP&lt;/p&gt;</description></item></channel></rss>

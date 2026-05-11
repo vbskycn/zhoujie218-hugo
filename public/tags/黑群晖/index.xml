@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>黑群晖 on 周杰个人博客</title><link>/tags/%E9%BB%91%E7%BE%A4%E6%99%96/</link><description>Recent content in 黑群晖 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E9%BB%91%E7%BE%A4%E6%99%96/index.xml" rel="self" type="application/rss+xml"/><item><title>群晖docker开启局域网桥接，获取独立IP</title><link>/archives/1018.html</link><pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1018.html</guid><description>&lt;p&gt;&lt;strong&gt;开始我参考国外论坛各种毛病各种方法都不行，国内各大论坛都没有教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先群晖默认网络模式是bridge+host 我们将开启的网络模式bridge-host&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bridge:docker容器内部虚拟网桥，容器内部172.17.0.X网段 无法获取主机网络ip 访问容器需要映射端口 并且不能和主机占用端口冲突 不映射端口无法使用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Host：host模式 将容器绑定到主机网卡使用主机的ip 并且不能和主机占用端口冲突 使用哪些端口自动占用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bridge-host：通过主机的虚拟网卡来创建虚拟网桥 将容器的网卡绑定到这个直通局域网的虚拟网桥上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点：容器获取到局域网ip， 容器ip和群晖主机一个网段，端口1-65535全端口使用 不和主机冲突 ip手动指定&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可以说bridge-host模式就是把容器都桥接到你群晖所在的局域网&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那么开始教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先你的群晖开启了root账号并用putty登录上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我自己的的记录&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="开启bridge-host网络"&gt;开启bridge-host网络&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.254 -o parent=ovs_eth0 bridge-host
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建容器&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -itd --restart=always --network bridge-host --ip=192.168.1.240 --name baota pch18/baota
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建容器&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -itd --restart=always --network bridge-host --ip=192.168.1.241 --name centos241 centos
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;如图 打开群晖控制面板 &amp;mdash;》》》》网络&amp;mdash;-》》》》网络界面&amp;mdash;-》》》管理&amp;mdash;》》》》Open vSwitch设置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;勾选启动——————》》点击确定&amp;mdash;》》》等待群晖进入界面&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/2.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/2.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/1.png" /&gt;
+ &lt;/a&gt;
+ &lt;strong&gt;登录putty&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="执行创建网络命令"&gt;执行创建网络命令&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker network create -d macvlan --subnet=192.168.99.0/24 --gateway=192.168.99.254 -o parent=ovs_eth0 bridge-host
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;192.168.99.0/24是整个192.168.99.X网段&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>黑群晖让视频有缩略图</title><link>/archives/666.html</link><pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate><guid>/archives/666.html</guid><description>&lt;p&gt;首先安装 安装ffmpeg ，照片能正常使用&lt;/p&gt;
+&lt;p&gt;当前安装好ffmpeg后，你只需要把 /volume1/@appstore/ffmpeg/bin/ffmpeg 这个文件覆盖其它用到转码的地方即可。&lt;/p&gt;
+&lt;p&gt;简单说就两行（第一个是视频转码，第二个是拍照视频缩略图）：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;cp /volume1/@appstore/ffmpeg/bin/ffmpeg  /volume1/@appstore/VideoStation/bin/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cp /volume1/@appstore/ffmpeg/bin/ffmpeg /usr/bin&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;要用root用户&lt;/p&gt;
+&lt;p&gt;1、用到一个工具putty，自行百度下载。 2、进入putty后开始修改操作，先切换到英文输入法。 第一步 输入admin账户的账号和密码后按Enter键（其他账户不清楚是否可以修改，大家可以测试，如果可以跟帖回复一下） 第二步 确定出现绿色字体的admin@xxx（XXX应该显示你设置的主机用户名） 然后输入 sudo su -（注意u和-之间有一个空格！！！） 再次输入admin密码 就会出现绿色字体root@xxx。 第三步 输入synouser &amp;ndash;setpw root xxx (xxx是你打算要修改的root的密码 建议修改成和admin账户一样，注意&amp;ndash;前有一个空格），按一下Enter键出现绿色字体的root@xxx，这样就成功了（先不要关闭！！）。 之后你可以进winscp 用root户名和你刚修改的密码登陆了。之后的权限修改操作都用winscp这个软件，自行百度下载。 对于修改transmission自带英文web界面为中文web界面的朋友提示一点： 上面第三步修改完密码出现root@xxx之后，接着输入killall transmission-daemon，这是系统停用transmission，之后就可以用你下载中文web替换自带的英文web了，具体方法到处都是，自己查看吧。&lt;/p&gt;</description></item></channel></rss>

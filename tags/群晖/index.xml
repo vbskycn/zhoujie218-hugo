@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>群晖 on 周杰个人博客</title><link>/tags/%E7%BE%A4%E6%99%96/</link><description>Recent content in 群晖 on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E7%BE%A4%E6%99%96/index.xml" rel="self" type="application/rss+xml"/><item><title>群晖硬盘不够用？？把电影放到阿里云盘挂到EMBY来播放吧（EMBY挂载阿里云网盘教程）</title><link>/archives/2520.html</link><pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate><guid>/archives/2520.html</guid><description>&lt;p&gt;自从CHIA这个虚拟币出来后，机械硬盘的价格扶揺直上，曾经到了有钱都买不到的地步（我说的是全新12T、14T、18T这种大硬盘），现在虽然慢慢有货了，但是价格也是很贵，买不起硬盘了，我的小姐姐住哪啊？还好有大容量的阿里云盘，感谢马爸爸~感谢~~好吧，既然电影放到阿里云盘了，那么就用EMBY来看吧！还没有注册有阿里云盘账号的，点【&lt;a href="https://www.alipan.com/"&gt;这里&lt;/a&gt;】注册账号。&lt;/p&gt;
+&lt;p&gt;一、先把阿里云盘用WEBDAV协议加载到群晖（此步骤已经做了的，可以跳过。还没做的，请按照《&lt;a href="https://www.zhoujie218.top/archives/2520.html"&gt;群晖同步阿里云盘及Win电脑加载阿里云盘变成本地磁盘（网络磁盘）&lt;/a&gt;》教程设置）。&lt;/p&gt;
+&lt;p&gt;二、群晖控制面板开启SSH，然后在Windows系统的电脑上用MobaXterm 、xShell 之类的软件，以root用户登录到群晖SSH状态下，输入下面的命令回车，下载Rclone并安装 ：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;curl https://rclone.org/install.sh | sudo bash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981271-1.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab78934607.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab78934607.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;三、文件在下载中（如果发现不能正常下载的，最好挂上科学出国）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981275-2.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab797d339a.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab797d339a.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;四、安装完成；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981276-3.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab797a6690.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab797a6690.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;五、输入下面的命令回车，开始配置Rclone：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981277-4.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab797960d2.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab797960d2.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;六、由于我之前已经加载过一个网盘，所以上面会显示有已经加载过的网盘名称和类型，如果你的NAS没加载过，是不会显示的。这次需要加载的是阿里云盘，所以输入n回车，新建一个；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981277-5.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab9fb8e83a.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab9fb8e83a.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;七、需要设置挂载的名称，我这写：aliyunpan ；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981278-6.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab798d658c.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab798d658c.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;八、接下来这里会跳出一长串，需要选的Webdav协议序号是38，所以输入38回车（这个菜单的序号有可能会变，不要照搬，先看清楚是Webdav的序号再输入）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981278-7.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b75bb7.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b75bb7.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;九、输入在第一步设置的群晖IP地址和webdav端口（注意，http:// 这个不能省）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981279-8.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b669fc.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79b669fc.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十、由于阿里网盘不在列表中，所以选择5 其它站点，回车；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981279-9.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79d50a93.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79d50a93.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十一、在user&amp;gt;的后面输入在第一个步骤设置webdav的用户名（默认是admin）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981280-10.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79cf360f.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79cf360f.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十二、输入y，自己设置密码；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981280-11.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79bd52bb.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79bd52bb.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十三、在password：的后面，输入在第一个步骤设置webdav的密码（输入密码时，屏幕是不显示的，无需理会，输完密码直接回车，然后再输入一次密码，两次输入要一致）；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981281-12.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79c464b9.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79c464b9.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十四、在bearer_token后面回车；&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981281-13.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79fbefbf.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79fbefbf.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十五、不需要高级配置，输入n回车；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981282-15.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f40dbc.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f40dbc.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十六、这里会再次显示出我们前面设置的阿里云盘的Webdav配置，确认无误后，输入y回车；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981291-16.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a079fd5.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a079fd5.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十七、可以看到阿里云盘已经配置好了，输入q回车退出配置；&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981291-17.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a06fb61.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab7a06fb61.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;十八、接下来设置Rclone自动启动，输入以下命令下载自动启动的配置文件并编辑：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget https://wp.gxnas.com/wp-content/uploads/2021/08/rcloned &amp;amp;&amp;amp; vi rcloned
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href="https://wp.gxnas.com/wp-content/uploads/2021/08/1627981291-18.jpg"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f9cdf8.webp"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/2024/03/08/65eab79f9cdf8.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;</description></item><item><title>群晖docker开启局域网桥接，获取独立IP</title><link>/archives/1018.html</link><pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1018.html</guid><description>&lt;p&gt;&lt;strong&gt;开始我参考国外论坛各种毛病各种方法都不行，国内各大论坛都没有教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先群晖默认网络模式是bridge+host 我们将开启的网络模式bridge-host&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bridge:docker容器内部虚拟网桥，容器内部172.17.0.X网段 无法获取主机网络ip 访问容器需要映射端口 并且不能和主机占用端口冲突 不映射端口无法使用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Host：host模式 将容器绑定到主机网卡使用主机的ip 并且不能和主机占用端口冲突 使用哪些端口自动占用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bridge-host：通过主机的虚拟网卡来创建虚拟网桥 将容器的网卡绑定到这个直通局域网的虚拟网桥上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点：容器获取到局域网ip， 容器ip和群晖主机一个网段，端口1-65535全端口使用 不和主机冲突 ip手动指定&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可以说bridge-host模式就是把容器都桥接到你群晖所在的局域网&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那么开始教程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先你的群晖开启了root账号并用putty登录上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我自己的的记录&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="开启bridge-host网络"&gt;开启bridge-host网络&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.254 -o parent=ovs_eth0 bridge-host
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建容器&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -itd --restart=always --network bridge-host --ip=192.168.1.240 --name baota pch18/baota
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建容器&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -itd --restart=always --network bridge-host --ip=192.168.1.241 --name centos241 centos
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;如图 打开群晖控制面板 &amp;mdash;》》》》网络&amp;mdash;-》》》》网络界面&amp;mdash;-》》》管理&amp;mdash;》》》》Open vSwitch设置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;勾选启动——————》》点击确定&amp;mdash;》》》等待群晖进入界面&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/2.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/2.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/1.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/12/1.png" /&gt;
+ &lt;/a&gt;
+ &lt;strong&gt;登录putty&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="执行创建网络命令"&gt;执行创建网络命令&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker network create -d macvlan --subnet=192.168.99.0/24 --gateway=192.168.99.254 -o parent=ovs_eth0 bridge-host
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;192.168.99.0/24是整个192.168.99.X网段&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>群晖6.2最新获取root权限设置root密码并登入ssh的方法</title><link>/archives/704.html</link><pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate><guid>/archives/704.html</guid><description>&lt;p&gt;群晖|6.2最新获取root权限设置root密码并登入的方法&lt;/p&gt;
+&lt;p&gt;一、控制面板—-终端机和SNMP里，开启SSH功能。&lt;/p&gt;
+&lt;p&gt;二、登陆群晖的SSH，用系统默认用户登陆，我这里是admin，所以我输入以下命令，admin和IP地址修改为你的&lt;/p&gt;
+&lt;p&gt;三、登陆后输入以下命令切换至root账号，这时还需在输入一次你的群晖登陆密码&lt;/p&gt;
+&lt;p&gt;sudo -i&lt;/p&gt;
+&lt;p&gt;四、输入以下命令进入到ssh的目录&lt;/p&gt;
+&lt;p&gt;cd /etc/ssh&lt;/p&gt;
+&lt;p&gt;五、给sshd_config赋予755的权限&lt;/p&gt;
+&lt;p&gt;chmod 755 sshd_config&lt;/p&gt;
+&lt;p&gt;六、修改config配置文件内容 输入&lt;/p&gt;
+&lt;p&gt;vi /etc/ssh/sshd_config&lt;/p&gt;
+&lt;p&gt;点击“i”键进入编辑模式，找到&lt;/p&gt;
+&lt;h1 id="permitrootlogin-prohibit-password-更改为注意前面的号不要"&gt;PermitRootLogin prohibit password 更改为,注意前面的“#”号不要&lt;/h1&gt;
+&lt;p&gt;PermitRootLogin yes 改成yes&lt;/p&gt;
+&lt;p&gt;按“esc”键退出编辑模式，输入“:wq”保存&lt;/p&gt;
+&lt;p&gt;七、重启群晖&lt;/p&gt;
+&lt;p&gt;reboot&lt;/p&gt;
+&lt;p&gt;八、重启完成再次以系统默认账户登录群晖SSH,我这里是admin，所以我输入以下命令，admin和IP地址修改为你的&lt;/p&gt;
+&lt;p&gt;九、再次输入以下命令切换至root账号，这时还需在输入一次你的群晖登陆密码 sudo -i&lt;/p&gt;
+&lt;p&gt;十、输入下面命令修改root默认密码，xxx改为你要设置的密码，回车没有任何提示即可&lt;/p&gt;
+&lt;p&gt;synouser &amp;ndash;setpw root xxx&lt;/p&gt;</description></item><item><title>使用群晖二合一的小白，调整磁盘镜的分区教程在这里！附送无损升级系统教程</title><link>/archives/668.html</link><pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate><guid>/archives/668.html</guid><description>&lt;p&gt;&lt;strong&gt;使用大神二合一固件&lt;/strong&gt; &lt;strong&gt;用的是64的固态，看着还有那么多空间用不了，心里就是不爽&lt;/strong&gt; &lt;strong&gt;各位大神又不出教程，只能自己摸索了&lt;/strong&gt; &lt;strong&gt;自己的盘格了多遍，幸不辱命，成功调整可以使用全部的空间了！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/121239ihpos1pmv19pns61.png.thumb20190424-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="使用二合一的小白，调整磁盘镜的分区教程在这里！附送无损升级系统教程 NAS云论坛-那是云论坛 2.png/&amp;gt;" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/121239ihpos1pmv19pns61.png.thumb20190424-1.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/121236rpgxc7izx8kx2mkm.png.thumb20190424-1.jpg"&gt;
+ &lt;img class="mx-auto" alt="使用二合一的小白，调整磁盘镜的分区教程在这里！附送无损升级系统教程 NAS云论坛-那是云论坛 1.png/&amp;gt;" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/04/121236rpgxc7izx8kx2mkm.png.thumb20190424-1.jpg" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其实真的像大神说的那样，很容易&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;纯手打，首发！大神勿喷，小白自取&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="本帖隐藏的内容"&gt;本帖隐藏的内容&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;先刷好大神的固件&lt;/strong&gt; &lt;strong&gt;打开DiskGenius专业版，这个如有闪退请断网&lt;/strong&gt; &lt;strong&gt;一.先备份5个分区&lt;/strong&gt; &lt;strong&gt;1分区和2分区是保数据升级系统用的&lt;/strong&gt; &lt;strong&gt;3分区和4分区是引导用的吧&lt;/strong&gt; &lt;strong&gt;5分区我猜是默认安装的一些套件数据之类的吧，就是安装完好显示9.4G的那个分区&lt;/strong&gt; &lt;strong&gt;二，删除3 4 5 分区，注意：一定要保存下分区表&lt;/strong&gt; &lt;strong&gt;三，重建3 (esp) 4 分区，也和原来的格式一样哦，把 3 4 分区的镜像备份还原回去，&lt;/strong&gt; &lt;strong&gt;四，剩下的空间新建第5分区，和原来的格式一样，把5分区的镜像备份还原回去，如失败在来一次&lt;/strong&gt; &lt;strong&gt;把你的盘接回去吧，开要同会提示你的系统可以扩充，点下动作扩充，几分钟就好了，这样就不浪费你的固态盘了&lt;/strong&gt; &lt;strong&gt;这里说下 1 2 分区的妙用吧，损了几个盘的数据才得来的经验&lt;/strong&gt; &lt;strong&gt;群晖不像win,它没有系统盘的概念，只要接在群晖里面的硬盘，系统都会在硬盘前面建几个分区 2.4G 2G的就是&lt;/strong&gt; &lt;strong&gt;raid的盘没有试过，亲测 basic 没有问题&lt;/strong&gt; &lt;strong&gt;步骤同上&lt;/strong&gt; &lt;strong&gt;数据盘也拿下来，把备份的1 2 分区数据还原到数据盘的 1 2 分区，等于就是把所有盘的系统同步成最新的了&lt;/strong&gt; &lt;strong&gt;接上群晖，修复一下就OK了&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>群晖NAS安装Transmission并替换TWC增强中文界面</title><link>/archives/580.html</link><pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate><guid>/archives/580.html</guid><description>&lt;p&gt;群晖如何使用BT下载，那就使用Transmission，它是BitTorrent客户端的一种，是一个跨平台的后端程序，用户界面简洁。&lt;/p&gt;
+&lt;p&gt;具体安装方法如下：&lt;/p&gt;
+&lt;p&gt;一、首先安装Transmission这个BT下载程序。&lt;/p&gt;
+&lt;p&gt;1、进入群晖点击套件中心&amp;ndash;设置&amp;ndash;套件来源，点新增添加一个源：&lt;a href="http://packages.synocommunity.com/"&gt;&lt;/a&gt;&lt;a href="http://packages.synocommunity.com/"&gt;http://packages.synocommunity.com/&lt;/a&gt; 后保存。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-f3cc154123534420190309-2.jpg"&gt;
+ &lt;img alt="1.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-f3cc154123534420190309-2.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;点击查看原图&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2、然后点击左侧社群，等待软件刷新出来，然后上方搜索后点击安装，完成后设置。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-1560154123583220190309-2.jpg"&gt;
+ &lt;img alt="2.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-1560154123583220190309-2.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;点击查看原图&lt;/figcaption&gt;
+&lt;/figure&gt; &lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-799b154123590320190309-2.jpg"&gt;
+ &lt;img alt="3.jpg" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-799b154123590320190309-2.jpg" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;点击查看原图&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3、按照以上2张图设置后下一步即可完成Transmission的安装，然后就可以用群晖IP:9091进行访问。&lt;/p&gt;
+&lt;p&gt;二、再安装TWC增强中文界面，中文增强界面有好几种安装方式，这里介绍2种常用方法。项目地址是：&lt;a href="https://github.com/ronggang/transmission-web-control%EF%BC%8C%E7%95%8C%E9%9D%A2%E6%AC%A3%E8%B5%8F"&gt;&lt;/a&gt;&lt;a href="https://github.com/ronggang/transmission-web-control%EF%BC%8C%E7%95%8C%E9%9D%A2%E6%AC%A3%E8%B5%8F"&gt;https://github.com/ronggang/transmission-web-control，界面欣赏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-f19c154123698720190309-2.png"&gt;
+ &lt;img alt="6.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-f19c154123698720190309-2.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;点击查看原图&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;1、通过群晖SSH终端安装：&lt;/p&gt;
+&lt;p&gt;a、确认开启SSH功能。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/09dd154123654520190309-2.png"&gt;
+ &lt;img alt="4.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/09dd154123654520190309-2.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;点击查看原图&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;b、终端使用以root用户登录到你的系统- ，脚本以下假设你已经使用root用户;（方法自行搜索） 记住当前路径（如/ volume1 /），以后用到，因为wget下载的文件会保存到当前目录; &lt;strong&gt;获取最新的安装脚本：&lt;/strong&gt; wget &lt;a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh"&gt;&lt;/a&gt;&lt;a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh"&gt;https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh&lt;/a&gt; 请留意执行结果，如果出现install-tr-control-cn.sh.1之类的提示，表示文件已存在，请使用 rm install-tr-  control-cn.sh*删除之前的脚本再重新执行上面的命令; 如果提示https电子杂志失败，请使用以下命令获取安装脚本： wget &lt;a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh"&gt;&lt;/a&gt;&lt;a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh"&gt;https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh&lt;/a&gt; &amp;ndash;no-check-certificate 如果提示文件已存在，通过可以rm install-tr-control-cn.sh进行删除后再执行下载;在或者wget后面添加-N参数，如： wget -N &lt;a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh"&gt;&lt;/a&gt;&lt;a href="https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh"&gt;https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh&lt;/a&gt; &amp;ndash;no-check-certificate c、执行安装脚本 执行安装脚本（系统-如果不请立即获取iTunes bash命令，尝试请将bash对划线sh）： bash install-tr-control-cn.sh 出现如果Permission denied之类的提示，表示没有权限，可尝试添加执行权限： chmod +x install-tr-control-cn.sh 如果命令成功执行，将出现以下界面：&lt;/p&gt;
+&lt;p&gt;&lt;figure class="max-w-2xl mx-auto overflow-hidden"&gt;
+ 
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-8266154123678720190309-2.png"&gt;
+ &lt;img alt="5.png" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2019/03/thum-8266154123678720190309-2.png" /&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption class="p-2 text-center"&gt;点击查看原图&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;</description></item></channel></rss>
