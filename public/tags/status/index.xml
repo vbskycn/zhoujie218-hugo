@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Status on 周杰个人博客</title><link>/tags/status/</link><description>Recent content in Status on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/status/index.xml" rel="self" type="application/rss+xml"/><item><title>ServerStatus-Toyo中文云探针安装说明</title><link>/archives/1002.html</link><pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1002.html</guid><description>&lt;p&gt;&lt;a href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34-1024x286.png"&gt;
+ &lt;img class="mx-auto" alt="" src="https://img-cloud.zhoujie218.top/wp-content/uploads/2020/09/unnamed-file-34-1024x286.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667"&gt;
+ &lt;a data-fancybox="gallery" href="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667"&gt;
+ &lt;img class="mx-auto" alt="的GitHub" src="https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ServerStatus-Toyo版是一个酷炫高逼格的云探针，云监控，服务器云监控，多服务器探针〜，该云监控（云探针）是ServerStatus（&lt;a href="https://github.com/tenyue/ServerStatus"&gt;https://github.com/tenyue/ ServerStatus&lt;/a&gt;）项目的优化/修改版。&lt;/li&gt;
+&lt;li&gt;在线演示：&lt;a href="https://tz.toyoo.pw/"&gt;https&lt;/a&gt; : &lt;a href="https://tz.toyoo.pw/"&gt;//tz.toyoo.pw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;我的博客：&lt;a href="https://doub.io/shell-jc3/"&gt;https&lt;/a&gt; : &lt;a href="https://doub.io/shell-jc3/"&gt;//doub.io/shell-jc3/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="目录介绍"&gt;&lt;a href="https://github.com/vbskycn/ServerStatus-Toyo#%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"&gt;&lt;/a&gt;目录介绍：&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;客户客户端文件&lt;/li&gt;
+&lt;li&gt;服务器服务端文件&lt;/li&gt;
+&lt;li&gt;网站文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="更新说明"&gt;&lt;a href="https://github.com/vbskycn/ServerStatus-Toyo#%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E"&gt;&lt;/a&gt;更新说明：&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;2018.08.21，修改新样式，效果见&lt;a href="https://tz.toyoo.pw/"&gt;https://tz.toyoo.pw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2017.10.12，负载优化，并支持CentOS6系统&lt;/li&gt;
+&lt;li&gt;2017.10.10，修改负载的增量：当前服务器上链接SSR等软件的IP总和（只要软件监听IPv6那么就能统计，例如SSH）&lt;/li&gt;
+&lt;li&gt;2017.04.30，优化手机显示式样&lt;/li&gt;
+&lt;li&gt;2017.04.29，移除主机名设定&lt;/li&gt;
+&lt;li&gt;2017.04.27，增加一键部署脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="安装教程"&gt;&lt;a href="https://github.com/vbskycn/ServerStatus-Toyo#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"&gt;&lt;/a&gt;安装教程：&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://www.nbdog.com/8364.html"&gt;http://www.nbdog.com/8364.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;bash &amp;lt;(curl -s -L https://git.io/v2ray.sh)&lt;/p&gt;
+&lt;p&gt;如果提示 curl: command not found ，那是因为你的小鸡没装 Curl
+ubuntu/debian 系统安装 Curl 方法: &lt;code&gt;apt-get update -y &amp;amp;&amp;amp; apt-get install curl -y&lt;/code&gt; centos 系统安装 Curl 方法: &lt;code&gt;yum update -y &amp;amp;&amp;amp; yum install curl -y&lt;/code&gt; 安装好 curl 之后就能安装脚本了&lt;/p&gt;
+&lt;p&gt;执行下面的代码下载并运行脚本。&lt;/p&gt;
+&lt;p&gt;wget -N &amp;ndash;no-check-certificate &lt;a href="https://softs.loan/Bash/status.sh"&gt;https://softs.loan/Bash/status.sh&lt;/a&gt; &amp;amp;&amp;amp; chmod + x status.sh&lt;/p&gt;</description></item></channel></rss>

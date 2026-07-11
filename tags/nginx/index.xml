@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on 周杰个人博客</title><link>/tags/nginx/</link><description>Recent content in Nginx on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>甲骨文ARM机器宝塔面板安装网站监控报表和nginx防火墙</title><link>/archives/2599.html</link><pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate><guid>/archives/2599.html</guid><description>&lt;p&gt;用甲骨文ARM机器建站大半年了，每日一备份还是很不错的，宝塔对arm的支持不是很好，有个小问题&lt;/p&gt;
+&lt;p&gt;宝塔面板的nginx 编译脚本直接忽略 ARM 对 LuaJIT 的支持，这导致了许多依赖 lua 语言的插件失效，例如 Nginx 防火墙、网站监控报表。&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/03/01/65e1497709732.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240301112014964" src="https://img-cloud.zhoujie218.top/2024/03/01/65e1497709732.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id="先决条件"&gt;先决条件&lt;/h2&gt;
+&lt;p&gt;需要debian11系统。debian10无法解决。甲骨文自带的ubuntu没测试过不清楚，甲骨文自带的系统太难用了，我每次都是dd系统&lt;/p&gt;
+&lt;p&gt;如果系统是debian11，那可以直接解决，网站不受影响。暂时卸载nginx和防火墙插件，其他软件不动。然后再运行下面命令&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cat&amp;gt;/www/server/panel/install/nginx_prepare.sh&amp;lt;&amp;lt;EOL
+#!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+
+wget -c -O LuaJIT-2.1.zip https://github.com/LuaJIT/LuaJIT/archive/refs/heads/v2.1.zip -T 10
+unzip LuaJIT-2.1.zip
+if [ -e LuaJIT-2.1 ]; then
+ cd LuaJIT-2.1
+ make linux
+ make install
+ export LUAJIT_LIB=/usr/local/lib
+ export LUAJIT_INC=/usr/local/include/luajit-2.1/
+ ln -sf /usr/local/lib/libluajit-5.1.so.2 /usr/local/lib64/libluajit-5.1.so.2
+ if [ `grep -c /usr/local/lib /etc/ld.so.conf` -eq 0 ]; then
+ echo &amp;#34;/usr/local/lib&amp;#34; &amp;gt;&amp;gt; /etc/ld.so.conf
+ fi
+ ldconfig
+ cd ..
+fi
+rm -rf LuaJIT-2.1*
+Install_cjson
+EOL
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;sed -i &amp;#39;s/\r//g&amp;#39; /www/server/panel/install/nginx_prepare.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;cat&amp;gt;/www/server/panel/install/nginx_configure.pl&amp;lt;&amp;lt;EOL
+--add-module=/www/server/nginx/src/ngx_devel_kit --add-module=/www/server/nginx/src/lua_nginx_module
+EOL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装lua5。&lt;/p&gt;</description></item><item><title>套娃：自用宝塔docker镜像</title><link>/archives/2596.html</link><pubDate>Fri, 16 Feb 2024 00:00:00 +0000</pubDate><guid>/archives/2596.html</guid><description>&lt;p&gt;&lt;strong&gt;套娃：自用宝塔docker镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目的：1分钟快速搭建 nginx php mysql 环境用于测试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20240216215522103" src="https://img-cloud.zhoujie218.top/2024/02/16/65cf69536e9a8.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;生产环境请用官方版&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是我自用的宝塔docker镜像，用于测试&lt;/p&gt;
+&lt;h2 id="宝塔76"&gt;&lt;strong&gt;宝塔7.6&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;底层系统：官方centos7.9&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:one&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;刚安装好宝塔，什么都没有&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tag: zhoujie218/baota:npm&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;安装好了 nginx 1.21 php 7.4 mysql 5.7&lt;/p&gt;
+&lt;p&gt;phpmyadmin 5.0 redis 6.2&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;docker run -idt \
+ -p 3081:80 \
+ -p 3443:443 \
+ -p 38888:8888 \
+ -p 3888:888 \
+ --privileged \
+ -v /www1/wwwroot:/www/wwwroot \
+ -v /www1/server/data:/www/server/data \
+ -v /www1/server/panel/vhost:/www/server/panel/vhost \
+ -v /www1/backup:/www/backup \
+ --network=bridge \
+ --name baota \
+ --restart always \
+ zhoujie218/baota:npm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;端口可以自己定义&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;38888: 宝塔web管理端口&lt;/p&gt;
+&lt;p&gt;3888: phpmyadmin管理端口&lt;/p&gt;</description></item><item><title>frp nginx 共用80端</title><link>/archives/1030.html</link><pubDate>Fri, 06 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1030.html</guid><description>&lt;p&gt;在nginx的配置文件里面加上这个&lt;/p&gt;
+&lt;p&gt;然后frp监听8080端口，重启nginx，搞定&lt;/p&gt;
+&lt;p&gt;server { listen 80; location / { proxy_pass http://127.0.0.1:8080; proxy_set_header Host $host:80; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_hide_header X-Powered-By; } }&lt;/p&gt;</description></item></channel></rss>

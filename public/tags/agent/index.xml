@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Agent on 周杰个人博客</title><link>/tags/agent/</link><description>Recent content in Agent on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/agent/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenWrt哪吒监控Agent一键安装脚本</title><link>/archives/2666.html</link><pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate><guid>/archives/2666.html</guid><description>&lt;h1 id="openwrt哪吒监控agent一键安装脚本"&gt;OpenWrt哪吒监控Agent一键安装脚本&lt;/h1&gt;
+&lt;h2 id="项目简介"&gt;项目简介&lt;/h2&gt;
+&lt;p&gt;这是一个用于在OpenWrt系统上安装哪吒监控Agent的一键安装脚本。哪吒监控是一个开源的服务器监控系统，可以帮助您实时监控服务器的运行状态。 脚本会自动从官方github仓库下载最新版本的Agent，并进行安装。&lt;/p&gt;
+&lt;h2 id="系统要求"&gt;系统要求&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenWrt系统&lt;/li&gt;
+&lt;li&gt;Root权限&lt;/li&gt;
+&lt;li&gt;网络连接&lt;/li&gt;
+&lt;li&gt;支持的系统架构：
+&lt;ul&gt;
+&lt;li&gt;x86_64 (amd64)&lt;/li&gt;
+&lt;li&gt;aarch64/arm64&lt;/li&gt;
+&lt;li&gt;armv7l/armv6l&lt;/li&gt;
+&lt;li&gt;mips&lt;/li&gt;
+&lt;li&gt;mips64&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="安装步骤"&gt;安装步骤&lt;/h2&gt;
+&lt;h3 id="一键安装命令"&gt;一键安装命令&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O nezha_openwrt.sh https://raw.githubusercontent.com/vbskycn/nezha_openwrt/main/nezha_openwrt.sh &amp;amp;&amp;amp; chmod +x nezha_openwrt.sh &amp;amp;&amp;amp; ./nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="国内网无法访问github的用下面的如果失效请自己更换代理"&gt;国内网无法访问github的用下面的，如果失效请自己更换代理&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget -O nezha_openwrt.sh https://gh-proxy.com/raw.githubusercontent.com/vbskycn/nezha_openwrt/main/nezha_openwrt.sh &amp;amp;&amp;amp; chmod +x nezha_openwrt.sh &amp;amp;&amp;amp; ./nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="分步安装"&gt;分步安装&lt;/h3&gt;
+&lt;h4 id="1-下载脚本"&gt;1. 下载脚本&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget https://raw.githubusercontent.com/vbskycn/nezha_openwrt/main/nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="2-添加执行权限"&gt;2. 添加执行权限&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;chmod +x nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="3-运行安装脚本"&gt;3. 运行安装脚本&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;./nezha_openwrt.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="配置说明"&gt;配置说明&lt;/h2&gt;
+&lt;p&gt;安装过程中需要配置以下参数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;服务器地址：哪吒监控面板的地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;客户端密钥：在面板中生成的客户端密钥&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/vbskycn/nezha_openwrt/blob/main/assets/image-20250421141640256.png"&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2025/04/22/68077ea23e136.png"&gt;
+ &lt;img class="mx-auto" alt="image-20250421141640256" src="https://img-cloud.zhoujie218.top/2025/04/22/68077ea23e136.png" /&gt;
+ &lt;/a&gt;
+ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;复制安装地址后里面有一串密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TLS：是否启用TLS加密连接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GPU监控：是否启用GPU监控&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;温度监控：是否启用温度监控&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="使用说明"&gt;使用说明&lt;/h2&gt;
+&lt;h3 id="服务管理"&gt;服务管理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;启动服务：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/etc/init.d/nezha-service start
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;停止服务：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/etc/init.d/nezha-service stop
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;重启服务：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/etc/init.d/nezha-service restart
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="配置文件位置"&gt;配置文件位置&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安装目录：&lt;code&gt;/etc/nezha&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;配置文件：&lt;code&gt;/etc/nezha/config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="常见问题"&gt;常见问题&lt;/h2&gt;
+&lt;h3 id="1-安装失败"&gt;1. 安装失败&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;检查是否具有root权限&lt;/li&gt;
+&lt;li&gt;检查网络连接是否正常&lt;/li&gt;
+&lt;li&gt;检查系统架构是否支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-服务无法启动"&gt;2. 服务无法启动&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;检查配置文件是否正确&lt;/li&gt;
+&lt;li&gt;检查服务器地址是否可以访问&lt;/li&gt;
+&lt;li&gt;检查客户端密钥是否正确&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-监控数据不显示"&gt;3. 监控数据不显示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;检查网络连接&lt;/li&gt;
+&lt;li&gt;检查服务是否正常运行&lt;/li&gt;
+&lt;li&gt;检查面板配置是否正确&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="注意事项"&gt;注意事项&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装前请确保系统有足够的存储空间&lt;/li&gt;
+&lt;li&gt;建议在安装前备份重要数据&lt;/li&gt;
+&lt;li&gt;确保网络环境稳定&lt;/li&gt;
+&lt;li&gt;建议使用TLS加密连接以提高安全性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="技术支持"&gt;技术支持&lt;/h2&gt;
+&lt;p&gt;如有问题，请提交Issue或Pull Request：&lt;/p&gt;</description></item></channel></rss>

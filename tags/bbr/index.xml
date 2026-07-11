@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bbr on 周杰个人博客</title><link>/tags/bbr/</link><description>Recent content in Bbr on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/bbr/index.xml" rel="self" type="application/rss+xml"/><item><title>centost Vultr 一键安装BBR工具教程</title><link>/archives/1172.html</link><pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate><guid>/archives/1172.html</guid><description>&lt;p&gt;最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。 根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。 于是我根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 脚本。&lt;/p&gt;
+&lt;h2 id="本脚本适用环境"&gt;本脚本适用环境&lt;/h2&gt;
+&lt;p&gt;系统支持：CentOS 6+，Debian 7+，Ubuntu 12+ 虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等 内存要求：≥128M 日期　　：2018 年 12 月 14 日&lt;/p&gt;
+&lt;h3 id="关于本脚本"&gt;关于本脚本&lt;/h3&gt;
+&lt;p&gt;1、本脚本已在 &lt;a href="https://qiu.sh/vultr"&gt;&lt;strong&gt;Vultr&lt;/strong&gt;&lt;/a&gt; 上的 VPS 全部测试通过。 2、当脚本检测到 VPS 的虚拟方式为 OpenVZ 时，会提示错误，并自动退出安装。 3、脚本运行完重启发现开不了机的，打开 VPS 后台控制面板的 VNC, 开机卡在 grub 引导, 手动选择内核即可。 4、由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。&lt;/p&gt;
+&lt;h3 id="使用方法"&gt;使用方法&lt;/h3&gt;
+&lt;p&gt;使用root用户登录，运行以下命令：&lt;/p&gt;
+&lt;p&gt;wget --no-check-certificate &lt;a href="https://github.com/teddysun/across/raw/master/bbr.sh"&gt;https://github.com/teddysun/across/raw/master/bbr.sh&lt;/a&gt; &amp;amp;&amp;amp; chmod +x bbr.sh &amp;amp;&amp;amp; ./bbr.sh&lt;/p&gt;
+&lt;p&gt;安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。 重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：&lt;/p&gt;</description></item></channel></rss>

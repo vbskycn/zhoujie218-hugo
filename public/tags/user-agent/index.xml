@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>User-Agent on 周杰个人博客</title><link>/tags/user-agent/</link><description>Recent content in User-Agent on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/user-agent/index.xml" rel="self" type="application/rss+xml"/><item><title>浏览器 User-Agent 大全</title><link>/archives/1646.html</link><pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate><guid>/archives/1646.html</guid><description>&lt;p&gt;一、基础知识 Http Header之User-Agent&lt;/p&gt;
+&lt;p&gt;User Agent中文名为用户代理，是Http协议中的一部分，属于头域的组成部分，User Agent也简称UA。它是一个特殊字符串头，是一种向访问网站提供你所使用的浏览器类型及版本、操作系统及版本、浏览器内核、等信息的标识。通过这个标识，用户所访问的网站可以显示不同的排版从而为用户提供更好的体验或者进行信息统计；例如用手机访问谷歌和电脑访问是不一样的，这些是谷歌根据访问者的UA来判断的。UA可以进行伪装。&lt;/p&gt;
+&lt;p&gt;浏览器的UA字串的标准格式：浏览器标识 (操作系统标识; 加密等级标识; 浏览器语言) 渲染引擎标识版本信息。但各个浏览器有所不同。&lt;/p&gt;
+&lt;p&gt;字串说明：&lt;/p&gt;
+&lt;p&gt;1、浏览器标识&lt;/p&gt;
+&lt;p&gt;出于兼容及推广等目的，很多浏览器的标识相同，因此浏览器标识并不能说明浏览器的真实版本，真实版本信息在 UA 字串尾部可以找到。&lt;/p&gt;
+&lt;p&gt;2、操作系统标识&lt;/p&gt;
+&lt;p&gt;3、加密等级标识&lt;/p&gt;
+&lt;p&gt;N: 表示无安全加密 I: 表示弱安全加密 U: 表示强安全加密&lt;/p&gt;
+&lt;p&gt;4、浏览器语言&lt;/p&gt;
+&lt;p&gt;在首选项 &amp;gt; 常规 &amp;gt; 语言中指定的语言&lt;/p&gt;
+&lt;p&gt;5、渲染引擎&lt;/p&gt;
+&lt;p&gt;显示浏览器使用的主流渲染引擎有：Gecko、WebKit、KHTML、Presto、Trident、Tasman等，格式为：渲染引擎/版本信息&lt;/p&gt;
+&lt;p&gt;6、版本信息&lt;/p&gt;
+&lt;p&gt;显示浏览器的真实版本信息，格式为：浏览器/版本信息&lt;/p&gt;
+&lt;p&gt;注： 1、在广告定向设定中，浏览器定向和操作系统定向均是针对User-Agent中的信息进行定向。 2、欲了解更多的User-Agent信息，请参考User-agent 字串史&lt;/p&gt;
+&lt;p&gt;浏览器User-Agent的详细信息&lt;/p&gt;
+&lt;p&gt;PC端： safari 5.1 – MAC User-Agent:Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50&lt;/p&gt;
+&lt;p&gt;safari 5.1 – Windows User-Agent:Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50&lt;/p&gt;</description></item></channel></rss>

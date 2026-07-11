@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Https on 周杰个人博客</title><link>/tags/https/</link><description>Recent content in Https on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/https/index.xml" rel="self" type="application/rss+xml"/><item><title>禁止chrome浏览器自动跳转https_chrome 自动https</title><link>/archives/2455.html</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>/archives/2455.html</guid><description>&lt;p&gt;&lt;strong&gt;现在浏览器为了安全，只要是访问过 https 的域名的，如果使用 http 请求，就会自动跳 https，在一些特殊场景下，我们在 https 和 http 部署了不同的两套系统，这种方式就会影响我们系统正常演示。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;针对 chrome 内核浏览器，如 360 浏览器、edge 等，都通用。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在浏览器地址栏输入：chrome://net-internals/#hsts&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进入如下界面&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/piggo/202207282053830.png"&gt;
+ &lt;img class="mx-auto" alt="img" src="https://img-cloud.zhoujie218.top/piggo/202207282053830.png" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在 1 框中，录入你的 http 的域名，如果查询有记录，那就是这个问题导致了自动跳转。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这时到 2 框中，录入域名，点击删除，在上 1 框中确认删除成功后。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重新打开浏览器，录入 http 域名，就不会自动跳转了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意，如果你手残，又手动跳转了 https，那就得重来一次。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;以上。&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

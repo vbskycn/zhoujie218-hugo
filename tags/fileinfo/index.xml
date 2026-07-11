@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fileinfo on 周杰个人博客</title><link>/tags/fileinfo/</link><description>Recent content in Fileinfo on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 27 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/fileinfo/index.xml" rel="self" type="application/rss+xml"/><item><title>解决宝塔php8 不能安装fileinfo模块的问题</title><link>/archives/2551.html</link><pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate><guid>/archives/2551.html</guid><description>&lt;h2 id="解决宝塔php8-不能安装fileinfo模块的问题"&gt;解决宝塔php8 不能安装fileinfo模块的问题&lt;/h2&gt;
+&lt;p&gt;阿里云服务器系统 Alibaba Cloud (Aliyun ) 2.1903 LTS (Hunting Beagle) x86_64(Py3.7.9) 或者类似系统&lt;/p&gt;
+&lt;p&gt;因照顾小机器的安装宝塔默认使用了禁用fileinfo参数，可能是检测到了禁用参数所以提示的不支持 可以使用以下命令重装默认开启 fileinfo的php&lt;/p&gt;
+&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/3545df842e35f4917583d946c78ab2b2.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230827192340694" src="https://img-cloud.zhoujie218.top/2023/08/3545df842e35f4917583d946c78ab2b2.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;命令行执行&lt;/p&gt;
+&lt;h1 id="下载php编译安装脚本"&gt;下载php编译安装脚本&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wget http://download.bt.cn/install/0/php.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#替换禁用fileinfo参数改为开启&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sed -i &amp;#34;s/--disable-fileinfo/--enable--fileinfo/g&amp;#34; php.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#安装php-8.2&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;bash php.sh install 8.2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+ &lt;a data-fancybox="gallery" href="https://img-cloud.zhoujie218.top/2023/08/7efe971de6987b7b67352d82fd7e09ec.webp"&gt;
+ &lt;img class="mx-auto" alt="image-20230827192416306" src="https://img-cloud.zhoujie218.top/2023/08/7efe971de6987b7b67352d82fd7e09ec.webp" /&gt;
+ &lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;官方论坛提几次都说不支持阿里云系统，还是自己动手&lt;/p&gt;</description></item></channel></rss>

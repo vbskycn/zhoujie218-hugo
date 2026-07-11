@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iftop on 周杰个人博客</title><link>/tags/iftop/</link><description>Recent content in Iftop on 周杰个人博客</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/iftop/index.xml" rel="self" type="application/rss+xml"/><item><title>Centos7下查看各进程的网络速率情况</title><link>/archives/1005.html</link><pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate><guid>/archives/1005.html</guid><description>&lt;h1 id="操作环境"&gt;操作环境&lt;/h1&gt;
+&lt;p&gt;Centos7&lt;/p&gt;
+&lt;p&gt;iftop&lt;/p&gt;
+&lt;p&gt;lsof&lt;/p&gt;
+&lt;h1 id="操作方法"&gt;操作方法&lt;/h1&gt;
+&lt;p&gt;这里使用iftop来查看各进程的网络速率情况&lt;/p&gt;
+&lt;p&gt;1.系统默认是没有安装iftop的，需要先安装iftop，在安装iftop之前最好更新下epel repo&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;#yum -y install epel-release&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#yum makecache&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#yum -y install iftop&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2.使用iftop -PB来监控各进程网络速率情况，可以查看各端口的网络速率情况，可以看见48774端口占用速率最大为150KB/s，来查看48774端口是哪个进程&lt;/p&gt;
+&lt;p&gt;iftop -i eth1&lt;/p&gt;
+&lt;p&gt;iftop -i eth1 -P -B&lt;/p&gt;
+&lt;p&gt;常用参数说明： -i设定监测的网卡，如：iftop -i eth1&lt;/p&gt;
+&lt;p&gt;通过监控， 可以将占用带宽最多的IP，用防火墙或者安全组屏蔽访问。 最好观察一段时间，如果是持续占用带宽，可以屏蔽。&lt;/p&gt;
+&lt;p&gt;为了更好的监控某个特定IP的带宽访问情况，可以执行命令： iftop -i eth1 -B -F 112.74.***.222&lt;/p&gt;
+&lt;p&gt;几个标识说明: &amp;ldquo;&amp;lt;=&amp;ldquo;与&amp;rdquo;=&amp;gt;&amp;quot;，表示的是流量的方向 &amp;ldquo;TX&amp;rdquo;：从网卡发出的流量 &amp;ldquo;RX&amp;rdquo;：网卡接收流量 &amp;ldquo;TOTAL&amp;rdquo;：网卡发送接收总流量 &amp;ldquo;cum&amp;rdquo;：iftop开始运行到当前时间点的总流量 &amp;ldquo;peak&amp;rdquo;：网卡流量峰值 &amp;ldquo;rates&amp;rdquo;：分别表示最近2s、10s、40s 的平均流量&lt;/p&gt;
+&lt;p&gt;-&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; 本文来自 IDO老徐 的CSDN 博客 ，全文地址请点击：&lt;a href="https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy"&gt;&lt;/a&gt;&lt;a href="https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy"&gt;https://blog.csdn.net/dieyong/article/details/80971253?utm_source=copy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.通过lsof来查看网络端口的进程，可以查看到48774端口是java的进程。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;[root@centos7-mysql-196 ~]# lsof -i :48774&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;java 25762 cloudera-scm 239u IPv4 224786 0t0 TCP centos7-mysql-196:48774-&amp;gt;151.101.0.167:https (ESTABLISHED)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(adsbygoogle = window.adsbygoogle || []).push({});&lt;/p&gt;</description></item></channel></rss>
